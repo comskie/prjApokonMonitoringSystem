@@ -1,5 +1,4 @@
 ﻿Imports MySql.Data.MySqlClient
-Imports AForge.Video.DirectShow
 Imports System.IO
 Imports QRCoder
 Public Class uctrl_register_student
@@ -87,6 +86,10 @@ Public Class uctrl_register_student
             Dim code As New QRCode(data)
             QRGenerate.BackgroundImage = code.GetGraphic(6)
         End If
+
+    End Sub
+
+    Private Sub uctrl_register_student_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
 End Class
