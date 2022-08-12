@@ -115,15 +115,33 @@ Public Class uctrl_student_list
                 End With
                 displayStudent()
             ElseIf colName = "action_delete" Then
-                'deletePatient(selectedRow.Cells(3).Value.ToString)
+                deleteStudent(selectedRow.Cells(4).Value.ToString)
                 'insertToLogs(user_id, "patient", "delete", u_employee, "User deleted patient id: " & selectedRow.Cells(3).Value.ToString)
-                'displayStudent()
+                displayStudent()
             End If
         Catch ex As Exception
 
         End Try
     End Sub
 
+    Private Sub deleteStudent(sLRN As String)
+        Try
+            conn.Open()
+            comm = New MySqlCommand("DELETE FROM tbl_student WHERE lrn = @slrn", conn)
+            comm.Parameters.Add("@slrn", MySqlDbType.VarChar).Value = sLRN
+
+            adapter = New MySqlDataAdapter(comm)
+            comm.ExecuteNonQuery()
+            MessageBox.Show("Record Deleted")
+            conn.Close()
+        Catch ex As Exception
+            conn.Close()
+            MessageBox.Show(ex.Message)
+        Finally
+            conn.Dispose()
+        End Try
+        conn.Close()
+    End Sub
     Private Sub btnSearch_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
         filteredSearch()
     End Sub
