@@ -17,14 +17,7 @@ Public Class frmMainPage
     Private Sub btnStudent_Click(sender As Object, e As EventArgs) Handles btnStudent.Click
         ActivateButton(sender, Color.FromArgb(248, 233, 161), "Student")
         Dim UC As New UserControl_Navs_Student
-        addUserControl(UC)
-    End Sub
-
-    Private Sub addUserControl(userControl As UserControl)
-        userControl.Dock = DockStyle.Fill
-        UserControlPanel.Controls.Clear()
-        UserControlPanel.Controls.Add(userControl)
-        userControl.BringToFront()
+        addUserControl(UC, UserControlPanel)
     End Sub
 
 
@@ -73,13 +66,13 @@ Public Class frmMainPage
     Private Sub IconButton5_Click(sender As Object, e As EventArgs) Handles IconButton5.Click
         ActivateButton(sender, Color.FromArgb(248, 233, 161), "Backup")
         Dim UC As New uctrl_backup
-        addUserControl(UC)
+        addUserControl(UC, UserControlPanel)
     End Sub
 
     Private Sub IconButton2_Click(sender As Object, e As EventArgs) Handles IconButton2.Click
         ActivateButton(sender, Color.FromArgb(248, 233, 161), "Logs")
         Dim UC As New uctrl_view_logs
-        addUserControl(UC)
+        addUserControl(UC, UserControlPanel)
     End Sub
 
     Private Sub IconButton4_Click(sender As Object, e As EventArgs) Handles IconButton4.Click
@@ -88,5 +81,11 @@ Public Class frmMainPage
             Me.Close()
             frmLogin.Show()
         End If
+    End Sub
+
+    Private Sub IconButton3_Click(sender As Object, e As EventArgs) Handles IconButton3.Click
+        ActivateButton(sender, Color.FromArgb(248, 233, 161), "Notify")
+        Dim UC As New UserControl_Navs_Notification
+        addUserControl(UC, UserControlPanel)
     End Sub
 End Class

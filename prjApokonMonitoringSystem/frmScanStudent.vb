@@ -53,8 +53,10 @@ Public Class frmScanStudent
             End If
             Dim Reader As New BarcodeReader()
             Dim result As Result = Reader.Decode(CType(PictureBox1.Image, Bitmap))
-            If result IsNot Nothing Then
+            If result IsNot Nothing And IsNumeric(result.Text) And result.Text.Count = 12 Then
                 SearchStudent(result.Text)
+            Else
+                MsgBox("Invalid QR Code", MessageBoxIcon.Error)
             End If
         Catch ex As Exception
 

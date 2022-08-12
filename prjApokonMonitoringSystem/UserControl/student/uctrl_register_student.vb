@@ -33,7 +33,11 @@ Public Class uctrl_register_student
             comm.ExecuteNonQuery()
 
             MessageBox.Show("Record inserted")
-            SendMail(txtEmail.Text, "Apokon Monitoring System Registration", "Hello there " & txtParent.Text & "! " & txtFname.Text & " have successfully registered in Apokon Monitoring System.", txtLRN.Text)
+
+            Dim attachment As System.Net.Mail.Attachment
+            attachment = New System.Net.Mail.Attachment(Application.StartupPath & "\student_id\" & txtLRN.Text & ".png")
+            SendMail(txtEmail.Text, "Apokon Monitoring System Registration", "Hello there " & txtParent.Text & "! " & txtFname.Text & " have successfully registered in Apokon Monitoring System.", txtLRN.Text, attachment)
+
             conn.Close()
         Catch ex As Exception
             conn.Close()

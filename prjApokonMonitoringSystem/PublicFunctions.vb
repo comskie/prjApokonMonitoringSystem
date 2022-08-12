@@ -2,6 +2,37 @@
 Imports System.IO
 Imports MySql.Data.MySqlClient
 Module PublicFunctions
+
+    Public Sub addUserControl(userControl As UserControl, pnl As Panel)
+        userControl.Dock = DockStyle.Fill
+        pnl.Controls.Clear()
+        pnl.Controls.Add(userControl)
+        userControl.BringToFront()
+    End Sub
+
+    Public Sub SendMail(MailReceiver As String, MailSubject As String, MailBody As String, LRN As String, attachment As System.Net.Mail.Attachment)
+        Try
+            Dim smpt_server As New SmtpClient
+            Dim email As New MailMessage
+            smpt_server.UseDefaultCredentials = False
+            smpt_server.Credentials = New Net.NetworkCredential(school_email, school_password)
+            smpt_server.Port = 587
+            smpt_server.EnableSsl = True
+            smpt_server.Host = "smtp.gmail.com"
+            email = New MailMessage()
+            email.From = New MailAddress(school_email)
+            email.To.Add(MailReceiver)
+            email.Subject = MailSubject
+            email.IsBodyHtml = False
+            email.Body = MailBody
+            email.Attachments.Add(attachment)
+            smpt_server.Send(email)
+            MsgBox("Email successfully sent", MsgBoxStyle.Information)
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
     Public Sub SendMail(MailReceiver As String, MailSubject As String, MailBody As String, LRN As String)
         Try
             Dim smpt_server As New SmtpClient
@@ -17,12 +48,8 @@ Module PublicFunctions
             email.Subject = MailSubject
             email.IsBodyHtml = False
             email.Body = MailBody
-
-            Dim attachment As System.Net.Mail.Attachment
-            attachment = New System.Net.Mail.Attachment(Application.StartupPath & "\student_id\" & LRN & ".png")
-            email.Attachments.Add(attachment)
-
             smpt_server.Send(email)
+            MsgBox("Email successfully sent", MsgBoxStyle.Information)
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try

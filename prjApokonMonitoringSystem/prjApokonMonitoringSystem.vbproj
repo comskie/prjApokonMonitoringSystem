@@ -169,6 +169,30 @@
     <Compile Include="UserControl\backup\uctrl_backup.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="UserControl\notify\uctrl_send_email.Designer.vb">
+      <DependentUpon>uctrl_send_email.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\notify\uctrl_send_email.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\notify\uctrl_send_sms.Designer.vb">
+      <DependentUpon>uctrl_send_sms.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\notify\uctrl_send_sms.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\notify\uctrl_view_notification_logs.Designer.vb">
+      <DependentUpon>uctrl_view_notification_logs.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\notify\uctrl_view_notification_logs.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\notify\frmBrowse_Student.Designer.vb">
+      <DependentUpon>frmBrowse_Student.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\notify\frmBrowse_Student.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="UserControl\student\frm_edit_student.Designer.vb">
       <DependentUpon>frm_edit_student.vb</DependentUpon>
     </Compile>
@@ -211,6 +235,12 @@
     <Compile Include="UserControl\logs\uctrl_view_logs.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="UserControl\UserControl_Navs_Notification.Designer.vb">
+      <DependentUpon>UserControl_Navs_Notification.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\UserControl_Navs_Notification.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="UserControl\UserControl_Navs_Student.Designer.vb">
       <DependentUpon>UserControl_Navs_Student.vb</DependentUpon>
     </Compile>
@@ -246,6 +276,18 @@
     <EmbeddedResource Include="UserControl\backup\uctrl_backup.resx">
       <DependentUpon>uctrl_backup.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\notify\uctrl_send_email.resx">
+      <DependentUpon>uctrl_send_email.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\notify\uctrl_send_sms.resx">
+      <DependentUpon>uctrl_send_sms.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\notify\uctrl_view_notification_logs.resx">
+      <DependentUpon>uctrl_view_notification_logs.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\notify\frmBrowse_Student.resx">
+      <DependentUpon>frmBrowse_Student.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControl\student\frm_edit_student.resx">
       <DependentUpon>frm_edit_student.vb</DependentUpon>
     </EmbeddedResource>
@@ -266,6 +308,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl\logs\uctrl_view_logs.resx">
       <DependentUpon>uctrl_view_logs.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\UserControl_Navs_Notification.resx">
+      <DependentUpon>UserControl_Navs_Notification.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl\UserControl_Navs_Student.resx">
       <DependentUpon>UserControl_Navs_Student.vb</DependentUpon>
@@ -340,6 +385,7 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
