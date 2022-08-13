@@ -36,7 +36,7 @@ Public Class frm_edit_student
         ProfileContainer.BackgroundImage.Save(ms, ProfileContainer.BackgroundImage.RawFormat)
         Try
             conn.Open()
-            comm = New MySqlCommand("UPDATE tbl_student SET lrn=@slrn, fname=@sfname, mname=@smname, lname=@slname, gender=@sgender, address=@saddress, parent_name=@spname, contact_number=@scnum, email_address=@seaddm, display_picture=@sdp WHERE id='" & txtID.Text & "'", conn)
+            comm = New MySqlCommand("UPDATE tbl_student SET lrn=@slrn, fname=@sfname, mname=@smname, lname=@slname, gender=@sgender, address=@saddress, parent_name=@spname, contact_number=@scnum, email_address=@seaddm, display_picture=@sdp, section=@ssection WHERE id='" & txtID.Text & "'", conn)
             comm.Parameters.Add("@slrn", MySqlDbType.VarChar).Value = txtLRN.Text
             comm.Parameters.Add("@sfname", MySqlDbType.VarChar).Value = txtFname.Text
             comm.Parameters.Add("@smname", MySqlDbType.VarChar).Value = txtMname.Text
@@ -47,6 +47,7 @@ Public Class frm_edit_student
             comm.Parameters.Add("@scnum", MySqlDbType.VarChar).Value = txtContactNo.Text
             comm.Parameters.Add("@seaddm", MySqlDbType.VarChar).Value = txtEmail.Text
             comm.Parameters.Add("@sdp", MySqlDbType.LongBlob).Value = ms.ToArray()
+            comm.Parameters.Add("@ssection", MySqlDbType.VarChar).Value = txtSection.Text
 
             adapter = New MySqlDataAdapter(comm)
             comm.ExecuteNonQuery()
@@ -73,6 +74,13 @@ Public Class frm_edit_student
     Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles Guna2Button1.Click
         With frmCaptureImage
             .ShowDialog()
+        End With
+    End Sub
+
+    Private Sub Guna2Button5_Click(sender As Object, e As EventArgs) Handles Guna2Button5.Click
+        With frmBrowse_Section
+            .ShowDialog()
+            txtSection.Text = .ssection
         End With
     End Sub
 End Class

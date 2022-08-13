@@ -25,7 +25,7 @@ Public Class uctrl_import_student
             xlWorkSheet = CType(xlWorkBook.Sheets(1), Excel.Worksheet)
             xlRange = xlWorkSheet.UsedRange
             For xlRow = 2 To xlRange.Rows.Count
-                dgvImported.Rows.Add(xlRange.Cells(xlRow, 1).Text, xlRange.Cells(xlRow, 2).Text, xlRange.Cells(xlRow, 3).Text, xlRange.Cells(xlRow, 4).Text, xlRange.Cells(xlRow, 5).Text, xlRange.Cells(xlRow, 6).Text, xlRange.Cells(xlRow, 7).Text, xlRange.Cells(xlRow, 8).Text, xlRange.Cells(xlRow, 9).Text, xlRange.Cells(xlRow, 10).Text)
+                dgvImported.Rows.Add(xlRange.Cells(xlRow, 1).Text, xlRange.Cells(xlRow, 2).Text, xlRange.Cells(xlRow, 3).Text, xlRange.Cells(xlRow, 4).Text, xlRange.Cells(xlRow, 5).Text, xlRange.Cells(xlRow, 6).Text, xlRange.Cells(xlRow, 7).Text, xlRange.Cells(xlRow, 8).Text, xlRange.Cells(xlRow, 9).Text)
             Next
             xlWorkBook.Close()
             xlApp.Quit()
@@ -53,7 +53,10 @@ Public Class uctrl_import_student
     End Sub
 
     Private Sub Guna2Button2_Click(sender As Object, e As EventArgs) Handles Guna2Button2.Click
-        import_file(dgvImported, ProfileContainer)
+        With frmBrowse_Section
+            .ShowDialog()
+            import_file(dgvImported, ProfileContainer, .ssection)
+        End With
         dgvImported.Rows.Clear()
         dgvImported.Refresh()
     End Sub

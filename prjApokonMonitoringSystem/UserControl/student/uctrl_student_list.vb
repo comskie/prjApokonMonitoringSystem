@@ -74,7 +74,7 @@ Public Class uctrl_student_list
                     .txtParent.Text = selectedRow.Cells(10).Value.ToString
                     .txtContactNo.Text = selectedRow.Cells(11).Value.ToString
                     .txtEmail.Text = selectedRow.Cells(12).Value.ToString
-
+                    .txtSection.Text = selectedRow.Cells(14).Value.ToString
                     If selectedRow.Cells(13).Value IsNot Nothing Then
                         Dim ms As New MemoryStream(CType(selectedRow.Cells(13).Value, Byte()))
                         .ProfileContainer.BackgroundImage = Image.FromStream(ms)
@@ -101,7 +101,7 @@ Public Class uctrl_student_list
                     .txtParent.Text = selectedRow.Cells(10).Value.ToString
                     .txtContactNo.Text = selectedRow.Cells(11).Value.ToString
                     .txtEmail.Text = selectedRow.Cells(12).Value.ToString
-
+                    .txtSection.Text = selectedRow.Cells(14).Value.ToString
                     If selectedRow.Cells(13).Value IsNot Nothing Then
                         Dim ms As New MemoryStream(CType(selectedRow.Cells(13).Value, Byte()))
                         .ProfileContainer.BackgroundImage = Image.FromStream(ms)

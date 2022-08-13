@@ -77,40 +77,96 @@ Module PublicFunctions
         End If
     End Sub
 
-    Public Sub import_file(dgv As DataGridView, ProfileContainer As Panel)
+    Public Sub import_file(dgv As DataGridView, ProfileContainer As Panel, section As String)
         If dgv.Rows.Count > 0 Then
             For i As Integer = 0 To dgv.Rows.Count - 1 Step +1
                 Dim ms As New MemoryStream
                 ProfileContainer.BackgroundImage.Save(ms, ProfileContainer.BackgroundImage.RawFormat)
-                Try
-                    conn.Open()
-                    comm = New MySqlCommand("INSERT INTO tbl_student(lrn, fname, mname, lname, gender, address, parent_name, contact_number, email_address, display_picture) VALUES (@slrn, @sfname, @smname, @slname, @sgender, @saddress, @spname, @scnum, @seaddm, @sdp)", conn)
-                    comm.Parameters.Add("@slrn", MySqlDbType.VarChar).Value = dgv.Rows(i).Cells(0).Value.ToString()
-                    comm.Parameters.Add("@sfname", MySqlDbType.VarChar).Value = dgv.Rows(i).Cells(1).Value.ToString()
-                    comm.Parameters.Add("@smname", MySqlDbType.VarChar).Value = dgv.Rows(i).Cells(2).Value.ToString()
-                    comm.Parameters.Add("@slname", MySqlDbType.VarChar).Value = dgv.Rows(i).Cells(3).Value.ToString()
-                    comm.Parameters.Add("@sgender", MySqlDbType.VarChar).Value = dgv.Rows(i).Cells(4).Value.ToString()
-                    comm.Parameters.Add("@saddress", MySqlDbType.VarChar).Value = dgv.Rows(i).Cells(5).Value.ToString()
-                    comm.Parameters.Add("@spname", MySqlDbType.VarChar).Value = dgv.Rows(i).Cells(6).Value.ToString()
-                    comm.Parameters.Add("@scnum", MySqlDbType.VarChar).Value = dgv.Rows(i).Cells(7).Value.ToString()
-                    comm.Parameters.Add("@seaddm", MySqlDbType.VarChar).Value = dgv.Rows(i).Cells(8).Value.ToString()
-                    comm.Parameters.Add("@sdp", MySqlDbType.LongBlob).Value = ms.ToArray()
-
-                    adapter = New MySqlDataAdapter(comm)
-                    comm.ExecuteNonQuery()
-                Catch ex As Exception
+                If checkIfStudentExist(dgv.Rows(i).Cells(0).Value.ToString()) Then
+                    Dim dialogResult As DialogResult = MessageBox.Show("Student '" & dgv.Rows(i).Cells(0).Value.ToString() & "' already exists in the database. Do you want to overwrite / update the data?", "Import Student", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+                    If dialogResult = DialogResult.Yes Then
+                        Try
+                            conn.Open()
+                            comm = New MySqlCommand("UPDATE tbl_student SET lrn=@slrn, fname=@sfname, mname=@smname, lname=@slname, gender=@sgender, address=@saddress, parent_name=@spname, contact_number=@scnum, email_address=@seaddm, display_picture=@sdp, section=@ssection WHERE lrn='" & dgv.Rows(i).Cells(0).Value.ToString() & "'", conn)
+                            comm.Parameters.Add("@slrn", MySqlDbType.VarChar).Value = dgv.Rows(i).Cells(0).Value.ToString()
+                            comm.Parameters.Add("@sfname", MySqlDbType.VarChar).Value = dgv.Rows(i).Cells(1).Value.ToString()
+                            comm.Parameters.Add("@smname", MySqlDbType.VarChar).Value = dgv.Rows(i).Cells(2).Value.ToString()
+                            comm.Parameters.Add("@slname", MySqlDbType.VarChar).Value = dgv.Rows(i).Cells(3).Value.ToString()
+                            comm.Parameters.Add("@sgender", MySqlDbType.VarChar).Value = dgv.Rows(i).Cells(4).Value.ToString()
+                            comm.Parameters.Add("@saddress", MySqlDbType.VarChar).Value = dgv.Rows(i).Cells(5).Value.ToString()
+                            comm.Parameters.Add("@spname", MySqlDbType.VarChar).Value = dgv.Rows(i).Cells(6).Value.ToString()
+                            comm.Parameters.Add("@scnum", MySqlDbType.VarChar).Value = dgv.Rows(i).Cells(7).Value.ToString()
+                            comm.Parameters.Add("@seaddm", MySqlDbType.VarChar).Value = dgv.Rows(i).Cells(8).Value.ToString()
+                            comm.Parameters.Add("@sdp", MySqlDbType.LongBlob).Value = ms.ToArray()
+                            comm.Parameters.Add("@ssection", MySqlDbType.VarChar).Value = section
+                            adapter = New MySqlDataAdapter(comm)
+                            comm.ExecuteNonQuery()
+                        Catch ex As Exception
+                            conn.Close()
+                            MessageBox.Show(ex.Message)
+                        Finally
+                            conn.Dispose()
+                        End Try
+                        conn.Close()
+                    End If
+                Else
+                    Try
+                        conn.Open()
+                        comm = New MySqlCommand("INSERT INTO tbl_student(lrn, fname, mname, lname, gender, address, parent_name, contact_number, email_address, display_picture, section) VALUES (@slrn, @sfname, @smname, @slname, @sgender, @saddress, @spname, @scnum, @seaddm, @sdp, @ssection)", conn)
+                        comm.Parameters.Add("@slrn", MySqlDbType.VarChar).Value = dgv.Rows(i).Cells(0).Value.ToString()
+                        comm.Parameters.Add("@sfname", MySqlDbType.VarChar).Value = dgv.Rows(i).Cells(1).Value.ToString()
+                        comm.Parameters.Add("@smname", MySqlDbType.VarChar).Value = dgv.Rows(i).Cells(2).Value.ToString()
+                        comm.Parameters.Add("@slname", MySqlDbType.VarChar).Value = dgv.Rows(i).Cells(3).Value.ToString()
+                        comm.Parameters.Add("@sgender", MySqlDbType.VarChar).Value = dgv.Rows(i).Cells(4).Value.ToString()
+                        comm.Parameters.Add("@saddress", MySqlDbType.VarChar).Value = dgv.Rows(i).Cells(5).Value.ToString()
+                        comm.Parameters.Add("@spname", MySqlDbType.VarChar).Value = dgv.Rows(i).Cells(6).Value.ToString()
+                        comm.Parameters.Add("@scnum", MySqlDbType.VarChar).Value = dgv.Rows(i).Cells(7).Value.ToString()
+                        comm.Parameters.Add("@seaddm", MySqlDbType.VarChar).Value = dgv.Rows(i).Cells(8).Value.ToString()
+                        comm.Parameters.Add("@sdp", MySqlDbType.LongBlob).Value = ms.ToArray()
+                        comm.Parameters.Add("@ssection", MySqlDbType.VarChar).Value = section
+                        adapter = New MySqlDataAdapter(comm)
+                        comm.ExecuteNonQuery()
+                    Catch ex As Exception
+                        conn.Close()
+                        MessageBox.Show(ex.Message)
+                    Finally
+                        conn.Dispose()
+                    End Try
                     conn.Close()
-                    MessageBox.Show(ex.Message)
-                Finally
-                    conn.Dispose()
-                End Try
-                conn.Close()
+                End If
             Next
         Else
             MsgBox("Table is empty")
         End If
 
     End Sub
+
+    Function checkIfStudentExist(sLRN As String) As Boolean
+        Try
+            conn.Open()
+            comm = New MySqlCommand("SELECT COUNT(*) FROM tbl_student WHERE lrn = '" & sLRN & "'", conn)
+            adapter = New MySqlDataAdapter(comm)
+            Dim table As New DataTable()
+            adapter.Fill(table)
+
+            If table.Rows.Count = 0 Then
+                Return True
+            Else
+                If table.Rows(0).Item(0).ToString() = "0" Then
+                    Return False
+                Else
+                    Return True
+                End If
+            End If
+        Catch ex As Exception
+            conn.Close()
+            MessageBox.Show(ex.Message)
+        Finally
+            conn.Dispose()
+        End Try
+        Return False
+        conn.Close()
+    End Function
 
     Public Sub InsertToLogs(sLRN As String)
         Dim commandString As String = ""

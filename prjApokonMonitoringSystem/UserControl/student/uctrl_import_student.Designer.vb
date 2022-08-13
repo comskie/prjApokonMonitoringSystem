@@ -43,7 +43,6 @@ Partial Class uctrl_import_student
         Me.pname = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.pcontact = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.pemail = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.syear = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.dgvImported, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -68,7 +67,7 @@ Partial Class uctrl_import_student
         Me.dgvImported.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.dgvImported.ColumnHeadersHeight = 50
         Me.dgvImported.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
-        Me.dgvImported.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.lrn, Me.fname, Me.mname, Me.lname, Me.gender, Me.address, Me.pname, Me.pcontact, Me.pemail, Me.syear})
+        Me.dgvImported.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.lrn, Me.fname, Me.mname, Me.lname, Me.gender, Me.address, Me.pname, Me.pcontact, Me.pemail})
         Me.dgvImported.Cursor = System.Windows.Forms.Cursors.Hand
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
@@ -88,7 +87,6 @@ Partial Class uctrl_import_student
         Me.dgvImported.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvImported.Size = New System.Drawing.Size(862, 417)
         Me.dgvImported.TabIndex = 1
-        Me.dgvImported.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.[Default]
         Me.dgvImported.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
         Me.dgvImported.ThemeStyle.AlternatingRowsStyle.Font = Nothing
         Me.dgvImported.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty
@@ -116,14 +114,10 @@ Partial Class uctrl_import_student
         Me.Guna2Button3.Animated = True
         Me.Guna2Button3.AutoRoundedCorners = True
         Me.Guna2Button3.BorderRadius = 21
-        Me.Guna2Button3.CheckedState.Parent = Me.Guna2Button3
-        Me.Guna2Button3.CustomImages.Parent = Me.Guna2Button3
         Me.Guna2Button3.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.Guna2Button3.ForeColor = System.Drawing.Color.White
-        Me.Guna2Button3.HoverState.Parent = Me.Guna2Button3
         Me.Guna2Button3.Location = New System.Drawing.Point(15, 28)
         Me.Guna2Button3.Name = "Guna2Button3"
-        Me.Guna2Button3.ShadowDecoration.Parent = Me.Guna2Button3
         Me.Guna2Button3.Size = New System.Drawing.Size(107, 45)
         Me.Guna2Button3.TabIndex = 17
         Me.Guna2Button3.Text = "Browse"
@@ -135,20 +129,17 @@ Partial Class uctrl_import_student
         Me.txtFileLocation.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
         Me.txtFileLocation.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
         Me.txtFileLocation.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtFileLocation.DisabledState.Parent = Me.txtFileLocation
         Me.txtFileLocation.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txtFileLocation.Enabled = False
         Me.txtFileLocation.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtFileLocation.FocusedState.Parent = Me.txtFileLocation
+        Me.txtFileLocation.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.txtFileLocation.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtFileLocation.HoverState.Parent = Me.txtFileLocation
         Me.txtFileLocation.Location = New System.Drawing.Point(129, 28)
         Me.txtFileLocation.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.txtFileLocation.Name = "txtFileLocation"
         Me.txtFileLocation.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtFileLocation.PlaceholderText = ""
         Me.txtFileLocation.SelectedText = ""
-        Me.txtFileLocation.ShadowDecoration.Parent = Me.txtFileLocation
         Me.txtFileLocation.Size = New System.Drawing.Size(256, 45)
         Me.txtFileLocation.TabIndex = 18
         '
@@ -161,14 +152,10 @@ Partial Class uctrl_import_student
         Me.Guna2Button1.Animated = True
         Me.Guna2Button1.AutoRoundedCorners = True
         Me.Guna2Button1.BorderRadius = 21
-        Me.Guna2Button1.CheckedState.Parent = Me.Guna2Button1
-        Me.Guna2Button1.CustomImages.Parent = Me.Guna2Button1
         Me.Guna2Button1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.Guna2Button1.ForeColor = System.Drawing.Color.White
-        Me.Guna2Button1.HoverState.Parent = Me.Guna2Button1
         Me.Guna2Button1.Location = New System.Drawing.Point(718, 28)
         Me.Guna2Button1.Name = "Guna2Button1"
-        Me.Guna2Button1.ShadowDecoration.Parent = Me.Guna2Button1
         Me.Guna2Button1.Size = New System.Drawing.Size(159, 45)
         Me.Guna2Button1.TabIndex = 19
         Me.Guna2Button1.Text = "Download Template"
@@ -178,14 +165,10 @@ Partial Class uctrl_import_student
         Me.Guna2Button2.Animated = True
         Me.Guna2Button2.AutoRoundedCorners = True
         Me.Guna2Button2.BorderRadius = 21
-        Me.Guna2Button2.CheckedState.Parent = Me.Guna2Button2
-        Me.Guna2Button2.CustomImages.Parent = Me.Guna2Button2
         Me.Guna2Button2.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.Guna2Button2.ForeColor = System.Drawing.Color.White
-        Me.Guna2Button2.HoverState.Parent = Me.Guna2Button2
         Me.Guna2Button2.Location = New System.Drawing.Point(361, 514)
         Me.Guna2Button2.Name = "Guna2Button2"
-        Me.Guna2Button2.ShadowDecoration.Parent = Me.Guna2Button2
         Me.Guna2Button2.Size = New System.Drawing.Size(159, 45)
         Me.Guna2Button2.TabIndex = 20
         Me.Guna2Button2.Text = "Import Records"
@@ -255,12 +238,6 @@ Partial Class uctrl_import_student
         Me.pemail.Name = "pemail"
         Me.pemail.ReadOnly = True
         '
-        'syear
-        '
-        Me.syear.HeaderText = "Year Level"
-        Me.syear.Name = "syear"
-        Me.syear.ReadOnly = True
-        '
         'uctrl_import_student
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -296,5 +273,4 @@ Partial Class uctrl_import_student
     Friend WithEvents pname As DataGridViewTextBoxColumn
     Friend WithEvents pcontact As DataGridViewTextBoxColumn
     Friend WithEvents pemail As DataGridViewTextBoxColumn
-    Friend WithEvents syear As DataGridViewTextBoxColumn
 End Class

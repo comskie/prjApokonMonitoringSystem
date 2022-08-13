@@ -51,6 +51,9 @@ Partial Class frm_edit_student
         Me.Guna2GroupBox2 = New Guna.UI2.WinForms.Guna2GroupBox()
         Me.Guna2Button4 = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2Button3 = New Guna.UI2.WinForms.Guna2Button()
+        Me.Guna2Button5 = New Guna.UI2.WinForms.Guna2Button()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.txtSection = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Guna2GroupBox1.SuspendLayout()
         Me.Guna2GroupBox2.SuspendLayout()
         Me.SuspendLayout()
@@ -61,22 +64,21 @@ Partial Class frm_edit_student
         Me.cmbGender.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
         Me.cmbGender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbGender.FocusedColor = System.Drawing.Color.Empty
-        Me.cmbGender.FocusedState.Parent = Me.cmbGender
         Me.cmbGender.Font = New System.Drawing.Font("Segoe UI", 10.0!)
         Me.cmbGender.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
         Me.cmbGender.FormattingEnabled = True
-        Me.cmbGender.HoverState.Parent = Me.cmbGender
         Me.cmbGender.ItemHeight = 30
         Me.cmbGender.Items.AddRange(New Object() {"Male", "Female"})
-        Me.cmbGender.ItemsAppearance.Parent = Me.cmbGender
         Me.cmbGender.Location = New System.Drawing.Point(100, 247)
         Me.cmbGender.Name = "cmbGender"
-        Me.cmbGender.ShadowDecoration.Parent = Me.cmbGender
         Me.cmbGender.Size = New System.Drawing.Size(199, 36)
         Me.cmbGender.TabIndex = 8
         '
         'Guna2GroupBox1
         '
+        Me.Guna2GroupBox1.Controls.Add(Me.Guna2Button5)
+        Me.Guna2GroupBox1.Controls.Add(Me.Label11)
+        Me.Guna2GroupBox1.Controls.Add(Me.txtSection)
         Me.Guna2GroupBox1.Controls.Add(Me.txtID)
         Me.Guna2GroupBox1.Controls.Add(Me.Label10)
         Me.Guna2GroupBox1.Controls.Add(Me.QRGenerate)
@@ -98,10 +100,9 @@ Partial Class frm_edit_student
         Me.Guna2GroupBox1.CustomBorderColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(88, Byte), Integer))
         Me.Guna2GroupBox1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.Guna2GroupBox1.ForeColor = System.Drawing.Color.White
-        Me.Guna2GroupBox1.Location = New System.Drawing.Point(19, 20)
+        Me.Guna2GroupBox1.Location = New System.Drawing.Point(19, 10)
         Me.Guna2GroupBox1.Name = "Guna2GroupBox1"
-        Me.Guna2GroupBox1.ShadowDecoration.Parent = Me.Guna2GroupBox1
-        Me.Guna2GroupBox1.Size = New System.Drawing.Size(854, 354)
+        Me.Guna2GroupBox1.Size = New System.Drawing.Size(854, 391)
         Me.Guna2GroupBox1.TabIndex = 4
         Me.Guna2GroupBox1.Text = "Student Information"
         '
@@ -140,14 +141,10 @@ Partial Class frm_edit_student
         Me.Guna2Button2.Animated = True
         Me.Guna2Button2.AutoRoundedCorners = True
         Me.Guna2Button2.BorderRadius = 21
-        Me.Guna2Button2.CheckedState.Parent = Me.Guna2Button2
-        Me.Guna2Button2.CustomImages.Parent = Me.Guna2Button2
         Me.Guna2Button2.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.Guna2Button2.ForeColor = System.Drawing.Color.White
-        Me.Guna2Button2.HoverState.Parent = Me.Guna2Button2
         Me.Guna2Button2.Location = New System.Drawing.Point(583, 276)
         Me.Guna2Button2.Name = "Guna2Button2"
-        Me.Guna2Button2.ShadowDecoration.Parent = Me.Guna2Button2
         Me.Guna2Button2.Size = New System.Drawing.Size(107, 45)
         Me.Guna2Button2.TabIndex = 19
         Me.Guna2Button2.Text = "Select"
@@ -157,14 +154,10 @@ Partial Class frm_edit_student
         Me.Guna2Button1.Animated = True
         Me.Guna2Button1.AutoRoundedCorners = True
         Me.Guna2Button1.BorderRadius = 21
-        Me.Guna2Button1.CheckedState.Parent = Me.Guna2Button1
-        Me.Guna2Button1.CustomImages.Parent = Me.Guna2Button1
         Me.Guna2Button1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.Guna2Button1.ForeColor = System.Drawing.Color.White
-        Me.Guna2Button1.HoverState.Parent = Me.Guna2Button1
         Me.Guna2Button1.Location = New System.Drawing.Point(696, 276)
         Me.Guna2Button1.Name = "Guna2Button1"
-        Me.Guna2Button1.ShadowDecoration.Parent = Me.Guna2Button1
         Me.Guna2Button1.Size = New System.Drawing.Size(107, 45)
         Me.Guna2Button1.TabIndex = 18
         Me.Guna2Button1.Text = "Capture"
@@ -186,19 +179,16 @@ Partial Class frm_edit_student
         Me.txtAddress.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
         Me.txtAddress.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
         Me.txtAddress.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtAddress.DisabledState.Parent = Me.txtAddress
         Me.txtAddress.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txtAddress.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtAddress.FocusedState.Parent = Me.txtAddress
+        Me.txtAddress.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.txtAddress.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtAddress.HoverState.Parent = Me.txtAddress
         Me.txtAddress.Location = New System.Drawing.Point(100, 289)
         Me.txtAddress.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.txtAddress.Name = "txtAddress"
         Me.txtAddress.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtAddress.PlaceholderText = ""
         Me.txtAddress.SelectedText = ""
-        Me.txtAddress.ShadowDecoration.Parent = Me.txtAddress
         Me.txtAddress.Size = New System.Drawing.Size(335, 53)
         Me.txtAddress.TabIndex = 12
         '
@@ -239,19 +229,16 @@ Partial Class frm_edit_student
         Me.txtLname.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
         Me.txtLname.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
         Me.txtLname.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtLname.DisabledState.Parent = Me.txtLname
         Me.txtLname.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txtLname.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtLname.FocusedState.Parent = Me.txtLname
+        Me.txtLname.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.txtLname.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtLname.HoverState.Parent = Me.txtLname
         Me.txtLname.Location = New System.Drawing.Point(100, 205)
         Me.txtLname.Margin = New System.Windows.Forms.Padding(7, 3, 7, 3)
         Me.txtLname.Name = "txtLname"
         Me.txtLname.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtLname.PlaceholderText = ""
         Me.txtLname.SelectedText = ""
-        Me.txtLname.ShadowDecoration.Parent = Me.txtLname
         Me.txtLname.Size = New System.Drawing.Size(200, 36)
         Me.txtLname.TabIndex = 6
         '
@@ -272,19 +259,16 @@ Partial Class frm_edit_student
         Me.txtMname.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
         Me.txtMname.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
         Me.txtMname.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtMname.DisabledState.Parent = Me.txtMname
         Me.txtMname.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txtMname.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtMname.FocusedState.Parent = Me.txtMname
+        Me.txtMname.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.txtMname.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtMname.HoverState.Parent = Me.txtMname
         Me.txtMname.Location = New System.Drawing.Point(100, 163)
         Me.txtMname.Margin = New System.Windows.Forms.Padding(6, 3, 6, 3)
         Me.txtMname.Name = "txtMname"
         Me.txtMname.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtMname.PlaceholderText = ""
         Me.txtMname.SelectedText = ""
-        Me.txtMname.ShadowDecoration.Parent = Me.txtMname
         Me.txtMname.Size = New System.Drawing.Size(200, 36)
         Me.txtMname.TabIndex = 4
         '
@@ -305,19 +289,16 @@ Partial Class frm_edit_student
         Me.txtFname.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
         Me.txtFname.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
         Me.txtFname.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtFname.DisabledState.Parent = Me.txtFname
         Me.txtFname.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txtFname.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtFname.FocusedState.Parent = Me.txtFname
+        Me.txtFname.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.txtFname.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtFname.HoverState.Parent = Me.txtFname
         Me.txtFname.Location = New System.Drawing.Point(100, 121)
         Me.txtFname.Margin = New System.Windows.Forms.Padding(5, 3, 5, 3)
         Me.txtFname.Name = "txtFname"
         Me.txtFname.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtFname.PlaceholderText = ""
         Me.txtFname.SelectedText = ""
-        Me.txtFname.ShadowDecoration.Parent = Me.txtFname
         Me.txtFname.Size = New System.Drawing.Size(200, 36)
         Me.txtFname.TabIndex = 2
         '
@@ -338,19 +319,16 @@ Partial Class frm_edit_student
         Me.txtLRN.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
         Me.txtLRN.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
         Me.txtLRN.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtLRN.DisabledState.Parent = Me.txtLRN
         Me.txtLRN.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txtLRN.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtLRN.FocusedState.Parent = Me.txtLRN
+        Me.txtLRN.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.txtLRN.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtLRN.HoverState.Parent = Me.txtLRN
         Me.txtLRN.Location = New System.Drawing.Point(100, 79)
         Me.txtLRN.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.txtLRN.Name = "txtLRN"
         Me.txtLRN.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtLRN.PlaceholderText = ""
         Me.txtLRN.SelectedText = ""
-        Me.txtLRN.ShadowDecoration.Parent = Me.txtLRN
         Me.txtLRN.Size = New System.Drawing.Size(200, 36)
         Me.txtLRN.TabIndex = 0
         '
@@ -371,19 +349,16 @@ Partial Class frm_edit_student
         Me.txtEmail.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
         Me.txtEmail.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
         Me.txtEmail.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtEmail.DisabledState.Parent = Me.txtEmail
         Me.txtEmail.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txtEmail.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtEmail.FocusedState.Parent = Me.txtEmail
+        Me.txtEmail.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.txtEmail.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtEmail.HoverState.Parent = Me.txtEmail
         Me.txtEmail.Location = New System.Drawing.Point(498, 50)
         Me.txtEmail.Margin = New System.Windows.Forms.Padding(7, 3, 7, 3)
         Me.txtEmail.Name = "txtEmail"
         Me.txtEmail.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtEmail.PlaceholderText = ""
         Me.txtEmail.SelectedText = ""
-        Me.txtEmail.ShadowDecoration.Parent = Me.txtEmail
         Me.txtEmail.Size = New System.Drawing.Size(200, 36)
         Me.txtEmail.TabIndex = 20
         '
@@ -404,19 +379,16 @@ Partial Class frm_edit_student
         Me.txtContactNo.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
         Me.txtContactNo.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
         Me.txtContactNo.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtContactNo.DisabledState.Parent = Me.txtContactNo
         Me.txtContactNo.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txtContactNo.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtContactNo.FocusedState.Parent = Me.txtContactNo
+        Me.txtContactNo.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.txtContactNo.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtContactNo.HoverState.Parent = Me.txtContactNo
         Me.txtContactNo.Location = New System.Drawing.Point(104, 92)
         Me.txtContactNo.Margin = New System.Windows.Forms.Padding(6, 3, 6, 3)
         Me.txtContactNo.Name = "txtContactNo"
         Me.txtContactNo.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtContactNo.PlaceholderText = ""
         Me.txtContactNo.SelectedText = ""
-        Me.txtContactNo.ShadowDecoration.Parent = Me.txtContactNo
         Me.txtContactNo.Size = New System.Drawing.Size(200, 36)
         Me.txtContactNo.TabIndex = 18
         '
@@ -437,19 +409,16 @@ Partial Class frm_edit_student
         Me.txtParent.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
         Me.txtParent.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
         Me.txtParent.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtParent.DisabledState.Parent = Me.txtParent
         Me.txtParent.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txtParent.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtParent.FocusedState.Parent = Me.txtParent
+        Me.txtParent.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.txtParent.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtParent.HoverState.Parent = Me.txtParent
         Me.txtParent.Location = New System.Drawing.Point(105, 50)
         Me.txtParent.Margin = New System.Windows.Forms.Padding(5, 3, 5, 3)
         Me.txtParent.Name = "txtParent"
         Me.txtParent.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtParent.PlaceholderText = ""
         Me.txtParent.SelectedText = ""
-        Me.txtParent.ShadowDecoration.Parent = Me.txtParent
         Me.txtParent.Size = New System.Drawing.Size(200, 36)
         Me.txtParent.TabIndex = 16
         '
@@ -464,9 +433,8 @@ Partial Class frm_edit_student
         Me.Guna2GroupBox2.CustomBorderColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(88, Byte), Integer))
         Me.Guna2GroupBox2.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.Guna2GroupBox2.ForeColor = System.Drawing.Color.White
-        Me.Guna2GroupBox2.Location = New System.Drawing.Point(19, 380)
+        Me.Guna2GroupBox2.Location = New System.Drawing.Point(19, 407)
         Me.Guna2GroupBox2.Name = "Guna2GroupBox2"
-        Me.Guna2GroupBox2.ShadowDecoration.Parent = Me.Guna2GroupBox2
         Me.Guna2GroupBox2.Size = New System.Drawing.Size(854, 149)
         Me.Guna2GroupBox2.TabIndex = 5
         Me.Guna2GroupBox2.Text = "Parent Information"
@@ -476,14 +444,10 @@ Partial Class frm_edit_student
         Me.Guna2Button4.Animated = True
         Me.Guna2Button4.AutoRoundedCorners = True
         Me.Guna2Button4.BorderRadius = 21
-        Me.Guna2Button4.CheckedState.Parent = Me.Guna2Button4
-        Me.Guna2Button4.CustomImages.Parent = Me.Guna2Button4
         Me.Guna2Button4.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.Guna2Button4.ForeColor = System.Drawing.Color.White
-        Me.Guna2Button4.HoverState.Parent = Me.Guna2Button4
-        Me.Guna2Button4.Location = New System.Drawing.Point(472, 535)
+        Me.Guna2Button4.Location = New System.Drawing.Point(472, 560)
         Me.Guna2Button4.Name = "Guna2Button4"
-        Me.Guna2Button4.ShadowDecoration.Parent = Me.Guna2Button4
         Me.Guna2Button4.Size = New System.Drawing.Size(107, 45)
         Me.Guna2Button4.TabIndex = 24
         Me.Guna2Button4.Text = "Clear"
@@ -493,24 +457,64 @@ Partial Class frm_edit_student
         Me.Guna2Button3.Animated = True
         Me.Guna2Button3.AutoRoundedCorners = True
         Me.Guna2Button3.BorderRadius = 21
-        Me.Guna2Button3.CheckedState.Parent = Me.Guna2Button3
-        Me.Guna2Button3.CustomImages.Parent = Me.Guna2Button3
         Me.Guna2Button3.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.Guna2Button3.ForeColor = System.Drawing.Color.White
-        Me.Guna2Button3.HoverState.Parent = Me.Guna2Button3
-        Me.Guna2Button3.Location = New System.Drawing.Point(288, 535)
+        Me.Guna2Button3.Location = New System.Drawing.Point(288, 560)
         Me.Guna2Button3.Name = "Guna2Button3"
-        Me.Guna2Button3.ShadowDecoration.Parent = Me.Guna2Button3
         Me.Guna2Button3.Size = New System.Drawing.Size(107, 45)
         Me.Guna2Button3.TabIndex = 23
         Me.Guna2Button3.Text = "Save"
+        '
+        'Guna2Button5
+        '
+        Me.Guna2Button5.Animated = True
+        Me.Guna2Button5.AutoRoundedCorners = True
+        Me.Guna2Button5.BorderRadius = 16
+        Me.Guna2Button5.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.Guna2Button5.ForeColor = System.Drawing.Color.White
+        Me.Guna2Button5.Location = New System.Drawing.Point(312, 348)
+        Me.Guna2Button5.Name = "Guna2Button5"
+        Me.Guna2Button5.Size = New System.Drawing.Size(89, 35)
+        Me.Guna2Button5.TabIndex = 24
+        Me.Guna2Button5.Text = "Browse"
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.ForeColor = System.Drawing.Color.Black
+        Me.Label11.Location = New System.Drawing.Point(40, 359)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(49, 15)
+        Me.Label11.TabIndex = 23
+        Me.Label11.Text = "Section:"
+        '
+        'txtSection
+        '
+        Me.txtSection.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtSection.DefaultText = ""
+        Me.txtSection.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txtSection.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txtSection.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtSection.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtSection.Enabled = False
+        Me.txtSection.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtSection.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txtSection.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtSection.Location = New System.Drawing.Point(100, 348)
+        Me.txtSection.Margin = New System.Windows.Forms.Padding(8, 3, 8, 3)
+        Me.txtSection.Name = "txtSection"
+        Me.txtSection.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtSection.PlaceholderText = ""
+        Me.txtSection.SelectedText = ""
+        Me.txtSection.Size = New System.Drawing.Size(201, 36)
+        Me.txtSection.TabIndex = 22
         '
         'frm_edit_student
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(893, 592)
+        Me.ClientSize = New System.Drawing.Size(893, 614)
         Me.Controls.Add(Me.Guna2Button4)
         Me.Controls.Add(Me.Guna2Button3)
         Me.Controls.Add(Me.Guna2GroupBox1)
@@ -553,4 +557,7 @@ Partial Class frm_edit_student
     Friend WithEvents Guna2Button3 As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents txtID As Label
     Friend WithEvents Label10 As Label
+    Friend WithEvents Guna2Button5 As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents Label11 As Label
+    Friend WithEvents txtSection As Guna.UI2.WinForms.Guna2TextBox
 End Class
