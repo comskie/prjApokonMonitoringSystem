@@ -7,7 +7,7 @@ Public Class uctrl_register_student
         ProfileContainer.BackgroundImage.Save(ms, ProfileContainer.BackgroundImage.RawFormat)
         Try
             conn.Open()
-            comm = New MySqlCommand("INSERT INTO tbl_student(lrn, fname, mname, lname, gender, address, parent_name, contact_number, email_address, display_picture) VALUES (@slrn, @sfname, @smname, @slname, @sgender, @saddress, @spname, @scnum, @seaddm, @sdp)", conn)
+            comm = New MySqlCommand("INSERT INTO tbl_student(lrn, fname, mname, lname, gender, address, parent_name, contact_number, email_address, display_picture, section) VALUES (@slrn, @sfname, @smname, @slname, @sgender, @saddress, @spname, @scnum, @seaddm, @sdp, @ssection)", conn)
             comm.Parameters.Add("@slrn", MySqlDbType.VarChar).Value = txtLRN.Text
             comm.Parameters.Add("@sfname", MySqlDbType.VarChar).Value = txtFname.Text
             comm.Parameters.Add("@smname", MySqlDbType.VarChar).Value = txtMname.Text
@@ -18,6 +18,7 @@ Public Class uctrl_register_student
             comm.Parameters.Add("@scnum", MySqlDbType.VarChar).Value = txtContactNo.Text
             comm.Parameters.Add("@seaddm", MySqlDbType.VarChar).Value = txtEmail.Text
             comm.Parameters.Add("@sdp", MySqlDbType.LongBlob).Value = ms.ToArray()
+            comm.Parameters.Add("@ssection", MySqlDbType.VarChar).Value = txtSection.Text
 
             With frm_student_id
                 .nameContainer.Text = txtFname.Text & " " & txtMname.Text & " " & txtLname.Text
@@ -36,7 +37,7 @@ Public Class uctrl_register_student
 
             Dim attachment As System.Net.Mail.Attachment
             attachment = New System.Net.Mail.Attachment(Application.StartupPath & "\student_id\" & txtLRN.Text & ".png")
-            SendMail(txtEmail.Text, "Apokon Monitoring System Registration", "Hello there " & txtParent.Text & "! " & txtFname.Text & " have successfully registered in Apokon Monitoring System.", txtLRN.Text, attachment)
+            SendMail(txtEmail.Text, "Apokon Monitoring System Registration", "Hello there " & txtParent.Text & "! " & txtFname.Text & " have successfully registered in Apokon Monitoring System. Please download the attached Digital QR ID which will be used upon entering and leaving the institution. Thank you!", txtLRN.Text, attachment)
 
             conn.Close()
         Catch ex As Exception
