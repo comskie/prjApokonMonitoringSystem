@@ -25,6 +25,8 @@ Partial Class frm_edit_student
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_edit_student))
         Me.cmbGender = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.Guna2GroupBox1 = New Guna.UI2.WinForms.Guna2GroupBox()
+        Me.txtID = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
         Me.QRGenerate = New System.Windows.Forms.Panel()
         Me.Guna2Button2 = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2Button1 = New Guna.UI2.WinForms.Guna2Button()
@@ -49,8 +51,6 @@ Partial Class frm_edit_student
         Me.Guna2GroupBox2 = New Guna.UI2.WinForms.Guna2GroupBox()
         Me.Guna2Button4 = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2Button3 = New Guna.UI2.WinForms.Guna2Button()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.txtID = New System.Windows.Forms.Label()
         Me.Guna2GroupBox1.SuspendLayout()
         Me.Guna2GroupBox2.SuspendLayout()
         Me.SuspendLayout()
@@ -104,6 +104,26 @@ Partial Class frm_edit_student
         Me.Guna2GroupBox1.Size = New System.Drawing.Size(854, 354)
         Me.Guna2GroupBox1.TabIndex = 4
         Me.Guna2GroupBox1.Text = "Student Information"
+        '
+        'txtID
+        '
+        Me.txtID.AutoSize = True
+        Me.txtID.ForeColor = System.Drawing.Color.Black
+        Me.txtID.Location = New System.Drawing.Point(101, 53)
+        Me.txtID.Name = "txtID"
+        Me.txtID.Size = New System.Drawing.Size(55, 15)
+        Me.txtID.TabIndex = 21
+        Me.txtID.Text = "[no data]"
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.ForeColor = System.Drawing.Color.Black
+        Me.Label10.Location = New System.Drawing.Point(70, 53)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(21, 15)
+        Me.Label10.TabIndex = 20
+        Me.Label10.Text = "ID:"
         '
         'QRGenerate
         '
@@ -484,26 +504,6 @@ Partial Class frm_edit_student
         Me.Guna2Button3.Size = New System.Drawing.Size(107, 45)
         Me.Guna2Button3.TabIndex = 23
         Me.Guna2Button3.Text = "Save"
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.ForeColor = System.Drawing.Color.Black
-        Me.Label10.Location = New System.Drawing.Point(70, 53)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(21, 15)
-        Me.Label10.TabIndex = 20
-        Me.Label10.Text = "ID:"
-        '
-        'txtID
-        '
-        Me.txtID.AutoSize = True
-        Me.txtID.ForeColor = System.Drawing.Color.Black
-        Me.txtID.Location = New System.Drawing.Point(101, 53)
-        Me.txtID.Name = "txtID"
-        Me.txtID.Size = New System.Drawing.Size(55, 15)
-        Me.txtID.TabIndex = 21
-        Me.txtID.Text = "[no data]"
         '
         'frm_edit_student
         '

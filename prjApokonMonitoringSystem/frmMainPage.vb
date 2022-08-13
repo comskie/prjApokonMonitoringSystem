@@ -63,12 +63,6 @@ Public Class frmMainPage
         frmScanStudent.Show()
     End Sub
 
-    Private Sub IconButton5_Click(sender As Object, e As EventArgs) Handles IconButton5.Click
-        ActivateButton(sender, Color.FromArgb(248, 233, 161), "Backup")
-        Dim UC As New uctrl_backup
-        addUserControl(UC, UserControlPanel)
-    End Sub
-
     Private Sub IconButton2_Click(sender As Object, e As EventArgs) Handles IconButton2.Click
         ActivateButton(sender, Color.FromArgb(248, 233, 161), "Logs")
         Dim UC As New uctrl_view_logs
@@ -86,6 +80,24 @@ Public Class frmMainPage
     Private Sub IconButton3_Click(sender As Object, e As EventArgs) Handles IconButton3.Click
         ActivateButton(sender, Color.FromArgb(248, 233, 161), "Notify")
         Dim UC As New UserControl_Navs_Notification
+        addUserControl(UC, UserControlPanel)
+    End Sub
+
+    Private Sub IconButton5_Click_1(sender As Object, e As EventArgs) Handles IconButton5.Click
+        ActivateButton(sender, Color.FromArgb(248, 233, 161), "Backup")
+        Dim UC As New uctrl_backup
+        addUserControl(UC, UserControlPanel)
+    End Sub
+
+    Private Sub IconButton8_Click(sender As Object, e As EventArgs) Handles IconButton8.Click
+        ActivateButton(sender, Color.FromArgb(248, 233, 161), "Teacher")
+        Dim UC As New UserControl_Navs_Teacher
+        addUserControl(UC, UserControlPanel)
+    End Sub
+
+    Private Sub IconButton6_Click(sender As Object, e As EventArgs) Handles IconButton6.Click
+        ActivateButton(sender, Color.FromArgb(248, 233, 161), "Section")
+        Dim UC As New UserControl_Navs_Section
         addUserControl(UC, UserControlPanel)
     End Sub
 End Class

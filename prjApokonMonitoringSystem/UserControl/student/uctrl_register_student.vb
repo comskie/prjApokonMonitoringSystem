@@ -93,7 +93,10 @@ Public Class uctrl_register_student
 
     End Sub
 
-    Private Sub uctrl_register_student_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+    Private Sub Guna2Button5_Click(sender As Object, e As EventArgs) Handles Guna2Button5.Click
+        With frmBrowse_Section
+            .ShowDialog()
+            txtSection.Text = .ssection
+        End With
     End Sub
 End Class

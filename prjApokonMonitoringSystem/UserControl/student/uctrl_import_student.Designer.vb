@@ -27,6 +27,13 @@ Partial Class uctrl_import_student
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(uctrl_import_student))
         Me.dgvImported = New Guna.UI2.WinForms.Guna2DataGridView()
+        Me.Guna2Button3 = New Guna.UI2.WinForms.Guna2Button()
+        Me.txtFileLocation = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
+        Me.Guna2Button1 = New Guna.UI2.WinForms.Guna2Button()
+        Me.FolderBrowserDialog1 = New System.Windows.Forms.FolderBrowserDialog()
+        Me.Guna2Button2 = New Guna.UI2.WinForms.Guna2Button()
+        Me.ProfileContainer = New System.Windows.Forms.Panel()
         Me.lrn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.fname = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.mname = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -36,13 +43,7 @@ Partial Class uctrl_import_student
         Me.pname = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.pcontact = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.pemail = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Guna2Button3 = New Guna.UI2.WinForms.Guna2Button()
-        Me.txtFileLocation = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
-        Me.Guna2Button1 = New Guna.UI2.WinForms.Guna2Button()
-        Me.FolderBrowserDialog1 = New System.Windows.Forms.FolderBrowserDialog()
-        Me.Guna2Button2 = New Guna.UI2.WinForms.Guna2Button()
-        Me.ProfileContainer = New System.Windows.Forms.Panel()
+        Me.syear = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.dgvImported, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -67,7 +68,7 @@ Partial Class uctrl_import_student
         Me.dgvImported.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.dgvImported.ColumnHeadersHeight = 50
         Me.dgvImported.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
-        Me.dgvImported.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.lrn, Me.fname, Me.mname, Me.lname, Me.gender, Me.address, Me.pname, Me.pcontact, Me.pemail})
+        Me.dgvImported.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.lrn, Me.fname, Me.mname, Me.lname, Me.gender, Me.address, Me.pname, Me.pcontact, Me.pemail, Me.syear})
         Me.dgvImported.Cursor = System.Windows.Forms.Cursors.Hand
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
@@ -85,7 +86,7 @@ Partial Class uctrl_import_student
         Me.dgvImported.RowHeadersVisible = False
         Me.dgvImported.RowTemplate.Height = 80
         Me.dgvImported.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvImported.Size = New System.Drawing.Size(862, 430)
+        Me.dgvImported.Size = New System.Drawing.Size(862, 417)
         Me.dgvImported.TabIndex = 1
         Me.dgvImported.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.[Default]
         Me.dgvImported.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
@@ -109,60 +110,6 @@ Partial Class uctrl_import_student
         Me.dgvImported.ThemeStyle.RowsStyle.Height = 80
         Me.dgvImported.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.dgvImported.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        '
-        'lrn
-        '
-        Me.lrn.HeaderText = "LRN"
-        Me.lrn.Name = "lrn"
-        Me.lrn.ReadOnly = True
-        '
-        'fname
-        '
-        Me.fname.HeaderText = "First Name"
-        Me.fname.Name = "fname"
-        Me.fname.ReadOnly = True
-        '
-        'mname
-        '
-        Me.mname.HeaderText = "Middle Name"
-        Me.mname.Name = "mname"
-        Me.mname.ReadOnly = True
-        '
-        'lname
-        '
-        Me.lname.HeaderText = "Last Name"
-        Me.lname.Name = "lname"
-        Me.lname.ReadOnly = True
-        '
-        'gender
-        '
-        Me.gender.HeaderText = "Gender"
-        Me.gender.Name = "gender"
-        Me.gender.ReadOnly = True
-        '
-        'address
-        '
-        Me.address.HeaderText = "Address"
-        Me.address.Name = "address"
-        Me.address.ReadOnly = True
-        '
-        'pname
-        '
-        Me.pname.HeaderText = "Parent's Name"
-        Me.pname.Name = "pname"
-        Me.pname.ReadOnly = True
-        '
-        'pcontact
-        '
-        Me.pcontact.HeaderText = "Parent's Contact No."
-        Me.pcontact.Name = "pcontact"
-        Me.pcontact.ReadOnly = True
-        '
-        'pemail
-        '
-        Me.pemail.HeaderText = "Parent's Email"
-        Me.pemail.Name = "pemail"
-        Me.pemail.ReadOnly = True
         '
         'Guna2Button3
         '
@@ -236,7 +183,7 @@ Partial Class uctrl_import_student
         Me.Guna2Button2.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.Guna2Button2.ForeColor = System.Drawing.Color.White
         Me.Guna2Button2.HoverState.Parent = Me.Guna2Button2
-        Me.Guna2Button2.Location = New System.Drawing.Point(361, 524)
+        Me.Guna2Button2.Location = New System.Drawing.Point(361, 514)
         Me.Guna2Button2.Name = "Guna2Button2"
         Me.Guna2Button2.ShadowDecoration.Parent = Me.Guna2Button2
         Me.Guna2Button2.Size = New System.Drawing.Size(159, 45)
@@ -253,6 +200,66 @@ Partial Class uctrl_import_student
         Me.ProfileContainer.Size = New System.Drawing.Size(49, 42)
         Me.ProfileContainer.TabIndex = 21
         Me.ProfileContainer.Visible = False
+        '
+        'lrn
+        '
+        Me.lrn.HeaderText = "LRN"
+        Me.lrn.Name = "lrn"
+        Me.lrn.ReadOnly = True
+        '
+        'fname
+        '
+        Me.fname.HeaderText = "First Name"
+        Me.fname.Name = "fname"
+        Me.fname.ReadOnly = True
+        '
+        'mname
+        '
+        Me.mname.HeaderText = "Middle Name"
+        Me.mname.Name = "mname"
+        Me.mname.ReadOnly = True
+        '
+        'lname
+        '
+        Me.lname.HeaderText = "Last Name"
+        Me.lname.Name = "lname"
+        Me.lname.ReadOnly = True
+        '
+        'gender
+        '
+        Me.gender.HeaderText = "Gender"
+        Me.gender.Name = "gender"
+        Me.gender.ReadOnly = True
+        '
+        'address
+        '
+        Me.address.HeaderText = "Address"
+        Me.address.Name = "address"
+        Me.address.ReadOnly = True
+        '
+        'pname
+        '
+        Me.pname.HeaderText = "Parent's Name"
+        Me.pname.Name = "pname"
+        Me.pname.ReadOnly = True
+        '
+        'pcontact
+        '
+        Me.pcontact.HeaderText = "Parent's Contact No."
+        Me.pcontact.Name = "pcontact"
+        Me.pcontact.ReadOnly = True
+        '
+        'pemail
+        '
+        Me.pemail.HeaderText = "Parent's Email"
+        Me.pemail.Name = "pemail"
+        Me.pemail.ReadOnly = True
+        '
+        'syear
+        '
+        Me.syear.HeaderText = "Year Level"
+        Me.syear.Name = "syear"
+        Me.syear.ReadOnly = True
         '
         'uctrl_import_student
         '
@@ -276,6 +283,10 @@ Partial Class uctrl_import_student
     Friend WithEvents Guna2Button3 As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents txtFileLocation As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents OpenFileDialog1 As OpenFileDialog
+    Friend WithEvents Guna2Button1 As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents FolderBrowserDialog1 As FolderBrowserDialog
+    Friend WithEvents Guna2Button2 As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents ProfileContainer As Panel
     Friend WithEvents lrn As DataGridViewTextBoxColumn
     Friend WithEvents fname As DataGridViewTextBoxColumn
     Friend WithEvents mname As DataGridViewTextBoxColumn
@@ -285,8 +296,5 @@ Partial Class uctrl_import_student
     Friend WithEvents pname As DataGridViewTextBoxColumn
     Friend WithEvents pcontact As DataGridViewTextBoxColumn
     Friend WithEvents pemail As DataGridViewTextBoxColumn
-    Friend WithEvents Guna2Button1 As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents FolderBrowserDialog1 As FolderBrowserDialog
-    Friend WithEvents Guna2Button2 As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents ProfileContainer As Panel
+    Friend WithEvents syear As DataGridViewTextBoxColumn
 End Class

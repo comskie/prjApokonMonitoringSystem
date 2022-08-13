@@ -20,7 +20,6 @@ Public Class uctrl_student_list
             imgColumn.ImageLayout = DataGridViewImageCellLayout.Stretch
 
         Catch ex As Exception
-            MsgBox(ex.Message)
         End Try
         conn.Close()
     End Sub
@@ -48,7 +47,6 @@ Public Class uctrl_student_list
             imgColumn.ImageLayout = DataGridViewImageCellLayout.Stretch
 
         Catch ex As Exception
-            MsgBox(ex.Message)
         End Try
         conn.Close()
     End Sub

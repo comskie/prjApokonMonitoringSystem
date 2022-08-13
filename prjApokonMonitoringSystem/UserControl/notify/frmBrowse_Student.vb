@@ -80,4 +80,8 @@ Public Class frmBrowse_Student
     Private Sub btnSearch_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
         filteredSearch()
     End Sub
+
+    Private Sub frmBrowse_Student_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
+        Me.Close()
+    End Sub
 End Class

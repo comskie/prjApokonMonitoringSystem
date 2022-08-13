@@ -27,6 +27,8 @@ Partial Class frmMainPage
         Me.Guna2PictureBox1 = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.PanelMenu = New Guna.UI2.WinForms.Guna2Panel()
         Me.IconButton5 = New FontAwesome.Sharp.IconButton()
+        Me.IconButton8 = New FontAwesome.Sharp.IconButton()
+        Me.IconButton6 = New FontAwesome.Sharp.IconButton()
         Me.IconButton4 = New FontAwesome.Sharp.IconButton()
         Me.IconButton3 = New FontAwesome.Sharp.IconButton()
         Me.IconButton2 = New FontAwesome.Sharp.IconButton()
@@ -63,6 +65,8 @@ Partial Class frmMainPage
         'PanelMenu
         '
         Me.PanelMenu.Controls.Add(Me.IconButton5)
+        Me.PanelMenu.Controls.Add(Me.IconButton8)
+        Me.PanelMenu.Controls.Add(Me.IconButton6)
         Me.PanelMenu.Controls.Add(Me.IconButton4)
         Me.PanelMenu.Controls.Add(Me.IconButton3)
         Me.PanelMenu.Controls.Add(Me.IconButton2)
@@ -90,14 +94,58 @@ Partial Class frmMainPage
         Me.IconButton5.IconFont = FontAwesome.Sharp.IconFont.[Auto]
         Me.IconButton5.IconSize = 30
         Me.IconButton5.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.IconButton5.Location = New System.Drawing.Point(0, 407)
+        Me.IconButton5.Location = New System.Drawing.Point(0, 517)
         Me.IconButton5.Name = "IconButton5"
         Me.IconButton5.Padding = New System.Windows.Forms.Padding(10, 0, 20, 0)
         Me.IconButton5.Size = New System.Drawing.Size(221, 55)
-        Me.IconButton5.TabIndex = 10
+        Me.IconButton5.TabIndex = 14
         Me.IconButton5.Text = "Backup"
         Me.IconButton5.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
         Me.IconButton5.UseVisualStyleBackColor = False
+        '
+        'IconButton8
+        '
+        Me.IconButton8.BackColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(88, Byte), Integer))
+        Me.IconButton8.Dock = System.Windows.Forms.DockStyle.Top
+        Me.IconButton8.FlatAppearance.BorderSize = 0
+        Me.IconButton8.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.IconButton8.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.IconButton8.ForeColor = System.Drawing.Color.White
+        Me.IconButton8.IconChar = FontAwesome.Sharp.IconChar.UserPlus
+        Me.IconButton8.IconColor = System.Drawing.Color.White
+        Me.IconButton8.IconFont = FontAwesome.Sharp.IconFont.[Auto]
+        Me.IconButton8.IconSize = 30
+        Me.IconButton8.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.IconButton8.Location = New System.Drawing.Point(0, 462)
+        Me.IconButton8.Name = "IconButton8"
+        Me.IconButton8.Padding = New System.Windows.Forms.Padding(10, 0, 20, 0)
+        Me.IconButton8.Size = New System.Drawing.Size(221, 55)
+        Me.IconButton8.TabIndex = 13
+        Me.IconButton8.Text = "Teacher"
+        Me.IconButton8.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
+        Me.IconButton8.UseVisualStyleBackColor = False
+        '
+        'IconButton6
+        '
+        Me.IconButton6.BackColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(88, Byte), Integer))
+        Me.IconButton6.Dock = System.Windows.Forms.DockStyle.Top
+        Me.IconButton6.FlatAppearance.BorderSize = 0
+        Me.IconButton6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.IconButton6.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.IconButton6.ForeColor = System.Drawing.Color.White
+        Me.IconButton6.IconChar = FontAwesome.Sharp.IconChar.School
+        Me.IconButton6.IconColor = System.Drawing.Color.White
+        Me.IconButton6.IconFont = FontAwesome.Sharp.IconFont.[Auto]
+        Me.IconButton6.IconSize = 30
+        Me.IconButton6.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.IconButton6.Location = New System.Drawing.Point(0, 407)
+        Me.IconButton6.Name = "IconButton6"
+        Me.IconButton6.Padding = New System.Windows.Forms.Padding(10, 0, 20, 0)
+        Me.IconButton6.Size = New System.Drawing.Size(221, 55)
+        Me.IconButton6.TabIndex = 11
+        Me.IconButton6.Text = "Section"
+        Me.IconButton6.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
+        Me.IconButton6.UseVisualStyleBackColor = False
         '
         'IconButton4
         '
@@ -357,5 +405,7 @@ Partial Class frmMainPage
     Friend WithEvents IconButton7 As FontAwesome.Sharp.IconButton
     Friend WithEvents UserControlPanel As Panel
     Friend WithEvents tmrTimer As Timer
+    Friend WithEvents IconButton6 As FontAwesome.Sharp.IconButton
     Friend WithEvents IconButton5 As FontAwesome.Sharp.IconButton
+    Friend WithEvents IconButton8 As FontAwesome.Sharp.IconButton
 End Class

@@ -61,4 +61,18 @@ Public Class frm_edit_student
         conn.Close()
         Me.Close()
     End Sub
+
+    Private Sub Guna2Button2_Click(sender As Object, e As EventArgs) Handles Guna2Button2.Click
+        Dim ofd As New OpenFileDialog
+        ofd.Filter = "Choose Image(*.JPG; *.PNG)|*.jpg;*.png"
+        If ofd.ShowDialog = DialogResult.OK Then
+            ProfileContainer.BackgroundImage = Image.FromFile(ofd.FileName)
+        End If
+    End Sub
+
+    Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles Guna2Button1.Click
+        With frmCaptureImage
+            .ShowDialog()
+        End With
+    End Sub
 End Class

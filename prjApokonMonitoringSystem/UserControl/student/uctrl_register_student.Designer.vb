@@ -49,12 +49,18 @@ Partial Class uctrl_register_student
         Me.txtParent = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Guna2Button4 = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2Button3 = New Guna.UI2.WinForms.Guna2Button()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.txtSection = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.Guna2Button5 = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2GroupBox1.SuspendLayout()
         Me.Guna2GroupBox2.SuspendLayout()
         Me.SuspendLayout()
         '
         'Guna2GroupBox1
         '
+        Me.Guna2GroupBox1.Controls.Add(Me.Guna2Button5)
+        Me.Guna2GroupBox1.Controls.Add(Me.Label10)
+        Me.Guna2GroupBox1.Controls.Add(Me.txtSection)
         Me.Guna2GroupBox1.Controls.Add(Me.QRGenerate)
         Me.Guna2GroupBox1.Controls.Add(Me.Guna2Button2)
         Me.Guna2GroupBox1.Controls.Add(Me.Guna2Button1)
@@ -74,10 +80,10 @@ Partial Class uctrl_register_student
         Me.Guna2GroupBox1.CustomBorderColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(88, Byte), Integer))
         Me.Guna2GroupBox1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.Guna2GroupBox1.ForeColor = System.Drawing.Color.White
-        Me.Guna2GroupBox1.Location = New System.Drawing.Point(14, 12)
+        Me.Guna2GroupBox1.Location = New System.Drawing.Point(14, 8)
         Me.Guna2GroupBox1.Name = "Guna2GroupBox1"
         Me.Guna2GroupBox1.ShadowDecoration.Parent = Me.Guna2GroupBox1
-        Me.Guna2GroupBox1.Size = New System.Drawing.Size(854, 330)
+        Me.Guna2GroupBox1.Size = New System.Drawing.Size(854, 355)
         Me.Guna2GroupBox1.TabIndex = 0
         Me.Guna2GroupBox1.Text = "Student Information"
         '
@@ -148,7 +154,7 @@ Partial Class uctrl_register_student
         Me.txtAddress.FocusedState.Parent = Me.txtAddress
         Me.txtAddress.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtAddress.HoverState.Parent = Me.txtAddress
-        Me.txtAddress.Location = New System.Drawing.Point(105, 258)
+        Me.txtAddress.Location = New System.Drawing.Point(105, 257)
         Me.txtAddress.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.txtAddress.Multiline = True
         Me.txtAddress.Name = "txtAddress"
@@ -156,14 +162,14 @@ Partial Class uctrl_register_student
         Me.txtAddress.PlaceholderText = ""
         Me.txtAddress.SelectedText = ""
         Me.txtAddress.ShadowDecoration.Parent = Me.txtAddress
-        Me.txtAddress.Size = New System.Drawing.Size(347, 57)
+        Me.txtAddress.Size = New System.Drawing.Size(347, 51)
         Me.txtAddress.TabIndex = 12
         '
         'Label6
         '
         Me.Label6.AutoSize = True
         Me.Label6.ForeColor = System.Drawing.Color.Black
-        Me.Label6.Location = New System.Drawing.Point(44, 267)
+        Me.Label6.Location = New System.Drawing.Point(44, 268)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(52, 15)
         Me.Label6.TabIndex = 11
@@ -193,7 +199,7 @@ Partial Class uctrl_register_student
         Me.cmbGender.ItemHeight = 30
         Me.cmbGender.Items.AddRange(New Object() {"Male", "Female"})
         Me.cmbGender.ItemsAppearance.Parent = Me.cmbGender
-        Me.cmbGender.Location = New System.Drawing.Point(105, 216)
+        Me.cmbGender.Location = New System.Drawing.Point(105, 215)
         Me.cmbGender.Name = "cmbGender"
         Me.cmbGender.ShadowDecoration.Parent = Me.cmbGender
         Me.cmbGender.Size = New System.Drawing.Size(199, 36)
@@ -203,7 +209,7 @@ Partial Class uctrl_register_student
         '
         Me.Label4.AutoSize = True
         Me.Label4.ForeColor = System.Drawing.Color.Black
-        Me.Label4.Location = New System.Drawing.Point(30, 186)
+        Me.Label4.Location = New System.Drawing.Point(30, 185)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(66, 15)
         Me.Label4.TabIndex = 7
@@ -222,7 +228,7 @@ Partial Class uctrl_register_student
         Me.txtLname.FocusedState.Parent = Me.txtLname
         Me.txtLname.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtLname.HoverState.Parent = Me.txtLname
-        Me.txtLname.Location = New System.Drawing.Point(105, 174)
+        Me.txtLname.Location = New System.Drawing.Point(105, 173)
         Me.txtLname.Margin = New System.Windows.Forms.Padding(7, 3, 7, 3)
         Me.txtLname.Name = "txtLname"
         Me.txtLname.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -236,7 +242,7 @@ Partial Class uctrl_register_student
         '
         Me.Label3.AutoSize = True
         Me.Label3.ForeColor = System.Drawing.Color.Black
-        Me.Label3.Location = New System.Drawing.Point(14, 144)
+        Me.Label3.Location = New System.Drawing.Point(14, 143)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(82, 15)
         Me.Label3.TabIndex = 5
@@ -255,7 +261,7 @@ Partial Class uctrl_register_student
         Me.txtMname.FocusedState.Parent = Me.txtMname
         Me.txtMname.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtMname.HoverState.Parent = Me.txtMname
-        Me.txtMname.Location = New System.Drawing.Point(105, 132)
+        Me.txtMname.Location = New System.Drawing.Point(105, 131)
         Me.txtMname.Margin = New System.Windows.Forms.Padding(6, 3, 6, 3)
         Me.txtMname.Name = "txtMname"
         Me.txtMname.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -269,7 +275,7 @@ Partial Class uctrl_register_student
         '
         Me.Label2.AutoSize = True
         Me.Label2.ForeColor = System.Drawing.Color.Black
-        Me.Label2.Location = New System.Drawing.Point(29, 100)
+        Me.Label2.Location = New System.Drawing.Point(29, 99)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(67, 15)
         Me.Label2.TabIndex = 3
@@ -288,7 +294,7 @@ Partial Class uctrl_register_student
         Me.txtFname.FocusedState.Parent = Me.txtFname
         Me.txtFname.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtFname.HoverState.Parent = Me.txtFname
-        Me.txtFname.Location = New System.Drawing.Point(105, 90)
+        Me.txtFname.Location = New System.Drawing.Point(105, 89)
         Me.txtFname.Margin = New System.Windows.Forms.Padding(5, 3, 5, 3)
         Me.txtFname.Name = "txtFname"
         Me.txtFname.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -342,10 +348,10 @@ Partial Class uctrl_register_student
         Me.Guna2GroupBox2.CustomBorderColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(88, Byte), Integer))
         Me.Guna2GroupBox2.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.Guna2GroupBox2.ForeColor = System.Drawing.Color.White
-        Me.Guna2GroupBox2.Location = New System.Drawing.Point(14, 352)
+        Me.Guna2GroupBox2.Location = New System.Drawing.Point(14, 369)
         Me.Guna2GroupBox2.Name = "Guna2GroupBox2"
         Me.Guna2GroupBox2.ShadowDecoration.Parent = Me.Guna2GroupBox2
-        Me.Guna2GroupBox2.Size = New System.Drawing.Size(854, 150)
+        Me.Guna2GroupBox2.Size = New System.Drawing.Size(854, 136)
         Me.Guna2GroupBox2.TabIndex = 1
         Me.Guna2GroupBox2.Text = "Parent Information"
         '
@@ -458,7 +464,7 @@ Partial Class uctrl_register_student
         Me.Guna2Button4.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.Guna2Button4.ForeColor = System.Drawing.Color.White
         Me.Guna2Button4.HoverState.Parent = Me.Guna2Button4
-        Me.Guna2Button4.Location = New System.Drawing.Point(477, 508)
+        Me.Guna2Button4.Location = New System.Drawing.Point(477, 511)
         Me.Guna2Button4.Name = "Guna2Button4"
         Me.Guna2Button4.ShadowDecoration.Parent = Me.Guna2Button4
         Me.Guna2Button4.Size = New System.Drawing.Size(107, 45)
@@ -475,12 +481,63 @@ Partial Class uctrl_register_student
         Me.Guna2Button3.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.Guna2Button3.ForeColor = System.Drawing.Color.White
         Me.Guna2Button3.HoverState.Parent = Me.Guna2Button3
-        Me.Guna2Button3.Location = New System.Drawing.Point(283, 509)
+        Me.Guna2Button3.Location = New System.Drawing.Point(280, 511)
         Me.Guna2Button3.Name = "Guna2Button3"
         Me.Guna2Button3.ShadowDecoration.Parent = Me.Guna2Button3
         Me.Guna2Button3.Size = New System.Drawing.Size(107, 45)
         Me.Guna2Button3.TabIndex = 16
         Me.Guna2Button3.Text = "Save"
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.ForeColor = System.Drawing.Color.Black
+        Me.Label10.Location = New System.Drawing.Point(44, 324)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(49, 15)
+        Me.Label10.TabIndex = 17
+        Me.Label10.Text = "Section:"
+        '
+        'txtSection
+        '
+        Me.txtSection.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtSection.DefaultText = ""
+        Me.txtSection.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txtSection.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txtSection.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtSection.DisabledState.Parent = Me.txtSection
+        Me.txtSection.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtSection.Enabled = False
+        Me.txtSection.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtSection.FocusedState.Parent = Me.txtSection
+        Me.txtSection.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtSection.HoverState.Parent = Me.txtSection
+        Me.txtSection.Location = New System.Drawing.Point(104, 313)
+        Me.txtSection.Margin = New System.Windows.Forms.Padding(8, 3, 8, 3)
+        Me.txtSection.Name = "txtSection"
+        Me.txtSection.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtSection.PlaceholderText = ""
+        Me.txtSection.SelectedText = ""
+        Me.txtSection.ShadowDecoration.Parent = Me.txtSection
+        Me.txtSection.Size = New System.Drawing.Size(201, 36)
+        Me.txtSection.TabIndex = 16
+        '
+        'Guna2Button5
+        '
+        Me.Guna2Button5.Animated = True
+        Me.Guna2Button5.AutoRoundedCorners = True
+        Me.Guna2Button5.BorderRadius = 16
+        Me.Guna2Button5.CheckedState.Parent = Me.Guna2Button5
+        Me.Guna2Button5.CustomImages.Parent = Me.Guna2Button5
+        Me.Guna2Button5.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.Guna2Button5.ForeColor = System.Drawing.Color.White
+        Me.Guna2Button5.HoverState.Parent = Me.Guna2Button5
+        Me.Guna2Button5.Location = New System.Drawing.Point(318, 314)
+        Me.Guna2Button5.Name = "Guna2Button5"
+        Me.Guna2Button5.ShadowDecoration.Parent = Me.Guna2Button5
+        Me.Guna2Button5.Size = New System.Drawing.Size(89, 35)
+        Me.Guna2Button5.TabIndex = 18
+        Me.Guna2Button5.Text = "Browse"
         '
         'uctrl_register_student
         '
@@ -527,4 +584,7 @@ Partial Class uctrl_register_student
     Friend WithEvents Label7 As Label
     Friend WithEvents txtParent As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents QRGenerate As Panel
+    Friend WithEvents Label10 As Label
+    Friend WithEvents txtSection As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents Guna2Button5 As Guna.UI2.WinForms.Guna2Button
 End Class

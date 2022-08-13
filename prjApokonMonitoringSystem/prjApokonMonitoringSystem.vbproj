@@ -193,6 +193,30 @@
     <Compile Include="UserControl\notify\frmBrowse_Student.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="UserControl\section\frmBrowse_Teacher.Designer.vb">
+      <DependentUpon>frmBrowse_Teacher.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\section\frmBrowse_Teacher.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserControl\section\uctrl_register_advisory.Designer.vb">
+      <DependentUpon>uctrl_register_advisory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\section\uctrl_register_advisory.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\section\uctrl_section_list.Designer.vb">
+      <DependentUpon>uctrl_section_list.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\section\uctrl_section_list.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\student\frmBrowse_Section.Designer.vb">
+      <DependentUpon>frmBrowse_Section.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\student\frmBrowse_Section.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="UserControl\student\frm_edit_student.Designer.vb">
       <DependentUpon>frm_edit_student.vb</DependentUpon>
     </Compile>
@@ -235,16 +259,40 @@
     <Compile Include="UserControl\logs\uctrl_view_logs.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="UserControl\teacher\uctrl_register_teacher.Designer.vb">
+      <DependentUpon>uctrl_register_teacher.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\teacher\uctrl_register_teacher.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\teacher\uctrl_teacher_list.Designer.vb">
+      <DependentUpon>uctrl_teacher_list.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\teacher\uctrl_teacher_list.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="UserControl\UserControl_Navs_Notification.Designer.vb">
       <DependentUpon>UserControl_Navs_Notification.vb</DependentUpon>
     </Compile>
     <Compile Include="UserControl\UserControl_Navs_Notification.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="UserControl\UserControl_Navs_Section.Designer.vb">
+      <DependentUpon>UserControl_Navs_Section.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\UserControl_Navs_Section.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="UserControl\UserControl_Navs_Student.Designer.vb">
       <DependentUpon>UserControl_Navs_Student.vb</DependentUpon>
     </Compile>
     <Compile Include="UserControl\UserControl_Navs_Student.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\UserControl_Navs_Teacher.Designer.vb">
+      <DependentUpon>UserControl_Navs_Teacher.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\UserControl_Navs_Teacher.vb">
       <SubType>UserControl</SubType>
     </Compile>
   </ItemGroup>
@@ -288,6 +336,18 @@
     <EmbeddedResource Include="UserControl\notify\frmBrowse_Student.resx">
       <DependentUpon>frmBrowse_Student.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\section\frmBrowse_Teacher.resx">
+      <DependentUpon>frmBrowse_Teacher.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\section\uctrl_register_advisory.resx">
+      <DependentUpon>uctrl_register_advisory.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\section\uctrl_section_list.resx">
+      <DependentUpon>uctrl_section_list.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\student\frmBrowse_Section.resx">
+      <DependentUpon>frmBrowse_Section.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControl\student\frm_edit_student.resx">
       <DependentUpon>frm_edit_student.vb</DependentUpon>
     </EmbeddedResource>
@@ -309,11 +369,23 @@
     <EmbeddedResource Include="UserControl\logs\uctrl_view_logs.resx">
       <DependentUpon>uctrl_view_logs.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\teacher\uctrl_register_teacher.resx">
+      <DependentUpon>uctrl_register_teacher.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\teacher\uctrl_teacher_list.resx">
+      <DependentUpon>uctrl_teacher_list.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControl\UserControl_Navs_Notification.resx">
       <DependentUpon>UserControl_Navs_Notification.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\UserControl_Navs_Section.resx">
+      <DependentUpon>UserControl_Navs_Section.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControl\UserControl_Navs_Student.resx">
       <DependentUpon>UserControl_Navs_Student.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\UserControl_Navs_Teacher.resx">
+      <DependentUpon>UserControl_Navs_Teacher.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
