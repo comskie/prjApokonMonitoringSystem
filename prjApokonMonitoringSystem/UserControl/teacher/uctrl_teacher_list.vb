@@ -84,4 +84,8 @@ Public Class uctrl_teacher_list
             txtSearchBox.Clear()
         End If
     End Sub
+
+    Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles Guna2Button1.Click
+        export_file(dgvTeacher, "teacher")
+    End Sub
 End Class

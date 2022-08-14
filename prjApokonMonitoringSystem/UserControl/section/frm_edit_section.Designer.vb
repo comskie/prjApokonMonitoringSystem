@@ -1,8 +1,8 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class uctrl_register_advisory
-    Inherits System.Windows.Forms.UserControl
+Partial Class frm_edit_section
+    Inherits System.Windows.Forms.Form
 
-    'UserControl overrides dispose to clean up the component list.
+    'Form overrides dispose to clean up the component list.
     <System.Diagnostics.DebuggerNonUserCode()> _
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
@@ -34,6 +34,8 @@ Partial Class uctrl_register_advisory
         Me.txtTeacher = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Guna2Button3 = New Guna.UI2.WinForms.Guna2Button()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.txtID = New System.Windows.Forms.Label()
         Me.Guna2GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -41,7 +43,7 @@ Partial Class uctrl_register_advisory
         '
         Me.Label5.AutoSize = True
         Me.Label5.ForeColor = System.Drawing.Color.Black
-        Me.Label5.Location = New System.Drawing.Point(51, 121)
+        Me.Label5.Location = New System.Drawing.Point(51, 157)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(62, 15)
         Me.Label5.TabIndex = 9
@@ -58,7 +60,7 @@ Partial Class uctrl_register_advisory
         Me.cmbYearLevel.FormattingEnabled = True
         Me.cmbYearLevel.ItemHeight = 30
         Me.cmbYearLevel.Items.AddRange(New Object() {"Kinder 1", "Kinder 2", "Grade 1", "Grade 2", "Grade 3", "Grade 4", "Grade 5", "Grade 6"})
-        Me.cmbYearLevel.Location = New System.Drawing.Point(121, 111)
+        Me.cmbYearLevel.Location = New System.Drawing.Point(121, 147)
         Me.cmbYearLevel.Name = "cmbYearLevel"
         Me.cmbYearLevel.Size = New System.Drawing.Size(235, 36)
         Me.cmbYearLevel.TabIndex = 8
@@ -76,7 +78,7 @@ Partial Class uctrl_register_advisory
         '
         Me.Label2.AutoSize = True
         Me.Label2.ForeColor = System.Drawing.Color.Black
-        Me.Label2.Location = New System.Drawing.Point(29, 72)
+        Me.Label2.Location = New System.Drawing.Point(29, 108)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(84, 15)
         Me.Label2.TabIndex = 3
@@ -93,7 +95,7 @@ Partial Class uctrl_register_advisory
         Me.txtSectionName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtSectionName.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.txtSectionName.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtSectionName.Location = New System.Drawing.Point(121, 62)
+        Me.txtSectionName.Location = New System.Drawing.Point(121, 98)
         Me.txtSectionName.Margin = New System.Windows.Forms.Padding(5, 3, 5, 3)
         Me.txtSectionName.Name = "txtSectionName"
         Me.txtSectionName.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -109,14 +111,16 @@ Partial Class uctrl_register_advisory
         Me.Guna2Button4.BorderRadius = 21
         Me.Guna2Button4.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.Guna2Button4.ForeColor = System.Drawing.Color.White
-        Me.Guna2Button4.Location = New System.Drawing.Point(480, 323)
+        Me.Guna2Button4.Location = New System.Drawing.Point(481, 416)
         Me.Guna2Button4.Name = "Guna2Button4"
         Me.Guna2Button4.Size = New System.Drawing.Size(107, 45)
-        Me.Guna2Button4.TabIndex = 26
+        Me.Guna2Button4.TabIndex = 29
         Me.Guna2Button4.Text = "Clear"
         '
         'Guna2GroupBox1
         '
+        Me.Guna2GroupBox1.Controls.Add(Me.txtID)
+        Me.Guna2GroupBox1.Controls.Add(Me.Label1)
         Me.Guna2GroupBox1.Controls.Add(Me.Guna2Button1)
         Me.Guna2GroupBox1.Controls.Add(Me.txtTeacherInfo)
         Me.Guna2GroupBox1.Controls.Add(Me.txtTeacher)
@@ -129,10 +133,10 @@ Partial Class uctrl_register_advisory
         Me.Guna2GroupBox1.CustomBorderColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(88, Byte), Integer))
         Me.Guna2GroupBox1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.Guna2GroupBox1.ForeColor = System.Drawing.Color.White
-        Me.Guna2GroupBox1.Location = New System.Drawing.Point(18, 61)
+        Me.Guna2GroupBox1.Location = New System.Drawing.Point(19, 131)
         Me.Guna2GroupBox1.Name = "Guna2GroupBox1"
-        Me.Guna2GroupBox1.Size = New System.Drawing.Size(854, 240)
-        Me.Guna2GroupBox1.TabIndex = 23
+        Me.Guna2GroupBox1.Size = New System.Drawing.Size(854, 263)
+        Me.Guna2GroupBox1.TabIndex = 27
         Me.Guna2GroupBox1.Text = "Section Information"
         '
         'Guna2Button1
@@ -142,7 +146,7 @@ Partial Class uctrl_register_advisory
         Me.Guna2Button1.BorderRadius = 17
         Me.Guna2Button1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.Guna2Button1.ForeColor = System.Drawing.Color.White
-        Me.Guna2Button1.Location = New System.Drawing.Point(376, 168)
+        Me.Guna2Button1.Location = New System.Drawing.Point(376, 204)
         Me.Guna2Button1.Name = "Guna2Button1"
         Me.Guna2Button1.Size = New System.Drawing.Size(107, 36)
         Me.Guna2Button1.TabIndex = 27
@@ -160,7 +164,7 @@ Partial Class uctrl_register_advisory
         Me.txtTeacherInfo.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtTeacherInfo.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.txtTeacherInfo.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtTeacherInfo.Location = New System.Drawing.Point(507, 94)
+        Me.txtTeacherInfo.Location = New System.Drawing.Point(507, 130)
         Me.txtTeacherInfo.Margin = New System.Windows.Forms.Padding(7, 3, 7, 3)
         Me.txtTeacherInfo.Name = "txtTeacherInfo"
         Me.txtTeacherInfo.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -182,7 +186,7 @@ Partial Class uctrl_register_advisory
         Me.txtTeacher.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtTeacher.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.txtTeacher.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtTeacher.Location = New System.Drawing.Point(121, 168)
+        Me.txtTeacher.Location = New System.Drawing.Point(121, 204)
         Me.txtTeacher.Margin = New System.Windows.Forms.Padding(6, 3, 6, 3)
         Me.txtTeacher.Name = "txtTeacher"
         Me.txtTeacher.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -195,7 +199,7 @@ Partial Class uctrl_register_advisory
         '
         Me.Label7.AutoSize = True
         Me.Label7.ForeColor = System.Drawing.Color.Black
-        Me.Label7.Location = New System.Drawing.Point(62, 178)
+        Me.Label7.Location = New System.Drawing.Point(62, 214)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(50, 15)
         Me.Label7.TabIndex = 15
@@ -208,27 +212,51 @@ Partial Class uctrl_register_advisory
         Me.Guna2Button3.BorderRadius = 21
         Me.Guna2Button3.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.Guna2Button3.ForeColor = System.Drawing.Color.White
-        Me.Guna2Button3.Location = New System.Drawing.Point(279, 323)
+        Me.Guna2Button3.Location = New System.Drawing.Point(280, 416)
         Me.Guna2Button3.Name = "Guna2Button3"
         Me.Guna2Button3.Size = New System.Drawing.Size(107, 45)
-        Me.Guna2Button3.TabIndex = 25
+        Me.Guna2Button3.TabIndex = 28
         Me.Guna2Button3.Text = "Save"
         '
-        'uctrl_register_advisory
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.ForeColor = System.Drawing.Color.Black
+        Me.Label1.Location = New System.Drawing.Point(49, 60)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(63, 15)
+        Me.Label1.TabIndex = 28
+        Me.Label1.Text = "Section ID:"
+        '
+        'txtID
+        '
+        Me.txtID.AutoSize = True
+        Me.txtID.ForeColor = System.Drawing.Color.Black
+        Me.txtID.Location = New System.Drawing.Point(119, 59)
+        Me.txtID.Name = "txtID"
+        Me.txtID.Size = New System.Drawing.Size(55, 15)
+        Me.txtID.TabIndex = 29
+        Me.txtID.Text = "[no data]"
+        '
+        'frm_edit_section
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.Controls.Add(Me.Guna2Button3)
+        Me.ClientSize = New System.Drawing.Size(893, 614)
         Me.Controls.Add(Me.Guna2Button4)
         Me.Controls.Add(Me.Guna2GroupBox1)
-        Me.Name = "uctrl_register_advisory"
-        Me.Size = New System.Drawing.Size(893, 572)
+        Me.Controls.Add(Me.Guna2Button3)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
+        Me.Name = "frm_edit_section"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "Edit Section"
         Me.Guna2GroupBox1.ResumeLayout(False)
         Me.Guna2GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
+
     Friend WithEvents Label5 As Label
     Friend WithEvents cmbYearLevel As Guna.UI2.WinForms.Guna2ComboBox
     Friend WithEvents Label3 As Label
@@ -236,9 +264,11 @@ Partial Class uctrl_register_advisory
     Friend WithEvents txtSectionName As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Guna2Button4 As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Guna2GroupBox1 As Guna.UI2.WinForms.Guna2GroupBox
-    Friend WithEvents Label7 As Label
-    Friend WithEvents txtTeacher As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Guna2Button1 As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents txtTeacherInfo As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents txtTeacher As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents Label7 As Label
     Friend WithEvents Guna2Button3 As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents txtID As Label
+    Friend WithEvents Label1 As Label
 End Class

@@ -112,7 +112,6 @@ Partial Class uctrl_student_list
         Me.dgvStudent.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvStudent.Size = New System.Drawing.Size(862, 439)
         Me.dgvStudent.TabIndex = 0
-        Me.dgvStudent.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.[Default]
         Me.dgvStudent.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
         Me.dgvStudent.ThemeStyle.AlternatingRowsStyle.Font = Nothing
         Me.dgvStudent.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty
@@ -181,17 +180,13 @@ Partial Class uctrl_student_list
         'Guna2Button1
         '
         Me.Guna2Button1.BorderRadius = 10
-        Me.Guna2Button1.CheckedState.Parent = Me.Guna2Button1
-        Me.Guna2Button1.CustomImages.Parent = Me.Guna2Button1
         Me.Guna2Button1.FillColor = System.Drawing.Color.Coral
         Me.Guna2Button1.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2Button1.ForeColor = System.Drawing.Color.White
-        Me.Guna2Button1.HoverState.Parent = Me.Guna2Button1
         Me.Guna2Button1.Image = CType(resources.GetObject("Guna2Button1.Image"), System.Drawing.Image)
         Me.Guna2Button1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.Guna2Button1.Location = New System.Drawing.Point(796, 3)
         Me.Guna2Button1.Name = "Guna2Button1"
-        Me.Guna2Button1.ShadowDecoration.Parent = Me.Guna2Button1
         Me.Guna2Button1.Size = New System.Drawing.Size(96, 37)
         Me.Guna2Button1.TabIndex = 1
         Me.Guna2Button1.Text = "Export"
@@ -200,17 +195,13 @@ Partial Class uctrl_student_list
         'Guna2Button2
         '
         Me.Guna2Button2.BorderRadius = 10
-        Me.Guna2Button2.CheckedState.Parent = Me.Guna2Button2
-        Me.Guna2Button2.CustomImages.Parent = Me.Guna2Button2
         Me.Guna2Button2.FillColor = System.Drawing.Color.MediumSeaGreen
         Me.Guna2Button2.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2Button2.ForeColor = System.Drawing.Color.White
-        Me.Guna2Button2.HoverState.Parent = Me.Guna2Button2
         Me.Guna2Button2.Image = CType(resources.GetObject("Guna2Button2.Image"), System.Drawing.Image)
         Me.Guna2Button2.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.Guna2Button2.Location = New System.Drawing.Point(689, 3)
         Me.Guna2Button2.Name = "Guna2Button2"
-        Me.Guna2Button2.ShadowDecoration.Parent = Me.Guna2Button2
         Me.Guna2Button2.Size = New System.Drawing.Size(96, 37)
         Me.Guna2Button2.TabIndex = 0
         Me.Guna2Button2.Text = "Print"
@@ -236,14 +227,10 @@ Partial Class uctrl_student_list
         'btnSearch
         '
         Me.btnSearch.BorderRadius = 10
-        Me.btnSearch.CheckedState.Parent = Me.btnSearch
-        Me.btnSearch.CustomImages.Parent = Me.btnSearch
         Me.btnSearch.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSearch.ForeColor = System.Drawing.Color.White
-        Me.btnSearch.HoverState.Parent = Me.btnSearch
         Me.btnSearch.Location = New System.Drawing.Point(791, 23)
         Me.btnSearch.Name = "btnSearch"
-        Me.btnSearch.ShadowDecoration.Parent = Me.btnSearch
         Me.btnSearch.Size = New System.Drawing.Size(86, 36)
         Me.btnSearch.TabIndex = 29
         Me.btnSearch.Text = "Search"
@@ -264,17 +251,13 @@ Partial Class uctrl_student_list
         Me.cmbGender.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
         Me.cmbGender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbGender.FocusedColor = System.Drawing.Color.Empty
-        Me.cmbGender.FocusedState.Parent = Me.cmbGender
         Me.cmbGender.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmbGender.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
         Me.cmbGender.FormattingEnabled = True
-        Me.cmbGender.HoverState.Parent = Me.cmbGender
         Me.cmbGender.ItemHeight = 30
         Me.cmbGender.Items.AddRange(New Object() {"Male", "Female"})
-        Me.cmbGender.ItemsAppearance.Parent = Me.cmbGender
         Me.cmbGender.Location = New System.Drawing.Point(592, 23)
         Me.cmbGender.Name = "cmbGender"
-        Me.cmbGender.ShadowDecoration.Parent = Me.cmbGender
         Me.cmbGender.Size = New System.Drawing.Size(187, 36)
         Me.cmbGender.StartIndex = 0
         Me.cmbGender.TabIndex = 27
@@ -295,17 +278,13 @@ Partial Class uctrl_student_list
         Me.cmbFilter.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
         Me.cmbFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbFilter.FocusedColor = System.Drawing.Color.Empty
-        Me.cmbFilter.FocusedState.Parent = Me.cmbFilter
-        Me.cmbFilter.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmbFilter.Font = New System.Drawing.Font("Century Gothic", 9.75!)
         Me.cmbFilter.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
         Me.cmbFilter.FormattingEnabled = True
-        Me.cmbFilter.HoverState.Parent = Me.cmbFilter
         Me.cmbFilter.ItemHeight = 30
-        Me.cmbFilter.Items.AddRange(New Object() {"All", "By Name", "By Gender", "By LRN"})
-        Me.cmbFilter.ItemsAppearance.Parent = Me.cmbFilter
+        Me.cmbFilter.Items.AddRange(New Object() {"All", "By Name", "By Gender", "By LRN", "By Section"})
         Me.cmbFilter.Location = New System.Drawing.Point(15, 23)
         Me.cmbFilter.Name = "cmbFilter"
-        Me.cmbFilter.ShadowDecoration.Parent = Me.cmbFilter
         Me.cmbFilter.Size = New System.Drawing.Size(187, 36)
         Me.cmbFilter.StartIndex = 0
         Me.cmbFilter.TabIndex = 25
@@ -318,21 +297,17 @@ Partial Class uctrl_student_list
         Me.txtSearchBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
         Me.txtSearchBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
         Me.txtSearchBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtSearchBox.DisabledState.Parent = Me.txtSearchBox
         Me.txtSearchBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txtSearchBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtSearchBox.FocusedState.Parent = Me.txtSearchBox
         Me.txtSearchBox.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtSearchBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtSearchBox.HoverState.Parent = Me.txtSearchBox
         Me.txtSearchBox.IconLeft = CType(resources.GetObject("txtSearchBox.IconLeft"), System.Drawing.Image)
         Me.txtSearchBox.Location = New System.Drawing.Point(210, 23)
-        Me.txtSearchBox.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.txtSearchBox.Margin = New System.Windows.Forms.Padding(5)
         Me.txtSearchBox.Name = "txtSearchBox"
         Me.txtSearchBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtSearchBox.PlaceholderText = "Search..."
         Me.txtSearchBox.SelectedText = ""
-        Me.txtSearchBox.ShadowDecoration.Parent = Me.txtSearchBox
         Me.txtSearchBox.Size = New System.Drawing.Size(374, 36)
         Me.txtSearchBox.TabIndex = 23
         '

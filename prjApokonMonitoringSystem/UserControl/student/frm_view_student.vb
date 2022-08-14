@@ -17,6 +17,7 @@ Public Class frm_view_student
             .lrnContainer.Text = txtLRN.Text
             .QRBox.Image = QRContainer.BackgroundImage
             .Profile.Image = ProfileContainer.BackgroundImage
+            .sectionContainer.Text = txtSection.Text
             .ShowDialog()
         End With
 

@@ -27,6 +27,7 @@ Public Class uctrl_register_student
                 .addressContainer.Text = txtAddress.Text
                 .QRBox.Image = QRGenerate.BackgroundImage
                 .Profile.Image = ProfileContainer.BackgroundImage
+                .sectionContainer.Text = txtSection.Text
                 .ShowDialog()
             End With
 

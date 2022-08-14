@@ -37,23 +37,27 @@ Partial Class frm_student_id
         Me.nameContainer = New System.Windows.Forms.Label()
         Me.lrnContainer = New System.Windows.Forms.Label()
         Me.Profile = New System.Windows.Forms.PictureBox()
-        Me.Guna2PictureBox2 = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Guna2PictureBox1 = New Guna.UI2.WinForms.Guna2PictureBox()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Guna2PictureBox1 = New Guna.UI2.WinForms.Guna2PictureBox()
+        Me.Guna2PictureBox2 = New Guna.UI2.WinForms.Guna2PictureBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.sectionContainer = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.Panel3.SuspendLayout()
         CType(Me.QRBox, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Profile, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Guna2PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Guna2PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(36, Byte), Integer), CType(CType(49, Byte), Integer))
+        Me.Panel1.Controls.Add(Me.Label4)
+        Me.Panel1.Controls.Add(Me.sectionContainer)
         Me.Panel1.Controls.Add(Me.Panel3)
         Me.Panel1.Controls.Add(Me.Label7)
         Me.Panel1.Controls.Add(Me.addressContainer)
@@ -210,19 +214,6 @@ Partial Class frm_student_id
         Me.Profile.TabIndex = 27
         Me.Profile.TabStop = False
         '
-        'Guna2PictureBox2
-        '
-        Me.Guna2PictureBox2.BackColor = System.Drawing.Color.PowderBlue
-        Me.Guna2PictureBox2.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Guna2PictureBox2.Image = CType(resources.GetObject("Guna2PictureBox2.Image"), System.Drawing.Image)
-        Me.Guna2PictureBox2.ImageRotate = 0!
-        Me.Guna2PictureBox2.Location = New System.Drawing.Point(0, 0)
-        Me.Guna2PictureBox2.Name = "Guna2PictureBox2"
-        Me.Guna2PictureBox2.Size = New System.Drawing.Size(125, 131)
-        Me.Guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.Guna2PictureBox2.TabIndex = 25
-        Me.Guna2PictureBox2.TabStop = False
-        '
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.PowderBlue
@@ -236,18 +227,18 @@ Partial Class frm_student_id
         Me.Panel2.Size = New System.Drawing.Size(728, 131)
         Me.Panel2.TabIndex = 38
         '
-        'Guna2PictureBox1
+        'Label2
         '
-        Me.Guna2PictureBox1.BackColor = System.Drawing.Color.PowderBlue
-        Me.Guna2PictureBox1.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Guna2PictureBox1.Image = CType(resources.GetObject("Guna2PictureBox1.Image"), System.Drawing.Image)
-        Me.Guna2PictureBox1.ImageRotate = 0!
-        Me.Guna2PictureBox1.Location = New System.Drawing.Point(603, 0)
-        Me.Guna2PictureBox1.Name = "Guna2PictureBox1"
-        Me.Guna2PictureBox1.Size = New System.Drawing.Size(125, 131)
-        Me.Guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.Guna2PictureBox1.TabIndex = 29
-        Me.Guna2PictureBox1.TabStop = False
+        Me.Label2.AutoSize = True
+        Me.Label2.BackColor = System.Drawing.Color.PowderBlue
+        Me.Label2.Font = New System.Drawing.Font("Arial Narrow", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Label2.Location = New System.Drawing.Point(131, 59)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(3, 30, 3, 0)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(248, 29)
+        Me.Label2.TabIndex = 31
+        Me.Label2.Text = "Apokon Elementary School"
         '
         'Label1
         '
@@ -262,18 +253,53 @@ Partial Class frm_student_id
         Me.Label1.TabIndex = 30
         Me.Label1.Text = "Digital QR ID"
         '
-        'Label2
+        'Guna2PictureBox1
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.BackColor = System.Drawing.Color.PowderBlue
-        Me.Label2.Font = New System.Drawing.Font("Arial Narrow", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label2.Location = New System.Drawing.Point(131, 59)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(3, 30, 3, 0)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(248, 29)
-        Me.Label2.TabIndex = 31
-        Me.Label2.Text = "Apokon Elementary School"
+        Me.Guna2PictureBox1.BackColor = System.Drawing.Color.PowderBlue
+        Me.Guna2PictureBox1.Dock = System.Windows.Forms.DockStyle.Right
+        Me.Guna2PictureBox1.Image = CType(resources.GetObject("Guna2PictureBox1.Image"), System.Drawing.Image)
+        Me.Guna2PictureBox1.ImageRotate = 0!
+        Me.Guna2PictureBox1.Location = New System.Drawing.Point(603, 0)
+        Me.Guna2PictureBox1.Name = "Guna2PictureBox1"
+        Me.Guna2PictureBox1.Size = New System.Drawing.Size(125, 131)
+        Me.Guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.Guna2PictureBox1.TabIndex = 29
+        Me.Guna2PictureBox1.TabStop = False
+        '
+        'Guna2PictureBox2
+        '
+        Me.Guna2PictureBox2.BackColor = System.Drawing.Color.PowderBlue
+        Me.Guna2PictureBox2.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Guna2PictureBox2.Image = CType(resources.GetObject("Guna2PictureBox2.Image"), System.Drawing.Image)
+        Me.Guna2PictureBox2.ImageRotate = 0!
+        Me.Guna2PictureBox2.Location = New System.Drawing.Point(0, 0)
+        Me.Guna2PictureBox2.Name = "Guna2PictureBox2"
+        Me.Guna2PictureBox2.Size = New System.Drawing.Size(125, 131)
+        Me.Guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.Guna2PictureBox2.TabIndex = 25
+        Me.Guna2PictureBox2.TabStop = False
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.Color.White
+        Me.Label4.Location = New System.Drawing.Point(199, 342)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(84, 25)
+        Me.Label4.TabIndex = 41
+        Me.Label4.Text = "Section"
+        '
+        'sectionContainer
+        '
+        Me.sectionContainer.AutoSize = True
+        Me.sectionContainer.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.sectionContainer.ForeColor = System.Drawing.Color.White
+        Me.sectionContainer.Location = New System.Drawing.Point(200, 370)
+        Me.sectionContainer.Name = "sectionContainer"
+        Me.sectionContainer.Size = New System.Drawing.Size(53, 20)
+        Me.sectionContainer.TabIndex = 40
+        Me.sectionContainer.Text = "[none]"
         '
         'frm_student_id
         '
@@ -290,10 +316,10 @@ Partial Class frm_student_id
         Me.Panel3.PerformLayout()
         CType(Me.QRBox, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Profile, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Guna2PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Guna2PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -316,4 +342,6 @@ Partial Class frm_student_id
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents Guna2PictureBox1 As Guna.UI2.WinForms.Guna2PictureBox
+    Friend WithEvents Label4 As Label
+    Friend WithEvents sectionContainer As Label
 End Class

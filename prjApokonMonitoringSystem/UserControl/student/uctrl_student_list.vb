@@ -34,6 +34,8 @@ Public Class uctrl_student_list
                 comm = New MySqlCommand("SELECT * FROM tbl_student WHERE gender = '" & cmbGender.Text & "'", conn)
             ElseIf cmbFilter.Text = "By LRN" Then
                 comm = New MySqlCommand("SELECT * FROM tbl_student WHERE lrn LIKE '%" + txtSearchBox.Text + "%'", conn)
+            ElseIf cmbFilter.Text = "By Section" Then
+                comm = New MySqlCommand("SELECT * FROM tbl_student WHERE section LIKE '%" + txtSearchBox.Text + "%'", conn)
             End If
 
             Dim da As New MySqlDataAdapter
@@ -114,7 +116,6 @@ Public Class uctrl_student_list
                 displayStudent()
             ElseIf colName = "action_delete" Then
                 deleteStudent(selectedRow.Cells(4).Value.ToString)
-                'insertToLogs(user_id, "patient", "delete", u_employee, "User deleted patient id: " & selectedRow.Cells(3).Value.ToString)
                 displayStudent()
             End If
         Catch ex As Exception
@@ -149,7 +150,7 @@ Public Class uctrl_student_list
             txtSearchBox.Enabled = False
             cmbGender.Enabled = False
             txtSearchBox.Clear()
-        ElseIf cmbFilter.Text = "By Name" Then
+        ElseIf cmbFilter.Text = "By Name" Or cmbFilter.Text = "By Section" Then
             cmbGender.Enabled = False
             txtSearchBox.Enabled = True
         ElseIf cmbFilter.Text = "By Gender" Then
