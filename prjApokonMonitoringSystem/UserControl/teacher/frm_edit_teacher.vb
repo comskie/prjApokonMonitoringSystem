@@ -22,6 +22,24 @@ Public Class frm_edit_teacher
         End Try
         conn.Close()
 
+        If txtPrevious.Text <> txtUsername.Text Then
+            Try
+                conn.Open()
+                comm = New MySqlCommand("UPDATE tbl_section SET advisory_of=@advisory WHERE advisory_of = '" & txtPrevious.Text & "'", conn)
+                comm.Parameters.Add("@advisory", MySqlDbType.VarChar).Value = txtUsername.Text
+                adapter = New MySqlDataAdapter(comm)
+                comm.ExecuteNonQuery()
+                conn.Close()
+            Catch ex As Exception
+                conn.Close()
+                MessageBox.Show(ex.Message)
+            Finally
+                conn.Dispose()
+            End Try
+            conn.Close()
+        End If
+
+
         If txtPassword.Text <> String.Empty Then
             Try
                 conn.Open()

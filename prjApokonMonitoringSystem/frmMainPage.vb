@@ -100,4 +100,16 @@ Public Class frmMainPage
         Dim UC As New UserControl_Navs_Section
         addUserControl(UC, UserControlPanel)
     End Sub
+
+    Private Sub Guna2PictureBox1_Click(sender As Object, e As EventArgs) Handles Guna2PictureBox1.Click
+        ActivateButton(sender, Color.FromArgb(248, 233, 161), "Home")
+        Dim UC As New UserControl_StartScreen
+        addUserControl(UC, UserControlPanel)
+    End Sub
+
+    Private Sub frmMainPage_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ActivateButton(sender, Color.FromArgb(248, 233, 161), "Home")
+        Dim UC As New UserControl_StartScreen
+        addUserControl(UC, UserControlPanel)
+    End Sub
 End Class

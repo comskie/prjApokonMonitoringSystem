@@ -126,6 +126,7 @@ Public Class uctrl_section_list
                 With frm_edit_section
                     .txtID.Text = selectedRow.Cells(3).Value.ToString
                     .txtSectionName.Text = selectedRow.Cells(4).Value.ToString
+                    .txtPreviousName.Text = selectedRow.Cells(4).Value.ToString
                     If selectedRow.Cells(5).Value.ToString = "Kinder 1" Then
                         .cmbYearLevel.SelectedIndex = 0
                     ElseIf selectedRow.Cells(5).Value.ToString = "Kinder 2" Then
@@ -161,7 +162,7 @@ Public Class uctrl_section_list
         Try
             conn.Open()
             comm = New MySqlCommand("DELETE FROM tbl_section WHERE id = @sid", conn)
-            comm.Parameters.Add("@sid-", MySqlDbType.VarChar).Value = sID
+            comm.Parameters.Add("@sid", MySqlDbType.VarChar).Value = sID
 
             adapter = New MySqlDataAdapter(comm)
             comm.ExecuteNonQuery()

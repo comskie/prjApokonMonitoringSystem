@@ -405,6 +405,12 @@
     <Compile Include="UserControl\UserControl_Navs_Teacher.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="UserControl\UserControl_StartScreen.Designer.vb">
+      <DependentUpon>UserControl_StartScreen.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\UserControl_StartScreen.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="frmCaptureImage.resx">
@@ -508,6 +514,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl\UserControl_Navs_Teacher.resx">
       <DependentUpon>UserControl_Navs_Teacher.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\UserControl_StartScreen.resx">
+      <DependentUpon>UserControl_StartScreen.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

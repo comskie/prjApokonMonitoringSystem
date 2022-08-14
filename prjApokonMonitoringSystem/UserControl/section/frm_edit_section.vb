@@ -26,7 +26,6 @@ Public Class frm_edit_section
             comm.Parameters.Add("@advisory", MySqlDbType.VarChar).Value = txtTeacherInfo.Text
             adapter = New MySqlDataAdapter(comm)
             comm.ExecuteNonQuery()
-            MsgBox("Record updated", MsgBoxStyle.Information)
         Catch ex As Exception
             conn.Close()
             MessageBox.Show(ex.Message)
@@ -34,6 +33,23 @@ Public Class frm_edit_section
             conn.Dispose()
         End Try
         conn.Close()
+
+        If txtSectionName.Text <> txtPreviousName.Text Then
+            Try
+                conn.Open()
+                comm = New MySqlCommand("UPDATE tbl_student SET section = @ssection WHERE section = '" & txtPreviousName.Text & "'", conn)
+                comm.Parameters.Add("@ssection", MySqlDbType.VarChar).Value = txtSectionName.Text
+                adapter = New MySqlDataAdapter(comm)
+                comm.ExecuteNonQuery()
+            Catch ex As Exception
+                conn.Close()
+                MessageBox.Show(ex.Message)
+            Finally
+                conn.Dispose()
+            End Try
+            conn.Close()
+        End If
+        MsgBox("Record updated", MsgBoxStyle.Information)
         Me.Close()
         ClearText()
     End Sub

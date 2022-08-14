@@ -31,7 +31,6 @@ Partial Class frmLogin
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Guna2Button2 = New Guna.UI2.WinForms.Guna2Button()
         Me.IconButton7 = New FontAwesome.Sharp.IconButton()
         CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -143,21 +142,6 @@ Partial Class frmLogin
         Me.Panel1.Size = New System.Drawing.Size(312, 1)
         Me.Panel1.TabIndex = 19
         '
-        'Guna2Button2
-        '
-        Me.Guna2Button2.AutoRoundedCorners = True
-        Me.Guna2Button2.BorderColor = System.Drawing.Color.White
-        Me.Guna2Button2.BorderRadius = 20
-        Me.Guna2Button2.BorderThickness = 1
-        Me.Guna2Button2.FillColor = System.Drawing.Color.Transparent
-        Me.Guna2Button2.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2Button2.ForeColor = System.Drawing.Color.White
-        Me.Guna2Button2.Location = New System.Drawing.Point(15, 444)
-        Me.Guna2Button2.Name = "Guna2Button2"
-        Me.Guna2Button2.Size = New System.Drawing.Size(312, 43)
-        Me.Guna2Button2.TabIndex = 18
-        Me.Guna2Button2.Text = "Register"
-        '
         'IconButton7
         '
         Me.IconButton7.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(36, Byte), Integer), CType(CType(49, Byte), Integer))
@@ -182,12 +166,11 @@ Partial Class frmLogin
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(36, Byte), Integer), CType(CType(49, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(346, 502)
+        Me.ClientSize = New System.Drawing.Size(346, 462)
         Me.Controls.Add(Me.IconButton7)
         Me.Controls.Add(Me.txtPassword)
         Me.Controls.Add(Me.txtUsername)
         Me.Controls.Add(Me.Guna2PictureBox1)
-        Me.Controls.Add(Me.Guna2Button2)
         Me.Controls.Add(Me.Guna2Button1)
         Me.Controls.Add(Me.PictureBox3)
         Me.Controls.Add(Me.PictureBox2)
@@ -212,6 +195,5 @@ Partial Class frmLogin
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents Guna2Button2 As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents IconButton7 As FontAwesome.Sharp.IconButton
 End Class

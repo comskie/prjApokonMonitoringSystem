@@ -126,7 +126,7 @@ Public Class uctrl_teacher_list
                     .txtContactNo.Text = selectedRow.Cells(9).Value.ToString
                     .txtEmail.Text = selectedRow.Cells(10).Value.ToString
                     .txtUsername.Text = selectedRow.Cells(4).Value.ToString
-
+                    .txtPrevious.Text = selectedRow.Cells(4).Value.ToString
                     .ShowDialog()
                 End With
                 displayTeacher()

@@ -45,6 +45,8 @@ Partial Class frm_edit_teacher
         Me.txtID = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.txtPrevious = New System.Windows.Forms.Label()
         Me.Guna2GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -299,6 +301,8 @@ Partial Class frm_edit_teacher
         '
         'Guna2GroupBox1
         '
+        Me.Guna2GroupBox1.Controls.Add(Me.txtPrevious)
+        Me.Guna2GroupBox1.Controls.Add(Me.Label11)
         Me.Guna2GroupBox1.Controls.Add(Me.txtAccountID)
         Me.Guna2GroupBox1.Controls.Add(Me.Label12)
         Me.Guna2GroupBox1.Controls.Add(Me.txtID)
@@ -378,6 +382,28 @@ Partial Class frm_edit_teacher
         Me.Label3.Size = New System.Drawing.Size(0, 15)
         Me.Label3.TabIndex = 5
         '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.ForeColor = System.Drawing.Color.Black
+        Me.Label11.Location = New System.Drawing.Point(391, 190)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(111, 15)
+        Me.Label11.TabIndex = 42
+        Me.Label11.Text = "Previous Username:"
+        Me.Label11.Visible = False
+        '
+        'txtPrevious
+        '
+        Me.txtPrevious.AutoSize = True
+        Me.txtPrevious.ForeColor = System.Drawing.Color.Black
+        Me.txtPrevious.Location = New System.Drawing.Point(521, 190)
+        Me.txtPrevious.Name = "txtPrevious"
+        Me.txtPrevious.Size = New System.Drawing.Size(55, 15)
+        Me.txtPrevious.TabIndex = 43
+        Me.txtPrevious.Text = "[no data]"
+        Me.txtPrevious.Visible = False
+        '
         'frm_edit_teacher
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -419,4 +445,6 @@ Partial Class frm_edit_teacher
     Friend WithEvents Label10 As Label
     Friend WithEvents txtAccountID As Label
     Friend WithEvents Label12 As Label
+    Friend WithEvents txtPrevious As Label
+    Friend WithEvents Label11 As Label
 End Class
