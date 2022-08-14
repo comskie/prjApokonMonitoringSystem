@@ -24,7 +24,7 @@ Public Class uctrl_register_teacher
 
         Try
             conn.Open()
-            comm = New MySqlCommand("INSERT INTO tbl_accounts(username, password, user_role) VALUES (@uname, @upass, @urole)", conn)
+            comm = New MySqlCommand("INSERT INTO tbl_accounts(username, password, user_role) VALUES (@uname, sha1(@upass), @urole)", conn)
             comm.Parameters.Add("@uname", MySqlDbType.VarChar).Value = txtUsername.Text
             comm.Parameters.Add("@upass", MySqlDbType.VarChar).Value = txtPassword.Text
             comm.Parameters.Add("@urole", MySqlDbType.VarChar).Value = "teacher"

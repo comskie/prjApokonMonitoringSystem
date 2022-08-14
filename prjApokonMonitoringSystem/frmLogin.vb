@@ -17,7 +17,7 @@ Public Class frmLogin
     Private Sub Guna2Button1_Click_1(sender As Object, e As EventArgs) Handles Guna2Button1.Click
         Try
             conn.Open()
-            comm = New MySqlCommand("SELECT * FROM tbl_accounts WHERE BINARY username = '" & txtUsername.Text & "' AND BINARY password = '" & txtPassword.Text & "'", conn)
+            comm = New MySqlCommand("SELECT * FROM tbl_accounts WHERE BINARY username = '" & txtUsername.Text & "' AND BINARY password = sha1('" & txtPassword.Text & "')", conn)
             adapter = New MySqlDataAdapter(comm)
             Dim table As New DataTable()
             adapter.Fill(table)

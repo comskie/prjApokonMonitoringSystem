@@ -25,7 +25,7 @@ Public Class frm_edit_teacher
         If txtPassword.Text <> String.Empty Then
             Try
                 conn.Open()
-                comm = New MySqlCommand("UPDATE tbl_accounts SET username=@uname, password=@upass, user_role=@urole WHERE id = '" & txtAccountID.Text & "'", conn)
+                comm = New MySqlCommand("UPDATE tbl_accounts SET username=@uname, password=sha1(@upass), user_role=@urole WHERE id = '" & txtAccountID.Text & "'", conn)
                 comm.Parameters.Add("@uname", MySqlDbType.VarChar).Value = txtUsername.Text
                 comm.Parameters.Add("@upass", MySqlDbType.VarChar).Value = txtPassword.Text
                 comm.Parameters.Add("@urole", MySqlDbType.VarChar).Value = "teacher"
