@@ -285,6 +285,18 @@
     <Compile Include="UserControl\section\frmBrowse_Teacher.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="UserControl\section\frm_edit_section.Designer.vb">
+      <DependentUpon>frm_edit_section.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\section\frm_edit_section.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserControl\section\frm_view_section.Designer.vb">
+      <DependentUpon>frm_view_section.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\section\frm_view_section.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="UserControl\section\uctrl_register_advisory.Designer.vb">
       <DependentUpon>uctrl_register_advisory.vb</DependentUpon>
     </Compile>
@@ -424,6 +436,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl\section\frmBrowse_Teacher.resx">
       <DependentUpon>frmBrowse_Teacher.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\section\frm_edit_section.resx">
+      <DependentUpon>frm_edit_section.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\section\frm_view_section.resx">
+      <DependentUpon>frm_view_section.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl\section\uctrl_register_advisory.resx">
       <DependentUpon>uctrl_register_advisory.vb</DependentUpon>

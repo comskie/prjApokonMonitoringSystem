@@ -54,9 +54,9 @@ Partial Class frmMainPage
         'Guna2PictureBox1
         '
         Me.Guna2PictureBox1.Image = CType(resources.GetObject("Guna2PictureBox1.Image"), System.Drawing.Image)
+        Me.Guna2PictureBox1.ImageRotate = 0!
         Me.Guna2PictureBox1.Location = New System.Drawing.Point(31, 32)
         Me.Guna2PictureBox1.Name = "Guna2PictureBox1"
-        Me.Guna2PictureBox1.ShadowDecoration.Parent = Me.Guna2PictureBox1
         Me.Guna2PictureBox1.Size = New System.Drawing.Size(138, 135)
         Me.Guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.Guna2PictureBox1.TabIndex = 24
@@ -77,7 +77,6 @@ Partial Class frmMainPage
         Me.PanelMenu.FillColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(88, Byte), Integer))
         Me.PanelMenu.Location = New System.Drawing.Point(0, 0)
         Me.PanelMenu.Name = "PanelMenu"
-        Me.PanelMenu.ShadowDecoration.Parent = Me.PanelMenu
         Me.PanelMenu.Size = New System.Drawing.Size(221, 665)
         Me.PanelMenu.TabIndex = 3
         '
@@ -155,7 +154,7 @@ Partial Class frmMainPage
         Me.IconButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.IconButton4.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.IconButton4.ForeColor = System.Drawing.Color.White
-        Me.IconButton4.IconChar = FontAwesome.Sharp.IconChar.SignOutAlt
+        Me.IconButton4.IconChar = FontAwesome.Sharp.IconChar.RightFromBracket
         Me.IconButton4.IconColor = System.Drawing.Color.White
         Me.IconButton4.IconFont = FontAwesome.Sharp.IconFont.[Auto]
         Me.IconButton4.IconSize = 30
@@ -302,7 +301,6 @@ Partial Class frmMainPage
         Me.Guna2Panel2.FillColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(88, Byte), Integer))
         Me.Guna2Panel2.Location = New System.Drawing.Point(221, 0)
         Me.Guna2Panel2.Name = "Guna2Panel2"
-        Me.Guna2Panel2.ShadowDecoration.Parent = Me.Guna2Panel2
         Me.Guna2Panel2.Size = New System.Drawing.Size(893, 48)
         Me.Guna2Panel2.TabIndex = 4
         '
@@ -324,10 +322,10 @@ Partial Class frmMainPage
         Me.ProfilePicture.BackColor = System.Drawing.Color.Transparent
         Me.ProfilePicture.Cursor = System.Windows.Forms.Cursors.Hand
         Me.ProfilePicture.Image = CType(resources.GetObject("ProfilePicture.Image"), System.Drawing.Image)
+        Me.ProfilePicture.ImageRotate = 0!
         Me.ProfilePicture.Location = New System.Drawing.Point(811, 3)
         Me.ProfilePicture.Name = "ProfilePicture"
         Me.ProfilePicture.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
-        Me.ProfilePicture.ShadowDecoration.Parent = Me.ProfilePicture
         Me.ProfilePicture.Size = New System.Drawing.Size(40, 39)
         Me.ProfilePicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.ProfilePicture.TabIndex = 0
@@ -342,7 +340,7 @@ Partial Class frmMainPage
         Me.IconButton7.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.IconButton7.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.IconButton7.ForeColor = System.Drawing.Color.White
-        Me.IconButton7.IconChar = FontAwesome.Sharp.IconChar.Times
+        Me.IconButton7.IconChar = FontAwesome.Sharp.IconChar.Multiply
         Me.IconButton7.IconColor = System.Drawing.Color.White
         Me.IconButton7.IconFont = FontAwesome.Sharp.IconFont.[Auto]
         Me.IconButton7.IconSize = 30
