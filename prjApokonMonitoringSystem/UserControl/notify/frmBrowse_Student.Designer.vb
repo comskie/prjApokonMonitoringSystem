@@ -22,9 +22,9 @@ Partial Class frmBrowse_Student
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmBrowse_Student))
         Me.Guna2ShadowPanel1 = New Guna.UI2.WinForms.Guna2ShadowPanel()
         Me.dgvStudent = New Guna.UI2.WinForms.Guna2DataGridView()
@@ -53,32 +53,32 @@ Partial Class frmBrowse_Student
         'dgvStudent
         '
         Me.dgvStudent.AllowUserToAddRows = False
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.White
-        Me.dgvStudent.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.White
+        Me.dgvStudent.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle4
         Me.dgvStudent.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgvStudent.BackgroundColor = System.Drawing.Color.White
         Me.dgvStudent.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dgvStudent.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
         Me.dgvStudent.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI", 10.5!)
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvStudent.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Segoe UI", 10.5!)
+        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvStudent.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
         Me.dgvStudent.ColumnHeadersHeight = 50
         Me.dgvStudent.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.dgvStudent.Cursor = System.Windows.Forms.Cursors.Hand
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI", 10.5!)
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvStudent.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle6.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Segoe UI", 10.5!)
+        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvStudent.DefaultCellStyle = DataGridViewCellStyle6
         Me.dgvStudent.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgvStudent.EnableHeadersVisualStyles = False
         Me.dgvStudent.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
@@ -90,7 +90,6 @@ Partial Class frmBrowse_Student
         Me.dgvStudent.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvStudent.Size = New System.Drawing.Size(862, 439)
         Me.dgvStudent.TabIndex = 0
-        Me.dgvStudent.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.[Default]
         Me.dgvStudent.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
         Me.dgvStudent.ThemeStyle.AlternatingRowsStyle.Font = Nothing
         Me.dgvStudent.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty
@@ -134,14 +133,10 @@ Partial Class frmBrowse_Student
         'btnSearch
         '
         Me.btnSearch.BorderRadius = 10
-        Me.btnSearch.CheckedState.Parent = Me.btnSearch
-        Me.btnSearch.CustomImages.Parent = Me.btnSearch
         Me.btnSearch.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSearch.ForeColor = System.Drawing.Color.White
-        Me.btnSearch.HoverState.Parent = Me.btnSearch
         Me.btnSearch.Location = New System.Drawing.Point(791, 23)
         Me.btnSearch.Name = "btnSearch"
-        Me.btnSearch.ShadowDecoration.Parent = Me.btnSearch
         Me.btnSearch.Size = New System.Drawing.Size(86, 36)
         Me.btnSearch.TabIndex = 38
         Me.btnSearch.Text = "Search"
@@ -162,17 +157,13 @@ Partial Class frmBrowse_Student
         Me.cmbGender.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
         Me.cmbGender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbGender.FocusedColor = System.Drawing.Color.Empty
-        Me.cmbGender.FocusedState.Parent = Me.cmbGender
         Me.cmbGender.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmbGender.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
         Me.cmbGender.FormattingEnabled = True
-        Me.cmbGender.HoverState.Parent = Me.cmbGender
         Me.cmbGender.ItemHeight = 30
         Me.cmbGender.Items.AddRange(New Object() {"Male", "Female"})
-        Me.cmbGender.ItemsAppearance.Parent = Me.cmbGender
         Me.cmbGender.Location = New System.Drawing.Point(592, 23)
         Me.cmbGender.Name = "cmbGender"
-        Me.cmbGender.ShadowDecoration.Parent = Me.cmbGender
         Me.cmbGender.Size = New System.Drawing.Size(187, 36)
         Me.cmbGender.StartIndex = 0
         Me.cmbGender.TabIndex = 36
@@ -193,17 +184,13 @@ Partial Class frmBrowse_Student
         Me.cmbFilter.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
         Me.cmbFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbFilter.FocusedColor = System.Drawing.Color.Empty
-        Me.cmbFilter.FocusedState.Parent = Me.cmbFilter
-        Me.cmbFilter.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmbFilter.Font = New System.Drawing.Font("Century Gothic", 9.75!)
         Me.cmbFilter.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
         Me.cmbFilter.FormattingEnabled = True
-        Me.cmbFilter.HoverState.Parent = Me.cmbFilter
         Me.cmbFilter.ItemHeight = 30
-        Me.cmbFilter.Items.AddRange(New Object() {"All", "By Name", "By Gender", "By LRN"})
-        Me.cmbFilter.ItemsAppearance.Parent = Me.cmbFilter
+        Me.cmbFilter.Items.AddRange(New Object() {"All", "By Name", "By Gender", "By LRN", "By Section"})
         Me.cmbFilter.Location = New System.Drawing.Point(15, 23)
         Me.cmbFilter.Name = "cmbFilter"
-        Me.cmbFilter.ShadowDecoration.Parent = Me.cmbFilter
         Me.cmbFilter.Size = New System.Drawing.Size(187, 36)
         Me.cmbFilter.StartIndex = 0
         Me.cmbFilter.TabIndex = 34
@@ -216,21 +203,17 @@ Partial Class frmBrowse_Student
         Me.txtSearchBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
         Me.txtSearchBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
         Me.txtSearchBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtSearchBox.DisabledState.Parent = Me.txtSearchBox
         Me.txtSearchBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txtSearchBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtSearchBox.FocusedState.Parent = Me.txtSearchBox
         Me.txtSearchBox.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtSearchBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtSearchBox.HoverState.Parent = Me.txtSearchBox
         Me.txtSearchBox.IconLeft = CType(resources.GetObject("txtSearchBox.IconLeft"), System.Drawing.Image)
         Me.txtSearchBox.Location = New System.Drawing.Point(210, 23)
-        Me.txtSearchBox.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.txtSearchBox.Margin = New System.Windows.Forms.Padding(5)
         Me.txtSearchBox.Name = "txtSearchBox"
         Me.txtSearchBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtSearchBox.PlaceholderText = "Search..."
         Me.txtSearchBox.SelectedText = ""
-        Me.txtSearchBox.ShadowDecoration.Parent = Me.txtSearchBox
         Me.txtSearchBox.Size = New System.Drawing.Size(374, 36)
         Me.txtSearchBox.TabIndex = 32
         '

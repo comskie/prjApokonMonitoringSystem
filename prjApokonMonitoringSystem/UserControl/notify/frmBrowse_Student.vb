@@ -59,6 +59,8 @@ Public Class frmBrowse_Student
                 comm = New MySqlCommand("SELECT * FROM tbl_student WHERE gender = '" & cmbGender.Text & "'", conn)
             ElseIf cmbFilter.Text = "By LRN" Then
                 comm = New MySqlCommand("SELECT * FROM tbl_student WHERE lrn LIKE '%" + txtSearchBox.Text + "%'", conn)
+            ElseIf cmbFilter.Text = "By Section" Then
+                comm = New MySqlCommand("SELECT * FROM tbl_student WHERE section LIKE '%" + txtSearchBox.Text + "%'", conn)
             End If
 
             Dim da As New MySqlDataAdapter
@@ -72,7 +74,6 @@ Public Class frmBrowse_Student
             imgColumn.ImageLayout = DataGridViewImageCellLayout.Stretch
 
         Catch ex As Exception
-            MsgBox(ex.Message)
         End Try
         conn.Close()
     End Sub
@@ -83,5 +84,43 @@ Public Class frmBrowse_Student
 
     Private Sub frmBrowse_Student_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
         Me.Close()
+    End Sub
+
+    Private Sub cmbFilter_SelectedValueChanged(sender As Object, e As EventArgs) Handles cmbFilter.SelectedValueChanged
+        If cmbFilter.Text = "All" Then
+            txtSearchBox.Enabled = False
+            cmbGender.Enabled = False
+            txtSearchBox.Clear()
+        ElseIf cmbFilter.Text = "By Name" Or cmbFilter.Text = "By Section" Then
+            cmbGender.Enabled = False
+            txtSearchBox.Enabled = True
+        ElseIf cmbFilter.Text = "By Gender" Then
+            cmbGender.Enabled = True
+            txtSearchBox.Enabled = False
+            txtSearchBox.Clear()
+        ElseIf cmbFilter.Text = "By LRN" Then
+            cmbGender.Enabled = False
+            txtSearchBox.Enabled = True
+        End If
+    End Sub
+
+    Private Sub chkboxAutoSearch_CheckedChanged(sender As Object, e As EventArgs) Handles chkboxAutoSearch.CheckedChanged
+        If chkboxAutoSearch.Checked = True Then
+            btnSearch.Enabled = False
+        Else
+            btnSearch.Enabled = True
+        End If
+    End Sub
+
+    Private Sub txtSearchBox_TextChanged(sender As Object, e As EventArgs) Handles txtSearchBox.TextChanged
+        If chkboxAutoSearch.Checked = True Then
+            filteredSearch()
+        End If
+    End Sub
+
+    Private Sub cmbGender_SelectedValueChanged(sender As Object, e As EventArgs) Handles cmbGender.SelectedValueChanged
+        If chkboxAutoSearch.Checked = True Then
+            filteredSearch()
+        End If
     End Sub
 End Class

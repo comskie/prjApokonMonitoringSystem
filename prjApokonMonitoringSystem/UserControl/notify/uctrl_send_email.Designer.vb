@@ -50,20 +50,17 @@ Partial Class uctrl_send_email
         Me.txtLRN.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
         Me.txtLRN.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
         Me.txtLRN.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtLRN.DisabledState.Parent = Me.txtLRN
         Me.txtLRN.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txtLRN.Enabled = False
         Me.txtLRN.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtLRN.FocusedState.Parent = Me.txtLRN
+        Me.txtLRN.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.txtLRN.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtLRN.HoverState.Parent = Me.txtLRN
         Me.txtLRN.Location = New System.Drawing.Point(169, 59)
         Me.txtLRN.Margin = New System.Windows.Forms.Padding(6, 3, 6, 3)
         Me.txtLRN.Name = "txtLRN"
         Me.txtLRN.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtLRN.PlaceholderText = ""
         Me.txtLRN.SelectedText = ""
-        Me.txtLRN.ShadowDecoration.Parent = Me.txtLRN
         Me.txtLRN.Size = New System.Drawing.Size(272, 30)
         Me.txtLRN.TabIndex = 0
         '
@@ -82,14 +79,10 @@ Partial Class uctrl_send_email
         Me.Guna2Button1.Animated = True
         Me.Guna2Button1.AutoRoundedCorners = True
         Me.Guna2Button1.BorderRadius = 14
-        Me.Guna2Button1.CheckedState.Parent = Me.Guna2Button1
-        Me.Guna2Button1.CustomImages.Parent = Me.Guna2Button1
         Me.Guna2Button1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.Guna2Button1.ForeColor = System.Drawing.Color.White
-        Me.Guna2Button1.HoverState.Parent = Me.Guna2Button1
         Me.Guna2Button1.Location = New System.Drawing.Point(463, 59)
         Me.Guna2Button1.Name = "Guna2Button1"
-        Me.Guna2Button1.ShadowDecoration.Parent = Me.Guna2Button1
         Me.Guna2Button1.Size = New System.Drawing.Size(86, 30)
         Me.Guna2Button1.TabIndex = 14
         Me.Guna2Button1.Text = "Browse"
@@ -108,7 +101,6 @@ Partial Class uctrl_send_email
         Me.Guna2GroupBox1.ForeColor = System.Drawing.Color.White
         Me.Guna2GroupBox1.Location = New System.Drawing.Point(14, 16)
         Me.Guna2GroupBox1.Name = "Guna2GroupBox1"
-        Me.Guna2GroupBox1.ShadowDecoration.Parent = Me.Guna2GroupBox1
         Me.Guna2GroupBox1.Size = New System.Drawing.Size(854, 220)
         Me.Guna2GroupBox1.TabIndex = 1
         Me.Guna2GroupBox1.Text = "Student Information"
@@ -130,20 +122,17 @@ Partial Class uctrl_send_email
         Me.txtName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
         Me.txtName.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
         Me.txtName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtName.DisabledState.Parent = Me.txtName
         Me.txtName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txtName.Enabled = False
         Me.txtName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtName.FocusedState.Parent = Me.txtName
+        Me.txtName.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.txtName.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtName.HoverState.Parent = Me.txtName
         Me.txtName.Location = New System.Drawing.Point(170, 98)
         Me.txtName.Margin = New System.Windows.Forms.Padding(7, 3, 7, 3)
         Me.txtName.Name = "txtName"
         Me.txtName.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtName.PlaceholderText = ""
         Me.txtName.SelectedText = ""
-        Me.txtName.ShadowDecoration.Parent = Me.txtName
         Me.txtName.Size = New System.Drawing.Size(271, 32)
         Me.txtName.TabIndex = 17
         '
@@ -164,20 +153,17 @@ Partial Class uctrl_send_email
         Me.txtEmail.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
         Me.txtEmail.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
         Me.txtEmail.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtEmail.DisabledState.Parent = Me.txtEmail
         Me.txtEmail.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txtEmail.Enabled = False
         Me.txtEmail.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtEmail.FocusedState.Parent = Me.txtEmail
+        Me.txtEmail.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.txtEmail.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtEmail.HoverState.Parent = Me.txtEmail
         Me.txtEmail.Location = New System.Drawing.Point(169, 143)
         Me.txtEmail.Margin = New System.Windows.Forms.Padding(7, 3, 7, 3)
         Me.txtEmail.Name = "txtEmail"
         Me.txtEmail.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtEmail.PlaceholderText = ""
         Me.txtEmail.SelectedText = ""
-        Me.txtEmail.ShadowDecoration.Parent = Me.txtEmail
         Me.txtEmail.Size = New System.Drawing.Size(272, 35)
         Me.txtEmail.TabIndex = 15
         '
@@ -194,7 +180,6 @@ Partial Class uctrl_send_email
         Me.Guna2GroupBox2.ForeColor = System.Drawing.Color.White
         Me.Guna2GroupBox2.Location = New System.Drawing.Point(14, 242)
         Me.Guna2GroupBox2.Name = "Guna2GroupBox2"
-        Me.Guna2GroupBox2.ShadowDecoration.Parent = Me.Guna2GroupBox2
         Me.Guna2GroupBox2.Size = New System.Drawing.Size(854, 277)
         Me.Guna2GroupBox2.TabIndex = 2
         Me.Guna2GroupBox2.Text = "Email Content"
@@ -206,20 +191,17 @@ Partial Class uctrl_send_email
         Me.txtAttachment.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
         Me.txtAttachment.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
         Me.txtAttachment.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtAttachment.DisabledState.Parent = Me.txtAttachment
         Me.txtAttachment.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txtAttachment.Enabled = False
         Me.txtAttachment.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtAttachment.FocusedState.Parent = Me.txtAttachment
+        Me.txtAttachment.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.txtAttachment.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtAttachment.HoverState.Parent = Me.txtAttachment
         Me.txtAttachment.Location = New System.Drawing.Point(169, 229)
         Me.txtAttachment.Margin = New System.Windows.Forms.Padding(9, 3, 9, 3)
         Me.txtAttachment.Name = "txtAttachment"
         Me.txtAttachment.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtAttachment.PlaceholderText = ""
         Me.txtAttachment.SelectedText = ""
-        Me.txtAttachment.ShadowDecoration.Parent = Me.txtAttachment
         Me.txtAttachment.Size = New System.Drawing.Size(272, 30)
         Me.txtAttachment.TabIndex = 24
         '
@@ -228,15 +210,11 @@ Partial Class uctrl_send_email
         Me.Guna2Button2.Animated = True
         Me.Guna2Button2.AutoRoundedCorners = True
         Me.Guna2Button2.BorderRadius = 14
-        Me.Guna2Button2.CheckedState.Parent = Me.Guna2Button2
-        Me.Guna2Button2.CustomImages.Parent = Me.Guna2Button2
         Me.Guna2Button2.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.Guna2Button2.ForeColor = System.Drawing.Color.White
-        Me.Guna2Button2.HoverState.Parent = Me.Guna2Button2
-        Me.Guna2Button2.Location = New System.Drawing.Point(61, 229)
+        Me.Guna2Button2.Location = New System.Drawing.Point(41, 229)
         Me.Guna2Button2.Name = "Guna2Button2"
-        Me.Guna2Button2.ShadowDecoration.Parent = Me.Guna2Button2
-        Me.Guna2Button2.Size = New System.Drawing.Size(86, 30)
+        Me.Guna2Button2.Size = New System.Drawing.Size(106, 30)
         Me.Guna2Button2.TabIndex = 23
         Me.Guna2Button2.Text = "Attachment"
         '
@@ -257,13 +235,11 @@ Partial Class uctrl_send_email
         Me.txtBody.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
         Me.txtBody.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
         Me.txtBody.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtBody.DisabledState.Parent = Me.txtBody
         Me.txtBody.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txtBody.Enabled = False
         Me.txtBody.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtBody.FocusedState.Parent = Me.txtBody
+        Me.txtBody.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.txtBody.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtBody.HoverState.Parent = Me.txtBody
         Me.txtBody.Location = New System.Drawing.Point(170, 97)
         Me.txtBody.Margin = New System.Windows.Forms.Padding(9, 3, 9, 3)
         Me.txtBody.Multiline = True
@@ -271,7 +247,6 @@ Partial Class uctrl_send_email
         Me.txtBody.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtBody.PlaceholderText = ""
         Me.txtBody.SelectedText = ""
-        Me.txtBody.ShadowDecoration.Parent = Me.txtBody
         Me.txtBody.Size = New System.Drawing.Size(360, 114)
         Me.txtBody.TabIndex = 19
         '
@@ -292,20 +267,17 @@ Partial Class uctrl_send_email
         Me.txtSubject.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
         Me.txtSubject.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
         Me.txtSubject.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtSubject.DisabledState.Parent = Me.txtSubject
         Me.txtSubject.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txtSubject.Enabled = False
         Me.txtSubject.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtSubject.FocusedState.Parent = Me.txtSubject
+        Me.txtSubject.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.txtSubject.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtSubject.HoverState.Parent = Me.txtSubject
         Me.txtSubject.Location = New System.Drawing.Point(169, 52)
         Me.txtSubject.Margin = New System.Windows.Forms.Padding(8, 3, 8, 3)
         Me.txtSubject.Name = "txtSubject"
         Me.txtSubject.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtSubject.PlaceholderText = ""
         Me.txtSubject.SelectedText = ""
-        Me.txtSubject.ShadowDecoration.Parent = Me.txtSubject
         Me.txtSubject.Size = New System.Drawing.Size(271, 39)
         Me.txtSubject.TabIndex = 17
         '
@@ -319,14 +291,10 @@ Partial Class uctrl_send_email
         Me.btnSend.Animated = True
         Me.btnSend.AutoRoundedCorners = True
         Me.btnSend.BorderRadius = 14
-        Me.btnSend.CheckedState.Parent = Me.btnSend
-        Me.btnSend.CustomImages.Parent = Me.btnSend
         Me.btnSend.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.btnSend.ForeColor = System.Drawing.Color.White
-        Me.btnSend.HoverState.Parent = Me.btnSend
         Me.btnSend.Location = New System.Drawing.Point(382, 530)
         Me.btnSend.Name = "btnSend"
-        Me.btnSend.ShadowDecoration.Parent = Me.btnSend
         Me.btnSend.Size = New System.Drawing.Size(162, 30)
         Me.btnSend.TabIndex = 25
         Me.btnSend.Text = "Send"
