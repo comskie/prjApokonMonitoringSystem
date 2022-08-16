@@ -115,8 +115,12 @@ Public Class uctrl_student_list
                 End With
                 displayStudent()
             ElseIf colName = "action_delete" Then
-                deleteStudent(selectedRow.Cells(4).Value.ToString)
-                displayStudent()
+                Dim dialogResult As DialogResult = MessageBox.Show("Do you want to delete this student?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+                If dialogResult = DialogResult.Yes Then
+                    deleteStudent(selectedRow.Cells(4).Value.ToString)
+                    displayStudent()
+                End If
+
             End If
         Catch ex As Exception
 

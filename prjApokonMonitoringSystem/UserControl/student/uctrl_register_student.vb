@@ -3,53 +3,65 @@ Imports System.IO
 Imports QRCoder
 Public Class uctrl_register_student
     Private Sub Guna2Button3_Click(sender As Object, e As EventArgs) Handles Guna2Button3.Click
-        Dim ms As New MemoryStream
-        ProfileContainer.BackgroundImage.Save(ms, ProfileContainer.BackgroundImage.RawFormat)
-        Try
-            conn.Open()
-            comm = New MySqlCommand("INSERT INTO tbl_student(lrn, fname, mname, lname, gender, address, parent_name, contact_number, email_address, display_picture, section) VALUES (@slrn, @sfname, @smname, @slname, @sgender, @saddress, @spname, @scnum, @seaddm, @sdp, @ssection)", conn)
-            comm.Parameters.Add("@slrn", MySqlDbType.VarChar).Value = txtLRN.Text
-            comm.Parameters.Add("@sfname", MySqlDbType.VarChar).Value = txtFname.Text
-            comm.Parameters.Add("@smname", MySqlDbType.VarChar).Value = txtMname.Text
-            comm.Parameters.Add("@slname", MySqlDbType.VarChar).Value = txtLname.Text
-            comm.Parameters.Add("@sgender", MySqlDbType.VarChar).Value = cmbGender.Text
-            comm.Parameters.Add("@saddress", MySqlDbType.VarChar).Value = txtAddress.Text
-            comm.Parameters.Add("@spname", MySqlDbType.VarChar).Value = txtParent.Text
-            comm.Parameters.Add("@scnum", MySqlDbType.VarChar).Value = txtContactNo.Text
-            comm.Parameters.Add("@seaddm", MySqlDbType.VarChar).Value = txtEmail.Text
-            comm.Parameters.Add("@sdp", MySqlDbType.LongBlob).Value = ms.ToArray()
-            comm.Parameters.Add("@ssection", MySqlDbType.VarChar).Value = txtSection.Text
+        Dim dialogResult As DialogResult = MessageBox.Show("Do you want to register this student?", "Edit", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        If dialogResult = DialogResult.Yes And ValidateInputs() Then
+            Dim ms As New MemoryStream
+            ProfileContainer.BackgroundImage.Save(ms, ProfileContainer.BackgroundImage.RawFormat)
+            Try
+                conn.Open()
+                comm = New MySqlCommand("INSERT INTO tbl_student(lrn, fname, mname, lname, gender, address, parent_name, contact_number, email_address, display_picture, section) VALUES (@slrn, @sfname, @smname, @slname, @sgender, @saddress, @spname, @scnum, @seaddm, @sdp, @ssection)", conn)
+                comm.Parameters.Add("@slrn", MySqlDbType.VarChar).Value = txtLRN.Text
+                comm.Parameters.Add("@sfname", MySqlDbType.VarChar).Value = txtFname.Text
+                comm.Parameters.Add("@smname", MySqlDbType.VarChar).Value = txtMname.Text
+                comm.Parameters.Add("@slname", MySqlDbType.VarChar).Value = txtLname.Text
+                comm.Parameters.Add("@sgender", MySqlDbType.VarChar).Value = cmbGender.Text
+                comm.Parameters.Add("@saddress", MySqlDbType.VarChar).Value = txtAddress.Text
+                comm.Parameters.Add("@spname", MySqlDbType.VarChar).Value = txtParent.Text
+                comm.Parameters.Add("@scnum", MySqlDbType.VarChar).Value = txtContactNo.Text
+                comm.Parameters.Add("@seaddm", MySqlDbType.VarChar).Value = txtEmail.Text
+                comm.Parameters.Add("@sdp", MySqlDbType.LongBlob).Value = ms.ToArray()
+                comm.Parameters.Add("@ssection", MySqlDbType.VarChar).Value = txtSection.Text
 
-            With frm_student_id
-                .nameContainer.Text = txtFname.Text & " " & txtMname.Text & " " & txtLname.Text
-                .lrnContainer.Text = txtLRN.Text
-                .genderContainer.Text = cmbGender.Text
-                .addressContainer.Text = txtAddress.Text
-                .QRBox.Image = QRGenerate.BackgroundImage
-                .Profile.Image = ProfileContainer.BackgroundImage
-                .sectionContainer.Text = txtSection.Text
-                .ShowDialog()
-            End With
+                With frm_student_id
+                    .nameContainer.Text = txtFname.Text & " " & txtMname.Text & " " & txtLname.Text
+                    .lrnContainer.Text = txtLRN.Text
+                    .genderContainer.Text = cmbGender.Text
+                    .addressContainer.Text = txtAddress.Text
+                    .QRBox.Image = QRGenerate.BackgroundImage
+                    .Profile.Image = ProfileContainer.BackgroundImage
+                    .sectionContainer.Text = txtSection.Text
+                    .ShowDialog()
+                End With
 
-            adapter = New MySqlDataAdapter(comm)
-            comm.ExecuteNonQuery()
+                adapter = New MySqlDataAdapter(comm)
+                comm.ExecuteNonQuery()
 
-            MessageBox.Show("Record inserted")
+                MessageBox.Show("Record inserted")
 
-            Dim attachment As System.Net.Mail.Attachment
-            attachment = New System.Net.Mail.Attachment(Application.StartupPath & "\student_id\" & txtLRN.Text & ".png")
-            SendMail(txtEmail.Text, "Apokon Monitoring System Registration", "Hello there " & txtParent.Text & "! " & txtFname.Text & " have successfully registered in Apokon Monitoring System. Please download the attached Digital QR ID which will be used upon entering and leaving the institution. Thank you!", txtLRN.Text, attachment)
+                Dim attachment As System.Net.Mail.Attachment
+                attachment = New System.Net.Mail.Attachment(Application.StartupPath & "\student_id\" & txtLRN.Text & ".png")
+                SendMail(txtEmail.Text, "Apokon Monitoring System Registration", "Hello there " & txtParent.Text & "! " & txtFname.Text & " have successfully registered in Apokon Monitoring System. Please download the attached Digital QR ID which will be used upon entering and leaving the institution. Thank you!", txtLRN.Text, attachment)
 
+                conn.Close()
+            Catch ex As Exception
+                conn.Close()
+                MessageBox.Show(ex.Message)
+            Finally
+                conn.Dispose()
+            End Try
             conn.Close()
-        Catch ex As Exception
-            conn.Close()
-            MessageBox.Show(ex.Message)
-        Finally
-            conn.Dispose()
-        End Try
-        conn.Close()
-        ClearText()
+            ClearText()
+        End If
     End Sub
+
+    Private Function ValidateInputs() As Boolean
+        If txtFname.Text = String.Empty Or txtLname.Text = String.Empty Or txtAddress.Text = String.Empty Or cmbGender.Text = String.Empty Or txtSection.Text = String.Empty Or txtParent.Text Or txtContactNo.Text Or txtEmail.Text Then
+            MessageBox.Show("Please fill in the textbox.")
+            Return False
+        Else
+            Return True
+        End If
+    End Function
 
     Private Sub ClearText()
         txtEmail.Clear()

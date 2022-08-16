@@ -40,13 +40,13 @@ Partial Class frm_edit_teacher
         Me.txtContactNo = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Guna2Button3 = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2GroupBox1 = New Guna.UI2.WinForms.Guna2GroupBox()
+        Me.txtPrevious = New System.Windows.Forms.Label()
+        Me.Label11 = New System.Windows.Forms.Label()
         Me.txtAccountID = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.txtID = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.txtPrevious = New System.Windows.Forms.Label()
         Me.Guna2GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -293,7 +293,7 @@ Partial Class frm_edit_teacher
         Me.Guna2Button3.BorderRadius = 21
         Me.Guna2Button3.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.Guna2Button3.ForeColor = System.Drawing.Color.White
-        Me.Guna2Button3.Location = New System.Drawing.Point(413, 456)
+        Me.Guna2Button3.Location = New System.Drawing.Point(367, 460)
         Me.Guna2Button3.Name = "Guna2Button3"
         Me.Guna2Button3.Size = New System.Drawing.Size(107, 45)
         Me.Guna2Button3.TabIndex = 31
@@ -332,6 +332,28 @@ Partial Class frm_edit_teacher
         Me.Guna2GroupBox1.Size = New System.Drawing.Size(854, 429)
         Me.Guna2GroupBox1.TabIndex = 30
         Me.Guna2GroupBox1.Text = "Teacher Information"
+        '
+        'txtPrevious
+        '
+        Me.txtPrevious.AutoSize = True
+        Me.txtPrevious.ForeColor = System.Drawing.Color.Black
+        Me.txtPrevious.Location = New System.Drawing.Point(521, 190)
+        Me.txtPrevious.Name = "txtPrevious"
+        Me.txtPrevious.Size = New System.Drawing.Size(55, 15)
+        Me.txtPrevious.TabIndex = 43
+        Me.txtPrevious.Text = "[no data]"
+        Me.txtPrevious.Visible = False
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.ForeColor = System.Drawing.Color.Black
+        Me.Label11.Location = New System.Drawing.Point(391, 190)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(111, 15)
+        Me.Label11.TabIndex = 42
+        Me.Label11.Text = "Previous Username:"
+        Me.Label11.Visible = False
         '
         'txtAccountID
         '
@@ -381,28 +403,6 @@ Partial Class frm_edit_teacher
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(0, 15)
         Me.Label3.TabIndex = 5
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.ForeColor = System.Drawing.Color.Black
-        Me.Label11.Location = New System.Drawing.Point(391, 190)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(111, 15)
-        Me.Label11.TabIndex = 42
-        Me.Label11.Text = "Previous Username:"
-        Me.Label11.Visible = False
-        '
-        'txtPrevious
-        '
-        Me.txtPrevious.AutoSize = True
-        Me.txtPrevious.ForeColor = System.Drawing.Color.Black
-        Me.txtPrevious.Location = New System.Drawing.Point(521, 190)
-        Me.txtPrevious.Name = "txtPrevious"
-        Me.txtPrevious.Size = New System.Drawing.Size(55, 15)
-        Me.txtPrevious.TabIndex = 43
-        Me.txtPrevious.Text = "[no data]"
-        Me.txtPrevious.Visible = False
         '
         'frm_edit_teacher
         '

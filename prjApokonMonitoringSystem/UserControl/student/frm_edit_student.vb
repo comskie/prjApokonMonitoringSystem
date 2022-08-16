@@ -32,36 +32,48 @@ Public Class frm_edit_student
     End Sub
 
     Private Sub Guna2Button3_Click(sender As Object, e As EventArgs) Handles Guna2Button3.Click
-        Dim ms As New MemoryStream
-        ProfileContainer.BackgroundImage.Save(ms, ProfileContainer.BackgroundImage.RawFormat)
-        Try
-            conn.Open()
-            comm = New MySqlCommand("UPDATE tbl_student SET lrn=@slrn, fname=@sfname, mname=@smname, lname=@slname, gender=@sgender, address=@saddress, parent_name=@spname, contact_number=@scnum, email_address=@seaddm, display_picture=@sdp, section=@ssection WHERE id='" & txtID.Text & "'", conn)
-            comm.Parameters.Add("@slrn", MySqlDbType.VarChar).Value = txtLRN.Text
-            comm.Parameters.Add("@sfname", MySqlDbType.VarChar).Value = txtFname.Text
-            comm.Parameters.Add("@smname", MySqlDbType.VarChar).Value = txtMname.Text
-            comm.Parameters.Add("@slname", MySqlDbType.VarChar).Value = txtLname.Text
-            comm.Parameters.Add("@sgender", MySqlDbType.VarChar).Value = cmbGender.Text
-            comm.Parameters.Add("@saddress", MySqlDbType.VarChar).Value = txtAddress.Text
-            comm.Parameters.Add("@spname", MySqlDbType.VarChar).Value = txtParent.Text
-            comm.Parameters.Add("@scnum", MySqlDbType.VarChar).Value = txtContactNo.Text
-            comm.Parameters.Add("@seaddm", MySqlDbType.VarChar).Value = txtEmail.Text
-            comm.Parameters.Add("@sdp", MySqlDbType.LongBlob).Value = ms.ToArray()
-            comm.Parameters.Add("@ssection", MySqlDbType.VarChar).Value = txtSection.Text
+        Dim dialogResult As DialogResult = MessageBox.Show("Do you want to edit this student?", "Edit", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        If dialogResult = DialogResult.Yes And ValidateInputs() Then
+            Dim ms As New MemoryStream
+            ProfileContainer.BackgroundImage.Save(ms, ProfileContainer.BackgroundImage.RawFormat)
+            Try
+                conn.Open()
+                comm = New MySqlCommand("UPDATE tbl_student SET lrn=@slrn, fname=@sfname, mname=@smname, lname=@slname, gender=@sgender, address=@saddress, parent_name=@spname, contact_number=@scnum, email_address=@seaddm, display_picture=@sdp, section=@ssection WHERE id='" & txtID.Text & "'", conn)
+                comm.Parameters.Add("@slrn", MySqlDbType.VarChar).Value = txtLRN.Text
+                comm.Parameters.Add("@sfname", MySqlDbType.VarChar).Value = txtFname.Text
+                comm.Parameters.Add("@smname", MySqlDbType.VarChar).Value = txtMname.Text
+                comm.Parameters.Add("@slname", MySqlDbType.VarChar).Value = txtLname.Text
+                comm.Parameters.Add("@sgender", MySqlDbType.VarChar).Value = cmbGender.Text
+                comm.Parameters.Add("@saddress", MySqlDbType.VarChar).Value = txtAddress.Text
+                comm.Parameters.Add("@spname", MySqlDbType.VarChar).Value = txtParent.Text
+                comm.Parameters.Add("@scnum", MySqlDbType.VarChar).Value = txtContactNo.Text
+                comm.Parameters.Add("@seaddm", MySqlDbType.VarChar).Value = txtEmail.Text
+                comm.Parameters.Add("@sdp", MySqlDbType.LongBlob).Value = ms.ToArray()
+                comm.Parameters.Add("@ssection", MySqlDbType.VarChar).Value = txtSection.Text
 
-            adapter = New MySqlDataAdapter(comm)
-            comm.ExecuteNonQuery()
-            MessageBox.Show("Record updated")
+                adapter = New MySqlDataAdapter(comm)
+                comm.ExecuteNonQuery()
+                MessageBox.Show("Record updated")
+                conn.Close()
+            Catch ex As Exception
+                conn.Close()
+                MessageBox.Show(ex.Message)
+            Finally
+                conn.Dispose()
+            End Try
             conn.Close()
-        Catch ex As Exception
-            conn.Close()
-            MessageBox.Show(ex.Message)
-        Finally
-            conn.Dispose()
-        End Try
-        conn.Close()
-        Me.Close()
+            Me.Close()
+        End If
     End Sub
+
+    Private Function ValidateInputs() As Boolean
+        If txtFname.Text = String.Empty Or txtLname.Text = String.Empty Or txtAddress.Text = String.Empty Or cmbGender.Text = String.Empty Or txtSection.Text = String.Empty Or txtParent.Text Or txtContactNo.Text Or txtEmail.Text Then
+            MessageBox.Show("Please fill in the textbox.")
+            Return False
+        Else
+            Return True
+        End If
+    End Function
 
     Private Sub Guna2Button2_Click(sender As Object, e As EventArgs) Handles Guna2Button2.Click
         Dim ofd As New OpenFileDialog

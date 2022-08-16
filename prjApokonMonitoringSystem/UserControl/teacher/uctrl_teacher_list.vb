@@ -131,8 +131,11 @@ Public Class uctrl_teacher_list
                 End With
                 displayTeacher()
             ElseIf colName = "action_delete" Then
-                deleteTeacher(selectedRow.Cells(3).Value.ToString, selectedRow.Cells(4).Value.ToString)
-                displayTeacher()
+                Dim dialogResult As DialogResult = MessageBox.Show("Do you want to delete this teacher?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+                If dialogResult = DialogResult.Yes Then
+                    deleteTeacher(selectedRow.Cells(3).Value.ToString, selectedRow.Cells(4).Value.ToString)
+                    displayTeacher()
+                End If
             End If
         Catch ex As Exception
 

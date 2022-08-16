@@ -150,8 +150,11 @@ Public Class uctrl_section_list
                 End With
                 displaySection()
             ElseIf colName = "action_delete" Then
-                deleteSection(selectedRow.Cells(3).Value.ToString)
-                displaySection()
+                Dim dialogResult As DialogResult = MessageBox.Show("Do you want to delete this section?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+                If dialogResult = DialogResult.Yes Then
+                    deleteSection(selectedRow.Cells(3).Value.ToString)
+                    displaySection()
+                End If
             End If
         Catch ex As Exception
 
