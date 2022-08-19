@@ -67,7 +67,7 @@ Public Class frm_edit_student
     End Sub
 
     Private Function ValidateInputs() As Boolean
-        If txtFname.Text = String.Empty Or txtLname.Text = String.Empty Or txtAddress.Text = String.Empty Or cmbGender.Text = String.Empty Or txtSection.Text = String.Empty Or txtParent.Text Or txtContactNo.Text Or txtEmail.Text Then
+        If txtFname.Text = String.Empty Or txtLname.Text = String.Empty Or txtAddress.Text = String.Empty Or cmbGender.Text = String.Empty Or txtSection.Text = String.Empty Or txtParent.Text = String.Empty Or txtContactNo.Text = String.Empty Or txtEmail.Text = String.Empty Then
             MessageBox.Show("Please fill in the textbox.")
             Return False
         Else

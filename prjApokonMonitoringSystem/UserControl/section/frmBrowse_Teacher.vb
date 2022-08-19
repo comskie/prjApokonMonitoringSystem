@@ -107,6 +107,7 @@ Public Class frmBrowse_Teacher
     End Sub
 
     Private Sub frmBrowse_Teacher_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
+        Me.Dispose()
         Me.Close()
     End Sub
 End Class
