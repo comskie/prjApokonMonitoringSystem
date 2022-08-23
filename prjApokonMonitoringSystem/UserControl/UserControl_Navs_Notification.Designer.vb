@@ -34,19 +34,15 @@ Partial Class UserControl_Navs_Notification
         '
         Me.Guna2Button1.Animated = True
         Me.Guna2Button1.CheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.Guna2Button1.CheckedState.Parent = Me.Guna2Button1
         Me.Guna2Button1.CustomBorderColor = System.Drawing.Color.White
         Me.Guna2Button1.CustomBorderThickness = New System.Windows.Forms.Padding(1, 1, 1, 0)
-        Me.Guna2Button1.CustomImages.Parent = Me.Guna2Button1
         Me.Guna2Button1.Dock = System.Windows.Forms.DockStyle.Left
         Me.Guna2Button1.FillColor = System.Drawing.Color.Transparent
         Me.Guna2Button1.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2Button1.ForeColor = System.Drawing.Color.Black
         Me.Guna2Button1.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Guna2Button1.HoverState.Parent = Me.Guna2Button1
         Me.Guna2Button1.Location = New System.Drawing.Point(0, 0)
         Me.Guna2Button1.Name = "Guna2Button1"
-        Me.Guna2Button1.ShadowDecoration.Parent = Me.Guna2Button1
         Me.Guna2Button1.Size = New System.Drawing.Size(180, 47)
         Me.Guna2Button1.TabIndex = 1
         Me.Guna2Button1.Text = "Notification  Logs"
@@ -60,7 +56,6 @@ Partial Class UserControl_Navs_Notification
         Me.Guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Guna2Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Guna2Panel1.Name = "Guna2Panel1"
-        Me.Guna2Panel1.ShadowDecoration.Parent = Me.Guna2Panel1
         Me.Guna2Panel1.Size = New System.Drawing.Size(893, 47)
         Me.Guna2Panel1.TabIndex = 6
         '
@@ -68,19 +63,15 @@ Partial Class UserControl_Navs_Notification
         '
         Me.Guna2Button3.Animated = True
         Me.Guna2Button3.CheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.Guna2Button3.CheckedState.Parent = Me.Guna2Button3
         Me.Guna2Button3.CustomBorderColor = System.Drawing.Color.White
         Me.Guna2Button3.CustomBorderThickness = New System.Windows.Forms.Padding(1, 1, 1, 0)
-        Me.Guna2Button3.CustomImages.Parent = Me.Guna2Button3
         Me.Guna2Button3.Dock = System.Windows.Forms.DockStyle.Left
         Me.Guna2Button3.FillColor = System.Drawing.Color.Transparent
         Me.Guna2Button3.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2Button3.ForeColor = System.Drawing.Color.Black
         Me.Guna2Button3.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Guna2Button3.HoverState.Parent = Me.Guna2Button3
         Me.Guna2Button3.Location = New System.Drawing.Point(360, 0)
         Me.Guna2Button3.Name = "Guna2Button3"
-        Me.Guna2Button3.ShadowDecoration.Parent = Me.Guna2Button3
         Me.Guna2Button3.Size = New System.Drawing.Size(180, 47)
         Me.Guna2Button3.TabIndex = 3
         Me.Guna2Button3.Text = "SMS"
@@ -89,19 +80,15 @@ Partial Class UserControl_Navs_Notification
         '
         Me.Guna2Button2.Animated = True
         Me.Guna2Button2.CheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.Guna2Button2.CheckedState.Parent = Me.Guna2Button2
         Me.Guna2Button2.CustomBorderColor = System.Drawing.Color.White
         Me.Guna2Button2.CustomBorderThickness = New System.Windows.Forms.Padding(1, 1, 1, 0)
-        Me.Guna2Button2.CustomImages.Parent = Me.Guna2Button2
         Me.Guna2Button2.Dock = System.Windows.Forms.DockStyle.Left
         Me.Guna2Button2.FillColor = System.Drawing.Color.Transparent
         Me.Guna2Button2.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2Button2.ForeColor = System.Drawing.Color.Black
         Me.Guna2Button2.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Guna2Button2.HoverState.Parent = Me.Guna2Button2
         Me.Guna2Button2.Location = New System.Drawing.Point(180, 0)
         Me.Guna2Button2.Name = "Guna2Button2"
-        Me.Guna2Button2.ShadowDecoration.Parent = Me.Guna2Button2
         Me.Guna2Button2.Size = New System.Drawing.Size(180, 47)
         Me.Guna2Button2.TabIndex = 2
         Me.Guna2Button2.Text = "Email"
@@ -111,7 +98,7 @@ Partial Class UserControl_Navs_Notification
         Me.pnlStudent.BackColor = System.Drawing.Color.White
         Me.pnlStudent.Location = New System.Drawing.Point(1, 46)
         Me.pnlStudent.Name = "pnlStudent"
-        Me.pnlStudent.Size = New System.Drawing.Size(890, 572)
+        Me.pnlStudent.Size = New System.Drawing.Size(892, 572)
         Me.pnlStudent.TabIndex = 7
         '
         'UserControl_Navs_Notification
