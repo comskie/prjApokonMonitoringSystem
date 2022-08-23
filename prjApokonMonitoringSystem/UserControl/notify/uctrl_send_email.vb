@@ -1,4 +1,5 @@
-﻿Public Class uctrl_send_email
+﻿Imports MySql.Data.MySqlClient
+Public Class uctrl_send_email
     Private Sub Guna2Button2_Click(sender As Object, e As EventArgs) Handles Guna2Button2.Click
         OpenFileDialog1.Filter = "Image Files|*.jpg;*.png" + "|Office Files|*.doc;*.xls;*.ppt;*.pdf" + "|All Files|*.*"
         txtAttachment.Text = ""
@@ -36,6 +37,7 @@
         Else
             SendMail(txtEmail.Text, txtSubject.Text, txtBody.Text, txtLRN.Text)
         End If
+        InsertToNotificationLogs("email", txtEmail.Text, txtBody.Text)
         ClearText()
     End Sub
 

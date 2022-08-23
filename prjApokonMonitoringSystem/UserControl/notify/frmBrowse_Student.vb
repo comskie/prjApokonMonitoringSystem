@@ -3,6 +3,7 @@ Public Class frmBrowse_Student
     Public slrn As String
     Public semail As String
     Public sname As String
+    Public scontact As String
     Private Sub dgvStudent_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvStudent.CellClick
         Dim colName As String = dgvStudent.Columns(e.ColumnIndex).Name
         Dim selectedRow As DataGridViewRow
@@ -15,10 +16,12 @@ Public Class frmBrowse_Student
             If dialogResult = DialogResult.Yes Then
                 slrn = selectedRow.Cells(0).Value.ToString
                 sname = selectedRow.Cells(2).Value.ToString + " " + selectedRow.Cells(3).Value.ToString + " " + selectedRow.Cells(4).Value.ToString
+                scontact = selectedRow.Cells(8).Value.ToString
                 semail = selectedRow.Cells(9).Value.ToString
                 Me.Close()
             Else
                 slrn = ""
+                scontact = ""
                 semail = ""
                 sname = ""
             End If

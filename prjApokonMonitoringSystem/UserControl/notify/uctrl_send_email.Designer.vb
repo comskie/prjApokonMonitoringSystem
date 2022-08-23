@@ -290,12 +290,12 @@ Partial Class uctrl_send_email
         '
         Me.btnSend.Animated = True
         Me.btnSend.AutoRoundedCorners = True
-        Me.btnSend.BorderRadius = 14
+        Me.btnSend.BorderRadius = 20
         Me.btnSend.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.btnSend.ForeColor = System.Drawing.Color.White
         Me.btnSend.Location = New System.Drawing.Point(382, 530)
         Me.btnSend.Name = "btnSend"
-        Me.btnSend.Size = New System.Drawing.Size(162, 30)
+        Me.btnSend.Size = New System.Drawing.Size(162, 42)
         Me.btnSend.TabIndex = 25
         Me.btnSend.Text = "Send"
         '
