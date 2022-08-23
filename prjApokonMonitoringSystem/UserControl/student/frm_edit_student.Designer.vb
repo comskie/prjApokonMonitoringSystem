@@ -25,12 +25,17 @@ Partial Class frm_edit_student
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_edit_student))
         Me.cmbGender = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.Guna2GroupBox1 = New Guna.UI2.WinForms.Guna2GroupBox()
+        Me.txtNewPath = New System.Windows.Forms.TextBox()
+        Me.txtPath = New System.Windows.Forms.TextBox()
+        Me.ProfileContainer = New System.Windows.Forms.PictureBox()
+        Me.Guna2Button5 = New Guna.UI2.WinForms.Guna2Button()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.txtSection = New Guna.UI2.WinForms.Guna2TextBox()
         Me.txtID = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.QRGenerate = New System.Windows.Forms.Panel()
         Me.Guna2Button2 = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2Button1 = New Guna.UI2.WinForms.Guna2Button()
-        Me.ProfileContainer = New System.Windows.Forms.Panel()
         Me.txtAddress = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -51,10 +56,9 @@ Partial Class frm_edit_student
         Me.Guna2GroupBox2 = New Guna.UI2.WinForms.Guna2GroupBox()
         Me.Guna2Button4 = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2Button3 = New Guna.UI2.WinForms.Guna2Button()
-        Me.Guna2Button5 = New Guna.UI2.WinForms.Guna2Button()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.txtSection = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.Guna2GroupBox1.SuspendLayout()
+        CType(Me.ProfileContainer, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Guna2GroupBox2.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -76,6 +80,9 @@ Partial Class frm_edit_student
         '
         'Guna2GroupBox1
         '
+        Me.Guna2GroupBox1.Controls.Add(Me.txtNewPath)
+        Me.Guna2GroupBox1.Controls.Add(Me.txtPath)
+        Me.Guna2GroupBox1.Controls.Add(Me.ProfileContainer)
         Me.Guna2GroupBox1.Controls.Add(Me.Guna2Button5)
         Me.Guna2GroupBox1.Controls.Add(Me.Label11)
         Me.Guna2GroupBox1.Controls.Add(Me.txtSection)
@@ -84,7 +91,6 @@ Partial Class frm_edit_student
         Me.Guna2GroupBox1.Controls.Add(Me.QRGenerate)
         Me.Guna2GroupBox1.Controls.Add(Me.Guna2Button2)
         Me.Guna2GroupBox1.Controls.Add(Me.Guna2Button1)
-        Me.Guna2GroupBox1.Controls.Add(Me.ProfileContainer)
         Me.Guna2GroupBox1.Controls.Add(Me.txtAddress)
         Me.Guna2GroupBox1.Controls.Add(Me.Label6)
         Me.Guna2GroupBox1.Controls.Add(Me.Label5)
@@ -105,6 +111,77 @@ Partial Class frm_edit_student
         Me.Guna2GroupBox1.Size = New System.Drawing.Size(854, 391)
         Me.Guna2GroupBox1.TabIndex = 4
         Me.Guna2GroupBox1.Text = "Student Information"
+        '
+        'txtNewPath
+        '
+        Me.txtNewPath.Enabled = False
+        Me.txtNewPath.Location = New System.Drawing.Point(583, 359)
+        Me.txtNewPath.Name = "txtNewPath"
+        Me.txtNewPath.Size = New System.Drawing.Size(213, 23)
+        Me.txtNewPath.TabIndex = 27
+        '
+        'txtPath
+        '
+        Me.txtPath.Enabled = False
+        Me.txtPath.Location = New System.Drawing.Point(583, 331)
+        Me.txtPath.Name = "txtPath"
+        Me.txtPath.Size = New System.Drawing.Size(213, 23)
+        Me.txtPath.TabIndex = 26
+        '
+        'ProfileContainer
+        '
+        Me.ProfileContainer.Image = CType(resources.GetObject("ProfileContainer.Image"), System.Drawing.Image)
+        Me.ProfileContainer.InitialImage = CType(resources.GetObject("ProfileContainer.InitialImage"), System.Drawing.Image)
+        Me.ProfileContainer.Location = New System.Drawing.Point(583, 71)
+        Me.ProfileContainer.Name = "ProfileContainer"
+        Me.ProfileContainer.Size = New System.Drawing.Size(220, 182)
+        Me.ProfileContainer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.ProfileContainer.TabIndex = 25
+        Me.ProfileContainer.TabStop = False
+        '
+        'Guna2Button5
+        '
+        Me.Guna2Button5.Animated = True
+        Me.Guna2Button5.AutoRoundedCorners = True
+        Me.Guna2Button5.BorderRadius = 16
+        Me.Guna2Button5.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.Guna2Button5.ForeColor = System.Drawing.Color.White
+        Me.Guna2Button5.Location = New System.Drawing.Point(312, 348)
+        Me.Guna2Button5.Name = "Guna2Button5"
+        Me.Guna2Button5.Size = New System.Drawing.Size(89, 35)
+        Me.Guna2Button5.TabIndex = 24
+        Me.Guna2Button5.Text = "Browse"
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.ForeColor = System.Drawing.Color.Black
+        Me.Label11.Location = New System.Drawing.Point(40, 359)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(49, 15)
+        Me.Label11.TabIndex = 23
+        Me.Label11.Text = "Section:"
+        '
+        'txtSection
+        '
+        Me.txtSection.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtSection.DefaultText = ""
+        Me.txtSection.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txtSection.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txtSection.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtSection.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtSection.Enabled = False
+        Me.txtSection.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtSection.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txtSection.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtSection.Location = New System.Drawing.Point(100, 348)
+        Me.txtSection.Margin = New System.Windows.Forms.Padding(8, 3, 8, 3)
+        Me.txtSection.Name = "txtSection"
+        Me.txtSection.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtSection.PlaceholderText = ""
+        Me.txtSection.SelectedText = ""
+        Me.txtSection.Size = New System.Drawing.Size(201, 36)
+        Me.txtSection.TabIndex = 22
         '
         'txtID
         '
@@ -161,16 +238,6 @@ Partial Class frm_edit_student
         Me.Guna2Button1.Size = New System.Drawing.Size(107, 45)
         Me.Guna2Button1.TabIndex = 18
         Me.Guna2Button1.Text = "Capture"
-        '
-        'ProfileContainer
-        '
-        Me.ProfileContainer.BackgroundImage = CType(resources.GetObject("ProfileContainer.BackgroundImage"), System.Drawing.Image)
-        Me.ProfileContainer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ProfileContainer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.ProfileContainer.Location = New System.Drawing.Point(582, 89)
-        Me.ProfileContainer.Name = "ProfileContainer"
-        Me.ProfileContainer.Size = New System.Drawing.Size(221, 162)
-        Me.ProfileContainer.TabIndex = 16
         '
         'txtAddress
         '
@@ -465,49 +532,9 @@ Partial Class frm_edit_student
         Me.Guna2Button3.TabIndex = 23
         Me.Guna2Button3.Text = "Save"
         '
-        'Guna2Button5
+        'OpenFileDialog1
         '
-        Me.Guna2Button5.Animated = True
-        Me.Guna2Button5.AutoRoundedCorners = True
-        Me.Guna2Button5.BorderRadius = 16
-        Me.Guna2Button5.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.Guna2Button5.ForeColor = System.Drawing.Color.White
-        Me.Guna2Button5.Location = New System.Drawing.Point(312, 348)
-        Me.Guna2Button5.Name = "Guna2Button5"
-        Me.Guna2Button5.Size = New System.Drawing.Size(89, 35)
-        Me.Guna2Button5.TabIndex = 24
-        Me.Guna2Button5.Text = "Browse"
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.ForeColor = System.Drawing.Color.Black
-        Me.Label11.Location = New System.Drawing.Point(40, 359)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(49, 15)
-        Me.Label11.TabIndex = 23
-        Me.Label11.Text = "Section:"
-        '
-        'txtSection
-        '
-        Me.txtSection.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.txtSection.DefaultText = ""
-        Me.txtSection.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.txtSection.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.txtSection.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtSection.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtSection.Enabled = False
-        Me.txtSection.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtSection.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.txtSection.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtSection.Location = New System.Drawing.Point(100, 348)
-        Me.txtSection.Margin = New System.Windows.Forms.Padding(8, 3, 8, 3)
-        Me.txtSection.Name = "txtSection"
-        Me.txtSection.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtSection.PlaceholderText = ""
-        Me.txtSection.SelectedText = ""
-        Me.txtSection.Size = New System.Drawing.Size(201, 36)
-        Me.txtSection.TabIndex = 22
+        Me.OpenFileDialog1.FileName = "OpenFileDialog1"
         '
         'frm_edit_student
         '
@@ -524,6 +551,7 @@ Partial Class frm_edit_student
         Me.Text = "Edit Student"
         Me.Guna2GroupBox1.ResumeLayout(False)
         Me.Guna2GroupBox1.PerformLayout()
+        CType(Me.ProfileContainer, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Guna2GroupBox2.ResumeLayout(False)
         Me.Guna2GroupBox2.PerformLayout()
         Me.ResumeLayout(False)
@@ -552,7 +580,6 @@ Partial Class frm_edit_student
     Friend WithEvents QRGenerate As Panel
     Friend WithEvents Guna2Button2 As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Guna2Button1 As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents ProfileContainer As Panel
     Friend WithEvents Guna2Button4 As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Guna2Button3 As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents txtID As Label
@@ -560,4 +587,8 @@ Partial Class frm_edit_student
     Friend WithEvents Guna2Button5 As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Label11 As Label
     Friend WithEvents txtSection As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents ProfileContainer As PictureBox
+    Friend WithEvents txtPath As TextBox
+    Friend WithEvents OpenFileDialog1 As OpenFileDialog
+    Friend WithEvents txtNewPath As TextBox
 End Class

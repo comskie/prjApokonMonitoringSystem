@@ -30,7 +30,6 @@ Partial Class uctrl_register_student
         Me.QRGenerate = New System.Windows.Forms.Panel()
         Me.Guna2Button2 = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2Button1 = New Guna.UI2.WinForms.Guna2Button()
-        Me.ProfileContainer = New System.Windows.Forms.Panel()
         Me.txtAddress = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -52,19 +51,24 @@ Partial Class uctrl_register_student
         Me.txtParent = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Guna2Button4 = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2Button3 = New Guna.UI2.WinForms.Guna2Button()
+        Me.ProfileContainer = New System.Windows.Forms.PictureBox()
+        Me.txtPath = New System.Windows.Forms.TextBox()
+        Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.Guna2GroupBox1.SuspendLayout()
         Me.Guna2GroupBox2.SuspendLayout()
+        CType(Me.ProfileContainer, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Guna2GroupBox1
         '
+        Me.Guna2GroupBox1.Controls.Add(Me.txtPath)
+        Me.Guna2GroupBox1.Controls.Add(Me.ProfileContainer)
         Me.Guna2GroupBox1.Controls.Add(Me.Guna2Button5)
         Me.Guna2GroupBox1.Controls.Add(Me.Label10)
         Me.Guna2GroupBox1.Controls.Add(Me.txtSection)
         Me.Guna2GroupBox1.Controls.Add(Me.QRGenerate)
         Me.Guna2GroupBox1.Controls.Add(Me.Guna2Button2)
         Me.Guna2GroupBox1.Controls.Add(Me.Guna2Button1)
-        Me.Guna2GroupBox1.Controls.Add(Me.ProfileContainer)
         Me.Guna2GroupBox1.Controls.Add(Me.txtAddress)
         Me.Guna2GroupBox1.Controls.Add(Me.Label6)
         Me.Guna2GroupBox1.Controls.Add(Me.Label5)
@@ -165,16 +169,6 @@ Partial Class uctrl_register_student
         Me.Guna2Button1.Size = New System.Drawing.Size(107, 45)
         Me.Guna2Button1.TabIndex = 14
         Me.Guna2Button1.Text = "Capture"
-        '
-        'ProfileContainer
-        '
-        Me.ProfileContainer.BackgroundImage = CType(resources.GetObject("ProfileContainer.BackgroundImage"), System.Drawing.Image)
-        Me.ProfileContainer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ProfileContainer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.ProfileContainer.Location = New System.Drawing.Point(591, 48)
-        Me.ProfileContainer.Name = "ProfileContainer"
-        Me.ProfileContainer.Size = New System.Drawing.Size(220, 181)
-        Me.ProfileContainer.TabIndex = 13
         '
         'txtAddress
         '
@@ -486,6 +480,29 @@ Partial Class uctrl_register_student
         Me.Guna2Button3.TabIndex = 16
         Me.Guna2Button3.Text = "Save"
         '
+        'ProfileContainer
+        '
+        Me.ProfileContainer.Image = CType(resources.GetObject("ProfileContainer.Image"), System.Drawing.Image)
+        Me.ProfileContainer.Location = New System.Drawing.Point(605, 48)
+        Me.ProfileContainer.Name = "ProfileContainer"
+        Me.ProfileContainer.Size = New System.Drawing.Size(206, 184)
+        Me.ProfileContainer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.ProfileContainer.TabIndex = 19
+        Me.ProfileContainer.TabStop = False
+        '
+        'txtPath
+        '
+        Me.txtPath.Enabled = False
+        Me.txtPath.Location = New System.Drawing.Point(598, 299)
+        Me.txtPath.Name = "txtPath"
+        Me.txtPath.Size = New System.Drawing.Size(213, 23)
+        Me.txtPath.TabIndex = 20
+        Me.txtPath.Visible = False
+        '
+        'OpenFileDialog1
+        '
+        Me.OpenFileDialog1.FileName = "OpenFileDialog1"
+        '
         'uctrl_register_student
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -501,6 +518,7 @@ Partial Class uctrl_register_student
         Me.Guna2GroupBox1.PerformLayout()
         Me.Guna2GroupBox2.ResumeLayout(False)
         Me.Guna2GroupBox2.PerformLayout()
+        CType(Me.ProfileContainer, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -509,7 +527,6 @@ Partial Class uctrl_register_student
     Friend WithEvents Guna2GroupBox2 As Guna.UI2.WinForms.Guna2GroupBox
     Friend WithEvents Guna2Button2 As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Guna2Button1 As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents ProfileContainer As Panel
     Friend WithEvents txtAddress As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Label6 As Label
     Friend WithEvents Label5 As Label
@@ -534,4 +551,7 @@ Partial Class uctrl_register_student
     Friend WithEvents Label10 As Label
     Friend WithEvents txtSection As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Guna2Button5 As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents ProfileContainer As PictureBox
+    Friend WithEvents txtPath As TextBox
+    Friend WithEvents OpenFileDialog1 As OpenFileDialog
 End Class

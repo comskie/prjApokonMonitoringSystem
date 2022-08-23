@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class frm_view_student
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class frm_view_student
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_view_student))
         Me.Guna2GroupBox2 = New Guna.UI2.WinForms.Guna2GroupBox()
@@ -30,7 +30,6 @@ Partial Class frm_view_student
         Me.txtContactNo = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.txtParent = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.ProfileContainer = New System.Windows.Forms.Panel()
         Me.txtAddress = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -43,13 +42,15 @@ Partial Class frm_view_student
         Me.txtFname = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Guna2GroupBox1 = New Guna.UI2.WinForms.Guna2GroupBox()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.txtSection = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Guna2Button2 = New Guna.UI2.WinForms.Guna2Button()
         Me.QRContainer = New System.Windows.Forms.Panel()
         Me.txtLRN = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.txtSection = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.ProfileContainer = New System.Windows.Forms.PictureBox()
         Me.Guna2GroupBox2.SuspendLayout()
         Me.Guna2GroupBox1.SuspendLayout()
+        CType(Me.ProfileContainer, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Guna2GroupBox2
@@ -161,16 +162,6 @@ Partial Class frm_view_student
         Me.txtParent.SelectedText = ""
         Me.txtParent.Size = New System.Drawing.Size(200, 36)
         Me.txtParent.TabIndex = 16
-        '
-        'ProfileContainer
-        '
-        Me.ProfileContainer.BackgroundImage = CType(resources.GetObject("ProfileContainer.BackgroundImage"), System.Drawing.Image)
-        Me.ProfileContainer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ProfileContainer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.ProfileContainer.Location = New System.Drawing.Point(482, 58)
-        Me.ProfileContainer.Name = "ProfileContainer"
-        Me.ProfileContainer.Size = New System.Drawing.Size(160, 143)
-        Me.ProfileContainer.TabIndex = 13
         '
         'txtAddress
         '
@@ -335,11 +326,11 @@ Partial Class frm_view_student
         '
         'Guna2GroupBox1
         '
+        Me.Guna2GroupBox1.Controls.Add(Me.ProfileContainer)
         Me.Guna2GroupBox1.Controls.Add(Me.Label10)
         Me.Guna2GroupBox1.Controls.Add(Me.txtSection)
         Me.Guna2GroupBox1.Controls.Add(Me.Guna2Button2)
         Me.Guna2GroupBox1.Controls.Add(Me.QRContainer)
-        Me.Guna2GroupBox1.Controls.Add(Me.ProfileContainer)
         Me.Guna2GroupBox1.Controls.Add(Me.txtAddress)
         Me.Guna2GroupBox1.Controls.Add(Me.Label6)
         Me.Guna2GroupBox1.Controls.Add(Me.Label5)
@@ -360,49 +351,6 @@ Partial Class frm_view_student
         Me.Guna2GroupBox1.Size = New System.Drawing.Size(854, 363)
         Me.Guna2GroupBox1.TabIndex = 2
         Me.Guna2GroupBox1.Text = "Student Information"
-        '
-        'Guna2Button2
-        '
-        Me.Guna2Button2.Animated = True
-        Me.Guna2Button2.AutoRoundedCorners = True
-        Me.Guna2Button2.BorderRadius = 21
-        Me.Guna2Button2.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.Guna2Button2.ForeColor = System.Drawing.Color.White
-        Me.Guna2Button2.Location = New System.Drawing.Point(583, 225)
-        Me.Guna2Button2.Name = "Guna2Button2"
-        Me.Guna2Button2.Size = New System.Drawing.Size(134, 45)
-        Me.Guna2Button2.TabIndex = 16
-        Me.Guna2Button2.Text = "Generate ID"
-        '
-        'QRContainer
-        '
-        Me.QRContainer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.QRContainer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.QRContainer.Location = New System.Drawing.Point(676, 58)
-        Me.QRContainer.Name = "QRContainer"
-        Me.QRContainer.Size = New System.Drawing.Size(160, 143)
-        Me.QRContainer.TabIndex = 14
-        '
-        'txtLRN
-        '
-        Me.txtLRN.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.txtLRN.DefaultText = ""
-        Me.txtLRN.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.txtLRN.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.txtLRN.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtLRN.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtLRN.Enabled = False
-        Me.txtLRN.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtLRN.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.txtLRN.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtLRN.Location = New System.Drawing.Point(105, 48)
-        Me.txtLRN.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
-        Me.txtLRN.Name = "txtLRN"
-        Me.txtLRN.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtLRN.PlaceholderText = ""
-        Me.txtLRN.SelectedText = ""
-        Me.txtLRN.Size = New System.Drawing.Size(200, 36)
-        Me.txtLRN.TabIndex = 0
         '
         'Label10
         '
@@ -435,6 +383,60 @@ Partial Class frm_view_student
         Me.txtSection.Size = New System.Drawing.Size(201, 36)
         Me.txtSection.TabIndex = 18
         '
+        'Guna2Button2
+        '
+        Me.Guna2Button2.Animated = True
+        Me.Guna2Button2.AutoRoundedCorners = True
+        Me.Guna2Button2.BorderRadius = 21
+        Me.Guna2Button2.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.Guna2Button2.ForeColor = System.Drawing.Color.White
+        Me.Guna2Button2.Location = New System.Drawing.Point(583, 225)
+        Me.Guna2Button2.Name = "Guna2Button2"
+        Me.Guna2Button2.Size = New System.Drawing.Size(134, 45)
+        Me.Guna2Button2.TabIndex = 16
+        Me.Guna2Button2.Text = "Generate ID"
+        '
+        'QRContainer
+        '
+        Me.QRContainer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.QRContainer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.QRContainer.Location = New System.Drawing.Point(469, 58)
+        Me.QRContainer.Name = "QRContainer"
+        Me.QRContainer.Size = New System.Drawing.Size(160, 143)
+        Me.QRContainer.TabIndex = 14
+        '
+        'txtLRN
+        '
+        Me.txtLRN.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtLRN.DefaultText = ""
+        Me.txtLRN.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txtLRN.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txtLRN.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtLRN.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtLRN.Enabled = False
+        Me.txtLRN.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtLRN.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txtLRN.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtLRN.Location = New System.Drawing.Point(105, 48)
+        Me.txtLRN.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
+        Me.txtLRN.Name = "txtLRN"
+        Me.txtLRN.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtLRN.PlaceholderText = ""
+        Me.txtLRN.SelectedText = ""
+        Me.txtLRN.Size = New System.Drawing.Size(200, 36)
+        Me.txtLRN.TabIndex = 0
+        '
+        'ProfileContainer
+        '
+        Me.ProfileContainer.Image = CType(resources.GetObject("ProfileContainer.Image"), System.Drawing.Image)
+        Me.ProfileContainer.InitialImage = CType(resources.GetObject("ProfileContainer.InitialImage"), System.Drawing.Image)
+        Me.ProfileContainer.Location = New System.Drawing.Point(650, 58)
+        Me.ProfileContainer.Name = "ProfileContainer"
+        Me.ProfileContainer.Size = New System.Drawing.Size(174, 143)
+        Me.ProfileContainer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.ProfileContainer.TabIndex = 27
+        Me.ProfileContainer.TabStop = False
+        '
         'frm_view_student
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -450,6 +452,7 @@ Partial Class frm_view_student
         Me.Guna2GroupBox2.PerformLayout()
         Me.Guna2GroupBox1.ResumeLayout(False)
         Me.Guna2GroupBox1.PerformLayout()
+        CType(Me.ProfileContainer, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -461,7 +464,6 @@ Partial Class frm_view_student
     Friend WithEvents txtContactNo As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Label7 As Label
     Friend WithEvents txtParent As Guna.UI2.WinForms.Guna2TextBox
-    Friend WithEvents ProfileContainer As Panel
     Friend WithEvents txtAddress As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Label6 As Label
     Friend WithEvents Label5 As Label
@@ -479,4 +481,5 @@ Partial Class frm_view_student
     Friend WithEvents Guna2Button2 As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Label10 As Label
     Friend WithEvents txtSection As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents ProfileContainer As PictureBox
 End Class

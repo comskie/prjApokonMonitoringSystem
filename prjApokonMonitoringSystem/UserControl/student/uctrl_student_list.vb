@@ -76,14 +76,12 @@ Public Class uctrl_student_list
                     .txtParent.Text = selectedRow.Cells(10).Value.ToString
                     .txtContactNo.Text = selectedRow.Cells(11).Value.ToString
                     .txtEmail.Text = selectedRow.Cells(12).Value.ToString
-                    .txtSection.Text = selectedRow.Cells(14).Value.ToString
-                    If selectedRow.Cells(13).Value IsNot Nothing Then
-                        Dim ms As New MemoryStream(CType(selectedRow.Cells(13).Value, Byte()))
-                        .ProfileContainer.BackgroundImage = Image.FromStream(ms)
+                    .txtSection.Text = selectedRow.Cells(13).Value.ToString
+                    If checkIfImageExist(selectedRow.Cells(14).Value.ToString) Then
+                        .ProfileContainer.Load(selectedRow.Cells(14).Value.ToString)
                     Else
-                        MsgBox("Empty!")
+                        .ProfileContainer.Load("https://res.cloudinary.com/hwke7fy3v/image/upload/v1661136033/display_picture/default_profile_y3rbxa.jpg")
                     End If
-
                     .ShowDialog()
                 End With
             ElseIf colName = "action_edit" Then
@@ -103,12 +101,13 @@ Public Class uctrl_student_list
                     .txtParent.Text = selectedRow.Cells(10).Value.ToString
                     .txtContactNo.Text = selectedRow.Cells(11).Value.ToString
                     .txtEmail.Text = selectedRow.Cells(12).Value.ToString
-                    .txtSection.Text = selectedRow.Cells(14).Value.ToString
-                    If selectedRow.Cells(13).Value IsNot Nothing Then
-                        Dim ms As New MemoryStream(CType(selectedRow.Cells(13).Value, Byte()))
-                        .ProfileContainer.BackgroundImage = Image.FromStream(ms)
+                    .txtSection.Text = selectedRow.Cells(13).Value.ToString
+                    If checkIfImageExist(selectedRow.Cells(14).Value.ToString) Then
+                        .ProfileContainer.Load(selectedRow.Cells(14).Value.ToString)
+                        .txtPath.Text = selectedRow.Cells(14).Value.ToString
                     Else
-                        MsgBox("Empty!")
+                        .ProfileContainer.Load("https://res.cloudinary.com/hwke7fy3v/image/upload/v1661136033/display_picture/default_profile_y3rbxa.jpg")
+                        .txtPath.Text = selectedRow.Cells(14).Value.ToString
                     End If
 
                     .ShowDialog()
@@ -118,12 +117,12 @@ Public Class uctrl_student_list
                 Dim dialogResult As DialogResult = MessageBox.Show("Do you want to delete this student?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
                 If dialogResult = DialogResult.Yes Then
                     deleteStudent(selectedRow.Cells(4).Value.ToString)
+                    deleteImage(selectedRow.Cells(4).Value.ToString)
                     displayStudent()
                 End If
 
             End If
         Catch ex As Exception
-
         End Try
     End Sub
 
