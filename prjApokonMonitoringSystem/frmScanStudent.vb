@@ -85,12 +85,14 @@ Public Class frmScanStudent
             txtParent.Text = table.Rows(0).Item(7).ToString()
             txtContactNo.Text = table.Rows(0).Item(8).ToString()
             txtEmail.Text = table.Rows(0).Item(9).ToString()
-            If table.Rows(0).Item(10) IsNot Nothing Then
-                Dim ms As New MemoryStream(CType(table.Rows(0).Item(10), Byte()))
-                ProfileContainer.BackgroundImage = Image.FromStream(ms)
-            Else
-                MsgBox("Student Not Found!")
-            End If
+            'If table.Rows(0).Item(10) IsNot Nothing Then
+            '    Dim ms As New MemoryStream(CType(table.Rows(0).Item(10), Byte()))
+            '    ProfileContainer.BackgroundImage = Image.FromStream(ms)
+            'Else
+            '    MsgBox("Student Not Found!")
+            'End If
+            PictureBox3.Load(table.Rows(0).Item(12).ToString)
+
             conn.Close()
         Catch ex As Exception
             conn.Close()
@@ -103,9 +105,5 @@ Public Class frmScanStudent
         Dim tts = CreateObject("SAPI.spvoice")
         tts.speak("Welcome " & txtFname.Text & " " & txtMname.Text & " " & txtLname.Text)
         InsertToLogs(txtLRN.Text)
-    End Sub
-
-    Private Sub Label15_Click(sender As Object, e As EventArgs) Handles day_today.Click
-
     End Sub
 End Class

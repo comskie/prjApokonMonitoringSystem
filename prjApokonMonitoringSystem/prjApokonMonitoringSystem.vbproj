@@ -462,6 +462,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl\notify\uctrl_view_notification_logs.resx">
       <DependentUpon>uctrl_view_notification_logs.vb</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl\notify\frmBrowse_Student.resx">
       <DependentUpon>frmBrowse_Student.vb</DependentUpon>

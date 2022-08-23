@@ -50,5 +50,4 @@ Public Class frmLogin
     Private Sub IconButton7_Click(sender As Object, e As EventArgs) Handles IconButton7.Click
         Application.Exit()
     End Sub
-
 End Class
