@@ -8,16 +8,14 @@ Module Connection
     Public adapter As MySqlDataAdapter
     Public school_email As String = "apokon.monitoring@gmail.com"
     Public school_password As String = "txyuonmqgfxekmeb"
-    Public Cloudinary As Cloudinary
-    Public Const CLOUD_NAME As String = "hwke7fy3v"
-    Public Const API_KEY As String = "814276976349143"
-    Public Const API_SECRET As String = "eEPG8YzG05zbFJ23xrFfpiLuM7w"
+    Public Const CLOUD_NAME As String = "dsffeuudt"
+    Public Const API_KEY As String = "176669418197682"
+    Public Const API_SECRET As String = "OGlji-Y32d7pWMFJRf9P45mLWC8"
     Sub connect()
-
         If CheckForInternetConnection() Then
             Try
                 With conn
-                    .ConnectionString = "server=localhost;user=root;database=monitoring_system;port=3306;password=1234;"
+
                     If .State = ConnectionState.Open Then
                         conn.Close()
                     End If
