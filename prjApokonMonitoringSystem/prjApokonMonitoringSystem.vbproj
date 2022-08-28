@@ -208,11 +208,17 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\UserControl\logs\uctrl_view_logs.Designer.vb">
+      <DependentUpon>uctrl_view_logs.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UserControl\logs\uctrl_view_logs.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Connection.vb" />
-    <Compile Include="frmCaptureImage.Designer.vb">
+    <Compile Include="Admin\frmCaptureImage.Designer.vb">
       <DependentUpon>frmCaptureImage.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmCaptureImage.vb">
+    <Compile Include="Admin\frmCaptureImage.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmLogin.vb">
@@ -222,28 +228,16 @@
       <DependentUpon>frmLogin.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmMainPage.Designer.vb">
+    <Compile Include="Admin\frmMainPage.Designer.vb">
       <DependentUpon>frmMainPage.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmMainPage.vb">
+    <Compile Include="Admin\frmMainPage.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmRegisterStudent.Designer.vb">
-      <DependentUpon>frmRegisterStudent.vb</DependentUpon>
-    </Compile>
-    <Compile Include="frmRegisterStudent.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmScanStudent.Designer.vb">
+    <Compile Include="Admin\frmScanStudent.Designer.vb">
       <DependentUpon>frmScanStudent.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmScanStudent.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmTest.Designer.vb">
-      <DependentUpon>frmTest.vb</DependentUpon>
-    </Compile>
-    <Compile Include="frmTest.vb">
+    <Compile Include="Admin\frmScanStudent.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -263,187 +257,190 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="PublicFunctions.vb" />
-    <Compile Include="UserControl\backup\uctrl_backup.Designer.vb">
+    <Compile Include="Admin\UserControl\backup\uctrl_backup.Designer.vb">
       <DependentUpon>uctrl_backup.vb</DependentUpon>
     </Compile>
-    <Compile Include="UserControl\backup\uctrl_backup.vb">
+    <Compile Include="Admin\UserControl\backup\uctrl_backup.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControl\notify\uctrl_send_email.Designer.vb">
+    <Compile Include="Admin\UserControl\notify\uctrl_send_email.Designer.vb">
       <DependentUpon>uctrl_send_email.vb</DependentUpon>
     </Compile>
-    <Compile Include="UserControl\notify\uctrl_send_email.vb">
+    <Compile Include="Admin\UserControl\notify\uctrl_send_email.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControl\notify\uctrl_send_sms.Designer.vb">
+    <Compile Include="Admin\UserControl\notify\uctrl_send_sms.Designer.vb">
       <DependentUpon>uctrl_send_sms.vb</DependentUpon>
     </Compile>
-    <Compile Include="UserControl\notify\uctrl_send_sms.vb">
+    <Compile Include="Admin\UserControl\notify\uctrl_send_sms.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControl\notify\uctrl_view_notification_logs.Designer.vb">
+    <Compile Include="Admin\UserControl\notify\uctrl_view_notification_logs.Designer.vb">
       <DependentUpon>uctrl_view_notification_logs.vb</DependentUpon>
     </Compile>
-    <Compile Include="UserControl\notify\uctrl_view_notification_logs.vb">
+    <Compile Include="Admin\UserControl\notify\uctrl_view_notification_logs.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControl\notify\frmBrowse_Student.Designer.vb">
+    <Compile Include="Admin\UserControl\notify\frmBrowse_Student.Designer.vb">
       <DependentUpon>frmBrowse_Student.vb</DependentUpon>
     </Compile>
-    <Compile Include="UserControl\notify\frmBrowse_Student.vb">
+    <Compile Include="Admin\UserControl\notify\frmBrowse_Student.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UserControl\section\frmBrowse_Teacher.Designer.vb">
+    <Compile Include="Admin\UserControl\section\frmBrowse_Teacher.Designer.vb">
       <DependentUpon>frmBrowse_Teacher.vb</DependentUpon>
     </Compile>
-    <Compile Include="UserControl\section\frmBrowse_Teacher.vb">
+    <Compile Include="Admin\UserControl\section\frmBrowse_Teacher.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UserControl\section\frm_edit_section.Designer.vb">
+    <Compile Include="Admin\UserControl\section\frm_edit_section.Designer.vb">
       <DependentUpon>frm_edit_section.vb</DependentUpon>
     </Compile>
-    <Compile Include="UserControl\section\frm_edit_section.vb">
+    <Compile Include="Admin\UserControl\section\frm_edit_section.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UserControl\section\frm_view_section.Designer.vb">
+    <Compile Include="Admin\UserControl\section\frm_view_section.Designer.vb">
       <DependentUpon>frm_view_section.vb</DependentUpon>
     </Compile>
-    <Compile Include="UserControl\section\frm_view_section.vb">
+    <Compile Include="Admin\UserControl\section\frm_view_section.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UserControl\section\uctrl_register_advisory.Designer.vb">
+    <Compile Include="Admin\UserControl\section\uctrl_register_advisory.Designer.vb">
       <DependentUpon>uctrl_register_advisory.vb</DependentUpon>
     </Compile>
-    <Compile Include="UserControl\section\uctrl_register_advisory.vb">
+    <Compile Include="Admin\UserControl\section\uctrl_register_advisory.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControl\section\uctrl_section_list.Designer.vb">
+    <Compile Include="Admin\UserControl\section\uctrl_section_list.Designer.vb">
       <DependentUpon>uctrl_section_list.vb</DependentUpon>
     </Compile>
-    <Compile Include="UserControl\section\uctrl_section_list.vb">
+    <Compile Include="Admin\UserControl\section\uctrl_section_list.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControl\student\frmBrowse_Section.Designer.vb">
+    <Compile Include="Admin\UserControl\student\frmBrowse_Section.Designer.vb">
       <DependentUpon>frmBrowse_Section.vb</DependentUpon>
     </Compile>
-    <Compile Include="UserControl\student\frmBrowse_Section.vb">
+    <Compile Include="Admin\UserControl\student\frmBrowse_Section.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UserControl\student\frm_edit_student.Designer.vb">
+    <Compile Include="Admin\UserControl\student\frm_edit_student.Designer.vb">
       <DependentUpon>frm_edit_student.vb</DependentUpon>
     </Compile>
-    <Compile Include="UserControl\student\frm_edit_student.vb">
+    <Compile Include="Admin\UserControl\student\frm_edit_student.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UserControl\student\frm_student_id.Designer.vb">
+    <Compile Include="Admin\UserControl\student\frm_student_id.Designer.vb">
       <DependentUpon>frm_student_id.vb</DependentUpon>
     </Compile>
-    <Compile Include="UserControl\student\frm_student_id.vb">
+    <Compile Include="Admin\UserControl\student\frm_student_id.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UserControl\student\frm_view_student.Designer.vb">
+    <Compile Include="Admin\UserControl\student\frm_view_student.Designer.vb">
       <DependentUpon>frm_view_student.vb</DependentUpon>
     </Compile>
-    <Compile Include="UserControl\student\frm_view_student.vb">
+    <Compile Include="Admin\UserControl\student\frm_view_student.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UserControl\student\uctrl_import_student.Designer.vb">
+    <Compile Include="Admin\UserControl\student\uctrl_import_student.Designer.vb">
       <DependentUpon>uctrl_import_student.vb</DependentUpon>
     </Compile>
-    <Compile Include="UserControl\student\uctrl_import_student.vb">
+    <Compile Include="Admin\UserControl\student\uctrl_import_student.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControl\student\uctrl_register_student.Designer.vb">
+    <Compile Include="Admin\UserControl\student\uctrl_register_student.Designer.vb">
       <DependentUpon>uctrl_register_student.vb</DependentUpon>
     </Compile>
-    <Compile Include="UserControl\student\uctrl_register_student.vb">
+    <Compile Include="Admin\UserControl\student\uctrl_register_student.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControl\student\uctrl_student_list.Designer.vb">
+    <Compile Include="Admin\UserControl\student\uctrl_student_list.Designer.vb">
       <DependentUpon>uctrl_student_list.vb</DependentUpon>
     </Compile>
-    <Compile Include="UserControl\student\uctrl_student_list.vb">
+    <Compile Include="Admin\UserControl\student\uctrl_student_list.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControl\logs\uctrl_view_logs.Designer.vb">
-      <DependentUpon>uctrl_view_logs.vb</DependentUpon>
-    </Compile>
-    <Compile Include="UserControl\logs\uctrl_view_logs.vb">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControl\teacher\frm_edit_teacher.Designer.vb">
+    <Compile Include="Admin\UserControl\teacher\frm_edit_teacher.Designer.vb">
       <DependentUpon>frm_edit_teacher.vb</DependentUpon>
     </Compile>
-    <Compile Include="UserControl\teacher\frm_edit_teacher.vb">
+    <Compile Include="Admin\UserControl\teacher\frm_edit_teacher.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UserControl\teacher\frm_view_teacher.Designer.vb">
+    <Compile Include="Admin\UserControl\teacher\frm_view_teacher.Designer.vb">
       <DependentUpon>frm_view_teacher.vb</DependentUpon>
     </Compile>
-    <Compile Include="UserControl\teacher\frm_view_teacher.vb">
+    <Compile Include="Admin\UserControl\teacher\frm_view_teacher.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UserControl\teacher\uctrl_register_teacher.Designer.vb">
+    <Compile Include="Admin\UserControl\teacher\uctrl_register_teacher.Designer.vb">
       <DependentUpon>uctrl_register_teacher.vb</DependentUpon>
     </Compile>
-    <Compile Include="UserControl\teacher\uctrl_register_teacher.vb">
+    <Compile Include="Admin\UserControl\teacher\uctrl_register_teacher.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControl\teacher\uctrl_teacher_list.Designer.vb">
+    <Compile Include="Admin\UserControl\teacher\uctrl_teacher_list.Designer.vb">
       <DependentUpon>uctrl_teacher_list.vb</DependentUpon>
     </Compile>
-    <Compile Include="UserControl\teacher\uctrl_teacher_list.vb">
+    <Compile Include="Admin\UserControl\teacher\uctrl_teacher_list.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControl\UserControl_Navs_Notification.Designer.vb">
+    <Compile Include="Admin\UserControl\UserControl_Navs_Notification.Designer.vb">
       <DependentUpon>UserControl_Navs_Notification.vb</DependentUpon>
     </Compile>
-    <Compile Include="UserControl\UserControl_Navs_Notification.vb">
+    <Compile Include="Admin\UserControl\UserControl_Navs_Notification.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControl\UserControl_Navs_Section.Designer.vb">
+    <Compile Include="Admin\UserControl\UserControl_Navs_Section.Designer.vb">
       <DependentUpon>UserControl_Navs_Section.vb</DependentUpon>
     </Compile>
-    <Compile Include="UserControl\UserControl_Navs_Section.vb">
+    <Compile Include="Admin\UserControl\UserControl_Navs_Section.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControl\UserControl_Navs_Student.Designer.vb">
+    <Compile Include="Admin\UserControl\UserControl_Navs_Student.Designer.vb">
       <DependentUpon>UserControl_Navs_Student.vb</DependentUpon>
     </Compile>
-    <Compile Include="UserControl\UserControl_Navs_Student.vb">
+    <Compile Include="Admin\UserControl\UserControl_Navs_Student.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControl\UserControl_Navs_Teacher.Designer.vb">
+    <Compile Include="Admin\UserControl\UserControl_Navs_Teacher.Designer.vb">
       <DependentUpon>UserControl_Navs_Teacher.vb</DependentUpon>
     </Compile>
-    <Compile Include="UserControl\UserControl_Navs_Teacher.vb">
+    <Compile Include="Admin\UserControl\UserControl_Navs_Teacher.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControl\UserControl_StartScreen.Designer.vb">
+    <Compile Include="Admin\UserControl\UserControl_StartScreen.Designer.vb">
       <DependentUpon>UserControl_StartScreen.vb</DependentUpon>
     </Compile>
-    <Compile Include="UserControl\UserControl_StartScreen.vb">
+    <Compile Include="Admin\UserControl\UserControl_StartScreen.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Teacher\frmMainPageTeacher.Designer.vb">
+      <DependentUpon>frmMainPageTeacher.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Teacher\frmMainPageTeacher.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Teacher\UserControl\MyStudent\uctrl_mystudent.Designer.vb">
+      <DependentUpon>uctrl_mystudent.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Teacher\UserControl\MyStudent\uctrl_mystudent.vb">
       <SubType>UserControl</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="frmCaptureImage.resx">
+    <EmbeddedResource Include="Admin\frmCaptureImage.resx">
       <DependentUpon>frmCaptureImage.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\UserControl\logs\uctrl_view_logs.resx">
+      <DependentUpon>uctrl_view_logs.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmMainPage.resx">
+    <EmbeddedResource Include="Admin\frmMainPage.resx">
       <DependentUpon>frmMainPage.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmRegisterStudent.resx">
-      <DependentUpon>frmRegisterStudent.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmScanStudent.resx">
+    <EmbeddedResource Include="Admin\frmScanStudent.resx">
       <DependentUpon>frmScanStudent.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmTest.resx">
-      <DependentUpon>frmTest.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -451,87 +448,90 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControl\backup\uctrl_backup.resx">
+    <EmbeddedResource Include="Admin\UserControl\backup\uctrl_backup.resx">
       <DependentUpon>uctrl_backup.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControl\notify\uctrl_send_email.resx">
+    <EmbeddedResource Include="Admin\UserControl\notify\uctrl_send_email.resx">
       <DependentUpon>uctrl_send_email.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControl\notify\uctrl_send_sms.resx">
+    <EmbeddedResource Include="Admin\UserControl\notify\uctrl_send_sms.resx">
       <DependentUpon>uctrl_send_sms.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControl\notify\uctrl_view_notification_logs.resx">
+    <EmbeddedResource Include="Admin\UserControl\notify\uctrl_view_notification_logs.resx">
       <DependentUpon>uctrl_view_notification_logs.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControl\notify\frmBrowse_Student.resx">
+    <EmbeddedResource Include="Admin\UserControl\notify\frmBrowse_Student.resx">
       <DependentUpon>frmBrowse_Student.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControl\section\frmBrowse_Teacher.resx">
+    <EmbeddedResource Include="Admin\UserControl\section\frmBrowse_Teacher.resx">
       <DependentUpon>frmBrowse_Teacher.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControl\section\frm_edit_section.resx">
+    <EmbeddedResource Include="Admin\UserControl\section\frm_edit_section.resx">
       <DependentUpon>frm_edit_section.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControl\section\frm_view_section.resx">
+    <EmbeddedResource Include="Admin\UserControl\section\frm_view_section.resx">
       <DependentUpon>frm_view_section.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControl\section\uctrl_register_advisory.resx">
+    <EmbeddedResource Include="Admin\UserControl\section\uctrl_register_advisory.resx">
       <DependentUpon>uctrl_register_advisory.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControl\section\uctrl_section_list.resx">
+    <EmbeddedResource Include="Admin\UserControl\section\uctrl_section_list.resx">
       <DependentUpon>uctrl_section_list.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControl\student\frmBrowse_Section.resx">
+    <EmbeddedResource Include="Admin\UserControl\student\frmBrowse_Section.resx">
       <DependentUpon>frmBrowse_Section.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControl\student\frm_edit_student.resx">
+    <EmbeddedResource Include="Admin\UserControl\student\frm_edit_student.resx">
       <DependentUpon>frm_edit_student.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControl\student\frm_student_id.resx">
+    <EmbeddedResource Include="Admin\UserControl\student\frm_student_id.resx">
       <DependentUpon>frm_student_id.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControl\student\frm_view_student.resx">
+    <EmbeddedResource Include="Admin\UserControl\student\frm_view_student.resx">
       <DependentUpon>frm_view_student.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControl\student\uctrl_import_student.resx">
+    <EmbeddedResource Include="Admin\UserControl\student\uctrl_import_student.resx">
       <DependentUpon>uctrl_import_student.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControl\student\uctrl_register_student.resx">
+    <EmbeddedResource Include="Admin\UserControl\student\uctrl_register_student.resx">
       <DependentUpon>uctrl_register_student.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControl\student\uctrl_student_list.resx">
+    <EmbeddedResource Include="Admin\UserControl\student\uctrl_student_list.resx">
       <DependentUpon>uctrl_student_list.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControl\logs\uctrl_view_logs.resx">
-      <DependentUpon>uctrl_view_logs.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControl\teacher\frm_edit_teacher.resx">
+    <EmbeddedResource Include="Admin\UserControl\teacher\frm_edit_teacher.resx">
       <DependentUpon>frm_edit_teacher.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControl\teacher\frm_view_teacher.resx">
+    <EmbeddedResource Include="Admin\UserControl\teacher\frm_view_teacher.resx">
       <DependentUpon>frm_view_teacher.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControl\teacher\uctrl_register_teacher.resx">
+    <EmbeddedResource Include="Admin\UserControl\teacher\uctrl_register_teacher.resx">
       <DependentUpon>uctrl_register_teacher.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControl\teacher\uctrl_teacher_list.resx">
+    <EmbeddedResource Include="Admin\UserControl\teacher\uctrl_teacher_list.resx">
       <DependentUpon>uctrl_teacher_list.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControl\UserControl_Navs_Notification.resx">
+    <EmbeddedResource Include="Admin\UserControl\UserControl_Navs_Notification.resx">
       <DependentUpon>UserControl_Navs_Notification.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControl\UserControl_Navs_Section.resx">
+    <EmbeddedResource Include="Admin\UserControl\UserControl_Navs_Section.resx">
       <DependentUpon>UserControl_Navs_Section.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControl\UserControl_Navs_Student.resx">
+    <EmbeddedResource Include="Admin\UserControl\UserControl_Navs_Student.resx">
       <DependentUpon>UserControl_Navs_Student.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControl\UserControl_Navs_Teacher.resx">
+    <EmbeddedResource Include="Admin\UserControl\UserControl_Navs_Teacher.resx">
       <DependentUpon>UserControl_Navs_Teacher.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControl\UserControl_StartScreen.resx">
+    <EmbeddedResource Include="Admin\UserControl\UserControl_StartScreen.resx">
       <DependentUpon>UserControl_StartScreen.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Teacher\frmMainPageTeacher.resx">
+      <DependentUpon>frmMainPageTeacher.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Teacher\UserControl\MyStudent\uctrl_mystudent.resx">
+      <DependentUpon>uctrl_mystudent.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

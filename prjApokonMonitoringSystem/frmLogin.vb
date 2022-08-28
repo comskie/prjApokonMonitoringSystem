@@ -17,7 +17,7 @@ Public Class frmLogin
     Private Sub Guna2Button1_Click_1(sender As Object, e As EventArgs) Handles Guna2Button1.Click
         Try
             conn.Open()
-            comm = New MySqlCommand("SELECT * FROM tbl_accounts WHERE BINARY username = '" & txtUsername.Text & "' AND BINARY password = sha1('" & txtPassword.Text & "')", conn)
+            comm = New MySqlCommand("SELECT * FROM tbl_accounts WHERE BINARY user_username = '" & txtUsername.Text & "' AND BINARY user_password = sha1('" & txtPassword.Text & "')", conn)
             adapter = New MySqlDataAdapter(comm)
             Dim table As New DataTable()
             adapter.Fill(table)
@@ -27,6 +27,8 @@ Public Class frmLogin
             Else
                 If table.Rows(0).Item(3).ToString() = "teacher" Then
                     MsgBox("Access Granted! Welcome teacher", MsgBoxStyle.Information)
+                    teacherID = getTeacherID(txtUsername.Text)
+                    frmMainPageTeacher.Show()
                 ElseIf table.Rows(0).Item(3).ToString() = "admin" Then
                     MsgBox("Access Granted! Welcome admin", MsgBoxStyle.Information)
                     frmMainPage.Show()
@@ -37,7 +39,6 @@ Public Class frmLogin
             End If
             txtUsername.Text = ""
             txtPassword.Text = ""
-            conn.Close()
         Catch ex As Exception
             conn.Close()
             MessageBox.Show(ex.Message)

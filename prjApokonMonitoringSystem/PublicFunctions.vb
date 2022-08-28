@@ -7,12 +7,30 @@ Imports System.Net
 
 Module PublicFunctions
     Public cloudinary As Cloudinary
+    Public teacherID As String
     Public Sub addUserControl(userControl As UserControl, pnl As Panel)
         userControl.Dock = DockStyle.Fill
         pnl.Controls.Clear()
         pnl.Controls.Add(userControl)
         userControl.BringToFront()
     End Sub
+
+    Function getTeacherID(uname As String) As String
+        Try
+            comm = New MySqlCommand("SELECT teacher_id FROM tbl_teacher WHERE BINARY username = '" & uname & "'", conn)
+            adapter = New MySqlDataAdapter(comm)
+            Dim table As New DataTable()
+            adapter.Fill(table)
+            Return table.Rows(0).Item(0).ToString()
+        Catch ex As Exception
+            conn.Close()
+            MessageBox.Show(ex.Message)
+        Finally
+            conn.Dispose()
+        End Try
+        conn.Close()
+        Return "error"
+    End Function
 
     Public Sub SendMail(MailReceiver As String, MailSubject As String, MailBody As String, LRN As String, attachment As System.Net.Mail.Attachment)
         Try
@@ -62,20 +80,21 @@ Module PublicFunctions
     Public Sub InsertToNotificationLogs(ntype As String, nsentto As String, nbody As String)
         Try
             conn.Open()
-            comm = New MySqlCommand("INSERT INTO tbl_notification(notification_type, sent_to, message_content, date_sent) VALUES (@ntype, @nsent, @ncontent, @ndate)", conn)
-            comm.Parameters.Add("@ntype", MySqlDbType.VarChar).Value = ntype
-            comm.Parameters.Add("@nsent", MySqlDbType.VarChar).Value = nsentto
-            comm.Parameters.Add("@ncontent", MySqlDbType.VarChar).Value = nbody
-            comm.Parameters.Add("@ndate", MySqlDbType.VarChar).Value = Format(DateTime.Now, "yyyy/MM/dd")
-            adapter = New MySqlDataAdapter(comm)
-            comm.ExecuteNonQuery()
+            comm = New MySqlCommand("prcInsertNotification", conn)
+            With comm
+                .CommandType = CommandType.StoredProcedure
+                .Parameters.AddWithValue("@ntype", ntype)
+                .Parameters.AddWithValue("@nsent", nsentto)
+                .Parameters.AddWithValue("@mcont", nbody)
+                .Parameters.AddWithValue("@ndate", Format(DateTime.Now, "yyyy/MM/dd"))
+                .ExecuteNonQuery()
+            End With
+            MessageBox.Show("Record inserted")
+
         Catch ex As Exception
             MsgBox(ex.Message)
             conn.Close()
-        Finally
-            conn.Dispose()
         End Try
-        conn.Close()
     End Sub
 
     Public Sub export_file(dgv As DataGridView, moduleName As String)
@@ -106,24 +125,48 @@ Module PublicFunctions
                 Dim ms As New MemoryStream
                 ProfileContainer.BackgroundImage.Save(ms, ProfileContainer.BackgroundImage.RawFormat)
                 If checkIfStudentExist(dgv.Rows(i).Cells(0).Value.ToString()) Then
-                    Dim dialogResult As DialogResult = MessageBox.Show("Student '" & dgv.Rows(i).Cells(0).Value.ToString() & "' already exists in the database. Do you want to overwrite / update the data?", "Import Student", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+                    Dim dialogResult As DialogResult = MessageBox.Show("Do you want to register this student?", "Register", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
                     If dialogResult = DialogResult.Yes Then
+                        conn.Open()
                         Try
-                            conn.Open()
-                            comm = New MySqlCommand("UPDATE tbl_student SET lrn=@slrn, fname=@sfname, mname=@smname, lname=@slname, gender=@sgender, address=@saddress, parent_name=@spname, contact_number=@scnum, email_address=@seaddm, display_picture=@sdp, section=@ssection WHERE lrn='" & dgv.Rows(i).Cells(0).Value.ToString() & "'", conn)
-                            comm.Parameters.Add("@slrn", MySqlDbType.VarChar).Value = dgv.Rows(i).Cells(0).Value.ToString()
-                            comm.Parameters.Add("@sfname", MySqlDbType.VarChar).Value = dgv.Rows(i).Cells(1).Value.ToString()
-                            comm.Parameters.Add("@smname", MySqlDbType.VarChar).Value = dgv.Rows(i).Cells(2).Value.ToString()
-                            comm.Parameters.Add("@slname", MySqlDbType.VarChar).Value = dgv.Rows(i).Cells(3).Value.ToString()
-                            comm.Parameters.Add("@sgender", MySqlDbType.VarChar).Value = dgv.Rows(i).Cells(4).Value.ToString()
-                            comm.Parameters.Add("@saddress", MySqlDbType.VarChar).Value = dgv.Rows(i).Cells(5).Value.ToString()
-                            comm.Parameters.Add("@spname", MySqlDbType.VarChar).Value = dgv.Rows(i).Cells(6).Value.ToString()
-                            comm.Parameters.Add("@scnum", MySqlDbType.VarChar).Value = dgv.Rows(i).Cells(7).Value.ToString()
-                            comm.Parameters.Add("@seaddm", MySqlDbType.VarChar).Value = dgv.Rows(i).Cells(8).Value.ToString()
-                            comm.Parameters.Add("@sdp", MySqlDbType.LongBlob).Value = ms.ToArray()
-                            comm.Parameters.Add("@ssection", MySqlDbType.VarChar).Value = section
-                            adapter = New MySqlDataAdapter(comm)
-                            comm.ExecuteNonQuery()
+                            comm = New MySqlCommand("prcInsertStudent", conn)
+                            With comm
+                                .CommandType = CommandType.StoredProcedure
+                                .Parameters.AddWithValue("@sid", dgv.Rows(i).Cells(0).Value.ToString())
+                                .Parameters.AddWithValue("@sfname", dgv.Rows(i).Cells(1).Value.ToString())
+                                .Parameters.AddWithValue("@smname", dgv.Rows(i).Cells(2).Value.ToString())
+                                .Parameters.AddWithValue("@slname", dgv.Rows(i).Cells(3).Value.ToString())
+                                .Parameters.AddWithValue("@sgender", dgv.Rows(i).Cells(4).Value.ToString())
+                                .Parameters.AddWithValue("@saddress", dgv.Rows(i).Cells(5).Value.ToString())
+                                .Parameters.AddWithValue("@pname", dgv.Rows(i).Cells(6).Value.ToString())
+                                .Parameters.AddWithValue("@pnum", dgv.Rows(i).Cells(7).Value.ToString())
+                                .Parameters.AddWithValue("@eadd", dgv.Rows(i).Cells(8).Value.ToString())
+                                .ExecuteNonQuery()
+                            End With
+                        Catch ex As Exception
+                            conn.Close()
+                            MessageBox.Show(ex.Message)
+                        Finally
+                            conn.Dispose()
+                        End Try
+                        conn.Close()
+
+                        conn.Open()
+                        Try
+                            comm = New MySqlCommand("prcInsertStudent", conn)
+                            With comm
+                                .CommandType = CommandType.StoredProcedure
+                                .Parameters.AddWithValue("@sid", dgv.Rows(i).Cells(0).Value.ToString())
+                                .Parameters.AddWithValue("@sfname", dgv.Rows(i).Cells(1).Value.ToString())
+                                .Parameters.AddWithValue("@smname", dgv.Rows(i).Cells(2).Value.ToString())
+                                .Parameters.AddWithValue("@slname", dgv.Rows(i).Cells(3).Value.ToString())
+                                .Parameters.AddWithValue("@sgender", dgv.Rows(i).Cells(4).Value.ToString())
+                                .Parameters.AddWithValue("@saddress", dgv.Rows(i).Cells(5).Value.ToString())
+                                .Parameters.AddWithValue("@pname", dgv.Rows(i).Cells(6).Value.ToString())
+                                .Parameters.AddWithValue("@pnum", dgv.Rows(i).Cells(7).Value.ToString())
+                                .Parameters.AddWithValue("@eadd", dgv.Rows(i).Cells(8).Value.ToString())
+                                .ExecuteNonQuery()
+                            End With
                         Catch ex As Exception
                             conn.Close()
                             MessageBox.Show(ex.Message)
@@ -287,40 +330,40 @@ Module PublicFunctions
         Return False
     End Function
 
-    Function CloudinaryStorage(path As String, sLRN As String) As String
-        Dim acc As New Account(CLOUD_NAME, API_KEY, API_SECRET)
-        cloudinary = New Cloudinary(acc)
-        cloudinary.Api.Secure = True
-        cloudinary.Api.UrlImgUp.Transform(New Transformation().Quality(50).FetchFormat("auto"))
-        Return uploadImage(path, sLRN)
-    End Function
+    'Function CloudinaryStorage(path As String, sLRN As String) As String
+    '    Dim acc As New Account(CLOUD_NAME, API_KEY, API_SECRET)
+    '    cloudinary = New Cloudinary(acc)
+    '    cloudinary.Api.Secure = True
+    '    cloudinary.Api.UrlImgUp.Transform(New Transformation().Quality(50).FetchFormat("auto"))
+    '    Return uploadImage(path, sLRN)
+    'End Function
 
-    Public Sub deleteImage(sLRN As String)
-        Dim acc As New Account(CLOUD_NAME, API_KEY, API_SECRET)
-        cloudinary = New Cloudinary(acc)
-        Dim DeletionParams = New DeletionParams("display_picture/" & sLRN)
-        cloudinary.DeleteFolder("display_picture/" & sLRN)
-        cloudinary.Destroy(DeletionParams)
-    End Sub
+    'Public Sub deleteImage(sLRN As String)
+    '    Dim acc As New Account(CLOUD_NAME, API_KEY, API_SECRET)
+    '    cloudinary = New Cloudinary(acc)
+    '    Dim DeletionParams = New DeletionParams("display_picture/" & sLRN)
+    '    cloudinary.DeleteFolder("display_picture/" & sLRN)
+    '    cloudinary.Destroy(DeletionParams)
+    'End Sub
 
-    Function uploadImage(path As String, sLRN As String) As String
-        Dim uploadParams = New ImageUploadParams
-        uploadParams.Folder = "display_picture/" + sLRN
-        uploadParams.PublicId = sLRN
-        uploadParams.File = New FileDescription(path)
-        Dim uploadResult = cloudinary.Upload(uploadParams)
-        Return uploadResult.Url.ToString
-    End Function
+    'Function uploadImage(path As String, sLRN As String) As String
+    '    Dim uploadParams = New ImageUploadParams
+    '    uploadParams.Folder = "display_picture/" + sLRN
+    '    uploadParams.PublicId = sLRN
+    '    uploadParams.File = New FileDescription(path)
+    '    Dim uploadResult = cloudinary.Upload(uploadParams)
+    '    Return uploadResult.Url.ToString
+    'End Function
 
-    Function checkIfImageExist(sURL As String) As Boolean
-        Try
-            Using client = New WebClient()
-                Using stream = client.OpenRead(sURL)
-                    Return True
-                End Using
-            End Using
-        Catch
-            Return False
-        End Try
-    End Function
+    'Function checkIfImageExist(sURL As String) As Boolean
+    '    Try
+    '        Using client = New WebClient()
+    '            Using stream = client.OpenRead(sURL)
+    '                Return True
+    '            End Using
+    '        End Using
+    '    Catch
+    '        Return False
+    '    End Try
+    'End Function
 End Module
