@@ -57,8 +57,10 @@ Public Class uctrl_send_sms
 
             If SerialPort1.IsOpen Then
                 lblStatus.Text = "Connected"
+                lblStatus.ForeColor = Color.DarkOliveGreen
             Else
                 lblStatus.Text = "Error"
+                lblStatus.ForeColor = Color.DarkRed
             End If
         Catch ex As Exception
             MsgBox(ex.Message)

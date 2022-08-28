@@ -25,6 +25,7 @@ Partial Class frm_edit_student
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_edit_student))
         Me.cmbGender = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.Guna2GroupBox1 = New Guna.UI2.WinForms.Guna2GroupBox()
+        Me.lblSID = New System.Windows.Forms.Label()
         Me.txtNewPath = New System.Windows.Forms.TextBox()
         Me.txtPath = New System.Windows.Forms.TextBox()
         Me.ProfileContainer = New System.Windows.Forms.PictureBox()
@@ -57,7 +58,6 @@ Partial Class frm_edit_student
         Me.Guna2Button4 = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2Button3 = New Guna.UI2.WinForms.Guna2Button()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
-        Me.lblSID = New System.Windows.Forms.Label()
         Me.Guna2GroupBox1.SuspendLayout()
         CType(Me.ProfileContainer, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Guna2GroupBox2.SuspendLayout()
@@ -114,6 +114,17 @@ Partial Class frm_edit_student
         Me.Guna2GroupBox1.TabIndex = 4
         Me.Guna2GroupBox1.Text = "Student Information"
         '
+        'lblSID
+        '
+        Me.lblSID.AutoSize = True
+        Me.lblSID.ForeColor = System.Drawing.Color.Black
+        Me.lblSID.Location = New System.Drawing.Point(407, 359)
+        Me.lblSID.Name = "lblSID"
+        Me.lblSID.Size = New System.Drawing.Size(55, 15)
+        Me.lblSID.TabIndex = 28
+        Me.lblSID.Text = "[no data]"
+        Me.lblSID.Visible = False
+        '
         'txtNewPath
         '
         Me.txtNewPath.Enabled = False
@@ -121,6 +132,7 @@ Partial Class frm_edit_student
         Me.txtNewPath.Name = "txtNewPath"
         Me.txtNewPath.Size = New System.Drawing.Size(213, 23)
         Me.txtNewPath.TabIndex = 27
+        Me.txtNewPath.Visible = False
         '
         'txtPath
         '
@@ -129,6 +141,7 @@ Partial Class frm_edit_student
         Me.txtPath.Name = "txtPath"
         Me.txtPath.Size = New System.Drawing.Size(213, 23)
         Me.txtPath.TabIndex = 26
+        Me.txtPath.Visible = False
         '
         'ProfileContainer
         '
@@ -537,17 +550,6 @@ Partial Class frm_edit_student
         'OpenFileDialog1
         '
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
-        '
-        'lblSID
-        '
-        Me.lblSID.AutoSize = True
-        Me.lblSID.ForeColor = System.Drawing.Color.Black
-        Me.lblSID.Location = New System.Drawing.Point(407, 359)
-        Me.lblSID.Name = "lblSID"
-        Me.lblSID.Size = New System.Drawing.Size(55, 15)
-        Me.lblSID.TabIndex = 28
-        Me.lblSID.Text = "[no data]"
-        Me.lblSID.Visible = False
         '
         'frm_edit_student
         '

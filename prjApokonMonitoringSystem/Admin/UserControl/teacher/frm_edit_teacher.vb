@@ -24,20 +24,6 @@ Public Class frm_edit_teacher
             End Try
             conn.Close()
 
-            Try
-                conn.Open()
-                comm = New MySqlCommand("prcUpdateTeacherSection", conn)
-                With comm
-                    .CommandType = CommandType.StoredProcedure
-                    .Parameters.AddWithValue("@tid", txtID.Text)
-                    .Parameters.AddWithValue("@sid", lblsid.Text)
-                    .ExecuteNonQuery()
-                End With
-            Catch ex As Exception
-                conn.Close()
-            End Try
-            conn.Close()
-
 
             If txtPassword.Text <> String.Empty Then
                 Try
@@ -45,14 +31,8 @@ Public Class frm_edit_teacher
                     comm = New MySqlCommand("prcUpdateAccount", conn)
                     With comm
                         .CommandType = CommandType.StoredProcedure
-                        .Parameters.AddWithValue("@col_id", txtColID.Text)
-                        .Parameters.AddWithValue("@tid", txtID.Text)
-                        .Parameters.AddWithValue("@tfname", txtFname.Text)
-                        .Parameters.AddWithValue("@tmname", txtMname.Text)
-                        .Parameters.AddWithValue("@tlname", txtLname.Text)
-                        .Parameters.AddWithValue("@tgender", cmbGender.Text)
-                        .Parameters.AddWithValue("@tnum", txtContactNo.Text)
-                        .Parameters.AddWithValue("@tadd", txtEmail.Text)
+                        .Parameters.AddWithValue("@uuname", txtID.Text)
+                        .Parameters.AddWithValue("@upass", txtPassword.Text)
                         .ExecuteNonQuery()
                     End With
                 Catch ex As Exception
@@ -60,23 +40,6 @@ Public Class frm_edit_teacher
                     conn.Close()
                 End Try
                 conn.Close()
-
-            Else
-                'Try
-                '    conn.Open()
-                '    comm = New MySqlCommand("UPDATE tbl_accounts SET username=@uname, user_role=@urole WHERE id = '" & txtAccountID.Text & "'", conn)
-                '    comm.Parameters.Add("@uname", MySqlDbType.VarChar).Value = txtUsername.Text
-                '    comm.Parameters.Add("@urole", MySqlDbType.VarChar).Value = "teacher"
-                '    adapter = New MySqlDataAdapter(comm)
-                '    comm.ExecuteNonQuery()
-                '    conn.Close()
-                'Catch ex As Exception
-                '    conn.Close()
-                '    MessageBox.Show(ex.Message)
-                'Finally
-                '    conn.Dispose()
-                'End Try
-                'conn.Close()
             End If
             MsgBox("Record Updated!", MsgBoxStyle.Information)
             Me.Close()
@@ -99,14 +62,6 @@ Public Class frm_edit_teacher
 
     Private Sub frm_edit_teacher_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
         Me.Dispose()
-    End Sub
-
-    Private Sub Guna2Button5_Click(sender As Object, e As EventArgs) Handles Guna2Button5.Click
-        With frmBrowse_Section
-            .ShowDialog()
-            txtSection.Text = .ssname
-            lblsid.Text = .ssection
-        End With
     End Sub
 
 End Class

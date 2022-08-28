@@ -27,7 +27,7 @@ Public Class frmLogin
             Else
                 If table.Rows(0).Item(3).ToString() = "teacher" Then
                     MsgBox("Access Granted! Welcome teacher", MsgBoxStyle.Information)
-                    teacherID = getTeacherID(txtUsername.Text)
+                    teacherID = txtUsername.Text
                     frmMainPageTeacher.Show()
                 ElseIf table.Rows(0).Item(3).ToString() = "admin" Then
                     MsgBox("Access Granted! Welcome admin", MsgBoxStyle.Information)

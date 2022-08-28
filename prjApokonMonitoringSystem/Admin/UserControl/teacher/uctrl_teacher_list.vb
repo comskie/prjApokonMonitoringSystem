@@ -2,7 +2,7 @@
 Public Class uctrl_teacher_list
     Private Sub displayTeacher()
         Try
-            comm = New MySqlCommand("SELECT b.id AS 'ID', b.teacher_id AS 'Teacher ID', b.fname AS 'First Name', b.mname AS 'Middle Name', b.lname AS 'Last Name', b.gender AS 'Gender', b.contact_number AS 'Contact Number', b.email_address AS 'Email Address', c.section_name AS 'Section Name', c.year_level AS 'Year Level' FROM tbl_teacher_section a, tbl_teacher b, tbl_section c WHERE a.teacher_id = b.teacher_id AND a.section_id = c.section_id", conn)
+            comm = New MySqlCommand("SELECT id AS 'ID', teacher_id AS 'Teacher ID', fname AS 'First Name', mname AS 'Middle Name', lname AS 'Last Name', gender AS 'Gender', contact_number AS 'Contact Number', email_address AS 'Email Address' FROM tbl_teacher", conn)
 
             Dim da As New MySqlDataAdapter
             da.SelectCommand = comm
@@ -21,11 +21,11 @@ Public Class uctrl_teacher_list
     Private Sub filteredSearch()
         Try
             If cmbFilter.Text = "All" Then
-                comm = New MySqlCommand("SELECT b.id AS 'ID', b.teacher_id AS 'Teacher ID',  b.fname AS 'First Name', b.mname AS 'Middle Name', b.lname AS 'Last Name', b.gender AS 'Gender', b.contact_number AS 'Contact Number', b.email_address AS 'Email Address', c.section_name AS 'Section Name', c.year_level AS 'Year Level' FROM tbl_teacher_section a, tbl_teacher b, tbl_section c WHERE a.teacher_id = b.teacher_id AND a.section_id = c.section_id", conn)
+                comm = New MySqlCommand("SELECT id AS 'ID', teacher_id AS 'Teacher ID', fname AS 'First Name', mname AS 'Middle Name', lname AS 'Last Name', gender AS 'Gender', contact_number AS 'Contact Number', email_address AS 'Email Address' FROM tbl_teacher", conn)
             ElseIf cmbFilter.Text = "By Name" Then
-                comm = New MySqlCommand("SELECT b.id AS 'ID', b.teacher_id AS 'Teacher ID', b.fname AS 'First Name', b.mname AS 'Middle Name', b.lname AS 'Last Name', b.gender AS 'Gender', b.contact_number AS 'Contact Number', b.email_address AS 'Email Address', c.section_name AS 'Section Name', c.year_level AS 'Year Level' FROM tbl_teacher_section a, tbl_teacher b, tbl_section c WHERE a.teacher_id = b.teacher_id AND a.section_id = c.section_id AND b.fname LIKE '%" + txtSearchBox.Text + "%' OR b.mname LIKE '%" + txtSearchBox.Text + "%' OR b.lname LIKE '%" + txtSearchBox.Text + "%'", conn)
+                comm = New MySqlCommand("SELECT id AS 'ID', teacher_id AS 'Teacher ID', fname AS 'First Name', mname AS 'Middle Name', lname AS 'Last Name', gender AS 'Gender', contact_number AS 'Contact Number', email_address AS 'Email Address' FROM tbl_teacher fname LIKE '%" + txtSearchBox.Text + "%' OR mname LIKE '%" + txtSearchBox.Text + "%' OR lname LIKE '%" + txtSearchBox.Text + "%'", conn)
             ElseIf cmbFilter.Text = "By Gender" Then
-                comm = New MySqlCommand("SELECT b.id AS 'ID', b.teacher_id AS 'Teacher ID', b.fname AS 'First Name', b.mname AS 'Middle Name', b.lname AS 'Last Name', b.gender AS 'Gender', b.contact_number AS 'Contact Number', b.email_address AS 'Email Address', c.section_name AS 'Section Name', c.year_level AS 'Year Level' FROM tbl_teacher_section a, tbl_teacher b, tbl_section c WHERE a.teacher_id = b.teacher_id AND a.section_id = c.section_id AND WHERE b.gender = '" & cmbGender.Text & "'", conn)
+                comm = New MySqlCommand("SELECT id AS 'ID', teacher_id AS 'Teacher ID', fname AS 'First Name', mname AS 'Middle Name', lname AS 'Last Name', gender AS 'Gender', contact_number AS 'Contact Number', email_address AS 'Email Address' FROM tbl_teacher WHERE gender = '" & cmbGender.Text & "'", conn)
             ElseIf cmbFilter.Text = "No Section" Then
                 comm = New MySqlCommand("SELECT b.id AS 'ID', b.teacher_id AS 'Teacher ID',  b.fname AS 'First Name', b.mname AS 'Middle Name', b.lname AS 'Last Name', b.gender AS 'Gender', b.contact_number AS 'Contact Number', b.email_address AS 'Email Address', a.section_id AS 'Section Name', NULL AS 'Year Level' FROM tbl_teacher_section a, tbl_teacher b WHERE a.teacher_id = b.teacher_id AND a.section_id IS NULL", conn)
 
@@ -112,7 +112,6 @@ Public Class uctrl_teacher_list
                     End If
                     .txtContactNo.Text = selectedRow.Cells(9).Value.ToString
                     .txtEmail.Text = selectedRow.Cells(10).Value.ToString
-                    .txtSection.Text = selectedRow.Cells(11).Value.ToString
                     .ShowDialog()
                 End With
             ElseIf colName = "action_edit" Then
@@ -130,7 +129,6 @@ Public Class uctrl_teacher_list
                     End If
                     .txtContactNo.Text = selectedRow.Cells(9).Value.ToString
                     .txtEmail.Text = selectedRow.Cells(10).Value.ToString
-                    .txtSection.Text = selectedRow.Cells(11).Value.ToString
                     .ShowDialog()
                 End With
                 displayTeacher()
@@ -167,7 +165,6 @@ Public Class uctrl_teacher_list
             conn.Open()
             comm = New MySqlCommand("DELETE FROM tbl_accounts WHERE user_username = @uname", conn)
             comm.Parameters.Add("@uname", MySqlDbType.VarChar).Value = userName
-
             adapter = New MySqlDataAdapter(comm)
             comm.ExecuteNonQuery()
             conn.Close()

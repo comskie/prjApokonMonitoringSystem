@@ -30,6 +30,21 @@ Public Class frm_edit_section
                 conn.Dispose()
             End Try
             conn.Close()
+
+            Try
+                conn.Open()
+                comm = New MySqlCommand("prcUpdateTeacherSection", conn)
+                With comm
+                    .CommandType = CommandType.StoredProcedure
+                    .Parameters.AddWithValue("@tid", lbltid.Text)
+                    .Parameters.AddWithValue("@sid", txtSID.Text)
+                    .ExecuteNonQuery()
+                End With
+            Catch ex As Exception
+                MsgBox(ex.Message)
+                conn.Close()
+            End Try
+
             Me.Close()
             ClearText()
         End If
@@ -46,5 +61,13 @@ Public Class frm_edit_section
 
     Private Sub Guna2Button4_Click(sender As Object, e As EventArgs) Handles Guna2Button4.Click
         ClearText()
+    End Sub
+
+    Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles Guna2Button1.Click
+        With frmBrowse_Teacher
+            .ShowDialog()
+            lbltid.Text = .tuname
+            txtTeacher.Text = .tname
+        End With
     End Sub
 End Class

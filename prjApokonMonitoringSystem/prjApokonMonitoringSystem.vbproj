@@ -419,6 +419,12 @@
     <Compile Include="Teacher\frmMainPageTeacher.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Teacher\UserControl\MyStudent Logs\uctrl_mystudent_logs.Designer.vb">
+      <DependentUpon>uctrl_mystudent_logs.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Teacher\UserControl\MyStudent Logs\uctrl_mystudent_logs.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Teacher\UserControl\MyStudent\uctrl_mystudent.Designer.vb">
       <DependentUpon>uctrl_mystudent.vb</DependentUpon>
     </Compile>
@@ -529,6 +535,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Teacher\frmMainPageTeacher.resx">
       <DependentUpon>frmMainPageTeacher.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Teacher\UserControl\MyStudent Logs\uctrl_mystudent_logs.resx">
+      <DependentUpon>uctrl_mystudent_logs.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Teacher\UserControl\MyStudent\uctrl_mystudent.resx">
       <DependentUpon>uctrl_mystudent.vb</DependentUpon>

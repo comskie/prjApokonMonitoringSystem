@@ -66,7 +66,7 @@ Partial Class uctrl_send_sms
         Me.Guna2GroupBox1.ForeColor = System.Drawing.Color.White
         Me.Guna2GroupBox1.Location = New System.Drawing.Point(19, 17)
         Me.Guna2GroupBox1.Name = "Guna2GroupBox1"
-        Me.Guna2GroupBox1.Size = New System.Drawing.Size(854, 234)
+        Me.Guna2GroupBox1.Size = New System.Drawing.Size(854, 245)
         Me.Guna2GroupBox1.TabIndex = 2
         Me.Guna2GroupBox1.Text = "Student Information"
         '
@@ -75,22 +75,22 @@ Partial Class uctrl_send_sms
         Me.lblPort.AutoSize = True
         Me.lblPort.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblPort.ForeColor = System.Drawing.Color.Black
-        Me.lblPort.Location = New System.Drawing.Point(596, 68)
+        Me.lblPort.Location = New System.Drawing.Point(202, 88)
         Me.lblPort.Name = "lblPort"
-        Me.lblPort.Size = New System.Drawing.Size(43, 16)
+        Me.lblPort.Size = New System.Drawing.Size(110, 16)
         Me.lblPort.TabIndex = 50
-        Me.lblPort.Text = "Label7"
+        Me.lblPort.Text = "[Port Not Selected]"
         '
         'lblStatus
         '
         Me.lblStatus.AutoSize = True
         Me.lblStatus.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblStatus.ForeColor = System.Drawing.Color.Black
-        Me.lblStatus.Location = New System.Drawing.Point(794, 68)
+        Me.lblStatus.ForeColor = System.Drawing.Color.DarkRed
+        Me.lblStatus.Location = New System.Drawing.Point(603, 62)
         Me.lblStatus.Name = "lblStatus"
-        Me.lblStatus.Size = New System.Drawing.Size(43, 16)
+        Me.lblStatus.Size = New System.Drawing.Size(98, 16)
         Me.lblStatus.TabIndex = 51
-        Me.lblStatus.Text = "Label8"
+        Me.lblStatus.Text = "[not connected]"
         '
         'Guna2Button2
         '
@@ -116,7 +116,7 @@ Partial Class uctrl_send_sms
         Me.cmbConnect.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
         Me.cmbConnect.FormattingEnabled = True
         Me.cmbConnect.ItemHeight = 30
-        Me.cmbConnect.Location = New System.Drawing.Point(205, 55)
+        Me.cmbConnect.Location = New System.Drawing.Point(205, 49)
         Me.cmbConnect.Name = "cmbConnect"
         Me.cmbConnect.Size = New System.Drawing.Size(272, 36)
         Me.cmbConnect.TabIndex = 48
@@ -125,7 +125,7 @@ Partial Class uctrl_send_sms
         '
         Me.Label4.AutoSize = True
         Me.Label4.ForeColor = System.Drawing.Color.Black
-        Me.Label4.Location = New System.Drawing.Point(122, 69)
+        Me.Label4.Location = New System.Drawing.Point(122, 58)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(63, 15)
         Me.Label4.TabIndex = 19
@@ -135,7 +135,7 @@ Partial Class uctrl_send_sms
         '
         Me.Label3.AutoSize = True
         Me.Label3.ForeColor = System.Drawing.Color.Black
-        Me.Label3.Location = New System.Drawing.Point(103, 151)
+        Me.Label3.Location = New System.Drawing.Point(103, 169)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(86, 15)
         Me.Label3.TabIndex = 18
@@ -153,7 +153,7 @@ Partial Class uctrl_send_sms
         Me.txtName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtName.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.txtName.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtName.Location = New System.Drawing.Point(205, 141)
+        Me.txtName.Location = New System.Drawing.Point(205, 159)
         Me.txtName.Margin = New System.Windows.Forms.Padding(7, 3, 7, 3)
         Me.txtName.Name = "txtName"
         Me.txtName.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -166,7 +166,7 @@ Partial Class uctrl_send_sms
         '
         Me.Label2.AutoSize = True
         Me.Label2.ForeColor = System.Drawing.Color.Black
-        Me.Label2.Location = New System.Drawing.Point(20, 189)
+        Me.Label2.Location = New System.Drawing.Point(20, 207)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(169, 15)
         Me.Label2.TabIndex = 16
@@ -184,7 +184,7 @@ Partial Class uctrl_send_sms
         Me.txtContact.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtContact.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.txtContact.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtContact.Location = New System.Drawing.Point(205, 179)
+        Me.txtContact.Location = New System.Drawing.Point(205, 197)
         Me.txtContact.Margin = New System.Windows.Forms.Padding(7, 3, 7, 3)
         Me.txtContact.Name = "txtContact"
         Me.txtContact.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -200,7 +200,7 @@ Partial Class uctrl_send_sms
         Me.Guna2Button1.BorderRadius = 14
         Me.Guna2Button1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.Guna2Button1.ForeColor = System.Drawing.Color.White
-        Me.Guna2Button1.Location = New System.Drawing.Point(504, 104)
+        Me.Guna2Button1.Location = New System.Drawing.Point(504, 123)
         Me.Guna2Button1.Name = "Guna2Button1"
         Me.Guna2Button1.Size = New System.Drawing.Size(86, 30)
         Me.Guna2Button1.TabIndex = 14
@@ -210,7 +210,7 @@ Partial Class uctrl_send_sms
         '
         Me.Label1.AutoSize = True
         Me.Label1.ForeColor = System.Drawing.Color.Black
-        Me.Label1.Location = New System.Drawing.Point(153, 114)
+        Me.Label1.Location = New System.Drawing.Point(153, 132)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(32, 15)
         Me.Label1.TabIndex = 1
@@ -228,7 +228,7 @@ Partial Class uctrl_send_sms
         Me.txtLRN.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtLRN.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.txtLRN.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtLRN.Location = New System.Drawing.Point(205, 105)
+        Me.txtLRN.Location = New System.Drawing.Point(205, 123)
         Me.txtLRN.Margin = New System.Windows.Forms.Padding(6, 3, 6, 3)
         Me.txtLRN.Name = "txtLRN"
         Me.txtLRN.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)

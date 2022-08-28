@@ -38,10 +38,6 @@ Partial Class frm_edit_teacher
         Me.txtContactNo = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Guna2Button3 = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2GroupBox1 = New Guna.UI2.WinForms.Guna2GroupBox()
-        Me.lblsid = New System.Windows.Forms.Label()
-        Me.Guna2Button5 = New Guna.UI2.WinForms.Guna2Button()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.txtSection = New Guna.UI2.WinForms.Guna2TextBox()
         Me.txtColID = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
@@ -263,7 +259,7 @@ Partial Class frm_edit_teacher
         Me.Guna2Button3.BorderRadius = 21
         Me.Guna2Button3.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.Guna2Button3.ForeColor = System.Drawing.Color.White
-        Me.Guna2Button3.Location = New System.Drawing.Point(382, 492)
+        Me.Guna2Button3.Location = New System.Drawing.Point(382, 465)
         Me.Guna2Button3.Name = "Guna2Button3"
         Me.Guna2Button3.Size = New System.Drawing.Size(107, 45)
         Me.Guna2Button3.TabIndex = 31
@@ -271,10 +267,6 @@ Partial Class frm_edit_teacher
         '
         'Guna2GroupBox1
         '
-        Me.Guna2GroupBox1.Controls.Add(Me.lblsid)
-        Me.Guna2GroupBox1.Controls.Add(Me.Guna2Button5)
-        Me.Guna2GroupBox1.Controls.Add(Me.Label11)
-        Me.Guna2GroupBox1.Controls.Add(Me.txtSection)
         Me.Guna2GroupBox1.Controls.Add(Me.txtColID)
         Me.Guna2GroupBox1.Controls.Add(Me.Label10)
         Me.Guna2GroupBox1.Controls.Add(Me.Label6)
@@ -299,64 +291,9 @@ Partial Class frm_edit_teacher
         Me.Guna2GroupBox1.ForeColor = System.Drawing.Color.White
         Me.Guna2GroupBox1.Location = New System.Drawing.Point(19, 12)
         Me.Guna2GroupBox1.Name = "Guna2GroupBox1"
-        Me.Guna2GroupBox1.Size = New System.Drawing.Size(854, 474)
+        Me.Guna2GroupBox1.Size = New System.Drawing.Size(854, 437)
         Me.Guna2GroupBox1.TabIndex = 30
         Me.Guna2GroupBox1.Text = "Teacher Information"
-        '
-        'lblsid
-        '
-        Me.lblsid.AutoSize = True
-        Me.lblsid.ForeColor = System.Drawing.Color.Black
-        Me.lblsid.Location = New System.Drawing.Point(479, 429)
-        Me.lblsid.Name = "lblsid"
-        Me.lblsid.Size = New System.Drawing.Size(55, 15)
-        Me.lblsid.TabIndex = 47
-        Me.lblsid.Text = "[no data]"
-        Me.lblsid.Visible = False
-        '
-        'Guna2Button5
-        '
-        Me.Guna2Button5.Animated = True
-        Me.Guna2Button5.AutoRoundedCorners = True
-        Me.Guna2Button5.BorderRadius = 16
-        Me.Guna2Button5.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.Guna2Button5.ForeColor = System.Drawing.Color.White
-        Me.Guna2Button5.Location = New System.Drawing.Point(376, 418)
-        Me.Guna2Button5.Name = "Guna2Button5"
-        Me.Guna2Button5.Size = New System.Drawing.Size(89, 35)
-        Me.Guna2Button5.TabIndex = 46
-        Me.Guna2Button5.Text = "Browse"
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.ForeColor = System.Drawing.Color.Black
-        Me.Label11.Location = New System.Drawing.Point(59, 429)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(49, 15)
-        Me.Label11.TabIndex = 45
-        Me.Label11.Text = "Section:"
-        '
-        'txtSection
-        '
-        Me.txtSection.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.txtSection.DefaultText = ""
-        Me.txtSection.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.txtSection.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.txtSection.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtSection.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtSection.Enabled = False
-        Me.txtSection.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtSection.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.txtSection.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtSection.Location = New System.Drawing.Point(132, 418)
-        Me.txtSection.Margin = New System.Windows.Forms.Padding(8, 3, 8, 3)
-        Me.txtSection.Name = "txtSection"
-        Me.txtSection.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtSection.PlaceholderText = ""
-        Me.txtSection.SelectedText = ""
-        Me.txtSection.Size = New System.Drawing.Size(233, 36)
-        Me.txtSection.TabIndex = 44
         '
         'txtColID
         '
@@ -456,8 +393,4 @@ Partial Class frm_edit_teacher
     Friend WithEvents txtID As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents txtColID As Label
     Friend WithEvents Label10 As Label
-    Friend WithEvents lblsid As Label
-    Friend WithEvents Guna2Button5 As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents Label11 As Label
-    Friend WithEvents txtSection As Guna.UI2.WinForms.Guna2TextBox
 End Class

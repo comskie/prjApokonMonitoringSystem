@@ -39,21 +39,6 @@ Public Class uctrl_register_teacher
                 conn.Close()
             End Try
             conn.Close()
-            Try
-                conn.Open()
-                comm = New MySqlCommand("prcInsertTeacherSection", conn)
-                With comm
-                    .CommandType = CommandType.StoredProcedure
-                    .CommandType = CommandType.StoredProcedure
-                    .Parameters.AddWithValue("@tid", txtID.Text)
-                    .Parameters.AddWithValue("@sid", lblsid.Text)
-                    .ExecuteNonQuery()
-                End With
-            Catch ex As Exception
-                MsgBox(ex.Message)
-                conn.Close()
-            End Try
-            conn.Close()
             MessageBox.Show("Record inserted")
             ClearText()
         End If
@@ -73,8 +58,6 @@ Public Class uctrl_register_teacher
     End Function
 
     Private Sub ClearText()
-        txtSection.Clear()
-        lblsid.Text = ""
         txtID.Clear()
         txtContactNo.Clear()
         txtEmail.Clear()
@@ -85,11 +68,4 @@ Public Class uctrl_register_teacher
         cmbGender.SelectedIndex = -1
     End Sub
 
-    Private Sub Guna2Button5_Click(sender As Object, e As EventArgs) Handles Guna2Button5.Click
-        With frmBrowse_Section
-            .ShowDialog()
-            txtSection.Text = .ssname
-            lblsid.Text = .ssection
-        End With
-    End Sub
 End Class

@@ -285,7 +285,7 @@ Partial Class uctrl_mystudent
         Me.cmbFilter.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
         Me.cmbFilter.FormattingEnabled = True
         Me.cmbFilter.ItemHeight = 30
-        Me.cmbFilter.Items.AddRange(New Object() {"By Name", "By Gender", "By LRN"})
+        Me.cmbFilter.Items.AddRange(New Object() {"All", "By Name", "By Gender", "By LRN"})
         Me.cmbFilter.Location = New System.Drawing.Point(203, 20)
         Me.cmbFilter.Name = "cmbFilter"
         Me.cmbFilter.Size = New System.Drawing.Size(167, 36)

@@ -15,23 +15,6 @@ Module PublicFunctions
         userControl.BringToFront()
     End Sub
 
-    Function getTeacherID(uname As String) As String
-        Try
-            comm = New MySqlCommand("SELECT teacher_id FROM tbl_teacher WHERE BINARY username = '" & uname & "'", conn)
-            adapter = New MySqlDataAdapter(comm)
-            Dim table As New DataTable()
-            adapter.Fill(table)
-            Return table.Rows(0).Item(0).ToString()
-        Catch ex As Exception
-            conn.Close()
-            MessageBox.Show(ex.Message)
-        Finally
-            conn.Dispose()
-        End Try
-        conn.Close()
-        Return "error"
-    End Function
-
     Public Sub SendMail(MailReceiver As String, MailSubject As String, MailBody As String, LRN As String, attachment As System.Net.Mail.Attachment)
         Try
             Dim smpt_server As New SmtpClient

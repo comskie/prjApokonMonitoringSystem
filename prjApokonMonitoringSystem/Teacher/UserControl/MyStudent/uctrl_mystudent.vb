@@ -3,7 +3,7 @@ Public Class uctrl_mystudent
     Private Sub displaySection()
         Try
             conn.Open()
-            comm = New MySqlCommand("SELECT section_name FROM tbl_section WHERE advisory_of = '" & teacherID & "'", conn)
+            comm = New MySqlCommand("SELECT section_name  From tbl_teacher_section a, tbl_section b, tbl_teacher c Where a.teacher_id = c.teacher_id And a.section_id = b.section_id And a.teacher_id = '" & teacherID & "' And c.teacher_id = '" & teacherID & "'", conn)
             adapter = New MySqlDataAdapter(comm)
             Dim table As New DataTable()
             adapter.Fill(table)
@@ -26,7 +26,7 @@ Public Class uctrl_mystudent
 
     Private Sub displayStudent()
         Try
-            comm = New MySqlCommand("SELECT * FROM tbl_student WHERE section = '" & cmbSection.Text & "'", conn)
+            comm = New MySqlCommand("SELECT d.id AS 'ID', d.lrn AS 'LRN', d.fname AS 'First Name', d.mname AS 'Middle Name', d.lname AS 'Last Name', d.gender AS 'Gender', d.address AS 'Address', d.parent_name AS 'Parent Name', d.contact_number AS 'Contact Number', d.email_address AS 'Email Address', e.section_name AS 'Section', d.display_picture AS 'Display Picture' FROM tbl_teacher a, tbl_teacher_section b, tbl_student_section c, tbl_student d, tbl_section e WHERE c.student_id = d.lrn AND c.section_id = e.section_id AND b.teacher_id = a.teacher_id AND b.section_id = e.section_id AND e.section_name = '" & cmbSection.Text & "' ORDER BY d.id ASC", conn)
 
             Dim da As New MySqlDataAdapter
             da.SelectCommand = comm
@@ -35,7 +35,7 @@ Public Class uctrl_mystudent
 
             da.Fill(dt)
             dgvStudent.DataSource = dt
-            Dim imgColumn = DirectCast(dgvStudent.Columns(13), DataGridViewImageColumn)
+            Dim imgColumn = DirectCast(dgvStudent.Columns(14), DataGridViewImageColumn)
             imgColumn.ImageLayout = DataGridViewImageCellLayout.Stretch
 
         Catch ex As Exception
@@ -46,13 +46,13 @@ Public Class uctrl_mystudent
     Private Sub filteredSearch()
         Try
             If cmbFilter.Text = "All" Then
-                comm = New MySqlCommand("SELECT * FROM tbl_student WHERE section = '" & cmbSection.Text & "'", conn)
+                comm = New MySqlCommand("SELECT d.id AS 'ID', d.lrn AS 'LRN', d.fname AS 'First Name', d.mname AS 'Middle Name', d.lname AS 'Last Name', d.gender AS 'Gender', d.address AS 'Address', d.parent_name AS 'Parent Name', d.contact_number AS 'Contact Number', d.email_address AS 'Email Address', e.section_name AS 'Section', d.display_picture AS 'Display Picture' FROM tbl_teacher a, tbl_teacher_section b, tbl_student_section c, tbl_student d, tbl_section e WHERE c.student_id = d.lrn AND c.section_id = e.section_id AND b.teacher_id = a.teacher_id AND b.section_id = e.section_id AND e.section_name = '" & cmbSection.Text & "' ORDER BY d.id ASC", conn)
             ElseIf cmbFilter.Text = "By Name" Then
-                comm = New MySqlCommand("SELECT * FROM tbl_student WHERE section = '" & cmbSection.Text & "' AND fname LIKE '%" + txtSearchBox.Text + "%' OR mname LIKE '%" + txtSearchBox.Text + "%' OR lname LIKE '%" + txtSearchBox.Text + "%'", conn)
+                comm = New MySqlCommand("SELECT d.id AS 'ID', d.lrn AS 'LRN', d.fname AS 'First Name', d.mname AS 'Middle Name', d.lname AS 'Last Name', d.gender AS 'Gender', d.address AS 'Address', d.parent_name AS 'Parent Name', d.contact_number AS 'Contact Number', d.email_address AS 'Email Address', e.section_name AS 'Section', d.display_picture AS 'Display Picture' FROM tbl_teacher a, tbl_teacher_section b, tbl_student_section c, tbl_student d, tbl_section e WHERE c.student_id = d.lrn AND c.section_id = e.section_id AND b.teacher_id = a.teacher_id AND b.section_id = e.section_id AND e.section_name = '" & cmbSection.Text & "' AND (d.fname LIKE '%" + txtSearchBox.Text + "%' OR d.mname LIKE '%" + txtSearchBox.Text + "%' OR d.lname LIKE '%" + txtSearchBox.Text + "%') ORDER BY d.id ASC", conn)
             ElseIf cmbFilter.Text = "By Gender" Then
-                comm = New MySqlCommand("SELECT * FROM tbl_student WHERE section = '" & cmbSection.Text & "' AND gender = '" & cmbGender.Text & "'", conn)
+                comm = New MySqlCommand("SELECT d.id AS 'ID', d.lrn AS 'LRN', d.fname AS 'First Name', d.mname AS 'Middle Name', d.lname AS 'Last Name', d.gender AS 'Gender', d.address AS 'Address', d.parent_name AS 'Parent Name', d.contact_number AS 'Contact Number', d.email_address AS 'Email Address', e.section_name AS 'Section', d.display_picture AS 'Display Picture' FROM tbl_teacher a, tbl_teacher_section b, tbl_student_section c, tbl_student d, tbl_section e WHERE c.student_id = d.lrn AND c.section_id = e.section_id AND b.teacher_id = a.teacher_id AND b.section_id = e.section_id AND e.section_name = '" & cmbSection.Text & "' AND d.gender = '" & cmbGender.Text & "'", conn)
             ElseIf cmbFilter.Text = "By LRN" Then
-                comm = New MySqlCommand("SELECT * FROM tbl_student WHERE section = '" & cmbSection.Text & "' AND lrn LIKE '%" + txtSearchBox.Text + "%'", conn)
+                comm = New MySqlCommand("SELECT d.id AS 'ID', d.lrn AS 'LRN', d.fname AS 'First Name', d.mname AS 'Middle Name', d.lname AS 'Last Name', d.gender AS 'Gender', d.address AS 'Address', d.parent_name AS 'Parent Name', d.contact_number AS 'Contact Number', d.email_address AS 'Email Address', e.section_name AS 'Section', d.display_picture AS 'Display Picture' FROM tbl_teacher a, tbl_teacher_section b, tbl_student_section c, tbl_student d, tbl_section e WHERE c.student_id = d.lrn AND c.section_id = e.section_id AND b.teacher_id = a.teacher_id AND b.section_id = e.section_id AND e.section_name = '" & cmbSection.Text & "' AND d.lrn LIKE '%" + txtSearchBox.Text + "%'", conn)
             End If
 
             Dim da As New MySqlDataAdapter
