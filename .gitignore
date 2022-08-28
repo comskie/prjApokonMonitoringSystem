@@ -363,5 +363,6 @@ MigrationBackup/
 FodyWeavers.xsd
 
 # Exclude ignored files
+!Admin/**/*
 !UserControl/backup/
 !UserControl/logs/
