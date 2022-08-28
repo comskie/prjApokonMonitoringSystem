@@ -102,6 +102,10 @@ Public Class frmScanStudent
     End Sub
 
     Private Sub frmScanStudent_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
+        If vcd Is Nothing Then
+            Return
+        End If
+
         Try
             vcd.Stop()
         Catch ex As Exception
