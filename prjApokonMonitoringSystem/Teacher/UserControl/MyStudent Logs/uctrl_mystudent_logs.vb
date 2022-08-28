@@ -4,7 +4,6 @@ Public Class uctrl_mystudent_logs
         dtpDateFrom.Value = Date.Now
         dtpDateTo.Value = Date.Now
         displaySection()
-        displayLogs()
     End Sub
 
     Private Sub displayLogs()
@@ -123,5 +122,11 @@ Public Class uctrl_mystudent_logs
             conn.Dispose()
         End Try
         conn.Close()
+    End Sub
+
+    Private Sub cmbSection_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbSection.SelectedValueChanged
+        If chkboxAutoSearch.Checked = True Then
+            filteredSearch()
+        End If
     End Sub
 End Class

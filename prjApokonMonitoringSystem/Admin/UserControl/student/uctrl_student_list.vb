@@ -105,14 +105,6 @@ Public Class uctrl_student_list
                     Dim img() As Byte = selectedRow.Cells(14).Value
                     Dim ms As New MemoryStream(img)
                     .ProfileContainer.Image = Image.FromStream(ms)
-                    'If checkIfImageExist(selectedRow.Cells(14).Value.ToString) Then
-                    '    .ProfileContainer.Load(selectedRow.Cells(14).Value.ToString)
-                    '    .txtPath.Text = selectedRow.Cells(14).Value.ToString
-                    'Else
-                    '    .ProfileContainer.Load("https://res.cloudinary.com/hwke7fy3v/image/upload/v1661136033/display_picture/default_profile_y3rbxa.jpg")
-                    '    .txtPath.Text = selectedRow.Cells(14).Value.ToString
-                    'End If
-
                     .ShowDialog()
                 End With
                 displayStudent()
@@ -120,7 +112,6 @@ Public Class uctrl_student_list
                 Dim dialogResult As DialogResult = MessageBox.Show("Do you want to delete this student?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
                 If dialogResult = DialogResult.Yes Then
                     deleteStudent(selectedRow.Cells(4).Value.ToString)
-                    'deleteImage(selectedRow.Cells(4).Value.ToString)
                     displayStudent()
                 End If
             End If

@@ -289,6 +289,7 @@ Partial Class uctrl_mystudent
         Me.cmbFilter.Location = New System.Drawing.Point(203, 20)
         Me.cmbFilter.Name = "cmbFilter"
         Me.cmbFilter.Size = New System.Drawing.Size(167, 36)
+        Me.cmbFilter.StartIndex = 0
         Me.cmbFilter.TabIndex = 34
         '
         'txtSearchBox

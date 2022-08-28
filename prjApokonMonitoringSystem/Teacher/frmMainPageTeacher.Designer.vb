@@ -28,7 +28,6 @@ Partial Class frmMainPageTeacher
         Me.lblClock = New System.Windows.Forms.Label()
         Me.ProfilePicture = New Guna.UI2.WinForms.Guna2CirclePictureBox()
         Me.IconButton4 = New FontAwesome.Sharp.IconButton()
-        Me.IconButton3 = New FontAwesome.Sharp.IconButton()
         Me.IconButton2 = New FontAwesome.Sharp.IconButton()
         Me.Guna2Panel2 = New Guna.UI2.WinForms.Guna2Panel()
         Me.lblTitle = New System.Windows.Forms.Label()
@@ -101,28 +100,6 @@ Partial Class frmMainPageTeacher
         Me.IconButton4.Text = "Logout"
         Me.IconButton4.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
         Me.IconButton4.UseVisualStyleBackColor = False
-        '
-        'IconButton3
-        '
-        Me.IconButton3.BackColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(88, Byte), Integer))
-        Me.IconButton3.Dock = System.Windows.Forms.DockStyle.Top
-        Me.IconButton3.FlatAppearance.BorderSize = 0
-        Me.IconButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.IconButton3.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.IconButton3.ForeColor = System.Drawing.Color.White
-        Me.IconButton3.IconChar = FontAwesome.Sharp.IconChar.Bell
-        Me.IconButton3.IconColor = System.Drawing.Color.White
-        Me.IconButton3.IconFont = FontAwesome.Sharp.IconFont.[Auto]
-        Me.IconButton3.IconSize = 30
-        Me.IconButton3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.IconButton3.Location = New System.Drawing.Point(0, 297)
-        Me.IconButton3.Name = "IconButton3"
-        Me.IconButton3.Padding = New System.Windows.Forms.Padding(10, 0, 20, 0)
-        Me.IconButton3.Size = New System.Drawing.Size(221, 55)
-        Me.IconButton3.TabIndex = 8
-        Me.IconButton3.Text = "Notify"
-        Me.IconButton3.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
-        Me.IconButton3.UseVisualStyleBackColor = False
         '
         'IconButton2
         '
@@ -229,7 +206,6 @@ Partial Class frmMainPageTeacher
         'PanelMenu
         '
         Me.PanelMenu.Controls.Add(Me.IconButton4)
-        Me.PanelMenu.Controls.Add(Me.IconButton3)
         Me.PanelMenu.Controls.Add(Me.IconButton2)
         Me.PanelMenu.Controls.Add(Me.btnStudent)
         Me.PanelMenu.Controls.Add(Me.Panel2)
@@ -297,7 +273,6 @@ Partial Class frmMainPageTeacher
     Friend WithEvents lblClock As Label
     Friend WithEvents ProfilePicture As Guna.UI2.WinForms.Guna2CirclePictureBox
     Friend WithEvents IconButton4 As FontAwesome.Sharp.IconButton
-    Friend WithEvents IconButton3 As FontAwesome.Sharp.IconButton
     Friend WithEvents IconButton2 As FontAwesome.Sharp.IconButton
     Friend WithEvents Guna2Panel2 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents lblTitle As Label

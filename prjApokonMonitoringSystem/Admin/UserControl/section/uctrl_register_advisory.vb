@@ -32,7 +32,7 @@ Public Class uctrl_register_advisory
                 conn.Close()
             End Try
             conn.Close()
-
+            getMaxCol()
             ClearText()
         End If
     End Sub
