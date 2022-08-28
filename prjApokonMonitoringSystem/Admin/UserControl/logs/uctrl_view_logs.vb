@@ -7,7 +7,7 @@ Public Class uctrl_view_logs
     End Sub
     Private Sub displayLogs()
         Try
-            comm = New MySqlCommand("SELECT lrn AS 'LRN', timeIN_AM AS 'TimeIN AM', timeOUT_AM AS 'TimeOUT AM', timeIN_PM AS 'TimeIN PM', timeOUT_PM AS 'TimeOUT PM', DATE_FORMAT(logcurrent_date, '%m/%d/%Y') AS 'Log Date' FROM tbl_logs WHERE logcurrent_date='" & Format(DateTime.Now, "yyyy/MM/dd") & "'", conn)
+            comm = New MySqlCommand("SELECT c.id AS 'Log ID', b.lrn AS 'LRN', CONCAT(b.fname, ' ', LEFT(b.mname, 1), '. ', b.lname) AS 'Student Name', d.section_name AS 'Section', timeIN_AM AS 'TimeIN (AM)', c.timeOUT_AM AS 'TimeOUT (AM)', c.timeIN_PM AS 'TimeIN (PM)', c.timeOUT_PM AS 'TimeOUT (PM)', c.logcurrent_date AS 'Date'  FROM tbl_student_section a, tbl_student b, tbl_logs c, tbl_section d WHERE b.lrn = c.lrn AND a.section_id = d.section_id AND a.student_id = c.lrn AND c.logcurrent_date ='" & Format(DateTime.Now, "yyyy/MM/dd") & "'", conn)
 
             Dim da As New MySqlDataAdapter
             da.SelectCommand = comm
@@ -30,11 +30,11 @@ Public Class uctrl_view_logs
     Private Sub filteredSearch()
         Try
             If cmbFilter.Text = "Current Date" Then
-                comm = New MySqlCommand("SELECT lrn AS 'LRN', timeIN_AM AS 'TimeIN AM', timeOUT_AM AS 'TimeOUT AM', timeIN_PM AS 'TimeIN PM', timeOUT_PM AS 'TimeOUT PM', DATE_FORMAT(logcurrent_date, '%m/%d/%Y') AS 'Log Date' FROM tbl_logs WHERE logcurrent_date='" & Format(DateTime.Now, "yyyy/MM/dd") & "'", conn)
+                comm = New MySqlCommand("SELECT c.id AS 'Log ID', b.lrn AS 'LRN', CONCAT(b.fname, ' ', LEFT(b.mname, 1), '. ', b.lname) AS 'Student Name', d.section_name AS 'Section', timeIN_AM AS 'TimeIN (AM)', c.timeOUT_AM AS 'TimeOUT (AM)', c.timeIN_PM AS 'TimeIN (PM)', c.timeOUT_PM AS 'TimeOUT (PM)', c.logcurrent_date AS 'Date'  FROM tbl_student_section a, tbl_student b, tbl_logs c, tbl_section d WHERE b.lrn = c.lrn AND a.section_id = d.section_id AND a.student_id = c.lrn AND c.logcurrent_date='" & Format(DateTime.Now, "yyyy/MM/dd") & "'", conn)
             ElseIf cmbFilter.Text = "By LRN" Then
-                comm = New MySqlCommand("SELECT lrn AS 'LRN', timeIN_AM AS 'TimeIN AM', timeOUT_AM AS 'TimeOUT AM', timeIN_PM AS 'TimeIN PM', timeOUT_PM AS 'TimeOUT PM', DATE_FORMAT(logcurrent_date, '%m/%d/%Y') AS 'Log Date' FROM tbl_logs WHERE lrn LIKE '%" + txtSearchBox.Text + "%'", conn)
+                comm = New MySqlCommand("SELECT c.id AS 'Log ID', b.lrn AS 'LRN', CONCAT(b.fname, ' ', LEFT(b.mname, 1), '. ', b.lname) AS 'Student Name', d.section_name AS 'Section', timeIN_AM AS 'TimeIN (AM)', c.timeOUT_AM AS 'TimeOUT (AM)', c.timeIN_PM AS 'TimeIN (PM)', c.timeOUT_PM AS 'TimeOUT (PM)', c.logcurrent_date AS 'Date'  FROM tbl_student_section a, tbl_student b, tbl_logs c, tbl_section d WHERE b.lrn = c.lrn AND a.section_id = d.section_id AND a.student_id = c.lrn AND c.logcurrent_date='" & Format(DateTime.Now, "yyyy/MM/dd") & "' AND b.lrn LIKE '%" + txtSearchBox.Text + "%'", conn)
             ElseIf cmbFilter.Text = "By Date" Then
-                comm = New MySqlCommand("SELECT lrn AS 'LRN', timeIN_AM AS 'TimeIN AM', timeOUT_AM AS 'TimeOUT AM', timeIN_PM AS 'TimeIN PM', timeOUT_PM AS 'TimeOUT PM', DATE_FORMAT(logcurrent_date, '%m/%d/%Y') AS 'Log Date' FROM tbl_logs WHERE logcurrent_date BETWEEN '" & Format(dtpDateFrom.Value, "yyyy/MM/dd") & "' AND '" & Format(dtpDateTo.Value, "yyyy/MM/dd") & "'", conn)
+                comm = New MySqlCommand("SELECT c.id AS 'Log ID', b.lrn AS 'LRN', CONCAT(b.fname, ' ', LEFT(b.mname, 1), '. ', b.lname) AS 'Student Name', d.section_name AS 'Section', timeIN_AM AS 'TimeIN (AM)', c.timeOUT_AM AS 'TimeOUT (AM)', c.timeIN_PM AS 'TimeIN (PM)', c.timeOUT_PM AS 'TimeOUT (PM)', c.logcurrent_date AS 'Date'  FROM tbl_student_section a, tbl_student b, tbl_logs c, tbl_section d WHERE b.lrn = c.lrn AND a.section_id = d.section_id AND a.student_id = c.lrn AND c.logcurrent_date BETWEEN '" & Format(dtpDateFrom.Value, "yyyy/MM/dd") & "' AND '" & Format(dtpDateTo.Value, "yyyy/MM/dd") & "'", conn)
             End If
 
             Dim da As New MySqlDataAdapter

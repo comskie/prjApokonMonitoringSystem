@@ -3,8 +3,9 @@ Public Class uctrl_register_teacher
     Private Sub Guna2Button3_Click(sender As Object, e As EventArgs) Handles Guna2Button3.Click
         Dim dialogResult As DialogResult = MessageBox.Show("Do you want to register this teacher?", "Register", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
         If dialogResult = DialogResult.Yes And ValidateInputs() Then
-            conn.Open()
+
             Try
+                conn.Open()
                 comm = New MySqlCommand("prcInsertTeacher", conn)
                 With comm
                     .CommandType = CommandType.StoredProcedure
@@ -21,9 +22,9 @@ Public Class uctrl_register_teacher
                 MsgBox(ex.Message)
                 conn.Close()
             End Try
-
+            conn.Close()
             Try
-
+                conn.Open()
                 comm = New MySqlCommand("prcInsertAccount", conn)
                 With comm
                     .CommandType = CommandType.StoredProcedure
@@ -32,36 +33,34 @@ Public Class uctrl_register_teacher
                     .Parameters.AddWithValue("@urole", "teacher")
                     .ExecuteNonQuery()
                 End With
-                MessageBox.Show("Record inserted")
 
             Catch ex As Exception
                 MsgBox(ex.Message)
                 conn.Close()
             End Try
-
+            conn.Close()
             Try
-
+                conn.Open()
                 comm = New MySqlCommand("prcInsertTeacherSection", conn)
                 With comm
+                    .CommandType = CommandType.StoredProcedure
                     .CommandType = CommandType.StoredProcedure
                     .Parameters.AddWithValue("@tid", txtID.Text)
                     .Parameters.AddWithValue("@sid", lblsid.Text)
                     .ExecuteNonQuery()
                 End With
-                MessageBox.Show("Record inserted")
-
             Catch ex As Exception
                 MsgBox(ex.Message)
                 conn.Close()
             End Try
-
             conn.Close()
+            MessageBox.Show("Record inserted")
+            ClearText()
         End If
-        ClearText()
     End Sub
 
     Private Function ValidateInputs() As Boolean
-        If txtFname.Text = String.Empty Or txtLname.Text = String.Empty Or cmbGender.Text = String.Empty Or txtContactNo.Text = String.Empty Or txtEmail.Text = String.Empty Then
+        If txtFname.Text = String.Empty Or txtLname.Text = String.Empty Or cmbGender.Text = String.Empty Or txtContactNo.Text = String.Empty Or txtEmail.Text = String.Empty Or txtPassword.Text = String.Empty Then
             MessageBox.Show("Please fill in the textbox.")
             Return False
         Else
@@ -74,6 +73,9 @@ Public Class uctrl_register_teacher
     End Function
 
     Private Sub ClearText()
+        txtSection.Clear()
+        lblsid.Text = ""
+        txtID.Clear()
         txtContactNo.Clear()
         txtEmail.Clear()
         txtFname.Clear()

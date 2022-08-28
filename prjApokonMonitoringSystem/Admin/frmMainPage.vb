@@ -59,9 +59,9 @@ Public Class frmMainPage
     End Sub
 
     Private Sub IconButton2_Click(sender As Object, e As EventArgs) Handles IconButton2.Click
-        'ActivateButton(sender, Color.FromArgb(248, 233, 161), "Logs")
-        'Dim UC As New uctrl_view_logs
-        'addUserControl(UC, UserControlPanel)
+        ActivateButton(sender, Color.FromArgb(248, 233, 161), "Logs")
+        Dim UC As New uctrl_view_logs
+        addUserControl(UC, UserControlPanel)
     End Sub
 
     Private Sub IconButton4_Click(sender As Object, e As EventArgs) Handles IconButton4.Click

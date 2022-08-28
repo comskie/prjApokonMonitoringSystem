@@ -59,14 +59,33 @@ Public Class frm_edit_student
                     .ExecuteNonQuery()
                 End With
 
-                MessageBox.Show("Record updated")
                 conn.Close()
             Catch ex As Exception
                 conn.Close()
-                MessageBox.Show(ex.Message)
             Finally
                 conn.Dispose()
             End Try
+            conn.Close()
+
+            conn.Open()
+
+            Try
+                comm = New MySqlCommand("prcUpdateStudentSection", conn)
+                With comm
+                    .CommandType = CommandType.StoredProcedure
+                    .Parameters.AddWithValue("@lrn", txtLRN.Text)
+                    .Parameters.AddWithValue("@sid", lblSID.Text)
+
+                    .ExecuteNonQuery()
+                End With
+
+                conn.Close()
+            Catch ex As Exception
+                conn.Close()
+            Finally
+                conn.Dispose()
+            End Try
+            MessageBox.Show("Record updated")
             conn.Close()
             Me.Close()
         End If
@@ -97,10 +116,15 @@ Public Class frm_edit_student
     End Sub
 
     Private Sub Guna2Button5_Click(sender As Object, e As EventArgs) Handles Guna2Button5.Click
-        With frmBrowse_Section
-            .ShowDialog()
-            txtSection.Text = .ssection
-        End With
+        Try
+            With frmBrowse_Section
+                .ShowDialog()
+                lblSID.Text = .ssection
+                txtSection.Text = .ssname
+            End With
+        Catch ex As Exception
+
+        End Try
     End Sub
 
     Private Sub frm_edit_student_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed

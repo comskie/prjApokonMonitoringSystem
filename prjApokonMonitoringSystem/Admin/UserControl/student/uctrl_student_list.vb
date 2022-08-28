@@ -7,7 +7,7 @@ Public Class uctrl_student_list
 
     Private Sub displayStudent()
         Try
-            comm = New MySqlCommand("SELECT * FROM tbl_student", conn)
+            comm = New MySqlCommand("SELECT d.id AS 'ID', d.lrn AS 'LRN', d.fname AS 'First Name', d.mname AS 'Middle Name', d.lname AS 'Last Name', d.gender AS 'Gender', d.address AS 'Address', d.parent_name AS 'Parent Name', d.contact_number AS 'Contact Number', d.email_address AS 'Email Address', e.section_name AS 'Section', d.display_picture AS 'Display Picture' FROM tbl_student_section c, tbl_student d, tbl_section e WHERE c.student_id = d.lrn AND c.section_id = e.section_id ORDER BY d.id ASC", conn)
 
             Dim da As New MySqlDataAdapter
             da.SelectCommand = comm
@@ -16,7 +16,7 @@ Public Class uctrl_student_list
 
             da.Fill(dt)
             dgvStudent.DataSource = dt
-            Dim imgColumn = DirectCast(dgvStudent.Columns(13), DataGridViewImageColumn)
+            Dim imgColumn = DirectCast(dgvStudent.Columns(14), DataGridViewImageColumn)
             imgColumn.ImageLayout = DataGridViewImageCellLayout.Stretch
 
         Catch ex As Exception
@@ -27,15 +27,17 @@ Public Class uctrl_student_list
     Private Sub filteredSearch()
         Try
             If cmbFilter.Text = "All" Then
-                comm = New MySqlCommand("SELECT * FROM tbl_student", conn)
+                comm = New MySqlCommand("SELECT d.id AS 'ID', d.lrn AS 'LRN', d.fname AS 'First Name', d.mname AS 'Middle Name', d.lname AS 'Last Name', d.gender AS 'Gender', d.address AS 'Address', d.parent_name AS 'Parent Name', d.contact_number AS 'Contact Number', d.email_address AS 'Email Address', e.section_name AS 'Section', d.display_picture AS 'Display Picture' FROM tbl_student_section c, tbl_student d, tbl_section e WHERE c.student_id = d.lrn AND c.section_id = e.section_id ORDER BY d.id ASC", conn)
             ElseIf cmbFilter.Text = "By Name" Then
-                comm = New MySqlCommand("SELECT * FROM tbl_student WHERE fname LIKE '%" + txtSearchBox.Text + "%' OR mname LIKE '%" + txtSearchBox.Text + "%' OR lname LIKE '%" + txtSearchBox.Text + "%'", conn)
+                comm = New MySqlCommand("SELECT d.id AS 'ID', d.lrn AS 'LRN', d.fname AS 'First Name', d.mname AS 'Middle Name', d.lname AS 'Last Name', d.gender AS 'Gender', d.address AS 'Address', d.parent_name AS 'Parent Name', d.contact_number AS 'Contact Number', d.email_address AS 'Email Address', e.section_name AS 'Section', d.display_picture AS 'Display Picture' FROM tbl_student_section c, tbl_student d, tbl_section e WHERE c.student_id = d.lrn AND c.section_id = e.section_id AND fname LIKE '%" + txtSearchBox.Text + "%' OR mname LIKE '%" + txtSearchBox.Text + "%' OR lname LIKE '%" + txtSearchBox.Text + "%' ORDER BY d.id ASC", conn)
             ElseIf cmbFilter.Text = "By Gender" Then
-                comm = New MySqlCommand("SELECT * FROM tbl_student WHERE gender = '" & cmbGender.Text & "'", conn)
+                comm = New MySqlCommand("SELECT d.id AS 'ID', d.lrn AS 'LRN', d.fname AS 'First Name', d.mname AS 'Middle Name', d.lname AS 'Last Name', d.gender AS 'Gender', d.address AS 'Address', d.parent_name AS 'Parent Name', d.contact_number AS 'Contact Number', d.email_address AS 'Email Address', e.section_name AS 'Section', d.display_picture AS 'Display Picture' FROM tbl_student_section c, tbl_student d, tbl_section e WHERE c.student_id = d.lrn AND c.section_id = e.section_id AND gender = '" & cmbGender.Text & "' ORDER BY d.id ASC", conn)
             ElseIf cmbFilter.Text = "By LRN" Then
-                comm = New MySqlCommand("SELECT * FROM tbl_student WHERE lrn LIKE '%" + txtSearchBox.Text + "%'", conn)
+                comm = New MySqlCommand("SELECT d.id AS 'ID', d.lrn AS 'LRN', d.fname AS 'First Name', d.mname AS 'Middle Name', d.lname AS 'Last Name', d.gender AS 'Gender', d.address AS 'Address', d.parent_name AS 'Parent Name', d.contact_number AS 'Contact Number', d.email_address AS 'Email Address', e.section_name AS 'Section', d.display_picture AS 'Display Picture' FROM tbl_student_section c, tbl_student d, tbl_section e WHERE c.student_id = d.lrn AND c.section_id = e.section_id AND lrn LIKE '%" + txtSearchBox.Text + "%' ORDER BY d.id ASC", conn)
             ElseIf cmbFilter.Text = "By Section" Then
-                comm = New MySqlCommand("SELECT * FROM tbl_student WHERE section LIKE '%" + txtSearchBox.Text + "%'", conn)
+                comm = New MySqlCommand("SELECT d.id AS 'ID', d.lrn AS 'LRN', d.fname AS 'First Name', d.mname AS 'Middle Name', d.lname AS 'Last Name', d.gender AS 'Gender', d.address AS 'Address', d.parent_name AS 'Parent Name', d.contact_number AS 'Contact Number', d.email_address AS 'Email Address', e.section_name AS 'Section', d.display_picture AS 'Display Picture' FROM tbl_student_section c, tbl_student d, tbl_section e WHERE c.student_id = d.lrn AND c.section_id = e.section_id AND section LIKE '%" + txtSearchBox.Text + "%' ORDER BY d.id ASC", conn)
+            ElseIf cmbFilter.Text = "No Section" Then
+                comm = New MySqlCommand("SELECT d.id AS 'ID', d.lrn AS 'LRN', d.fname AS 'First Name', d.mname AS 'Middle Name', d.lname AS 'Last Name', d.gender AS 'Gender', d.address AS 'Address', d.parent_name AS 'Parent Name', d.contact_number AS 'Contact Number', d.email_address AS 'Email Address', c.section_id AS 'Section', d.display_picture AS 'Display Picture'  FROM tbl_student_section c, tbl_student d WHERE c.student_id = d.lrn AND c.section_id IS NULL ORDER BY d.id ASC", conn)
             End If
 
             Dim da As New MySqlDataAdapter
@@ -45,7 +47,7 @@ Public Class uctrl_student_list
 
             da.Fill(dt)
             dgvStudent.DataSource = dt
-            Dim imgColumn = DirectCast(dgvStudent.Columns(13), DataGridViewImageColumn)
+            Dim imgColumn = DirectCast(dgvStudent.Columns(14), DataGridViewImageColumn)
             imgColumn.ImageLayout = DataGridViewImageCellLayout.Stretch
 
         Catch ex As Exception
@@ -76,7 +78,8 @@ Public Class uctrl_student_list
                     .txtParent.Text = selectedRow.Cells(10).Value.ToString
                     .txtContactNo.Text = selectedRow.Cells(11).Value.ToString
                     .txtEmail.Text = selectedRow.Cells(12).Value.ToString
-                    Dim img() As Byte = selectedRow.Cells(13).Value
+                    .txtSection.Text = selectedRow.Cells(13).Value.ToString
+                    Dim img() As Byte = selectedRow.Cells(14).Value
                     Dim ms As New MemoryStream(img)
                     .ProfileContainer.Image = Image.FromStream(ms)
                     .ShowDialog()
@@ -99,6 +102,9 @@ Public Class uctrl_student_list
                     .txtContactNo.Text = selectedRow.Cells(11).Value.ToString
                     .txtEmail.Text = selectedRow.Cells(12).Value.ToString
                     .txtSection.Text = selectedRow.Cells(13).Value.ToString
+                    Dim img() As Byte = selectedRow.Cells(14).Value
+                    Dim ms As New MemoryStream(img)
+                    .ProfileContainer.Image = Image.FromStream(ms)
                     'If checkIfImageExist(selectedRow.Cells(14).Value.ToString) Then
                     '    .ProfileContainer.Load(selectedRow.Cells(14).Value.ToString)
                     '    .txtPath.Text = selectedRow.Cells(14).Value.ToString
@@ -160,6 +166,14 @@ Public Class uctrl_student_list
         ElseIf cmbFilter.Text = "By LRN" Then
             cmbGender.Enabled = False
             txtSearchBox.Enabled = True
+        ElseIf cmbFilter.Text = "No Section" Then
+            cmbGender.Enabled = False
+            txtSearchBox.Enabled = False
+            txtSearchBox.Clear()
+        End If
+
+        If chkboxAutoSearch.Checked = True Then
+            filteredSearch()
         End If
     End Sub
 

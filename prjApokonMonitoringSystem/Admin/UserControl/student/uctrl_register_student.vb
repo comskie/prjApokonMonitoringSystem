@@ -45,13 +45,27 @@ Public Class uctrl_register_student
                 'attachment = New System.Net.Mail.Attachment(Application.StartupPath & "\student_id\" & txtLRN.Text & ".png")
                 'SendMail(txtEmail.Text, "Apokon Monitoring System Registration", "Hello there " & txtParent.Text & "! " & txtFname.Text & " have successfully registered in Apokon Monitoring System. Please download the attached Digital QR ID which will be used upon entering and leaving the institution. Thank you!", txtLRN.Text, attachment)
 
-                MessageBox.Show("Record inserted")
+            Catch ex As Exception
+                conn.Close()
+            End Try
+            conn.Close()
+
+            conn.Open()
+            Try
+                comm = New MySqlCommand("prcInsertStudentSection", conn)
+                With comm
+                    .CommandType = CommandType.StoredProcedure
+                    .Parameters.AddWithValue("@lrn", txtLRN.Text)
+                    .Parameters.AddWithValue("@sid", lblSID.Text)
+                    .ExecuteNonQuery()
+                End With
 
             Catch ex As Exception
                 conn.Close()
             End Try
             conn.Close()
         End If
+        MessageBox.Show("Record inserted")
         ClearText()
     End Sub
 
@@ -112,7 +126,8 @@ Public Class uctrl_register_student
     Private Sub Guna2Button5_Click(sender As Object, e As EventArgs) Handles Guna2Button5.Click
         With frmBrowse_Section
             .ShowDialog()
-            txtSection.Text = .ssection
+            txtSection.Text = .ssname
+            lblSID.Text = .ssection
         End With
     End Sub
 

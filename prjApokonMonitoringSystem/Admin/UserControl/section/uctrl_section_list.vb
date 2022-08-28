@@ -100,52 +100,49 @@ Public Class uctrl_section_list
             selectedRow = dgvSection.Rows(index)
             If colName = "action_view" Then
                 With frm_view_section
-                    .txtSectionName.Text = selectedRow.Cells(4).Value.ToString
-                    If selectedRow.Cells(5).Value.ToString = "Kinder 1" Then
+                    .txtID.Text = selectedRow.Cells(4).Value.ToString
+                    .txtSectionName.Text = selectedRow.Cells(5).Value.ToString
+                    If selectedRow.Cells(6).Value.ToString = "Kinder 1" Then
                         .cmbYearLevel.SelectedIndex = 0
-                    ElseIf selectedRow.Cells(5).Value.ToString = "Kinder 2" Then
+                    ElseIf selectedRow.Cells(6).Value.ToString = "Kinder 2" Then
                         .cmbYearLevel.SelectedIndex = 1
-                    ElseIf selectedRow.Cells(5).Value.ToString = "Grade 1" Then
+                    ElseIf selectedRow.Cells(6).Value.ToString = "Grade 1" Then
                         .cmbYearLevel.SelectedIndex = 2
-                    ElseIf selectedRow.Cells(5).Value.ToString = "Grade 2" Then
+                    ElseIf selectedRow.Cells(6).Value.ToString = "Grade 2" Then
                         .cmbYearLevel.SelectedIndex = 3
-                    ElseIf selectedRow.Cells(5).Value.ToString = "Grade 3" Then
+                    ElseIf selectedRow.Cells(6).Value.ToString = "Grade 3" Then
                         .cmbYearLevel.SelectedIndex = 4
-                    ElseIf selectedRow.Cells(5).Value.ToString = "Grade 4" Then
+                    ElseIf selectedRow.Cells(6).Value.ToString = "Grade 4" Then
                         .cmbYearLevel.SelectedIndex = 5
-                    ElseIf selectedRow.Cells(5).Value.ToString = "Grade 5" Then
+                    ElseIf selectedRow.Cells(6).Value.ToString = "Grade 5" Then
                         .cmbYearLevel.SelectedIndex = 6
-                    ElseIf selectedRow.Cells(5).Value.ToString = "Grade 6" Then
+                    ElseIf selectedRow.Cells(6).Value.ToString = "Grade 6" Then
                         .cmbYearLevel.SelectedIndex = 7
                     End If
-                    .txtTeacher.Text = selectedRow.Cells(7).Value.ToString
-                    .txtTeacherInfo.Text = selectedRow.Cells(8).Value.ToString
                     .ShowDialog()
                 End With
             ElseIf colName = "action_edit" Then
                 With frm_edit_section
-                    .txtID.Text = selectedRow.Cells(3).Value.ToString
-                    .txtSectionName.Text = selectedRow.Cells(4).Value.ToString
-                    .txtPreviousName.Text = selectedRow.Cells(4).Value.ToString
-                    If selectedRow.Cells(5).Value.ToString = "Kinder 1" Then
+                    .txtColID.Text = selectedRow.Cells(3).Value.ToString
+                    .txtSID.Text = selectedRow.Cells(4).Value.ToString
+                    .txtSectionName.Text = selectedRow.Cells(5).Value.ToString
+                    If selectedRow.Cells(6).Value.ToString = "Kinder 1" Then
                         .cmbYearLevel.SelectedIndex = 0
-                    ElseIf selectedRow.Cells(5).Value.ToString = "Kinder 2" Then
+                    ElseIf selectedRow.Cells(6).Value.ToString = "Kinder 2" Then
                         .cmbYearLevel.SelectedIndex = 1
-                    ElseIf selectedRow.Cells(5).Value.ToString = "Grade 1" Then
+                    ElseIf selectedRow.Cells(6).Value.ToString = "Grade 1" Then
                         .cmbYearLevel.SelectedIndex = 2
-                    ElseIf selectedRow.Cells(5).Value.ToString = "Grade 2" Then
+                    ElseIf selectedRow.Cells(6).Value.ToString = "Grade 2" Then
                         .cmbYearLevel.SelectedIndex = 3
-                    ElseIf selectedRow.Cells(5).Value.ToString = "Grade 3" Then
+                    ElseIf selectedRow.Cells(6).Value.ToString = "Grade 3" Then
                         .cmbYearLevel.SelectedIndex = 4
-                    ElseIf selectedRow.Cells(5).Value.ToString = "Grade 4" Then
+                    ElseIf selectedRow.Cells(6).Value.ToString = "Grade 4" Then
                         .cmbYearLevel.SelectedIndex = 5
-                    ElseIf selectedRow.Cells(5).Value.ToString = "Grade 5" Then
+                    ElseIf selectedRow.Cells(6).Value.ToString = "Grade 5" Then
                         .cmbYearLevel.SelectedIndex = 6
-                    ElseIf selectedRow.Cells(5).Value.ToString = "Grade 6" Then
+                    ElseIf selectedRow.Cells(6).Value.ToString = "Grade 6" Then
                         .cmbYearLevel.SelectedIndex = 7
                     End If
-                    .txtTeacher.Text = selectedRow.Cells(7).Value.ToString
-                    .txtTeacherInfo.Text = selectedRow.Cells(8).Value.ToString
                     .ShowDialog()
                 End With
                 displaySection()

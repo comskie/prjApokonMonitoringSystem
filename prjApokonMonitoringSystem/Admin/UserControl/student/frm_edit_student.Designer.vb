@@ -57,6 +57,7 @@ Partial Class frm_edit_student
         Me.Guna2Button4 = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2Button3 = New Guna.UI2.WinForms.Guna2Button()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
+        Me.lblSID = New System.Windows.Forms.Label()
         Me.Guna2GroupBox1.SuspendLayout()
         CType(Me.ProfileContainer, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Guna2GroupBox2.SuspendLayout()
@@ -80,6 +81,7 @@ Partial Class frm_edit_student
         '
         'Guna2GroupBox1
         '
+        Me.Guna2GroupBox1.Controls.Add(Me.lblSID)
         Me.Guna2GroupBox1.Controls.Add(Me.txtNewPath)
         Me.Guna2GroupBox1.Controls.Add(Me.txtPath)
         Me.Guna2GroupBox1.Controls.Add(Me.ProfileContainer)
@@ -536,6 +538,17 @@ Partial Class frm_edit_student
         '
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
         '
+        'lblSID
+        '
+        Me.lblSID.AutoSize = True
+        Me.lblSID.ForeColor = System.Drawing.Color.Black
+        Me.lblSID.Location = New System.Drawing.Point(407, 359)
+        Me.lblSID.Name = "lblSID"
+        Me.lblSID.Size = New System.Drawing.Size(55, 15)
+        Me.lblSID.TabIndex = 28
+        Me.lblSID.Text = "[no data]"
+        Me.lblSID.Visible = False
+        '
         'frm_edit_student
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -591,4 +604,5 @@ Partial Class frm_edit_student
     Friend WithEvents txtPath As TextBox
     Friend WithEvents OpenFileDialog1 As OpenFileDialog
     Friend WithEvents txtNewPath As TextBox
+    Friend WithEvents lblSID As Label
 End Class

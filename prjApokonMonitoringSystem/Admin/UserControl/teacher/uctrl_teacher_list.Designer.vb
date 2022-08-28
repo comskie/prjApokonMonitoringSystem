@@ -278,11 +278,11 @@ Partial Class uctrl_teacher_list
         Me.cmbFilter.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
         Me.cmbFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbFilter.FocusedColor = System.Drawing.Color.Empty
-        Me.cmbFilter.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmbFilter.Font = New System.Drawing.Font("Century Gothic", 9.75!)
         Me.cmbFilter.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
         Me.cmbFilter.FormattingEnabled = True
         Me.cmbFilter.ItemHeight = 30
-        Me.cmbFilter.Items.AddRange(New Object() {"All", "By Name", "By Gender"})
+        Me.cmbFilter.Items.AddRange(New Object() {"All", "By Name", "By Gender", "No Section"})
         Me.cmbFilter.Location = New System.Drawing.Point(15, 20)
         Me.cmbFilter.Name = "cmbFilter"
         Me.cmbFilter.Size = New System.Drawing.Size(187, 36)

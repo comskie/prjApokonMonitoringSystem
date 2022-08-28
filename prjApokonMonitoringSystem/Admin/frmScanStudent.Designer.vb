@@ -29,7 +29,7 @@ Partial Class frmScanStudent
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Guna2GroupBox1 = New Guna.UI2.WinForms.Guna2GroupBox()
-        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
+        Me.ProfileContainer = New System.Windows.Forms.PictureBox()
         Me.txtAddress = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.cmbGender = New Guna.UI2.WinForms.Guna2ComboBox()
@@ -64,7 +64,7 @@ Partial Class frmScanStudent
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Guna2GroupBox1.SuspendLayout()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ProfileContainer, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Guna2GroupBox2.SuspendLayout()
         Me.Guna2GradientPanel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -109,7 +109,7 @@ Partial Class frmScanStudent
         '
         'Guna2GroupBox1
         '
-        Me.Guna2GroupBox1.Controls.Add(Me.PictureBox3)
+        Me.Guna2GroupBox1.Controls.Add(Me.ProfileContainer)
         Me.Guna2GroupBox1.Controls.Add(Me.txtAddress)
         Me.Guna2GroupBox1.Controls.Add(Me.Label6)
         Me.Guna2GroupBox1.Controls.Add(Me.Label5)
@@ -131,14 +131,15 @@ Partial Class frmScanStudent
         Me.Guna2GroupBox1.TabIndex = 5
         Me.Guna2GroupBox1.Text = "Student Information"
         '
-        'PictureBox3
+        'ProfileContainer
         '
-        Me.PictureBox3.Location = New System.Drawing.Point(555, 61)
-        Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(303, 263)
-        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox3.TabIndex = 44
-        Me.PictureBox3.TabStop = False
+        Me.ProfileContainer.Image = CType(resources.GetObject("ProfileContainer.Image"), System.Drawing.Image)
+        Me.ProfileContainer.Location = New System.Drawing.Point(572, 59)
+        Me.ProfileContainer.Name = "ProfileContainer"
+        Me.ProfileContainer.Size = New System.Drawing.Size(303, 263)
+        Me.ProfileContainer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.ProfileContainer.TabIndex = 44
+        Me.ProfileContainer.TabStop = False
         '
         'txtAddress
         '
@@ -595,7 +596,7 @@ Partial Class frmScanStudent
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Guna2GroupBox1.ResumeLayout(False)
         Me.Guna2GroupBox1.PerformLayout()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ProfileContainer, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Guna2GroupBox2.ResumeLayout(False)
         Me.Guna2GroupBox2.PerformLayout()
         Me.Guna2GradientPanel1.ResumeLayout(False)
@@ -646,5 +647,5 @@ Partial Class frmScanStudent
     Friend WithEvents day_today As Label
     Friend WithEvents lblClock As Label
     Friend WithEvents timeStatus As Label
-    Friend WithEvents PictureBox3 As PictureBox
+    Friend WithEvents ProfileContainer As PictureBox
 End Class

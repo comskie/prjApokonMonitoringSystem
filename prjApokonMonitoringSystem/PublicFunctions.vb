@@ -119,13 +119,58 @@ Module PublicFunctions
         End If
     End Sub
 
-    Public Sub import_file(dgv As DataGridView, ProfileContainer As Panel, section As String)
+    Public Sub import_file(dgv As DataGridView, ProfileContainer As Panel, sectionID As String)
         If dgv.Rows.Count > 0 Then
             For i As Integer = 0 To dgv.Rows.Count - 1 Step +1
                 Dim ms As New MemoryStream
                 ProfileContainer.BackgroundImage.Save(ms, ProfileContainer.BackgroundImage.RawFormat)
                 If checkIfStudentExist(dgv.Rows(i).Cells(0).Value.ToString()) Then
-                    Dim dialogResult As DialogResult = MessageBox.Show("Do you want to register this student?", "Register", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+                    Dim dialogResult As DialogResult = MessageBox.Show("Student '" & dgv.Rows(i).Cells(0).Value.ToString() & "' already exists in the database. Do you want to overwrite / update the data?", "Import Student", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+                    If dialogResult = DialogResult.Yes Then
+                        conn.Open()
+                        Try
+                            comm = New MySqlCommand("prcUpdateStudentImport", conn)
+                            With comm
+                                .CommandType = CommandType.StoredProcedure
+                                .Parameters.AddWithValue("@slrn", dgv.Rows(i).Cells(0).Value.ToString())
+                                .Parameters.AddWithValue("@sfname", dgv.Rows(i).Cells(1).Value.ToString())
+                                .Parameters.AddWithValue("@smname", dgv.Rows(i).Cells(2).Value.ToString())
+                                .Parameters.AddWithValue("@slname", dgv.Rows(i).Cells(3).Value.ToString())
+                                .Parameters.AddWithValue("@sgender", dgv.Rows(i).Cells(4).Value.ToString())
+                                .Parameters.AddWithValue("@saddress", dgv.Rows(i).Cells(5).Value.ToString())
+                                .Parameters.AddWithValue("@spname", dgv.Rows(i).Cells(6).Value.ToString())
+                                .Parameters.AddWithValue("@scnum", dgv.Rows(i).Cells(7).Value.ToString())
+                                .Parameters.AddWithValue("@seaddm", dgv.Rows(i).Cells(8).Value.ToString())
+                                .Parameters.AddWithValue("@sdp", ms.ToArray())
+                                .ExecuteNonQuery()
+                            End With
+                        Catch ex As Exception
+                            conn.Close()
+                            MessageBox.Show(ex.Message)
+                        Finally
+                            conn.Dispose()
+                        End Try
+                        conn.Close()
+
+                        conn.Open()
+                        Try
+                            comm = New MySqlCommand("prcUpdateStudentSection", conn)
+                            With comm
+                                .CommandType = CommandType.StoredProcedure
+                                .Parameters.AddWithValue("@lrn", dgv.Rows(i).Cells(0).Value.ToString())
+                                .Parameters.AddWithValue("@sid", sectionID)
+                                .ExecuteNonQuery()
+                            End With
+                        Catch ex As Exception
+                            conn.Close()
+                            MessageBox.Show(ex.Message)
+                        Finally
+                            conn.Dispose()
+                        End Try
+                        conn.Close()
+                    End If
+                Else
+                    Dim dialogResult As DialogResult = MessageBox.Show("Do you want to import this file?", "Import Student", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
                     If dialogResult = DialogResult.Yes Then
                         conn.Open()
                         Try
@@ -141,6 +186,7 @@ Module PublicFunctions
                                 .Parameters.AddWithValue("@pname", dgv.Rows(i).Cells(6).Value.ToString())
                                 .Parameters.AddWithValue("@pnum", dgv.Rows(i).Cells(7).Value.ToString())
                                 .Parameters.AddWithValue("@eadd", dgv.Rows(i).Cells(8).Value.ToString())
+                                .Parameters.AddWithValue("@dp", ms.ToArray())
                                 .ExecuteNonQuery()
                             End With
                         Catch ex As Exception
@@ -153,18 +199,11 @@ Module PublicFunctions
 
                         conn.Open()
                         Try
-                            comm = New MySqlCommand("prcInsertStudent", conn)
+                            comm = New MySqlCommand("prcInsertStudentSection", conn)
                             With comm
                                 .CommandType = CommandType.StoredProcedure
-                                .Parameters.AddWithValue("@sid", dgv.Rows(i).Cells(0).Value.ToString())
-                                .Parameters.AddWithValue("@sfname", dgv.Rows(i).Cells(1).Value.ToString())
-                                .Parameters.AddWithValue("@smname", dgv.Rows(i).Cells(2).Value.ToString())
-                                .Parameters.AddWithValue("@slname", dgv.Rows(i).Cells(3).Value.ToString())
-                                .Parameters.AddWithValue("@sgender", dgv.Rows(i).Cells(4).Value.ToString())
-                                .Parameters.AddWithValue("@saddress", dgv.Rows(i).Cells(5).Value.ToString())
-                                .Parameters.AddWithValue("@pname", dgv.Rows(i).Cells(6).Value.ToString())
-                                .Parameters.AddWithValue("@pnum", dgv.Rows(i).Cells(7).Value.ToString())
-                                .Parameters.AddWithValue("@eadd", dgv.Rows(i).Cells(8).Value.ToString())
+                                .Parameters.AddWithValue("@lrn", dgv.Rows(i).Cells(0).Value.ToString())
+                                .Parameters.AddWithValue("@sid", sectionID)
                                 .ExecuteNonQuery()
                             End With
                         Catch ex As Exception
@@ -174,31 +213,8 @@ Module PublicFunctions
                             conn.Dispose()
                         End Try
                         conn.Close()
+
                     End If
-                Else
-                    Try
-                        conn.Open()
-                        comm = New MySqlCommand("INSERT INTO tbl_student(lrn, fname, mname, lname, gender, address, parent_name, contact_number, email_address, display_picture, section) VALUES (@slrn, @sfname, @smname, @slname, @sgender, @saddress, @spname, @scnum, @seaddm, @sdp, @ssection)", conn)
-                        comm.Parameters.Add("@slrn", MySqlDbType.VarChar).Value = dgv.Rows(i).Cells(0).Value.ToString()
-                        comm.Parameters.Add("@sfname", MySqlDbType.VarChar).Value = dgv.Rows(i).Cells(1).Value.ToString()
-                        comm.Parameters.Add("@smname", MySqlDbType.VarChar).Value = dgv.Rows(i).Cells(2).Value.ToString()
-                        comm.Parameters.Add("@slname", MySqlDbType.VarChar).Value = dgv.Rows(i).Cells(3).Value.ToString()
-                        comm.Parameters.Add("@sgender", MySqlDbType.VarChar).Value = dgv.Rows(i).Cells(4).Value.ToString()
-                        comm.Parameters.Add("@saddress", MySqlDbType.VarChar).Value = dgv.Rows(i).Cells(5).Value.ToString()
-                        comm.Parameters.Add("@spname", MySqlDbType.VarChar).Value = dgv.Rows(i).Cells(6).Value.ToString()
-                        comm.Parameters.Add("@scnum", MySqlDbType.VarChar).Value = dgv.Rows(i).Cells(7).Value.ToString()
-                        comm.Parameters.Add("@seaddm", MySqlDbType.VarChar).Value = dgv.Rows(i).Cells(8).Value.ToString()
-                        comm.Parameters.Add("@sdp", MySqlDbType.LongBlob).Value = ms.ToArray()
-                        comm.Parameters.Add("@ssection", MySqlDbType.VarChar).Value = section
-                        adapter = New MySqlDataAdapter(comm)
-                        comm.ExecuteNonQuery()
-                    Catch ex As Exception
-                        conn.Close()
-                        MessageBox.Show(ex.Message)
-                    Finally
-                        conn.Dispose()
-                    End Try
-                    conn.Close()
                 End If
             Next
         Else

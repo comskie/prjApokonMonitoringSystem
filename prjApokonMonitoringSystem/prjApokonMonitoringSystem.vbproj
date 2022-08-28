@@ -208,6 +208,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\UserControl\backup\uctrl_backup.Designer.vb">
+      <DependentUpon>uctrl_backup.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UserControl\backup\uctrl_backup.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Admin\UserControl\logs\uctrl_view_logs.Designer.vb">
       <DependentUpon>uctrl_view_logs.vb</DependentUpon>
     </Compile>
@@ -257,12 +263,6 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="PublicFunctions.vb" />
-    <Compile Include="Admin\UserControl\backup\uctrl_backup.Designer.vb">
-      <DependentUpon>uctrl_backup.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\UserControl\backup\uctrl_backup.vb">
-      <SubType>UserControl</SubType>
-    </Compile>
     <Compile Include="Admin\UserControl\notify\uctrl_send_email.Designer.vb">
       <DependentUpon>uctrl_send_email.vb</DependentUpon>
     </Compile>
@@ -430,6 +430,9 @@
     <EmbeddedResource Include="Admin\frmCaptureImage.resx">
       <DependentUpon>frmCaptureImage.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Admin\UserControl\backup\uctrl_backup.resx">
+      <DependentUpon>uctrl_backup.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Admin\UserControl\logs\uctrl_view_logs.resx">
       <DependentUpon>uctrl_view_logs.vb</DependentUpon>
     </EmbeddedResource>
@@ -447,9 +450,6 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Admin\UserControl\backup\uctrl_backup.resx">
-      <DependentUpon>uctrl_backup.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Admin\UserControl\notify\uctrl_send_email.resx">
       <DependentUpon>uctrl_send_email.vb</DependentUpon>
@@ -535,6 +535,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="bin\Debug\prjApokonMonitoringSystem.exe.config" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -603,7 +604,21 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="assets\apokonlogo.png" />
+    <Content Include="assets\avatar.png" />
+    <Content Include="assets\default_profile.jpg" />
+    <Content Include="assets\icons\account.png" />
+    <Content Include="assets\monsyslogo.png" />
+    <Content Include="assets\monsys_logo.png" />
+    <Content Include="assets\scanning_gif.gif" />
+    <Content Include="assets\undraw_back_to_school_inwc.png" />
+    <Content Include="bin\Debug\prjApokonMonitoringSystem.exe" />
+    <Content Include="bin\Debug\prjApokonMonitoringSystem.pdb" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Release\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

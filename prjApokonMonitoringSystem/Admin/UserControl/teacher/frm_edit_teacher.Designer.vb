@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class frm_edit_teacher
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class frm_edit_teacher
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.txtPassword = New Guna.UI2.WinForms.Guna2TextBox()
@@ -38,15 +38,15 @@ Partial Class frm_edit_teacher
         Me.txtContactNo = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Guna2Button3 = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2GroupBox1 = New Guna.UI2.WinForms.Guna2GroupBox()
-        Me.txtAccountID = New System.Windows.Forms.Label()
-        Me.Label12 = New System.Windows.Forms.Label()
-        Me.txtID = New System.Windows.Forms.Label()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.txtUsername = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.txtPrevious = New System.Windows.Forms.Label()
+        Me.lblsid = New System.Windows.Forms.Label()
+        Me.Guna2Button5 = New Guna.UI2.WinForms.Guna2Button()
         Me.Label11 = New System.Windows.Forms.Label()
+        Me.txtSection = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.txtColID = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.txtID = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.Guna2GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -54,7 +54,7 @@ Partial Class frm_edit_teacher
         '
         Me.Label7.AutoSize = True
         Me.Label7.ForeColor = System.Drawing.Color.Black
-        Me.Label7.Location = New System.Drawing.Point(441, 154)
+        Me.Label7.Location = New System.Drawing.Point(440, 63)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(60, 15)
         Me.Label7.TabIndex = 37
@@ -71,7 +71,7 @@ Partial Class frm_edit_teacher
         Me.txtPassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtPassword.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.txtPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtPassword.Location = New System.Drawing.Point(524, 140)
+        Me.txtPassword.Location = New System.Drawing.Point(522, 50)
         Me.txtPassword.Margin = New System.Windows.Forms.Padding(8, 3, 8, 3)
         Me.txtPassword.Name = "txtPassword"
         Me.txtPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -84,7 +84,7 @@ Partial Class frm_edit_teacher
         '
         Me.Label5.AutoSize = True
         Me.Label5.ForeColor = System.Drawing.Color.Black
-        Me.Label5.Location = New System.Drawing.Point(61, 259)
+        Me.Label5.Location = New System.Drawing.Point(59, 271)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(48, 15)
         Me.Label5.TabIndex = 29
@@ -101,7 +101,7 @@ Partial Class frm_edit_teacher
         Me.cmbGender.FormattingEnabled = True
         Me.cmbGender.ItemHeight = 30
         Me.cmbGender.Items.AddRange(New Object() {"Male", "Female"})
-        Me.cmbGender.Location = New System.Drawing.Point(134, 247)
+        Me.cmbGender.Location = New System.Drawing.Point(132, 259)
         Me.cmbGender.Name = "cmbGender"
         Me.cmbGender.Size = New System.Drawing.Size(233, 36)
         Me.cmbGender.TabIndex = 28
@@ -110,7 +110,7 @@ Partial Class frm_edit_teacher
         '
         Me.Label4.AutoSize = True
         Me.Label4.ForeColor = System.Drawing.Color.Black
-        Me.Label4.Location = New System.Drawing.Point(43, 207)
+        Me.Label4.Location = New System.Drawing.Point(41, 219)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(66, 15)
         Me.Label4.TabIndex = 27
@@ -127,7 +127,7 @@ Partial Class frm_edit_teacher
         Me.txtLname.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtLname.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.txtLname.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtLname.Location = New System.Drawing.Point(134, 190)
+        Me.txtLname.Location = New System.Drawing.Point(132, 202)
         Me.txtLname.Margin = New System.Windows.Forms.Padding(8, 3, 8, 3)
         Me.txtLname.Name = "txtLname"
         Me.txtLname.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -140,7 +140,7 @@ Partial Class frm_edit_teacher
         '
         Me.Label1.AutoSize = True
         Me.Label1.ForeColor = System.Drawing.Color.Black
-        Me.Label1.Location = New System.Drawing.Point(27, 154)
+        Me.Label1.Location = New System.Drawing.Point(25, 166)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(82, 15)
         Me.Label1.TabIndex = 25
@@ -157,7 +157,7 @@ Partial Class frm_edit_teacher
         Me.txtMname.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtMname.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.txtMname.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtMname.Location = New System.Drawing.Point(134, 140)
+        Me.txtMname.Location = New System.Drawing.Point(132, 152)
         Me.txtMname.Margin = New System.Windows.Forms.Padding(7, 3, 7, 3)
         Me.txtMname.Name = "txtMname"
         Me.txtMname.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -170,7 +170,7 @@ Partial Class frm_edit_teacher
         '
         Me.Label2.AutoSize = True
         Me.Label2.ForeColor = System.Drawing.Color.Black
-        Me.Label2.Location = New System.Drawing.Point(42, 99)
+        Me.Label2.Location = New System.Drawing.Point(40, 111)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(67, 15)
         Me.Label2.TabIndex = 23
@@ -187,7 +187,7 @@ Partial Class frm_edit_teacher
         Me.txtFname.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtFname.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.txtFname.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtFname.Location = New System.Drawing.Point(134, 86)
+        Me.txtFname.Location = New System.Drawing.Point(132, 98)
         Me.txtFname.Margin = New System.Windows.Forms.Padding(6, 3, 6, 3)
         Me.txtFname.Name = "txtFname"
         Me.txtFname.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -200,7 +200,7 @@ Partial Class frm_edit_teacher
         '
         Me.Label9.AutoSize = True
         Me.Label9.ForeColor = System.Drawing.Color.Black
-        Me.Label9.Location = New System.Drawing.Point(70, 363)
+        Me.Label9.Location = New System.Drawing.Point(68, 375)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(39, 15)
         Me.Label9.TabIndex = 33
@@ -217,7 +217,7 @@ Partial Class frm_edit_teacher
         Me.txtEmail.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtEmail.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.txtEmail.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtEmail.Location = New System.Drawing.Point(134, 350)
+        Me.txtEmail.Location = New System.Drawing.Point(132, 362)
         Me.txtEmail.Margin = New System.Windows.Forms.Padding(8, 3, 8, 3)
         Me.txtEmail.Name = "txtEmail"
         Me.txtEmail.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -230,7 +230,7 @@ Partial Class frm_edit_teacher
         '
         Me.Label8.AutoSize = True
         Me.Label8.ForeColor = System.Drawing.Color.Black
-        Me.Label8.Location = New System.Drawing.Point(38, 313)
+        Me.Label8.Location = New System.Drawing.Point(36, 325)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(71, 15)
         Me.Label8.TabIndex = 31
@@ -247,7 +247,7 @@ Partial Class frm_edit_teacher
         Me.txtContactNo.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtContactNo.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.txtContactNo.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtContactNo.Location = New System.Drawing.Point(134, 298)
+        Me.txtContactNo.Location = New System.Drawing.Point(132, 310)
         Me.txtContactNo.Margin = New System.Windows.Forms.Padding(7, 3, 7, 3)
         Me.txtContactNo.Name = "txtContactNo"
         Me.txtContactNo.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -263,7 +263,7 @@ Partial Class frm_edit_teacher
         Me.Guna2Button3.BorderRadius = 21
         Me.Guna2Button3.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.Guna2Button3.ForeColor = System.Drawing.Color.White
-        Me.Guna2Button3.Location = New System.Drawing.Point(367, 460)
+        Me.Guna2Button3.Location = New System.Drawing.Point(382, 492)
         Me.Guna2Button3.Name = "Guna2Button3"
         Me.Guna2Button3.Size = New System.Drawing.Size(107, 45)
         Me.Guna2Button3.TabIndex = 31
@@ -271,16 +271,16 @@ Partial Class frm_edit_teacher
         '
         'Guna2GroupBox1
         '
-        Me.Guna2GroupBox1.Controls.Add(Me.txtPrevious)
+        Me.Guna2GroupBox1.Controls.Add(Me.lblsid)
+        Me.Guna2GroupBox1.Controls.Add(Me.Guna2Button5)
         Me.Guna2GroupBox1.Controls.Add(Me.Label11)
-        Me.Guna2GroupBox1.Controls.Add(Me.txtAccountID)
-        Me.Guna2GroupBox1.Controls.Add(Me.Label12)
-        Me.Guna2GroupBox1.Controls.Add(Me.txtID)
+        Me.Guna2GroupBox1.Controls.Add(Me.txtSection)
+        Me.Guna2GroupBox1.Controls.Add(Me.txtColID)
         Me.Guna2GroupBox1.Controls.Add(Me.Label10)
+        Me.Guna2GroupBox1.Controls.Add(Me.Label6)
+        Me.Guna2GroupBox1.Controls.Add(Me.txtID)
         Me.Guna2GroupBox1.Controls.Add(Me.Label7)
         Me.Guna2GroupBox1.Controls.Add(Me.txtPassword)
-        Me.Guna2GroupBox1.Controls.Add(Me.Label6)
-        Me.Guna2GroupBox1.Controls.Add(Me.txtUsername)
         Me.Guna2GroupBox1.Controls.Add(Me.Label5)
         Me.Guna2GroupBox1.Controls.Add(Me.cmbGender)
         Me.Guna2GroupBox1.Controls.Add(Me.Label4)
@@ -299,49 +299,114 @@ Partial Class frm_edit_teacher
         Me.Guna2GroupBox1.ForeColor = System.Drawing.Color.White
         Me.Guna2GroupBox1.Location = New System.Drawing.Point(19, 12)
         Me.Guna2GroupBox1.Name = "Guna2GroupBox1"
-        Me.Guna2GroupBox1.Size = New System.Drawing.Size(854, 429)
+        Me.Guna2GroupBox1.Size = New System.Drawing.Size(854, 474)
         Me.Guna2GroupBox1.TabIndex = 30
         Me.Guna2GroupBox1.Text = "Teacher Information"
         '
-        'txtAccountID
+        'lblsid
         '
-        Me.txtAccountID.AutoSize = True
-        Me.txtAccountID.ForeColor = System.Drawing.Color.Black
-        Me.txtAccountID.Location = New System.Drawing.Point(521, 53)
-        Me.txtAccountID.Name = "txtAccountID"
-        Me.txtAccountID.Size = New System.Drawing.Size(55, 15)
-        Me.txtAccountID.TabIndex = 41
-        Me.txtAccountID.Text = "[no data]"
+        Me.lblsid.AutoSize = True
+        Me.lblsid.ForeColor = System.Drawing.Color.Black
+        Me.lblsid.Location = New System.Drawing.Point(479, 429)
+        Me.lblsid.Name = "lblsid"
+        Me.lblsid.Size = New System.Drawing.Size(55, 15)
+        Me.lblsid.TabIndex = 47
+        Me.lblsid.Text = "[no data]"
+        Me.lblsid.Visible = False
         '
-        'Label12
+        'Guna2Button5
         '
-        Me.Label12.AutoSize = True
-        Me.Label12.ForeColor = System.Drawing.Color.Black
-        Me.Label12.Location = New System.Drawing.Point(432, 53)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(69, 15)
-        Me.Label12.TabIndex = 40
-        Me.Label12.Text = "Account ID:"
+        Me.Guna2Button5.Animated = True
+        Me.Guna2Button5.AutoRoundedCorners = True
+        Me.Guna2Button5.BorderRadius = 16
+        Me.Guna2Button5.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.Guna2Button5.ForeColor = System.Drawing.Color.White
+        Me.Guna2Button5.Location = New System.Drawing.Point(376, 418)
+        Me.Guna2Button5.Name = "Guna2Button5"
+        Me.Guna2Button5.Size = New System.Drawing.Size(89, 35)
+        Me.Guna2Button5.TabIndex = 46
+        Me.Guna2Button5.Text = "Browse"
         '
-        'txtID
+        'Label11
         '
-        Me.txtID.AutoSize = True
-        Me.txtID.ForeColor = System.Drawing.Color.Black
-        Me.txtID.Location = New System.Drawing.Point(131, 53)
-        Me.txtID.Name = "txtID"
-        Me.txtID.Size = New System.Drawing.Size(55, 15)
-        Me.txtID.TabIndex = 39
-        Me.txtID.Text = "[no data]"
+        Me.Label11.AutoSize = True
+        Me.Label11.ForeColor = System.Drawing.Color.Black
+        Me.Label11.Location = New System.Drawing.Point(59, 429)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(49, 15)
+        Me.Label11.TabIndex = 45
+        Me.Label11.Text = "Section:"
+        '
+        'txtSection
+        '
+        Me.txtSection.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtSection.DefaultText = ""
+        Me.txtSection.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txtSection.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txtSection.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtSection.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtSection.Enabled = False
+        Me.txtSection.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtSection.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txtSection.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtSection.Location = New System.Drawing.Point(132, 418)
+        Me.txtSection.Margin = New System.Windows.Forms.Padding(8, 3, 8, 3)
+        Me.txtSection.Name = "txtSection"
+        Me.txtSection.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtSection.PlaceholderText = ""
+        Me.txtSection.SelectedText = ""
+        Me.txtSection.Size = New System.Drawing.Size(233, 36)
+        Me.txtSection.TabIndex = 44
+        '
+        'txtColID
+        '
+        Me.txtColID.AutoSize = True
+        Me.txtColID.ForeColor = System.Drawing.Color.Black
+        Me.txtColID.Location = New System.Drawing.Point(519, 111)
+        Me.txtColID.Name = "txtColID"
+        Me.txtColID.Size = New System.Drawing.Size(55, 15)
+        Me.txtColID.TabIndex = 43
+        Me.txtColID.Text = "[no data]"
         '
         'Label10
         '
         Me.Label10.AutoSize = True
         Me.Label10.ForeColor = System.Drawing.Color.Black
-        Me.Label10.Location = New System.Drawing.Point(88, 53)
+        Me.Label10.Location = New System.Drawing.Point(458, 111)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(21, 15)
-        Me.Label10.TabIndex = 38
-        Me.Label10.Text = "ID:"
+        Me.Label10.Size = New System.Drawing.Size(42, 15)
+        Me.Label10.TabIndex = 42
+        Me.Label10.Text = "Col ID:"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.ForeColor = System.Drawing.Color.Black
+        Me.Label6.Location = New System.Drawing.Point(43, 64)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(64, 15)
+        Me.Label6.TabIndex = 41
+        Me.Label6.Text = "Teacher ID:"
+        '
+        'txtID
+        '
+        Me.txtID.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtID.DefaultText = ""
+        Me.txtID.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txtID.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txtID.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtID.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtID.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtID.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txtID.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtID.Location = New System.Drawing.Point(132, 50)
+        Me.txtID.Margin = New System.Windows.Forms.Padding(6, 3, 6, 3)
+        Me.txtID.Name = "txtID"
+        Me.txtID.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtID.PlaceholderText = ""
+        Me.txtID.SelectedText = ""
+        Me.txtID.Size = New System.Drawing.Size(233, 42)
+        Me.txtID.TabIndex = 40
         '
         'Label3
         '
@@ -351,58 +416,6 @@ Partial Class frm_edit_teacher
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(0, 15)
         Me.Label3.TabIndex = 5
-        '
-        'txtUsername
-        '
-        Me.txtUsername.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.txtUsername.DefaultText = ""
-        Me.txtUsername.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.txtUsername.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.txtUsername.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtUsername.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtUsername.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtUsername.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.txtUsername.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtUsername.Location = New System.Drawing.Point(524, 86)
-        Me.txtUsername.Margin = New System.Windows.Forms.Padding(7, 3, 7, 3)
-        Me.txtUsername.Name = "txtUsername"
-        Me.txtUsername.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtUsername.PlaceholderText = ""
-        Me.txtUsername.SelectedText = ""
-        Me.txtUsername.Size = New System.Drawing.Size(272, 42)
-        Me.txtUsername.TabIndex = 34
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.ForeColor = System.Drawing.Color.Black
-        Me.Label6.Location = New System.Drawing.Point(438, 99)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(63, 15)
-        Me.Label6.TabIndex = 35
-        Me.Label6.Text = "Username:"
-        '
-        'txtPrevious
-        '
-        Me.txtPrevious.AutoSize = True
-        Me.txtPrevious.ForeColor = System.Drawing.Color.Black
-        Me.txtPrevious.Location = New System.Drawing.Point(521, 190)
-        Me.txtPrevious.Name = "txtPrevious"
-        Me.txtPrevious.Size = New System.Drawing.Size(55, 15)
-        Me.txtPrevious.TabIndex = 43
-        Me.txtPrevious.Text = "[no data]"
-        Me.txtPrevious.Visible = False
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.ForeColor = System.Drawing.Color.Black
-        Me.Label11.Location = New System.Drawing.Point(391, 190)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(111, 15)
-        Me.Label11.TabIndex = 42
-        Me.Label11.Text = "Previous Username:"
-        Me.Label11.Visible = False
         '
         'frm_edit_teacher
         '
@@ -439,12 +452,12 @@ Partial Class frm_edit_teacher
     Friend WithEvents Guna2Button3 As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Guna2GroupBox1 As Guna.UI2.WinForms.Guna2GroupBox
     Friend WithEvents Label3 As Label
-    Friend WithEvents txtID As Label
-    Friend WithEvents Label10 As Label
-    Friend WithEvents txtAccountID As Label
-    Friend WithEvents Label12 As Label
-    Friend WithEvents txtPrevious As Label
-    Friend WithEvents Label11 As Label
     Friend WithEvents Label6 As Label
-    Friend WithEvents txtUsername As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents txtID As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents txtColID As Label
+    Friend WithEvents Label10 As Label
+    Friend WithEvents lblsid As Label
+    Friend WithEvents Guna2Button5 As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents Label11 As Label
+    Friend WithEvents txtSection As Guna.UI2.WinForms.Guna2TextBox
 End Class

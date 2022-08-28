@@ -52,7 +52,7 @@ Partial Class UserControl_StartScreen
         Me.Guna2CirclePictureBox2.FillColor = System.Drawing.Color.Transparent
         Me.Guna2CirclePictureBox2.Image = CType(resources.GetObject("Guna2CirclePictureBox2.Image"), System.Drawing.Image)
         Me.Guna2CirclePictureBox2.ImageRotate = 0!
-        Me.Guna2CirclePictureBox2.Location = New System.Drawing.Point(352, 43)
+        Me.Guna2CirclePictureBox2.Location = New System.Drawing.Point(316, 36)
         Me.Guna2CirclePictureBox2.Name = "Guna2CirclePictureBox2"
         Me.Guna2CirclePictureBox2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
         Me.Guna2CirclePictureBox2.Size = New System.Drawing.Size(269, 298)
@@ -65,7 +65,7 @@ Partial Class UserControl_StartScreen
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Century Gothic", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(286, 344)
+        Me.Label1.Location = New System.Drawing.Point(250, 337)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(393, 36)
         Me.Label1.TabIndex = 4

@@ -85,13 +85,12 @@ Public Class frmScanStudent
             txtParent.Text = table.Rows(0).Item(7).ToString()
             txtContactNo.Text = table.Rows(0).Item(8).ToString()
             txtEmail.Text = table.Rows(0).Item(9).ToString()
-            'If table.Rows(0).Item(10) IsNot Nothing Then
-            '    Dim ms As New MemoryStream(CType(table.Rows(0).Item(10), Byte()))
-            '    ProfileContainer.BackgroundImage = Image.FromStream(ms)
-            'Else
-            '    MsgBox("Student Not Found!")
-            'End If
-            PictureBox3.Load(table.Rows(0).Item(12).ToString)
+            If table.Rows(0).Item(10) IsNot Nothing Then
+                Dim ms As New MemoryStream(CType(table.Rows(0).Item(10), Byte()))
+                ProfileContainer.Image = Image.FromStream(ms)
+            Else
+                MsgBox("Student Not Found!")
+            End If
 
             conn.Close()
         Catch ex As Exception
