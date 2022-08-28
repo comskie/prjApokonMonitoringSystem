@@ -29,15 +29,9 @@ Public Class frmScanStudent
         End If
     End Sub
 
-    Private Sub frmScanStudent_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
-        Try
-            vcd.Stop()
-        Catch ex As Exception
-
-        End Try
-    End Sub
-
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+        Dim Reader As New BarcodeReader()
+        Dim result As Result = Reader.Decode(CType(PictureBox1.Image, Bitmap))
         Try
             lblClock.Text = DateTime.Now.ToString("hh:mm:ss tt").ToUpper
             If ValidateTimeLog() = "Timein AM" Then
@@ -51,12 +45,13 @@ Public Class frmScanStudent
             Else
                 timeStatus.Text = "[no data]"
             End If
-            Dim Reader As New BarcodeReader()
-            Dim result As Result = Reader.Decode(CType(PictureBox1.Image, Bitmap))
-            If result IsNot Nothing And IsNumeric(result.Text) And result.Text.Count = 12 Then
-                SearchStudent(result.Text)
-            Else
-                MsgBox("Invalid QR Code", MessageBoxIcon.Error)
+
+            If result IsNot Nothing Then
+                If IsNumeric(result.Text) And result.Text.Count = 12 Then
+                    SearchStudent(result.Text)
+                Else
+                    MsgBox("Invalid QR Code", MessageBoxIcon.Error)
+                End If
             End If
         Catch ex As Exception
 
@@ -104,5 +99,13 @@ Public Class frmScanStudent
         Dim tts = CreateObject("SAPI.spvoice")
         tts.speak("Welcome " & txtFname.Text & " " & txtMname.Text & " " & txtLname.Text)
         InsertToLogs(txtLRN.Text)
+    End Sub
+
+    Private Sub frmScanStudent_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
+        Try
+            vcd.Stop()
+        Catch ex As Exception
+
+        End Try
     End Sub
 End Class
