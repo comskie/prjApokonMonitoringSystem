@@ -149,67 +149,69 @@ Public Class uctrl_student_list
 
     Private Sub dgvStudent_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvStudent.CellClick
         Dim colName As String = dgvStudent.Columns(e.ColumnIndex).Name
-        Dim selectedRow As New DataGridViewRow
-        Dim index As New Integer
-        Try
-            index = e.RowIndex
-            selectedRow = dgvStudent.Rows(index)
-            If colName = "action_view" Then
-                With frm_view_student
-                    .txtLRN.Text = selectedRow.Cells(5).Value.ToString
-                    .txtFname.Text = selectedRow.Cells(6).Value.ToString
-                    .txtMname.Text = selectedRow.Cells(7).Value.ToString
-                    .txtLname.Text = selectedRow.Cells(8).Value.ToString
-                    If selectedRow.Cells(9).Value.ToString = "Male" Then
-                        .cmbGender.SelectedIndex = 0
-                    Else
-                        .cmbGender.SelectedIndex = 1
-                    End If
+        If e.RowIndex >= 0 Then
+            Dim selectedRow As New DataGridViewRow
+            Dim index As New Integer
+            Try
+                index = e.RowIndex
+                selectedRow = dgvStudent.Rows(index)
+                If colName = "action_view" Then
+                    With frm_view_student
+                        .txtLRN.Text = selectedRow.Cells(5).Value.ToString
+                        .txtFname.Text = selectedRow.Cells(6).Value.ToString
+                        .txtMname.Text = selectedRow.Cells(7).Value.ToString
+                        .txtLname.Text = selectedRow.Cells(8).Value.ToString
+                        If selectedRow.Cells(9).Value.ToString = "Male" Then
+                            .cmbGender.SelectedIndex = 0
+                        Else
+                            .cmbGender.SelectedIndex = 1
+                        End If
 
-                    .txtAddress.Text = selectedRow.Cells(10).Value.ToString
-                    .txtParent.Text = selectedRow.Cells(11).Value.ToString
-                    .txtContactNo.Text = selectedRow.Cells(12).Value.ToString
-                    .txtEmail.Text = selectedRow.Cells(13).Value.ToString
-                    .txtSection.Text = selectedRow.Cells(14).Value.ToString
-                    Dim img() As Byte = selectedRow.Cells(15).Value
-                    Dim ms As New MemoryStream(img)
-                    .ProfileContainer.Image = Image.FromStream(ms)
-                    .ShowDialog()
-                End With
-            ElseIf colName = "action_edit" Then
-                With frm_edit_student
-                    .txtID.Text = selectedRow.Cells(4).Value.ToString
-                    .txtLRN.Text = selectedRow.Cells(5).Value.ToString
-                    .txtFname.Text = selectedRow.Cells(6).Value.ToString
-                    .txtMname.Text = selectedRow.Cells(7).Value.ToString
-                    .txtLname.Text = selectedRow.Cells(8).Value.ToString
-                    If selectedRow.Cells(9).Value.ToString = "Male" Then
-                        .cmbGender.SelectedIndex = 0
-                    Else
-                        .cmbGender.SelectedIndex = 1
-                    End If
+                        .txtAddress.Text = selectedRow.Cells(10).Value.ToString
+                        .txtParent.Text = selectedRow.Cells(11).Value.ToString
+                        .txtContactNo.Text = selectedRow.Cells(12).Value.ToString
+                        .txtEmail.Text = selectedRow.Cells(13).Value.ToString
+                        .txtSection.Text = selectedRow.Cells(14).Value.ToString
+                        Dim img() As Byte = selectedRow.Cells(15).Value
+                        Dim ms As New MemoryStream(img)
+                        .ProfileContainer.Image = Image.FromStream(ms)
+                        .ShowDialog()
+                    End With
+                ElseIf colName = "action_edit" Then
+                    With frm_edit_student
+                        .txtID.Text = selectedRow.Cells(4).Value.ToString
+                        .txtLRN.Text = selectedRow.Cells(5).Value.ToString
+                        .txtFname.Text = selectedRow.Cells(6).Value.ToString
+                        .txtMname.Text = selectedRow.Cells(7).Value.ToString
+                        .txtLname.Text = selectedRow.Cells(8).Value.ToString
+                        If selectedRow.Cells(9).Value.ToString = "Male" Then
+                            .cmbGender.SelectedIndex = 0
+                        Else
+                            .cmbGender.SelectedIndex = 1
+                        End If
 
-                    .txtAddress.Text = selectedRow.Cells(10).Value.ToString
-                    .txtParent.Text = selectedRow.Cells(11).Value.ToString
-                    .txtContactNo.Text = selectedRow.Cells(12).Value.ToString
-                    .txtEmail.Text = selectedRow.Cells(13).Value.ToString
-                    .txtSection.Text = selectedRow.Cells(14).Value.ToString
-                    Dim img() As Byte = selectedRow.Cells(15).Value
-                    Dim ms As New MemoryStream(img)
-                    .ProfileContainer.Image = Image.FromStream(ms)
-                    .ShowDialog()
-                End With
-                load_data()
-            ElseIf colName = "action_delete" Then
-                Dim dialogResult As DialogResult = MessageBox.Show("Do you want to delete this student?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
-                If dialogResult = DialogResult.Yes Then
-                    deleteStudent(selectedRow.Cells(5).Value.ToString)
+                        .txtAddress.Text = selectedRow.Cells(10).Value.ToString
+                        .txtParent.Text = selectedRow.Cells(11).Value.ToString
+                        .txtContactNo.Text = selectedRow.Cells(12).Value.ToString
+                        .txtEmail.Text = selectedRow.Cells(13).Value.ToString
+                        .txtSection.Text = selectedRow.Cells(14).Value.ToString
+                        Dim img() As Byte = selectedRow.Cells(15).Value
+                        Dim ms As New MemoryStream(img)
+                        .ProfileContainer.Image = Image.FromStream(ms)
+                        .ShowDialog()
+                    End With
                     load_data()
+                ElseIf colName = "action_delete" Then
+                    Dim dialogResult As DialogResult = MessageBox.Show("Do you want to delete this student?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+                    If dialogResult = DialogResult.Yes Then
+                        deleteStudent(selectedRow.Cells(5).Value.ToString)
+                        load_data()
+                    End If
                 End If
-            End If
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+        End If
     End Sub
 
     Private Sub deleteStudent(sLRN As String)
