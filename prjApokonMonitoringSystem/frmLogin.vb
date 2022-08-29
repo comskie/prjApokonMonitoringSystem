@@ -30,6 +30,7 @@ Public Class frmLogin
 
             If table.Rows.Count = 0 Then
                 MsgBox("Access Denied. Wrong username or password", MsgBoxStyle.Critical)
+                txtUsername.Focus()
             Else
                 If table.Rows(0).Item(3).ToString() = "teacher" Then
                     MsgBox("Access Granted! Welcome teacher", MsgBoxStyle.Information)
