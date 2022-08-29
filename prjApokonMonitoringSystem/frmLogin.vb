@@ -14,6 +14,12 @@ Public Class frmLogin
         connect()
     End Sub
 
+    Private Sub frmLogin_KeyDown(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            Guna2Button1.PerformClick()
+        End If
+    End Sub
+
     Private Sub Guna2Button1_Click_1(sender As Object, e As EventArgs) Handles Guna2Button1.Click
         Try
             conn.Open()
