@@ -6,8 +6,7 @@ Public Class uctrl_section_list
 
     Private Sub displaySection()
         Try
-
-            comm = New MySqlCommand("SELECT id as 'ID', section_name as 'Section Name', year_level as 'Year Level', academic_year as 'Academic Year' FROM tbl_section", conn)
+            comm = New MySqlCommand("SELECT id AS 'ID', section_id AS 'Section ID', section_name AS 'Section Name', year_level AS 'Year Level', academic_year AS 'Academic Year' FROM tbl_section", conn)
 
             Dim da As New MySqlDataAdapter
             da.SelectCommand = comm
@@ -25,11 +24,11 @@ Public Class uctrl_section_list
     Private Sub filteredSearch()
         Try
             If cmbFilter.Text = "All" Then
-                comm = New MySqlCommand("SELECT * FROM tbl_section", conn)
+                comm = New MySqlCommand("SELECT id AS 'ID', section_id AS 'Section ID', section_name AS 'Section Name', year_level AS 'Year Level', academic_year AS 'Academic Year' FROM tbl_section", conn)
             ElseIf cmbFilter.Text = "By Section" Then
-                comm = New MySqlCommand("SELECT * FROM tbl_section WHERE section_name LIKE '%" + txtSearchBox.Text + "%'", conn)
+                comm = New MySqlCommand("SELECT id AS 'ID', section_id AS 'Section ID', section_name AS 'Section Name', year_level AS 'Year Level', academic_year AS 'Academic Year' FROM tbl_section WHERE section_name LIKE '%" + txtSearchBox.Text + "%'", conn)
             ElseIf cmbFilter.Text = "By Grade Level" Then
-                comm = New MySqlCommand("SELECT * FROM tbl_section WHERE year_level LIKE '%" + cmbYearLevel.Text + "%'", conn)
+                comm = New MySqlCommand("SELECT id AS 'ID', section_id AS 'Section ID', section_name AS 'Section Name', year_level AS 'Year Level', academic_year AS 'Academic Year' FROM tbl_section WHERE year_level LIKE '%" + cmbYearLevel.Text + "%'", conn)
             End If
 
             Dim da As New MySqlDataAdapter

@@ -14,6 +14,12 @@ Public Class frmLogin
         connect()
     End Sub
 
+    Private Sub frmLogin_KeyDown(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            Guna2Button1.PerformClick()
+        End If
+    End Sub
+
     Private Sub Guna2Button1_Click_1(sender As Object, e As EventArgs) Handles Guna2Button1.Click
         Try
             conn.Open()
@@ -24,6 +30,7 @@ Public Class frmLogin
 
             If table.Rows.Count = 0 Then
                 MsgBox("Access Denied. Wrong username or password", MsgBoxStyle.Critical)
+                txtUsername.Focus()
             Else
                 If table.Rows(0).Item(3).ToString() = "teacher" Then
                     MsgBox("Access Granted! Welcome teacher", MsgBoxStyle.Information)
