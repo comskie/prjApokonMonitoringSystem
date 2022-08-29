@@ -7,7 +7,7 @@ Public Class uctrl_section_list
     Private Sub displaySection()
         Try
 
-            comm = New MySqlCommand("SELECT * FROM tbl_section", conn)
+            comm = New MySqlCommand("SELECT id as 'ID', section_name as 'Section Name', year_level as 'Year Level', academic_year as 'Academic Year' FROM tbl_section", conn)
 
             Dim da As New MySqlDataAdapter
             da.SelectCommand = comm
