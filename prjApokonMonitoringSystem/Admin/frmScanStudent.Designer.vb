@@ -49,6 +49,10 @@ Partial Class frmScanStudent
         Me.txtParent = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Guna2GroupBox2 = New Guna.UI2.WinForms.Guna2GroupBox()
         Me.Guna2GradientPanel1 = New Guna.UI2.WinForms.Guna2GradientPanel()
+        Me.lblPort = New System.Windows.Forms.Label()
+        Me.lblStatus = New System.Windows.Forms.Label()
+        Me.Guna2Button2 = New Guna.UI2.WinForms.Guna2Button()
+        Me.cmbConnect = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
@@ -61,6 +65,7 @@ Partial Class frmScanStudent
         Me.day_today = New System.Windows.Forms.Label()
         Me.lblClock = New System.Windows.Forms.Label()
         Me.timeStatus = New System.Windows.Forms.Label()
+        Me.SerialPort1 = New System.IO.Ports.SerialPort(Me.components)
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Guna2GroupBox1.SuspendLayout()
@@ -91,7 +96,7 @@ Partial Class frmScanStudent
         '
         Me.PictureBox2.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
-        Me.PictureBox2.Location = New System.Drawing.Point(41, 412)
+        Me.PictureBox2.Location = New System.Drawing.Point(50, 498)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(283, 202)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -418,14 +423,18 @@ Partial Class frmScanStudent
         Me.Guna2GroupBox2.CustomBorderColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(88, Byte), Integer))
         Me.Guna2GroupBox2.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.Guna2GroupBox2.ForeColor = System.Drawing.Color.White
-        Me.Guna2GroupBox2.Location = New System.Drawing.Point(453, 770)
+        Me.Guna2GroupBox2.Location = New System.Drawing.Point(453, 765)
         Me.Guna2GroupBox2.Name = "Guna2GroupBox2"
-        Me.Guna2GroupBox2.Size = New System.Drawing.Size(1422, 185)
+        Me.Guna2GroupBox2.Size = New System.Drawing.Size(1047, 185)
         Me.Guna2GroupBox2.TabIndex = 6
         Me.Guna2GroupBox2.Text = "Parent Information"
         '
         'Guna2GradientPanel1
         '
+        Me.Guna2GradientPanel1.Controls.Add(Me.lblPort)
+        Me.Guna2GradientPanel1.Controls.Add(Me.lblStatus)
+        Me.Guna2GradientPanel1.Controls.Add(Me.Guna2Button2)
+        Me.Guna2GradientPanel1.Controls.Add(Me.cmbConnect)
         Me.Guna2GradientPanel1.Controls.Add(Me.PictureBox1)
         Me.Guna2GradientPanel1.Controls.Add(Me.PictureBox2)
         Me.Guna2GradientPanel1.FillColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(250, Byte), Integer))
@@ -435,6 +444,60 @@ Partial Class frmScanStudent
         Me.Guna2GradientPanel1.Name = "Guna2GradientPanel1"
         Me.Guna2GradientPanel1.Size = New System.Drawing.Size(395, 1044)
         Me.Guna2GradientPanel1.TabIndex = 7
+        '
+        'lblPort
+        '
+        Me.lblPort.AutoSize = True
+        Me.lblPort.BackColor = System.Drawing.Color.Transparent
+        Me.lblPort.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPort.ForeColor = System.Drawing.Color.Black
+        Me.lblPort.Location = New System.Drawing.Point(29, 456)
+        Me.lblPort.Name = "lblPort"
+        Me.lblPort.Size = New System.Drawing.Size(110, 16)
+        Me.lblPort.TabIndex = 52
+        Me.lblPort.Text = "[Port Not Selected]"
+        '
+        'lblStatus
+        '
+        Me.lblStatus.AutoSize = True
+        Me.lblStatus.BackColor = System.Drawing.Color.Transparent
+        Me.lblStatus.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblStatus.ForeColor = System.Drawing.Color.DarkRed
+        Me.lblStatus.Location = New System.Drawing.Point(267, 456)
+        Me.lblStatus.Name = "lblStatus"
+        Me.lblStatus.Size = New System.Drawing.Size(98, 16)
+        Me.lblStatus.TabIndex = 53
+        Me.lblStatus.Text = "[not connected]"
+        '
+        'Guna2Button2
+        '
+        Me.Guna2Button2.Animated = True
+        Me.Guna2Button2.AutoRoundedCorners = True
+        Me.Guna2Button2.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2Button2.BorderRadius = 17
+        Me.Guna2Button2.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.Guna2Button2.ForeColor = System.Drawing.Color.White
+        Me.Guna2Button2.Location = New System.Drawing.Point(270, 403)
+        Me.Guna2Button2.Name = "Guna2Button2"
+        Me.Guna2Button2.Size = New System.Drawing.Size(95, 36)
+        Me.Guna2Button2.TabIndex = 50
+        Me.Guna2Button2.Text = "Connect"
+        '
+        'cmbConnect
+        '
+        Me.cmbConnect.BackColor = System.Drawing.Color.Transparent
+        Me.cmbConnect.BorderRadius = 10
+        Me.cmbConnect.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
+        Me.cmbConnect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmbConnect.FocusedColor = System.Drawing.Color.Empty
+        Me.cmbConnect.Font = New System.Drawing.Font("Century Gothic", 9.75!)
+        Me.cmbConnect.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.cmbConnect.FormattingEnabled = True
+        Me.cmbConnect.ItemHeight = 30
+        Me.cmbConnect.Location = New System.Drawing.Point(32, 403)
+        Me.cmbConnect.Name = "cmbConnect"
+        Me.cmbConnect.Size = New System.Drawing.Size(223, 36)
+        Me.cmbConnect.TabIndex = 49
         '
         'Panel2
         '
@@ -514,7 +577,7 @@ Partial Class frmScanStudent
         Me.Panel3.BackColor = System.Drawing.Color.PowderBlue
         Me.Panel3.Controls.Add(Me.Label13)
         Me.Panel3.Controls.Add(Me.Label14)
-        Me.Panel3.Location = New System.Drawing.Point(394, 994)
+        Me.Panel3.Location = New System.Drawing.Point(394, 980)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(1512, 59)
         Me.Panel3.TabIndex = 40
@@ -524,7 +587,7 @@ Partial Class frmScanStudent
         Me.Label13.AutoSize = True
         Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label13.ForeColor = System.Drawing.Color.Black
-        Me.Label13.Location = New System.Drawing.Point(736, 22)
+        Me.Label13.Location = New System.Drawing.Point(471, 20)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(77, 15)
         Me.Label13.TabIndex = 41
@@ -535,7 +598,7 @@ Partial Class frmScanStudent
         Me.Label14.AutoSize = True
         Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label14.ForeColor = System.Drawing.Color.Black
-        Me.Label14.Location = New System.Drawing.Point(670, 6)
+        Me.Label14.Location = New System.Drawing.Point(407, 5)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(216, 15)
         Me.Label14.TabIndex = 40
@@ -581,7 +644,7 @@ Partial Class frmScanStudent
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(1519, 758)
+        Me.ClientSize = New System.Drawing.Size(1514, 1024)
         Me.Controls.Add(Me.timeStatus)
         Me.Controls.Add(Me.lblClock)
         Me.Controls.Add(Me.day_today)
@@ -601,6 +664,7 @@ Partial Class frmScanStudent
         Me.Guna2GroupBox2.ResumeLayout(False)
         Me.Guna2GroupBox2.PerformLayout()
         Me.Guna2GradientPanel1.ResumeLayout(False)
+        Me.Guna2GradientPanel1.PerformLayout()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         CType(Me.Guna2PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
@@ -649,4 +713,9 @@ Partial Class frmScanStudent
     Friend WithEvents lblClock As Label
     Friend WithEvents timeStatus As Label
     Friend WithEvents ProfileContainer As PictureBox
+    Friend WithEvents SerialPort1 As IO.Ports.SerialPort
+    Friend WithEvents cmbConnect As Guna.UI2.WinForms.Guna2ComboBox
+    Friend WithEvents Guna2Button2 As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents lblPort As Label
+    Friend WithEvents lblStatus As Label
 End Class

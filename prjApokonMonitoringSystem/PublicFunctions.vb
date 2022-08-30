@@ -1,12 +1,7 @@
 ﻿Imports System.Net.Mail
 Imports System.IO
 Imports MySql.Data.MySqlClient
-Imports CloudinaryDotNet
-Imports CloudinaryDotNet.Actions
-Imports System.Net
-
 Module PublicFunctions
-    Public cloudinary As Cloudinary
     Public teacherID As String
     Public Sub addUserControl(userControl As UserControl, pnl As Panel)
         userControl.Dock = DockStyle.Fill
@@ -328,41 +323,4 @@ Module PublicFunctions
         conn.Close()
         Return False
     End Function
-
-    'Function CloudinaryStorage(path As String, sLRN As String) As String
-    '    Dim acc As New Account(CLOUD_NAME, API_KEY, API_SECRET)
-    '    cloudinary = New Cloudinary(acc)
-    '    cloudinary.Api.Secure = True
-    '    cloudinary.Api.UrlImgUp.Transform(New Transformation().Quality(50).FetchFormat("auto"))
-    '    Return uploadImage(path, sLRN)
-    'End Function
-
-    'Public Sub deleteImage(sLRN As String)
-    '    Dim acc As New Account(CLOUD_NAME, API_KEY, API_SECRET)
-    '    cloudinary = New Cloudinary(acc)
-    '    Dim DeletionParams = New DeletionParams("display_picture/" & sLRN)
-    '    cloudinary.DeleteFolder("display_picture/" & sLRN)
-    '    cloudinary.Destroy(DeletionParams)
-    'End Sub
-
-    'Function uploadImage(path As String, sLRN As String) As String
-    '    Dim uploadParams = New ImageUploadParams
-    '    uploadParams.Folder = "display_picture/" + sLRN
-    '    uploadParams.PublicId = sLRN
-    '    uploadParams.File = New FileDescription(path)
-    '    Dim uploadResult = cloudinary.Upload(uploadParams)
-    '    Return uploadResult.Url.ToString
-    'End Function
-
-    'Function checkIfImageExist(sURL As String) As Boolean
-    '    Try
-    '        Using client = New WebClient()
-    '            Using stream = client.OpenRead(sURL)
-    '                Return True
-    '            End Using
-    '        End Using
-    '    Catch
-    '        Return False
-    '    End Try
-    'End Function
 End Module

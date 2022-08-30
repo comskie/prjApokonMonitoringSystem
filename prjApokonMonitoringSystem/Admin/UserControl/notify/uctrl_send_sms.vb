@@ -12,6 +12,7 @@ Public Class uctrl_send_sms
     End Sub
 
     Private Sub uctrl_send_sms_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        SerialPort1.Close()
         Dim ports() As String
         ports = Split(ModemsConnected(), "***")
         For i As Integer = 0 To ports.Length - 2
@@ -96,7 +97,6 @@ Public Class uctrl_send_sms
         txtContact.Clear()
         txtLRN.Clear()
         txtName.Clear()
-        txtSubject.Clear()
     End Sub
 
     Private Sub SerialPort1_DataReceived(sender As Object, e As IO.Ports.SerialDataReceivedEventArgs) Handles SerialPort1.DataReceived
@@ -119,12 +119,11 @@ Public Class uctrl_send_sms
     Private Sub txtLRN_TextChanged(sender As Object, e As EventArgs) Handles txtLRN.TextChanged
         If txtLRN.Text = String.Empty Then
             txtBody.Enabled = False
-            txtSubject.Enabled = False
             btnSend.Enabled = False
         Else
             txtBody.Enabled = True
-            txtSubject.Enabled = True
             btnSend.Enabled = True
         End If
     End Sub
+
 End Class

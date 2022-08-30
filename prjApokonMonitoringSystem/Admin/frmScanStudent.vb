@@ -1,13 +1,15 @@
-﻿
-Imports AForge.Video
+﻿Imports AForge.Video
 Imports AForge.Video.DirectShow
 Imports System.IO
 Imports ZXing
 Imports MySql.Data.MySqlClient
+Imports System.Management
+Imports System.Threading
 
 Public Class frmScanStudent
     Dim vcd As VideoCaptureDevice
     Dim bmp As Bitmap
+    Dim rcvdata As String = ""
     Private Sub Captured(sender As Object, eventArgs As NewFrameEventArgs)
         bmp = DirectCast(eventArgs.Frame.Clone(), Bitmap)
 
@@ -17,10 +19,34 @@ Public Class frmScanStudent
         PictureBox1.Image = bmp
     End Sub
 
+    Public Function ModemsConnected() As String
+        Dim modems As String = ""
+        Try
+            Dim searcher As New ManagementObjectSearcher(
+                "root\CIMV2",
+                "SELECT * FROM Win32_POTSModem")
+
+            For Each queryObj As ManagementObject In searcher.Get()
+                If queryObj("Status") = "OK" Then
+                    modems = modems & (queryObj("AttachedTo") & " - " & queryObj("Description") & "***")
+                End If
+            Next
+        Catch err As ManagementException
+            MsgBox("error")
+            Return ""
+        End Try
+        Return modems
+    End Function
 
     Private Sub frmScanStudent_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim vcdf As New VideoCaptureDeviceForm
         day_today.Text = Format(DateTime.Now, "Long Date")
+
+        Dim ports() As String
+        ports = Split(ModemsConnected(), "***")
+        For i As Integer = 0 To ports.Length - 2
+            cmbConnect.Items.Add(ports(i))
+        Next
 
         If vcdf.ShowDialog = DialogResult.OK Then
             vcd = vcdf.VideoDevice
@@ -110,6 +136,27 @@ Public Class frmScanStudent
         conn.Close()
     End Sub
 
+    Private Sub SendSMS(pNumber As String, smsContent As String)
+        Try
+            With SerialPort1
+                .Write("at" & vbCrLf)
+                Threading.Thread.Sleep(1000)
+                .Write("at+cmgf=1" & vbCrLf)
+                Threading.Thread.Sleep(1000)
+                .Write("at+cmgs=" & Chr(34) & pNumber & Chr(34) & vbCrLf)
+                .Write(smsContent & Chr(26))
+                Threading.Thread.Sleep(1000)
+                MsgBox(rcvdata.ToString)
+            End With
+            If rcvdata.ToString.Contains(">") Then
+                MsgBox("Message Sent")
+            Else
+                MsgBox("Error!")
+            End If
+        Catch ex As Exception
+
+        End Try
+    End Sub
     Private Sub frmScanStudent_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
         If vcd Is Nothing Then
             Return
@@ -119,6 +166,35 @@ Public Class frmScanStudent
             vcd.Stop()
         Catch ex As Exception
 
+        End Try
+    End Sub
+
+    Private Sub Guna2Button2_Click(sender As Object, e As EventArgs) Handles Guna2Button2.Click
+        Try
+            With SerialPort1
+                .PortName = lblPort.Text
+                .BaudRate = 9600
+                .Parity = IO.Ports.Parity.None
+                .DataBits = 8
+                .StopBits = IO.Ports.StopBits.One
+                .Handshake = IO.Ports.Handshake.None
+                .RtsEnable = True
+                .ReceivedBytesThreshold = 1
+                .NewLine = vbCr
+                .ReadTimeout = 1000
+                .Open()
+            End With
+
+            If SerialPort1.IsOpen Then
+                lblStatus.Text = "Connected"
+                lblStatus.ForeColor = Color.DarkOliveGreen
+            Else
+                lblStatus.Text = "Error"
+                lblStatus.ForeColor = Color.DarkRed
+                SerialPort1.Close()
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
         End Try
     End Sub
 End Class
