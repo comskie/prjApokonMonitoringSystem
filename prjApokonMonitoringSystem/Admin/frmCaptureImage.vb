@@ -40,7 +40,7 @@ Public Class frmCaptureImage
             MessageBox.Show("There's no image captured", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
         Else
             If SaveFileDialog1.ShowDialog = DialogResult.OK Then
-                Guna2PictureBox2.Image.Save(SaveFileDialog1.FileName, Imaging.ImageFormat.Jpeg)
+                Guna2PictureBox2.Image.Save(SaveFileDialog1.FileName, Drawing.Imaging.ImageFormat.Jpeg)
             End If
         End If
 

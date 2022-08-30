@@ -1,4 +1,4 @@
-﻿Imports AForge
+﻿
 Imports AForge.Video
 Imports AForge.Video.DirectShow
 Imports System.IO
@@ -10,7 +10,11 @@ Public Class frmScanStudent
     Dim bmp As Bitmap
     Private Sub Captured(sender As Object, eventArgs As NewFrameEventArgs)
         bmp = DirectCast(eventArgs.Frame.Clone(), Bitmap)
-        PictureBox1.Image = DirectCast(eventArgs.Frame.Clone(), Bitmap)
+
+        Dim filter = New AForge.Imaging.Filters.Mirror(False, True)
+        bmp = filter.Apply(bmp)
+
+        PictureBox1.Image = bmp
     End Sub
 
 
