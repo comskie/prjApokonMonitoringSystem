@@ -24,8 +24,9 @@ Partial Class uctrl_send_sms
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.Guna2GroupBox1 = New Guna.UI2.WinForms.Guna2GroupBox()
+        Me.lblPort = New System.Windows.Forms.Label()
         Me.lblStatus = New System.Windows.Forms.Label()
-        Me.Guna2Button2 = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnConnect = New Guna.UI2.WinForms.Guna2Button()
         Me.cmbConnect = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -40,7 +41,6 @@ Partial Class uctrl_send_sms
         Me.txtBody = New Guna.UI2.WinForms.Guna2TextBox()
         Me.btnSend = New Guna.UI2.WinForms.Guna2Button()
         Me.SerialPort1 = New System.IO.Ports.SerialPort(Me.components)
-        Me.lblPort = New System.Windows.Forms.Label()
         Me.Guna2GroupBox1.SuspendLayout()
         Me.Guna2GroupBox2.SuspendLayout()
         Me.SuspendLayout()
@@ -49,7 +49,7 @@ Partial Class uctrl_send_sms
         '
         Me.Guna2GroupBox1.Controls.Add(Me.lblPort)
         Me.Guna2GroupBox1.Controls.Add(Me.lblStatus)
-        Me.Guna2GroupBox1.Controls.Add(Me.Guna2Button2)
+        Me.Guna2GroupBox1.Controls.Add(Me.btnConnect)
         Me.Guna2GroupBox1.Controls.Add(Me.cmbConnect)
         Me.Guna2GroupBox1.Controls.Add(Me.Label4)
         Me.Guna2GroupBox1.Controls.Add(Me.Label3)
@@ -68,6 +68,17 @@ Partial Class uctrl_send_sms
         Me.Guna2GroupBox1.TabIndex = 2
         Me.Guna2GroupBox1.Text = "Student Information"
         '
+        'lblPort
+        '
+        Me.lblPort.AutoSize = True
+        Me.lblPort.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPort.ForeColor = System.Drawing.Color.Black
+        Me.lblPort.Location = New System.Drawing.Point(202, 88)
+        Me.lblPort.Name = "lblPort"
+        Me.lblPort.Size = New System.Drawing.Size(110, 16)
+        Me.lblPort.TabIndex = 50
+        Me.lblPort.Text = "[Port Not Selected]"
+        '
         'lblStatus
         '
         Me.lblStatus.AutoSize = True
@@ -79,18 +90,19 @@ Partial Class uctrl_send_sms
         Me.lblStatus.TabIndex = 51
         Me.lblStatus.Text = "[not connected]"
         '
-        'Guna2Button2
+        'btnConnect
         '
-        Me.Guna2Button2.Animated = True
-        Me.Guna2Button2.AutoRoundedCorners = True
-        Me.Guna2Button2.BorderRadius = 14
-        Me.Guna2Button2.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.Guna2Button2.ForeColor = System.Drawing.Color.White
-        Me.Guna2Button2.Location = New System.Drawing.Point(504, 55)
-        Me.Guna2Button2.Name = "Guna2Button2"
-        Me.Guna2Button2.Size = New System.Drawing.Size(86, 30)
-        Me.Guna2Button2.TabIndex = 49
-        Me.Guna2Button2.Text = "Connect"
+        Me.btnConnect.Animated = True
+        Me.btnConnect.AutoRoundedCorners = True
+        Me.btnConnect.BorderRadius = 14
+        Me.btnConnect.Enabled = False
+        Me.btnConnect.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.btnConnect.ForeColor = System.Drawing.Color.White
+        Me.btnConnect.Location = New System.Drawing.Point(504, 55)
+        Me.btnConnect.Name = "btnConnect"
+        Me.btnConnect.Size = New System.Drawing.Size(86, 30)
+        Me.btnConnect.TabIndex = 49
+        Me.btnConnect.Text = "Connect"
         '
         'cmbConnect
         '
@@ -285,17 +297,6 @@ Partial Class uctrl_send_sms
         'SerialPort1
         '
         '
-        'lblPort
-        '
-        Me.lblPort.AutoSize = True
-        Me.lblPort.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblPort.ForeColor = System.Drawing.Color.Black
-        Me.lblPort.Location = New System.Drawing.Point(202, 88)
-        Me.lblPort.Name = "lblPort"
-        Me.lblPort.Size = New System.Drawing.Size(110, 16)
-        Me.lblPort.TabIndex = 50
-        Me.lblPort.Text = "[Port Not Selected]"
-        '
         'uctrl_send_sms
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -327,7 +328,7 @@ Partial Class uctrl_send_sms
     Friend WithEvents txtBody As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents btnSend As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Label4 As Label
-    Friend WithEvents Guna2Button2 As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents btnConnect As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents cmbConnect As Guna.UI2.WinForms.Guna2ComboBox
     Friend WithEvents lblStatus As Label
     Friend WithEvents SerialPort1 As IO.Ports.SerialPort

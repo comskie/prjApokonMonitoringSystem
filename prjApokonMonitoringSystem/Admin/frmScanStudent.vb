@@ -125,6 +125,7 @@ Public Class frmScanStudent
                 Dim tts = CreateObject("SAPI.spvoice")
                 tts.speak("Welcome " & txtFname.Text & " " & txtMname.Text & " " & txtLname.Text)
                 conn.Close()
+                SendSMS(txtContactNo.Text, txtFname.Text & " " & txtLname.Text & " " & timeStatus.Text & " Apokon Elementary School at " & lblClock.Text)
                 InsertToLogs(txtLRN.Text)
             End If
         Catch ex As Exception
@@ -167,6 +168,10 @@ Public Class frmScanStudent
         Catch ex As Exception
 
         End Try
+        Me.Dispose()
+        SerialPort1.Dispose()
+        SerialPort1.Close()
+        Me.Close()
     End Sub
 
     Private Sub Guna2Button2_Click(sender As Object, e As EventArgs) Handles Guna2Button2.Click
@@ -187,7 +192,7 @@ Public Class frmScanStudent
 
             If SerialPort1.IsOpen Then
                 lblStatus.Text = "Connected"
-                lblStatus.ForeColor = Color.DarkOliveGreen
+                lblStatus.ForeColor = Color.Green
             Else
                 lblStatus.Text = "Error"
                 lblStatus.ForeColor = Color.DarkRed
@@ -197,4 +202,22 @@ Public Class frmScanStudent
             MsgBox(ex.Message)
         End Try
     End Sub
+
+    Private Sub cmbConnect_SelectedValueChanged(sender As Object, e As EventArgs) Handles cmbConnect.SelectedValueChanged
+        lblPort.Text = Trim(Mid(cmbConnect.Text, 1, 5))
+    End Sub
+
+    Private Sub SerialPort1_DataReceived(sender As Object, e As Ports.SerialDataReceivedEventArgs) Handles SerialPort1.DataReceived
+        Dim datain As String = ""
+        Dim numbytes As Integer = SerialPort1.BytesToRead
+        For i As Integer = 1 To numbytes
+            datain &= Chr(SerialPort1.ReadChar)
+        Next
+        test(datain)
+    End Sub
+
+    Private Sub test(ByVal indata As String)
+        rcvdata &= indata
+    End Sub
+
 End Class

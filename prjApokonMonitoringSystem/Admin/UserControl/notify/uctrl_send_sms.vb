@@ -12,12 +12,10 @@ Public Class uctrl_send_sms
     End Sub
 
     Private Sub uctrl_send_sms_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        SerialPort1.Close()
         Dim ports() As String
         ports = Split(ModemsConnected(), "***")
         For i As Integer = 0 To ports.Length - 2
             cmbConnect.Items.Add(ports(i))
-
         Next
     End Sub
 
@@ -40,7 +38,7 @@ Public Class uctrl_send_sms
         Return modems
     End Function
 
-    Private Sub Guna2Button2_Click(sender As Object, e As EventArgs) Handles Guna2Button2.Click
+    Private Sub Guna2Button2_Click(sender As Object, e As EventArgs) Handles btnConnect.Click
         Try
             With SerialPort1
                 .PortName = lblPort.Text
@@ -126,4 +124,7 @@ Public Class uctrl_send_sms
         End If
     End Sub
 
+    Private Sub cmbConnect_SelectedIndexChanged_1(sender As Object, e As EventArgs) Handles cmbConnect.SelectedValueChanged
+        btnConnect.Enabled = True
+    End Sub
 End Class

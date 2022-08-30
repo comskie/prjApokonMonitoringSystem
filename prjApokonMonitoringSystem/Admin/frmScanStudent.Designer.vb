@@ -639,6 +639,9 @@ Partial Class frmScanStudent
         Me.timeStatus.Text = "[no data]"
         Me.timeStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
+        'SerialPort1
+        '
+        '
         'frmScanStudent
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
