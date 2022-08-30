@@ -126,9 +126,11 @@ Public Class frmScanStudent
                 Dim tts = CreateObject("SAPI.spvoice")
                 tts.speak("Welcome " & txtFname.Text & " " & txtMname.Text & " " & txtLname.Text)
                 conn.Close()
-                SendSMS(txtContactNo.Text, txtFname.Text & " " & txtLname.Text & " " & timeStatus.Text & " Apokon Elementary School at " & lblClock.Text)
-                InsertToLogs(txtLRN.Text)
-                InsertToLogs(txtLRN.Text, currentDateTime)
+
+                If timeStatus.Text = "TIME IN (AM)" Or timeStatus.Text = "TIME OUT (PM)" Then
+                    SendSMS(txtContactNo.Text, txtFname.Text & " " & txtLname.Text & " " & timeStatus.Text & " Apokon Elementary School at " & lblClock.Text)
+                    InsertToLogs(txtLRN.Text, currentDateTime)
+                End If
             End If
         Catch ex As Exception
             conn.Close()
