@@ -233,28 +233,29 @@ Module PublicFunctions
         conn.Close()
     End Function
 
-    Public Sub InsertToLogs(sLRN As String)
-        Dim commandString As String = ""
-        If CheckIfLogExist(sLRN) Then
-            If ValidateTimeLog() = "Timein AM" Then
-                commandString = "UPDATE tbl_logs SET timeIN_AM = '" & Format(DateTime.Now, "HH:mm:ss") & "' WHERE logcurrent_date='" & DateTime.Now.ToString("yyyy/MM/dd") & "' AND lrn = '" & sLRN & "'"
-            ElseIf ValidateTimeLog() = "Timeout AM" Then
-                commandString = "UPDATE tbl_logs SET timeOUT_AM = '" & Format(DateTime.Now, "HH:mm:ss") & "' WHERE logcurrent_date ='" & DateTime.Now.ToString("yyyy/MM/dd") & "' AND lrn = '" & sLRN & "'"
-            ElseIf ValidateTimeLog() = "Timein PM" Then
-                commandString = "UPDATE tbl_logs SET timeIN_PM = '" & Format(DateTime.Now, "HH:mm:ss") & "' WHERE logcurrent_date = '" & DateTime.Now.ToString("yyyy/MM/dd") & "' AND lrn = '" & sLRN & "'"
-            ElseIf ValidateTimeLog() = "Timeout PM" Then
-                commandString = "UPDATE tbl_logs SET timeOUT_PM = '" & Format(DateTime.Now, "HH:mm:ss") & "' WHERE logcurrent_date = '" & DateTime.Now.ToString("yyyy/MM/dd") & "' AND lrn = '" & sLRN & "'"
-            End If
+    Public Sub InsertToLogs(sLRN As String, currentDateTime As DateTime)
+        Dim formattedCurrentTime = Format(currentDateTime, "HH:mm:ss")
+        Dim formattedCurrentDate = currentDateTime.ToString("yyyy/MM/dd")
+
+        Dim logType As String
+        Dim validatedTimeLog = ValidateTimeLog()
+
+        If validatedTimeLog = "Timein AM" Then
+            logType = "timeIN_AM"
+        ElseIf validatedTimeLog = "Timeout AM" Then
+            logType = "timeOUT_AM"
+        ElseIf validatedTimeLog = "Timein PM" Then
+            logType = "timeIN_PM"
         Else
-            If ValidateTimeLog() = "Timein AM" Then
-                commandString = "INSERT INTO tbl_logs(lrn, timeIN_AM, logcurrent_date) VALUES ('" & sLRN & "', '" & Format(DateTime.Now, "HH:mm:ss") & "', '" & Format(DateTime.Now, "yyyy/MM/dd") & "')"
-            ElseIf ValidateTimeLog() = "Timeout AM" Then
-                commandString = "INSERT INTO tbl_logs(lrn, timeOUT_AM, logcurrent_date) VALUES ('" & sLRN & "', '" & Format(DateTime.Now, "HH:mm:ss") & "', '" & Format(DateTime.Now, "yyyy/MM/dd") & "')"
-            ElseIf ValidateTimeLog() = "Timein PM" Then
-                commandString = "INSERT INTO tbl_logs(lrn, timeIN_PM, logcurrent_date) VALUES ('" & sLRN & "', '" & Format(DateTime.Now, "HH:mm:ss") & "', '" & Format(DateTime.Now, "yyyy/MM/dd") & "')"
-            ElseIf ValidateTimeLog() = "Timeout PM" Then
-                commandString = "INSERT INTO tbl_logs(lrn, timeOUT_PM, logcurrent_date) VALUES ('" & sLRN & "', '" & Format(DateTime.Now, "HH:mm:ss") & "', '" & Format(DateTime.Now, "yyyy/MM/dd") & "')"
-            End If
+            logType = "timeOUT_PM"
+        End If
+
+        Dim commandString As String
+
+        If CheckIfLogExist(sLRN) Then
+            commandString = "UPDATE tbl_logs SET " & logType & " = '" & formattedCurrentTime & "' WHERE logcurrent_date='" & formattedCurrentDate & "' AND lrn = '" & sLRN & "'"
+        Else
+            commandString = "INSERT INTO tbl_logs(lrn, " & logType & ", logcurrent_date) VALUES ('" & sLRN & "', '" & formattedCurrentTime & "', '" & formattedCurrentDate & "')"
         End If
         InsertTheLogs(commandString)
     End Sub
