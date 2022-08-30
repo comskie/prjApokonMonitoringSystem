@@ -246,8 +246,10 @@ Module PublicFunctions
             logType = "timeOUT_AM"
         ElseIf validatedTimeLog = "Timein PM" Then
             logType = "timeIN_PM"
-        Else
+        ElseIf validatedTimeLog = "Timeout PM" Then
             logType = "timeOUT_PM"
+        Else
+            Throw New Exception("Error validated time log!")
         End If
 
         Dim commandString As String
