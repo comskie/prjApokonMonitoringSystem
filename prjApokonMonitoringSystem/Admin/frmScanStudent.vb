@@ -74,27 +74,30 @@ Public Class frmScanStudent
             Dim table As New DataTable()
             adapter.Fill(table)
 
-            txtLRN.Text = table.Rows(0).Item(1).ToString()
-            txtFname.Text = table.Rows(0).Item(2).ToString()
-            txtMname.Text = table.Rows(0).Item(3).ToString()
-            txtLname.Text = table.Rows(0).Item(4).ToString()
-            If table.Rows(0).Item(5).ToString() = "Male" Then
-                cmbGender.SelectedIndex = 0
-            Else
-                cmbGender.SelectedIndex = 1
-            End If
-            txtAddress.Text = table.Rows(0).Item(6).ToString()
-            txtParent.Text = table.Rows(0).Item(7).ToString()
-            txtContactNo.Text = table.Rows(0).Item(8).ToString()
-            txtEmail.Text = table.Rows(0).Item(9).ToString()
-            If table.Rows(0).Item(10) IsNot Nothing Then
-                Dim ms As New MemoryStream(CType(table.Rows(0).Item(10), Byte()))
-                ProfileContainer.Image = Image.FromStream(ms)
-            Else
-                MsgBox("Student Not Found!")
-            End If
+            If table.Rows.Count > 0 Then
+                txtLRN.Text = table.Rows(0).Item(1).ToString()
+                txtFname.Text = table.Rows(0).Item(2).ToString()
+                txtMname.Text = table.Rows(0).Item(3).ToString()
+                txtLname.Text = table.Rows(0).Item(4).ToString()
+                If table.Rows(0).Item(5).ToString() = "Male" Then
+                    cmbGender.SelectedIndex = 0
+                Else
+                    cmbGender.SelectedIndex = 1
+                End If
+                txtAddress.Text = table.Rows(0).Item(6).ToString()
+                txtParent.Text = table.Rows(0).Item(7).ToString()
+                txtContactNo.Text = table.Rows(0).Item(8).ToString()
+                txtEmail.Text = table.Rows(0).Item(9).ToString()
+                If table.Rows(0).Item(10) IsNot Nothing Then
+                    Dim ms As New MemoryStream(CType(table.Rows(0).Item(10), Byte()))
+                    ProfileContainer.Image = Image.FromStream(ms)
+                End If
 
-            conn.Close()
+                Dim tts = CreateObject("SAPI.spvoice")
+                tts.speak("Welcome " & txtFname.Text & " " & txtMname.Text & " " & txtLname.Text)
+                conn.Close()
+                InsertToLogs(txtLRN.Text)
+            End If
         Catch ex As Exception
             conn.Close()
             MessageBox.Show(ex.Message)
@@ -102,10 +105,6 @@ Public Class frmScanStudent
             conn.Dispose()
         End Try
         conn.Close()
-
-        Dim tts = CreateObject("SAPI.spvoice")
-        tts.speak("Welcome " & txtFname.Text & " " & txtMname.Text & " " & txtLname.Text)
-        InsertToLogs(txtLRN.Text)
     End Sub
 
     Private Sub frmScanStudent_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed

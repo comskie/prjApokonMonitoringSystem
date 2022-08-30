@@ -16,7 +16,7 @@ Public Class frm_edit_student
         End If
     End Sub
 
-    Private Sub Guna2Button4_Click(sender As Object, e As EventArgs) Handles Guna2Button4.Click
+    Private Sub Guna2Button4_Click(sender As Object, e As EventArgs)
         ClearText()
     End Sub
 

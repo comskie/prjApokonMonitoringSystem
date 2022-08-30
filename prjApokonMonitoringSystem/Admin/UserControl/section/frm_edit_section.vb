@@ -68,7 +68,7 @@ Public Class frm_edit_section
         End If
     End Function
 
-    Private Sub Guna2Button4_Click(sender As Object, e As EventArgs) Handles Guna2Button4.Click
+    Private Sub Guna2Button4_Click(sender As Object, e As EventArgs) 
         ClearText()
     End Sub
 

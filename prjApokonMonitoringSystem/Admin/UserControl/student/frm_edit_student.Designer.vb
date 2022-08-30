@@ -55,7 +55,6 @@ Partial Class frm_edit_student
         Me.Label7 = New System.Windows.Forms.Label()
         Me.txtParent = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Guna2GroupBox2 = New Guna.UI2.WinForms.Guna2GroupBox()
-        Me.Guna2Button4 = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2Button3 = New Guna.UI2.WinForms.Guna2Button()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.Guna2GroupBox1.SuspendLayout()
@@ -521,19 +520,6 @@ Partial Class frm_edit_student
         Me.Guna2GroupBox2.TabIndex = 5
         Me.Guna2GroupBox2.Text = "Parent Information"
         '
-        'Guna2Button4
-        '
-        Me.Guna2Button4.Animated = True
-        Me.Guna2Button4.AutoRoundedCorners = True
-        Me.Guna2Button4.BorderRadius = 21
-        Me.Guna2Button4.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.Guna2Button4.ForeColor = System.Drawing.Color.White
-        Me.Guna2Button4.Location = New System.Drawing.Point(472, 560)
-        Me.Guna2Button4.Name = "Guna2Button4"
-        Me.Guna2Button4.Size = New System.Drawing.Size(107, 45)
-        Me.Guna2Button4.TabIndex = 24
-        Me.Guna2Button4.Text = "Clear"
-        '
         'Guna2Button3
         '
         Me.Guna2Button3.Animated = True
@@ -541,7 +527,7 @@ Partial Class frm_edit_student
         Me.Guna2Button3.BorderRadius = 21
         Me.Guna2Button3.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.Guna2Button3.ForeColor = System.Drawing.Color.White
-        Me.Guna2Button3.Location = New System.Drawing.Point(288, 560)
+        Me.Guna2Button3.Location = New System.Drawing.Point(401, 557)
         Me.Guna2Button3.Name = "Guna2Button3"
         Me.Guna2Button3.Size = New System.Drawing.Size(107, 45)
         Me.Guna2Button3.TabIndex = 23
@@ -557,7 +543,6 @@ Partial Class frm_edit_student
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(893, 614)
-        Me.Controls.Add(Me.Guna2Button4)
         Me.Controls.Add(Me.Guna2Button3)
         Me.Controls.Add(Me.Guna2GroupBox1)
         Me.Controls.Add(Me.Guna2GroupBox2)
@@ -595,7 +580,6 @@ Partial Class frm_edit_student
     Friend WithEvents QRGenerate As Panel
     Friend WithEvents Guna2Button2 As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Guna2Button1 As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents Guna2Button4 As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Guna2Button3 As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents txtID As Label
     Friend WithEvents Label10 As Label
