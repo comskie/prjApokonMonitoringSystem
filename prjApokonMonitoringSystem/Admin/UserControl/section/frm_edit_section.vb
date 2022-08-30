@@ -7,6 +7,7 @@ Public Class frm_edit_section
     End Sub
 
     Private Sub Guna2Button3_Click(sender As Object, e As EventArgs) Handles Guna2Button3.Click
+        Dim val1 As String
         Dim dialogResult As DialogResult = MessageBox.Show("Do you want to edit this section?", "Edit", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
         If dialogResult = DialogResult.Yes And ValidateInputs() Then
             Try
@@ -31,6 +32,12 @@ Public Class frm_edit_section
             End Try
             conn.Close()
 
+            If txtTeacher.Text <> prevTeacher.Text And txtTeacher.Text <> String.Empty Then
+                val1 = "teacher"
+            Else
+                val1 = "section"
+            End If
+
             Try
                 conn.Open()
                 comm = New MySqlCommand("prcUpdateTeacherSection", conn)
@@ -38,6 +45,7 @@ Public Class frm_edit_section
                     .CommandType = CommandType.StoredProcedure
                     .Parameters.AddWithValue("@tid", lbltid.Text)
                     .Parameters.AddWithValue("@sid", txtSID.Text)
+                    .Parameters.AddWithValue("@val", val1)
                     .ExecuteNonQuery()
                 End With
             Catch ex As Exception
@@ -46,6 +54,7 @@ Public Class frm_edit_section
             End Try
 
             Me.Close()
+
             ClearText()
         End If
     End Sub

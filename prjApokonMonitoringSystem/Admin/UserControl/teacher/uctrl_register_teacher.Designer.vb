@@ -149,7 +149,7 @@ Partial Class uctrl_register_teacher
         Me.txtPassword.Location = New System.Drawing.Point(535, 51)
         Me.txtPassword.Margin = New System.Windows.Forms.Padding(8, 3, 8, 3)
         Me.txtPassword.Name = "txtPassword"
-        Me.txtPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtPassword.PlaceholderText = ""
         Me.txtPassword.SelectedText = ""
         Me.txtPassword.Size = New System.Drawing.Size(272, 42)

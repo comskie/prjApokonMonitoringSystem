@@ -223,6 +223,18 @@
     <Compile Include="Admin\UserControl\logs\uctrl_view_logs.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Admin\UserControl\regadmin\uctrl_admin_list.Designer.vb">
+      <DependentUpon>uctrl_admin_list.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UserControl\regadmin\uctrl_admin_list.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin\UserControl\regadmin\uctrl_register_admin.Designer.vb">
+      <DependentUpon>uctrl_register_admin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UserControl\regadmin\uctrl_register_admin.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Connection.vb" />
     <Compile Include="Admin\frmCaptureImage.Designer.vb">
       <DependentUpon>frmCaptureImage.vb</DependentUpon>

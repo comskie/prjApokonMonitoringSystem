@@ -97,9 +97,6 @@ Public Class frmBrowse_Teacher
                 tuname = selectedRow.Cells(1).Value.ToString
                 tname = selectedRow.Cells(2).Value.ToString + " " + selectedRow.Cells(3).Value.ToString + " " + selectedRow.Cells(4).Value.ToString
                 Me.Close()
-            Else
-                tuname = ""
-                tname = ""
             End If
 
         Catch ex As Exception
@@ -107,7 +104,6 @@ Public Class frmBrowse_Teacher
     End Sub
 
     Private Sub frmBrowse_Teacher_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
-        Me.Dispose()
         Me.Close()
     End Sub
 End Class

@@ -6,7 +6,7 @@ Public Class uctrl_section_list
 
     Private Sub displaySection()
         Try
-            comm = New MySqlCommand("SELECT id AS 'ID', section_id AS 'Section ID', section_name AS 'Section Name', year_level AS 'Year Level', academic_year AS 'Academic Year' FROM tbl_section", conn)
+            comm = New MySqlCommand("SELECT c.id AS 'ID', c.section_id AS 'Section ID', c.section_name AS 'Section Name', c.year_level AS 'Year Level', c.academic_year AS 'Academic Year', CONCAT(b.fname, ' ', LEFT(b.mname, 1), '. ', b.lname) AS 'Handled By' FROM tbl_teacher_section a, tbl_teacher b, tbl_section c WHERE a.teacher_id = b.teacher_id AND a.section_id = c.section_id", conn)
 
             Dim da As New MySqlDataAdapter
             da.SelectCommand = comm
@@ -24,11 +24,11 @@ Public Class uctrl_section_list
     Private Sub filteredSearch()
         Try
             If cmbFilter.Text = "All" Then
-                comm = New MySqlCommand("SELECT id AS 'ID', section_id AS 'Section ID', section_name AS 'Section Name', year_level AS 'Year Level', academic_year AS 'Academic Year' FROM tbl_section", conn)
+                comm = New MySqlCommand("SELECT c.id AS 'ID', c.section_id AS 'Section ID', c.section_name AS 'Section Name', c.year_level AS 'Year Level', c.academic_year AS 'Academic Year', CONCAT(b.fname, ' ', LEFT(b.mname, 1), '. ', b.lname) AS 'Handled By' FROM tbl_teacher_section a, tbl_teacher b, tbl_section c WHERE a.teacher_id = b.teacher_id AND a.section_id = c.section_id", conn)
             ElseIf cmbFilter.Text = "By Section" Then
-                comm = New MySqlCommand("SELECT id AS 'ID', section_id AS 'Section ID', section_name AS 'Section Name', year_level AS 'Year Level', academic_year AS 'Academic Year' FROM tbl_section WHERE section_name LIKE '%" + txtSearchBox.Text + "%'", conn)
+                comm = New MySqlCommand("SELECT c.id AS 'ID', c.section_id AS 'Section ID', c.section_name AS 'Section Name', c.year_level AS 'Year Level', c.academic_year AS 'Academic Year', CONCAT(b.fname, ' ', LEFT(b.mname, 1), '. ', b.lname) AS 'Handled By' FROM tbl_teacher_section a, tbl_teacher b, tbl_section c WHERE a.teacher_id = b.teacher_id AND a.section_id = c.section_id AND c.section_name LIKE '%" + txtSearchBox.Text + "%'", conn)
             ElseIf cmbFilter.Text = "By Grade Level" Then
-                comm = New MySqlCommand("SELECT id AS 'ID', section_id AS 'Section ID', section_name AS 'Section Name', year_level AS 'Year Level', academic_year AS 'Academic Year' FROM tbl_section WHERE year_level LIKE '%" + cmbYearLevel.Text + "%'", conn)
+                comm = New MySqlCommand("SELECT c.id AS 'ID', c.section_id AS 'Section ID', c.section_name AS 'Section Name', c.year_level AS 'Year Level', c.academic_year AS 'Academic Year', CONCAT(b.fname, ' ', LEFT(b.mname, 1), '. ', b.lname) AS 'Handled By' FROM tbl_teacher_section a, tbl_teacher b, tbl_section c WHERE a.teacher_id = b.teacher_id AND a.section_id = c.section_id AND c.year_level LIKE '%" + cmbYearLevel.Text + "%'", conn)
             End If
 
             Dim da As New MySqlDataAdapter
@@ -125,6 +125,8 @@ Public Class uctrl_section_list
                     .txtColID.Text = selectedRow.Cells(3).Value.ToString
                     .txtSID.Text = selectedRow.Cells(4).Value.ToString
                     .txtSectionName.Text = selectedRow.Cells(5).Value.ToString
+                    .txtTeacher.Text = selectedRow.Cells(8).Value.ToString
+                    .prevTeacher.Text = selectedRow.Cells(8).Value.ToString
                     If selectedRow.Cells(6).Value.ToString = "Kinder 1" Then
                         .cmbYearLevel.SelectedIndex = 0
                     ElseIf selectedRow.Cells(6).Value.ToString = "Kinder 2" Then

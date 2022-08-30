@@ -3,22 +3,6 @@ Imports System.IO
 Public Class uctrl_student_list
     Dim pageRows As Integer
     Private Sub uctrl_student_list_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-
-        'Dim numbutton As Integer = 1
-        'Dim newbutton As Integer = 1
-        'numbutton = Math.Ceiling(count1 / 12)
-        'For i = 1 To numbutton
-        '    Dim buttonn As New Button
-        '    Controls.Add(buttonn)
-        '    buttonn.Top = 400
-        '    buttonn.Left = newbutton * 70
-        '    buttonn.Text = i
-        '    buttonn.Name = i
-        '    buttonn.BackColor = Color.Azure
-        '    newbutton = newbutton + 1
-        'Next
-
         count_rows()
 
         If CDbl(currentPg.Text) = 1 Or pageRows = 1 Then
@@ -42,7 +26,7 @@ Public Class uctrl_student_list
             ElseIf cmbFilter.Text = "By LRN" Then
                 comm = New MySqlCommand("SELECT count(*) FROM tbl_student_section c, tbl_student d, tbl_section e WHERE c.student_id = d.lrn AND c.section_id = e.section_id AND d.lrn LIKE '%" + txtSearchBox.Text + "%' ORDER BY d.id ASC", conn)
             ElseIf cmbFilter.Text = "By Section" Then
-                comm = New MySqlCommand("SELECT count(*) FROM tbl_student_section c, tbl_student d, tbl_section e WHERE c.student_id = d.lrn AND c.section_id = e.section_id AND d.section LIKE '%" + txtSearchBox.Text + "%' ORDER BY d.id ASC", conn)
+                comm = New MySqlCommand("SELECT count(*) FROM tbl_student_section c, tbl_student d, tbl_section e WHERE c.student_id = d.lrn AND c.section_id = e.section_id AND e.section_name LIKE '%" + txtSearchBox.Text + "%' ORDER BY d.id ASC", conn)
             ElseIf cmbFilter.Text = "No Section" Then
                 comm = New MySqlCommand("SELECT count(*) FROM tbl_student_section c, tbl_student d WHERE c.student_id = d.lrn AND c.section_id IS NULL ORDER BY d.id ASC", conn)
             Else
@@ -89,7 +73,7 @@ Public Class uctrl_student_list
         ElseIf cmbFilter.Text = "By LRN" Then
             Return "SELECT * FROM(SELECT row_number() Over (Order By d.id) As RowNumber, d.id As 'ID', d.lrn AS 'LRN', d.fname AS 'First Name', d.mname AS 'Middle Name', d.lname AS 'Last Name', d.gender AS 'Gender', d.address AS 'Address', d.parent_name AS 'Parent Name', d.contact_number AS 'Contact Number', d.email_address AS 'Email Address', e.section_name AS 'Section', d.display_picture AS 'Display Picture'  From tbl_student_section c, tbl_student d, tbl_section e Where c.student_id = d.lrn And c.section_id = e.section_id AND d.lrn LIKE '%" + txtSearchBox.Text + "%' Order By d.id ASC) tablerow WHERE RowNumber BETWEEN '" & val1 & "' And '" & val2 & "'"
         ElseIf cmbFilter.Text = "By Section" Then
-            Return "SELECT * FROM(SELECT row_number() Over (Order By d.id) As RowNumber, d.id As 'ID', d.lrn AS 'LRN', d.fname AS 'First Name', d.mname AS 'Middle Name', d.lname AS 'Last Name', d.gender AS 'Gender', d.address AS 'Address', d.parent_name AS 'Parent Name', d.contact_number AS 'Contact Number', d.email_address AS 'Email Address', e.section_name AS 'Section', d.display_picture AS 'Display Picture'  From tbl_student_section c, tbl_student d, tbl_section e Where c.student_id = d.lrn And c.section_id = e.section_id AND d.section LIKE '%" + txtSearchBox.Text + "%' Order By d.id ASC) tablerow WHERE RowNumber BETWEEN '" & val1 & "' And '" & val2 & "'"
+            Return "SELECT * FROM(SELECT row_number() Over (Order By d.id) As RowNumber, d.id As 'ID', d.lrn AS 'LRN', d.fname AS 'First Name', d.mname AS 'Middle Name', d.lname AS 'Last Name', d.gender AS 'Gender', d.address AS 'Address', d.parent_name AS 'Parent Name', d.contact_number AS 'Contact Number', d.email_address AS 'Email Address', e.section_name AS 'Section', d.display_picture AS 'Display Picture'  From tbl_student_section c, tbl_student d, tbl_section e Where c.student_id = d.lrn And c.section_id = e.section_id AND e.section_name LIKE '%" + txtSearchBox.Text + "%' Order By d.id ASC) tablerow WHERE RowNumber BETWEEN '" & val1 & "' And '" & val2 & "'"
         ElseIf cmbFilter.Text = "No Section" Then
             Return "SELECT * FROM(SELECT * FROM(SELECT row_number() Over (Order By d.id) As RowNumber, d.id As 'ID', d.lrn AS 'LRN', d.fname AS 'First Name', d.mname AS 'Middle Name', d.lname AS 'Last Name', d.gender AS 'Gender', d.address AS 'Address', d.parent_name AS 'Parent Name', d.contact_number AS 'Contact Number', d.email_address AS 'Email Address', e.section_name AS 'Section', d.display_picture AS 'Display Picture'  From tbl_student_section c, tbl_student d, tbl_section e Where c.student_id = d.lrn And c.section_id = e.section_id AND c.section_id IS NULL Order By d.id ASC) tablerow WHERE RowNumber BETWEEN '" & val1 & "' And '" & val2 & "'"
         Else
@@ -241,6 +225,7 @@ Public Class uctrl_student_list
         ElseIf cmbFilter.Text = "By Name" Or cmbFilter.Text = "By Section" Then
             cmbGender.Enabled = False
             txtSearchBox.Enabled = True
+            txtSearchBox.Clear()
         ElseIf cmbFilter.Text = "By Gender" Then
             cmbGender.Enabled = True
             txtSearchBox.Enabled = False
@@ -248,17 +233,15 @@ Public Class uctrl_student_list
         ElseIf cmbFilter.Text = "By LRN" Then
             cmbGender.Enabled = False
             txtSearchBox.Enabled = True
+            txtSearchBox.Clear()
         ElseIf cmbFilter.Text = "No Section" Then
             cmbGender.Enabled = False
             txtSearchBox.Enabled = False
             txtSearchBox.Clear()
         End If
-
-        If chkboxAutoSearch.Checked = True Then
-            Label1.Text = "1"
-            count_rows()
-            load_data()
-        End If
+        Label1.Text = "1"
+        count_rows()
+        load_data()
     End Sub
 
     Private Sub txtSearchBox_TextChanged(sender As Object, e As EventArgs) Handles txtSearchBox.TextChanged

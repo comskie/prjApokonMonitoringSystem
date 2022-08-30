@@ -26,8 +26,6 @@ Public Class uctrl_teacher_list
                 comm = New MySqlCommand("SELECT id AS 'ID', teacher_id AS 'Teacher ID', fname AS 'First Name', mname AS 'Middle Name', lname AS 'Last Name', gender AS 'Gender', contact_number AS 'Contact Number', email_address AS 'Email Address' FROM tbl_teacher fname LIKE '%" + txtSearchBox.Text + "%' OR mname LIKE '%" + txtSearchBox.Text + "%' OR lname LIKE '%" + txtSearchBox.Text + "%'", conn)
             ElseIf cmbFilter.Text = "By Gender" Then
                 comm = New MySqlCommand("SELECT id AS 'ID', teacher_id AS 'Teacher ID', fname AS 'First Name', mname AS 'Middle Name', lname AS 'Last Name', gender AS 'Gender', contact_number AS 'Contact Number', email_address AS 'Email Address' FROM tbl_teacher WHERE gender = '" & cmbGender.Text & "'", conn)
-            ElseIf cmbFilter.Text = "No Section" Then
-                comm = New MySqlCommand("SELECT b.id AS 'ID', b.teacher_id AS 'Teacher ID',  b.fname AS 'First Name', b.mname AS 'Middle Name', b.lname AS 'Last Name', b.gender AS 'Gender', b.contact_number AS 'Contact Number', b.email_address AS 'Email Address', a.section_id AS 'Section Name', NULL AS 'Year Level' FROM tbl_teacher_section a, tbl_teacher b WHERE a.teacher_id = b.teacher_id AND a.section_id IS NULL", conn)
 
             End If
 

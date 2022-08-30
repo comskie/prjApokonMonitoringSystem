@@ -29,16 +29,18 @@ Partial Class frm_edit_section
         Me.txtSectionName = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Guna2Button4 = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2GroupBox1 = New Guna.UI2.WinForms.Guna2GroupBox()
+        Me.lbltid = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Guna2Button1 = New Guna.UI2.WinForms.Guna2Button()
         Me.txtColID = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.txtSID = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Guna2Button3 = New Guna.UI2.WinForms.Guna2Button()
-        Me.lbltid = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Guna2Button1 = New Guna.UI2.WinForms.Guna2Button()
-        Me.txtTeacher = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
+        Me.txtTeacher = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.prevTeacher = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.Label8 = New System.Windows.Forms.Label()
         Me.Guna2GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -122,6 +124,8 @@ Partial Class frm_edit_section
         '
         'Guna2GroupBox1
         '
+        Me.Guna2GroupBox1.Controls.Add(Me.prevTeacher)
+        Me.Guna2GroupBox1.Controls.Add(Me.Label8)
         Me.Guna2GroupBox1.Controls.Add(Me.lbltid)
         Me.Guna2GroupBox1.Controls.Add(Me.Label4)
         Me.Guna2GroupBox1.Controls.Add(Me.Guna2Button1)
@@ -144,6 +148,41 @@ Partial Class frm_edit_section
         Me.Guna2GroupBox1.Size = New System.Drawing.Size(854, 254)
         Me.Guna2GroupBox1.TabIndex = 27
         Me.Guna2GroupBox1.Text = "Section Information"
+        '
+        'lbltid
+        '
+        Me.lbltid.AutoSize = True
+        Me.lbltid.ForeColor = System.Drawing.Color.Black
+        Me.lbltid.Location = New System.Drawing.Point(532, 208)
+        Me.lbltid.Name = "lbltid"
+        Me.lbltid.Size = New System.Drawing.Size(55, 15)
+        Me.lbltid.TabIndex = 36
+        Me.lbltid.Text = "[no data]"
+        Me.lbltid.Visible = False
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.ForeColor = System.Drawing.Color.Black
+        Me.Label4.Location = New System.Drawing.Point(462, 208)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(64, 15)
+        Me.Label4.TabIndex = 35
+        Me.Label4.Text = "Teacher ID:"
+        Me.Label4.Visible = False
+        '
+        'Guna2Button1
+        '
+        Me.Guna2Button1.Animated = True
+        Me.Guna2Button1.AutoRoundedCorners = True
+        Me.Guna2Button1.BorderRadius = 17
+        Me.Guna2Button1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.Guna2Button1.ForeColor = System.Drawing.Color.White
+        Me.Guna2Button1.Location = New System.Drawing.Point(373, 199)
+        Me.Guna2Button1.Name = "Guna2Button1"
+        Me.Guna2Button1.Size = New System.Drawing.Size(83, 36)
+        Me.Guna2Button1.TabIndex = 34
+        Me.Guna2Button1.Text = "Browse"
         '
         'txtColID
         '
@@ -198,40 +237,15 @@ Partial Class frm_edit_section
         Me.Guna2Button3.TabIndex = 28
         Me.Guna2Button3.Text = "Save"
         '
-        'lbltid
+        'Label7
         '
-        Me.lbltid.AutoSize = True
-        Me.lbltid.ForeColor = System.Drawing.Color.Black
-        Me.lbltid.Location = New System.Drawing.Point(532, 208)
-        Me.lbltid.Name = "lbltid"
-        Me.lbltid.Size = New System.Drawing.Size(55, 15)
-        Me.lbltid.TabIndex = 36
-        Me.lbltid.Text = "[no data]"
-        Me.lbltid.Visible = False
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.ForeColor = System.Drawing.Color.Black
-        Me.Label4.Location = New System.Drawing.Point(462, 208)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(64, 15)
-        Me.Label4.TabIndex = 35
-        Me.Label4.Text = "Teacher ID:"
-        Me.Label4.Visible = False
-        '
-        'Guna2Button1
-        '
-        Me.Guna2Button1.Animated = True
-        Me.Guna2Button1.AutoRoundedCorners = True
-        Me.Guna2Button1.BorderRadius = 17
-        Me.Guna2Button1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.Guna2Button1.ForeColor = System.Drawing.Color.White
-        Me.Guna2Button1.Location = New System.Drawing.Point(373, 199)
-        Me.Guna2Button1.Name = "Guna2Button1"
-        Me.Guna2Button1.Size = New System.Drawing.Size(83, 36)
-        Me.Guna2Button1.TabIndex = 34
-        Me.Guna2Button1.Text = "Browse"
+        Me.Label7.AutoSize = True
+        Me.Label7.ForeColor = System.Drawing.Color.Black
+        Me.Label7.Location = New System.Drawing.Point(63, 208)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(50, 15)
+        Me.Label7.TabIndex = 32
+        Me.Label7.Text = "Teacher:"
         '
         'txtTeacher
         '
@@ -241,6 +255,7 @@ Partial Class frm_edit_section
         Me.txtTeacher.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
         Me.txtTeacher.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txtTeacher.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtTeacher.Enabled = False
         Me.txtTeacher.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtTeacher.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.txtTeacher.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
@@ -253,15 +268,37 @@ Partial Class frm_edit_section
         Me.txtTeacher.Size = New System.Drawing.Size(235, 36)
         Me.txtTeacher.TabIndex = 33
         '
-        'Label7
+        'prevTeacher
         '
-        Me.Label7.AutoSize = True
-        Me.Label7.ForeColor = System.Drawing.Color.Black
-        Me.Label7.Location = New System.Drawing.Point(63, 208)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(50, 15)
-        Me.Label7.TabIndex = 32
-        Me.Label7.Text = "Teacher:"
+        Me.prevTeacher.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.prevTeacher.DefaultText = ""
+        Me.prevTeacher.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.prevTeacher.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.prevTeacher.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.prevTeacher.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.prevTeacher.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.prevTeacher.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.prevTeacher.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.prevTeacher.Location = New System.Drawing.Point(491, 87)
+        Me.prevTeacher.Margin = New System.Windows.Forms.Padding(5, 3, 5, 3)
+        Me.prevTeacher.Name = "prevTeacher"
+        Me.prevTeacher.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.prevTeacher.PlaceholderText = ""
+        Me.prevTeacher.SelectedText = ""
+        Me.prevTeacher.Size = New System.Drawing.Size(235, 36)
+        Me.prevTeacher.TabIndex = 38
+        Me.prevTeacher.Visible = False
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.ForeColor = System.Drawing.Color.Black
+        Me.Label8.Location = New System.Drawing.Point(407, 96)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(76, 15)
+        Me.Label8.TabIndex = 37
+        Me.Label8.Text = "Prev Teacher:"
+        Me.Label8.Visible = False
         '
         'frm_edit_section
         '
@@ -297,6 +334,8 @@ Partial Class frm_edit_section
     Friend WithEvents lbltid As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents Guna2Button1 As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents prevTeacher As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents Label8 As Label
     Friend WithEvents txtTeacher As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Label7 As Label
 End Class

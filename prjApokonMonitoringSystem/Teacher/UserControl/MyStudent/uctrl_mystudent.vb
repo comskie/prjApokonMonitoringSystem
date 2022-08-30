@@ -4,7 +4,7 @@ Public Class uctrl_mystudent
     Private Sub displaySection()
         Try
             conn.Open()
-            comm = New MySqlCommand("SELECT section_name  From tbl_teacher_section a, tbl_section b, tbl_teacher c Where a.teacher_id = c.teacher_id And a.section_id = b.section_id And a.teacher_id = '" & teacherID & "' And c.teacher_id = '" & teacherID & "'", conn)
+            comm = New MySqlCommand("SELECT section_name From tbl_teacher_section a, tbl_section b, tbl_teacher c Where a.teacher_id = c.teacher_id And a.section_id = b.section_id And a.teacher_id = '" & teacherID & "' And c.teacher_id = '" & teacherID & "'", conn)
             adapter = New MySqlDataAdapter(comm)
             Dim table As New DataTable()
             adapter.Fill(table)
@@ -73,6 +73,7 @@ Public Class uctrl_mystudent
 
     Private Sub uctrl_mystudent_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         displaySection()
+        displayStudent()
     End Sub
 
     Private Sub cmbSection_SelectedValueChanged(sender As Object, e As EventArgs) Handles cmbSection.SelectedValueChanged

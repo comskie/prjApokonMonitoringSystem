@@ -34,7 +34,6 @@ Partial Class uctrl_section_list
         Me.action_delete = New System.Windows.Forms.DataGridViewImageColumn()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Guna2Button1 = New Guna.UI2.WinForms.Guna2Button()
-        Me.Guna2Button2 = New Guna.UI2.WinForms.Guna2Button()
         Me.chkboxAutoSearch = New Guna.UI2.WinForms.Guna2CheckBox()
         Me.btnSearch = New Guna.UI2.WinForms.Guna2Button()
         Me.cmbYearLevel = New Guna.UI2.WinForms.Guna2ComboBox()
@@ -170,7 +169,6 @@ Partial Class uctrl_section_list
         'Panel2
         '
         Me.Panel2.Controls.Add(Me.Guna2Button1)
-        Me.Panel2.Controls.Add(Me.Guna2Button2)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Panel2.Location = New System.Drawing.Point(0, 529)
         Me.Panel2.Name = "Panel2"
@@ -191,20 +189,6 @@ Partial Class uctrl_section_list
         Me.Guna2Button1.TabIndex = 1
         Me.Guna2Button1.Text = "Export"
         Me.Guna2Button1.TextOffset = New System.Drawing.Point(4, 0)
-        '
-        'Guna2Button2
-        '
-        Me.Guna2Button2.BorderRadius = 10
-        Me.Guna2Button2.FillColor = System.Drawing.Color.MediumSeaGreen
-        Me.Guna2Button2.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2Button2.ForeColor = System.Drawing.Color.White
-        Me.Guna2Button2.Image = CType(resources.GetObject("Guna2Button2.Image"), System.Drawing.Image)
-        Me.Guna2Button2.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.Guna2Button2.Location = New System.Drawing.Point(689, 3)
-        Me.Guna2Button2.Name = "Guna2Button2"
-        Me.Guna2Button2.Size = New System.Drawing.Size(96, 37)
-        Me.Guna2Button2.TabIndex = 0
-        Me.Guna2Button2.Text = "Print"
         '
         'chkboxAutoSearch
         '
@@ -344,7 +328,6 @@ Partial Class uctrl_section_list
     Friend WithEvents action_delete As DataGridViewImageColumn
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Guna2Button1 As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents Guna2Button2 As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents chkboxAutoSearch As Guna.UI2.WinForms.Guna2CheckBox
     Friend WithEvents btnSearch As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents cmbYearLevel As Guna.UI2.WinForms.Guna2ComboBox

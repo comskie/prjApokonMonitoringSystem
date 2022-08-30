@@ -304,6 +304,7 @@ Partial Class frm_edit_teacher
         Me.txtColID.Size = New System.Drawing.Size(55, 15)
         Me.txtColID.TabIndex = 43
         Me.txtColID.Text = "[no data]"
+        Me.txtColID.Visible = False
         '
         'Label10
         '
@@ -314,6 +315,7 @@ Partial Class frm_edit_teacher
         Me.Label10.Size = New System.Drawing.Size(42, 15)
         Me.Label10.TabIndex = 42
         Me.Label10.Text = "Col ID:"
+        Me.Label10.Visible = False
         '
         'Label6
         '
