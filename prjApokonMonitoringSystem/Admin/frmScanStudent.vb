@@ -62,7 +62,8 @@ Public Class frmScanStudent
         Dim Reader As New BarcodeReader()
         Dim result As Result = Reader.Decode(CType(PictureBox1.Image, Bitmap))
         Try
-            lblClock.Text = DateTime.Now.ToString("hh:mm:ss tt").ToUpper
+            Dim currentDateTime = DateTime.Now
+            lblClock.Text = currentDateTime.ToString("hh:mm:ss tt").ToUpper
             If ValidateTimeLog() = "Timein AM" Then
                 timeStatus.Text = "TIME IN (AM)"
             ElseIf ValidateTimeLog() = "Timeout AM" Then
@@ -87,7 +88,7 @@ Public Class frmScanStudent
                 Return
             End If
 
-            SearchStudent(result.Text)
+            SearchStudent(result.Text, currentDateTime)
 
         Catch ex As Exception
 
@@ -95,7 +96,7 @@ Public Class frmScanStudent
 
     End Sub
 
-    Private Sub SearchStudent(ScannedLRN As String)
+    Private Sub SearchStudent(ScannedLRN As String, currentDateTime As DateTime)
         Try
             conn.Open()
             comm = New MySqlCommand("SELECT * FROM tbl_student WHERE lrn = '" & ScannedLRN & "'", conn)
@@ -125,7 +126,7 @@ Public Class frmScanStudent
                 Dim tts = CreateObject("SAPI.spvoice")
                 tts.speak("Welcome " & txtFname.Text & " " & txtMname.Text & " " & txtLname.Text)
                 conn.Close()
-                InsertToLogs(txtLRN.Text)
+                InsertToLogs(txtLRN.Text, currentDateTime)
             End If
         Catch ex As Exception
             conn.Close()
