@@ -565,6 +565,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="bin\Debug\files\student_import_template.xlsx" />
     <None Include="bin\Debug\prjApokonMonitoringSystem.exe.config" />
     <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">
@@ -646,6 +647,11 @@
     <Content Include="assets\undraw_back_to_school_inwc.png" />
     <Content Include="bin\Debug\prjApokonMonitoringSystem.exe" />
     <Content Include="bin\Debug\prjApokonMonitoringSystem.pdb" />
+    <Content Include="bin\Debug\student_id\112233445566.png" />
+    <Content Include="bin\Debug\student_id\869584768930.png" />
+    <Content Include="bin\Debug\student_id\948571748957.png" />
+    <Content Include="bin\Debug\student_id\984756718374.png" />
+    <Content Include="bin\Debug\student_id\default_profile.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\Release\" />

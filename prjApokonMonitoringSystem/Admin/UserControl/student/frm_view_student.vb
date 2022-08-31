@@ -23,4 +23,20 @@ Public Class frm_view_student
 
 
     End Sub
+
+    Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles Guna2Button1.Click
+        Dim locationFile As String = Application.StartupPath & "\student_id\" & txtLRN.Text & ".png"
+        Dim downloadLocation As String
+        Try
+            If FolderBrowserDialog1.ShowDialog() = Windows.Forms.DialogResult.OK Then
+                downloadLocation = FolderBrowserDialog1.SelectedPath
+                Dim root As Environment.SpecialFolder = FolderBrowserDialog1.RootFolder
+                MsgBox("Successfully downloaded ID", MsgBoxStyle.Information)
+                My.Computer.Network.DownloadFile(locationFile, downloadLocation & "\qr_id_" & txtLRN.Text & ".png")
+            End If
+
+        Catch ex As Exception
+
+        End Try
+    End Sub
 End Class

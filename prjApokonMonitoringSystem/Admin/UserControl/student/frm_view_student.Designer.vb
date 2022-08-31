@@ -42,12 +42,14 @@ Partial Class frm_view_student
         Me.txtFname = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Guna2GroupBox1 = New Guna.UI2.WinForms.Guna2GroupBox()
+        Me.ProfileContainer = New System.Windows.Forms.PictureBox()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.txtSection = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Guna2Button2 = New Guna.UI2.WinForms.Guna2Button()
         Me.QRContainer = New System.Windows.Forms.Panel()
         Me.txtLRN = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.ProfileContainer = New System.Windows.Forms.PictureBox()
+        Me.Guna2Button1 = New Guna.UI2.WinForms.Guna2Button()
+        Me.FolderBrowserDialog1 = New System.Windows.Forms.FolderBrowserDialog()
         Me.Guna2GroupBox2.SuspendLayout()
         Me.Guna2GroupBox1.SuspendLayout()
         CType(Me.ProfileContainer, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -326,6 +328,7 @@ Partial Class frm_view_student
         '
         'Guna2GroupBox1
         '
+        Me.Guna2GroupBox1.Controls.Add(Me.Guna2Button1)
         Me.Guna2GroupBox1.Controls.Add(Me.ProfileContainer)
         Me.Guna2GroupBox1.Controls.Add(Me.Label10)
         Me.Guna2GroupBox1.Controls.Add(Me.txtSection)
@@ -351,6 +354,17 @@ Partial Class frm_view_student
         Me.Guna2GroupBox1.Size = New System.Drawing.Size(854, 363)
         Me.Guna2GroupBox1.TabIndex = 2
         Me.Guna2GroupBox1.Text = "Student Information"
+        '
+        'ProfileContainer
+        '
+        Me.ProfileContainer.Image = CType(resources.GetObject("ProfileContainer.Image"), System.Drawing.Image)
+        Me.ProfileContainer.InitialImage = CType(resources.GetObject("ProfileContainer.InitialImage"), System.Drawing.Image)
+        Me.ProfileContainer.Location = New System.Drawing.Point(650, 58)
+        Me.ProfileContainer.Name = "ProfileContainer"
+        Me.ProfileContainer.Size = New System.Drawing.Size(174, 143)
+        Me.ProfileContainer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.ProfileContainer.TabIndex = 27
+        Me.ProfileContainer.TabStop = False
         '
         'Label10
         '
@@ -426,16 +440,18 @@ Partial Class frm_view_student
         Me.txtLRN.Size = New System.Drawing.Size(200, 36)
         Me.txtLRN.TabIndex = 0
         '
-        'ProfileContainer
+        'Guna2Button1
         '
-        Me.ProfileContainer.Image = CType(resources.GetObject("ProfileContainer.Image"), System.Drawing.Image)
-        Me.ProfileContainer.InitialImage = CType(resources.GetObject("ProfileContainer.InitialImage"), System.Drawing.Image)
-        Me.ProfileContainer.Location = New System.Drawing.Point(650, 58)
-        Me.ProfileContainer.Name = "ProfileContainer"
-        Me.ProfileContainer.Size = New System.Drawing.Size(174, 143)
-        Me.ProfileContainer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.ProfileContainer.TabIndex = 27
-        Me.ProfileContainer.TabStop = False
+        Me.Guna2Button1.Animated = True
+        Me.Guna2Button1.AutoRoundedCorners = True
+        Me.Guna2Button1.BorderRadius = 21
+        Me.Guna2Button1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.Guna2Button1.ForeColor = System.Drawing.Color.White
+        Me.Guna2Button1.Location = New System.Drawing.Point(583, 276)
+        Me.Guna2Button1.Name = "Guna2Button1"
+        Me.Guna2Button1.Size = New System.Drawing.Size(134, 45)
+        Me.Guna2Button1.TabIndex = 28
+        Me.Guna2Button1.Text = "Download ID"
         '
         'frm_view_student
         '
@@ -482,4 +498,6 @@ Partial Class frm_view_student
     Friend WithEvents Label10 As Label
     Friend WithEvents txtSection As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents ProfileContainer As PictureBox
+    Friend WithEvents Guna2Button1 As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents FolderBrowserDialog1 As FolderBrowserDialog
 End Class

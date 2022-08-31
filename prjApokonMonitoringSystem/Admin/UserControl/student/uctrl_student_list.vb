@@ -239,7 +239,7 @@ Public Class uctrl_student_list
             txtSearchBox.Enabled = False
             txtSearchBox.Clear()
         End If
-        Label1.Text = "1"
+        currentPg.Text = "1"
         count_rows()
         load_data()
     End Sub
