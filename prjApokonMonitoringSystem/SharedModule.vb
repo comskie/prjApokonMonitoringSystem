@@ -1,6 +1,6 @@
 ﻿Module SharedModule
-    Class Gender
-        Public Const Male = "Male"
-        Public Const Female = "Female"
-    End Class
+    Enum GenderEnum
+        Male = 0
+        Female = 1
+    End Enum
 End Module
