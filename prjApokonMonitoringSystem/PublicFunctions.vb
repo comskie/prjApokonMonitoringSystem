@@ -233,7 +233,7 @@ Module PublicFunctions
         Dim formattedCurrentDate = currentDateTime.ToString("yyyy/MM/dd")
 
         Dim logType = StudentUtil.GetLogTypeFromDateTime(currentDateTime)
-        Dim logTypeField = StudentUtil.GetFieldOfStudentLogType(logType)
+        Dim logTypeField = StudentUtil.GetFieldFromLogType(logType)
 
         Dim commandString As String
 
