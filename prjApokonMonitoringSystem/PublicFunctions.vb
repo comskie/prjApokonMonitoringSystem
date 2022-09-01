@@ -202,33 +202,6 @@ Module PublicFunctions
 
     End Sub
 
-    Function checkIfStudentExist(sLRN As String) As Boolean
-        Try
-            conn.Open()
-            comm = New MySqlCommand("SELECT COUNT(*) FROM tbl_student WHERE lrn = '" & sLRN & "'", conn)
-            adapter = New MySqlDataAdapter(comm)
-            Dim table As New DataTable()
-            adapter.Fill(table)
-
-            If table.Rows.Count = 0 Then
-                Return True
-            Else
-                If table.Rows(0).Item(0).ToString() = "0" Then
-                    Return False
-                Else
-                    Return True
-                End If
-            End If
-        Catch ex As Exception
-            conn.Close()
-            MessageBox.Show(ex.Message)
-        Finally
-            conn.Dispose()
-        End Try
-        Return False
-        conn.Close()
-    End Function
-
     Public Sub InsertToLogs(sLRN As String, currentDateTime As DateTime)
         Dim formattedCurrentTime = Format(currentDateTime, "HH:mm:ss")
         Dim formattedCurrentDate = currentDateTime.ToString("yyyy/MM/dd")
