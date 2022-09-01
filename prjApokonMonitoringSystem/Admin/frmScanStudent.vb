@@ -64,13 +64,15 @@ Public Class frmScanStudent
         Try
             Dim currentDateTime = DateTime.Now
             lblClock.Text = currentDateTime.ToString("hh:mm:ss tt").ToUpper
-            If ValidateTimeLog() = "Timein AM" Then
+            Dim logType = GetStudentLogTypeFromDateTime(currentDateTime)
+
+            If logType = StudentLogType.TimeInAM Then
                 timeStatus.Text = "TIME IN (AM)"
-            ElseIf ValidateTimeLog() = "Timeout AM" Then
+            ElseIf logType = StudentLogType.TimeOutAM Then
                 timeStatus.Text = "TIME OUT (AM)"
-            ElseIf ValidateTimeLog() = "Timein PM" Then
+            ElseIf logType = StudentLogType.TimeInPM Then
                 timeStatus.Text = "TIME IN (PM)"
-            ElseIf ValidateTimeLog() = "Timeout PM" Then
+            ElseIf logType = StudentLogType.TimeOutPM Then
                 timeStatus.Text = "TIME OUT (PM)"
             Else
                 timeStatus.Text = "[no data]"
@@ -88,7 +90,7 @@ Public Class frmScanStudent
                 Return
             End If
 
-            SearchStudent(result.Text, currentDateTime)
+            SearchStudent(result.Text, currentDateTime, logType)
 
         Catch ex As Exception
 
@@ -96,7 +98,7 @@ Public Class frmScanStudent
 
     End Sub
 
-    Private Sub SearchStudent(ScannedLRN As String, currentDateTime As DateTime)
+    Private Sub SearchStudent(ScannedLRN As String, currentDateTime As DateTime, logType As StudentLogType)
         Try
             conn.Open()
             comm = New MySqlCommand("SELECT * FROM tbl_student WHERE lrn = '" & ScannedLRN & "'", conn)
@@ -127,7 +129,7 @@ Public Class frmScanStudent
                 tts.speak("Welcome " & txtFname.Text & " " & txtMname.Text & " " & txtLname.Text)
                 conn.Close()
 
-                If timeStatus.Text = "TIME IN (AM)" Or timeStatus.Text = "TIME OUT (PM)" Then
+                If logType = StudentLogType.TimeInAM Or logType = StudentLogType.TimeOutPM Then
                     SendSMS(txtContactNo.Text, txtFname.Text & " " & txtLname.Text & " " & timeStatus.Text & " Apokon Elementary School at " & lblClock.Text)
                     InsertToLogs(txtLRN.Text, currentDateTime)
                 End If
