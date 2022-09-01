@@ -232,28 +232,17 @@ Module PublicFunctions
         Dim formattedCurrentTime = Format(currentDateTime, "HH:mm:ss")
         Dim formattedCurrentDate = currentDateTime.ToString("yyyy/MM/dd")
 
-        Dim logType As String
-        Dim validatedTimeLog = ValidateTimeLog()
-
-        If validatedTimeLog = "Timein AM" Then
-            logType = "timeIN_AM"
-        ElseIf validatedTimeLog = "Timeout AM" Then
-            logType = "timeOUT_AM"
-        ElseIf validatedTimeLog = "Timein PM" Then
-            logType = "timeIN_PM"
-        ElseIf validatedTimeLog = "Timeout PM" Then
-            logType = "timeOUT_PM"
-        Else
-            Throw New Exception("Error validated time log!")
-        End If
+        Dim logType = GetStudentLogTypeFromDateTime(currentDateTime)
+        Dim logTypeField = GetFieldOfStudentLogType(logType)
 
         Dim commandString As String
 
         If CheckIfLogExist(sLRN) Then
-            commandString = "UPDATE tbl_logs SET " & logType & " = '" & formattedCurrentTime & "' WHERE logcurrent_date='" & formattedCurrentDate & "' AND lrn = '" & sLRN & "'"
+            commandString = "UPDATE tbl_logs SET " & logTypeField & " = '" & formattedCurrentTime & "' WHERE logcurrent_date='" & formattedCurrentDate & "' AND lrn = '" & sLRN & "'"
         Else
-            commandString = "INSERT INTO tbl_logs(lrn, " & logType & ", logcurrent_date) VALUES ('" & sLRN & "', '" & formattedCurrentTime & "', '" & formattedCurrentDate & "')"
+            commandString = "INSERT INTO tbl_logs(lrn, " & logTypeField & ", logcurrent_date) VALUES ('" & sLRN & "', '" & formattedCurrentTime & "', '" & formattedCurrentDate & "')"
         End If
+
         InsertTheLogs(commandString)
     End Sub
 
@@ -293,6 +282,30 @@ Module PublicFunctions
             Return "Timeout PM"
         Else
             Return "Error"
+        End If
+    End Function
+
+    Public Function GetStudentLogTypeFromDateTime(dateTime As DateTime) As Enums.StudentLogType
+        Dim timeinAMRange_1 As DateTime = #12:00:00 AM#
+        Dim timeinAMRange_2 As DateTime = #11:59:00 AM#
+        Dim timeoutAMRange_1 As DateTime = #12:00:00 PM#
+        Dim timeoutAMRange_2 As DateTime = #12:30:00 PM#
+        Dim timeinPMRange_1 As DateTime = #12:31:00 PM#
+        Dim timeinPMRange_2 As DateTime = #4:59:00 PM#
+        Dim timeoutPMRange_1 As DateTime = #5:00:00 PM#
+        Dim timeoutPMRange_2 As DateTime = #11:59:00 PM#
+
+
+        If dateTime.TimeOfDay >= timeinAMRange_1.TimeOfDay And dateTime.TimeOfDay <= timeinAMRange_2.TimeOfDay Then
+            Return Enums.StudentLogType.TimeInAM
+        ElseIf dateTime.TimeOfDay >= timeoutAMRange_1.TimeOfDay And dateTime.TimeOfDay <= timeoutAMRange_2.TimeOfDay Then
+            Return Enums.StudentLogType.TimeOutAM
+        ElseIf dateTime.TimeOfDay >= timeinPMRange_1.TimeOfDay And dateTime.TimeOfDay <= timeinPMRange_2.TimeOfDay Then
+            Return Enums.StudentLogType.TimeInPM
+        ElseIf dateTime.TimeOfDay >= timeoutPMRange_1.TimeOfDay And dateTime.TimeOfDay <= timeoutPMRange_2.TimeOfDay Then
+            Return Enums.StudentLogType.TimeOutPM
+        Else
+            Throw New Exception("Error log type")
         End If
     End Function
 
