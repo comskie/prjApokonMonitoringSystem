@@ -49,7 +49,7 @@ Module StudentModule
             End Select
         End Function
 
-        Public Shared Function StudentExists(LRN As String) As Boolean
+        Public Shared Function Exists(LRN As String) As Boolean
             If LRN.Length <> 12 Then
                 Return False
             End If
@@ -62,11 +62,9 @@ Module StudentModule
                 Dim table As New DataTable()
                 adapter.Fill(table)
 
-                If table.Rows.Count <> 1 Then
+                If table.Rows.Count = 1 Then
                     Return True
                 End If
-
-                Return False
             Catch ex As Exception
                 MessageBox.Show(ex.Message)
             End Try
