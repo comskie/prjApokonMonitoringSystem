@@ -102,7 +102,8 @@ Module PublicFunctions
             For i As Integer = 0 To dgv.Rows.Count - 1 Step +1
                 Dim ms As New MemoryStream
                 ProfileContainer.BackgroundImage.Save(ms, ProfileContainer.BackgroundImage.RawFormat)
-                If checkIfStudentExist(dgv.Rows(i).Cells(0).Value.ToString()) Then
+                Dim lrn = dgv.Rows(i).Cells(0).Value.ToString()
+                If StudentUtil.Exists(lrn) Then
                     Dim dialogResult As DialogResult = MessageBox.Show("Student '" & dgv.Rows(i).Cells(0).Value.ToString() & "' already exists in the database. Do you want to overwrite / update the data?", "Import Student", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
                     If dialogResult = DialogResult.Yes Then
                         conn.Open()
