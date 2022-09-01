@@ -232,8 +232,8 @@ Module PublicFunctions
         Dim formattedCurrentTime = Format(currentDateTime, "HH:mm:ss")
         Dim formattedCurrentDate = currentDateTime.ToString("yyyy/MM/dd")
 
-        Dim logType = GetStudentLogTypeFromDateTime(currentDateTime)
-        Dim logTypeField = GetFieldOfStudentLogType(logType)
+        Dim logType = StudentUtil.GetLogTypeFromDateTime(currentDateTime)
+        Dim logTypeField = StudentUtil.GetFieldOfStudentLogType(logType)
 
         Dim commandString As String
 
@@ -285,29 +285,7 @@ Module PublicFunctions
         End If
     End Function
 
-    Public Function GetStudentLogTypeFromDateTime(dateTime As DateTime) As StudentLogType
-        Dim timeinAMRange_1 As DateTime = #12:00:00 AM#
-        Dim timeinAMRange_2 As DateTime = #11:59:00 AM#
-        Dim timeoutAMRange_1 As DateTime = #12:00:00 PM#
-        Dim timeoutAMRange_2 As DateTime = #12:30:00 PM#
-        Dim timeinPMRange_1 As DateTime = #12:31:00 PM#
-        Dim timeinPMRange_2 As DateTime = #4:59:00 PM#
-        Dim timeoutPMRange_1 As DateTime = #5:00:00 PM#
-        Dim timeoutPMRange_2 As DateTime = #11:59:00 PM#
 
-
-        If dateTime.TimeOfDay >= timeinAMRange_1.TimeOfDay And dateTime.TimeOfDay <= timeinAMRange_2.TimeOfDay Then
-            Return StudentLogType.TimeInAM
-        ElseIf dateTime.TimeOfDay >= timeoutAMRange_1.TimeOfDay And dateTime.TimeOfDay <= timeoutAMRange_2.TimeOfDay Then
-            Return StudentLogType.TimeOutAM
-        ElseIf dateTime.TimeOfDay >= timeinPMRange_1.TimeOfDay And dateTime.TimeOfDay <= timeinPMRange_2.TimeOfDay Then
-            Return StudentLogType.TimeInPM
-        ElseIf dateTime.TimeOfDay >= timeoutPMRange_1.TimeOfDay And dateTime.TimeOfDay <= timeoutPMRange_2.TimeOfDay Then
-            Return StudentLogType.TimeOutPM
-        Else
-            Throw New Exception("Error log type")
-        End If
-    End Function
 
     Public Function CheckIfLogExist(sLRN As String) As String
         Dim currentDate As String
