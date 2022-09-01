@@ -8,20 +8,9 @@ Module Connection
     Public adapter As MySqlDataAdapter
     Public school_email As String = "apokon.monitoring@gmail.com"
     Public school_password As String = "txyuonmqgfxekmeb"
-    'Public Const CLOUD_NAME As String = "dsffeuudt"
-    'Public Const API_KEY As String = "176669418197682"
-    'Public Const API_SECRET As String = "OGlji-Y32d7pWMFJRf9P45mLWC8"
+
     Sub connect()
-        'Try
-        '    With conn
-        '        .ConnectionString = "server=vmucrn65rion.ap-southeast-2.psdb.cloud;user=k923a3y3gqzb;database=monitoring_system;port=3306;password=pscale_pw_uOIYmpGWkYnuILpPw8sQFtUV0F8CKrtX0EVTHEK6zJQ;SslMode=VerifyFull"
-        '        If .State = ConnectionState.Open Then
-        '            conn.Close()
-        '        End If
-        '    End With
-        'Catch myerror As MySqlException
-        '    MsgBox(myerror.Message)
-        'End Try
+
         Try
             With conn
                 .ConnectionString = "server=localhost;user=root;database=apokon_monitoring_system;port=3306;password=1234;"
@@ -34,15 +23,4 @@ Module Connection
         End Try
     End Sub
 
-    'Public Function CheckForInternetConnection() As Boolean
-    '    Try
-    '        Using client = New WebClient()
-    '            Using stream = client.OpenRead("http://www.google.com")
-    '                Return True
-    '            End Using
-    '        End Using
-    '    Catch
-    '        Return False
-    '    End Try
-    'End Function
 End Module
