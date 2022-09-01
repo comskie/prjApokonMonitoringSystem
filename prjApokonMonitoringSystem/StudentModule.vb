@@ -11,6 +11,8 @@ Module StudentModule
         End Enum
 
         Public Shared Function GetLogTypeFromDateTime(dateTime As DateTime) As LogType
+            Dim time = dateTime.TimeOfDay
+
             Dim timeinAMRange_1 As DateTime = #12:00:00 AM#
             Dim timeinAMRange_2 As DateTime = #11:59:00 AM#
             Dim timeoutAMRange_1 As DateTime = #12:00:00 PM#
@@ -19,6 +21,8 @@ Module StudentModule
             Dim timeinPMRange_2 As DateTime = #4:59:00 PM#
             Dim timeoutPMRange_1 As DateTime = #5:00:00 PM#
             Dim timeoutPMRange_2 As DateTime = #11:59:00 PM#
+
+            MsgBox(timeoutPMRange_1.TimeOfDay)
 
 
             If dateTime.TimeOfDay >= timeinAMRange_1.TimeOfDay And dateTime.TimeOfDay <= timeinAMRange_2.TimeOfDay Then
