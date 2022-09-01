@@ -235,31 +235,6 @@ Module PublicFunctions
         End Try
         conn.Close()
     End Sub
-    Public Function ValidateTimeLog()
-        Dim timeinAMRange_1 As DateTime = #12:00:00 AM#
-        Dim timeinAMRange_2 As DateTime = #11:59:00 AM#
-        Dim timeoutAMRange_1 As DateTime = #12:00:00 PM#
-        Dim timeoutAMRange_2 As DateTime = #12:30:00 PM#
-        Dim timeinPMRange_1 As DateTime = #12:31:00 PM#
-        Dim timeinPMRange_2 As DateTime = #4:59:00 PM#
-        Dim timeoutPMRange_1 As DateTime = #5:00:00 PM#
-        Dim timeoutPMRange_2 As DateTime = #11:59:00 PM#
-
-
-        If DateTime.Now.TimeOfDay >= timeinAMRange_1.TimeOfDay And DateTime.Now.TimeOfDay <= timeinAMRange_2.TimeOfDay Then
-            Return "Timein AM"
-        ElseIf DateTime.Now.TimeOfDay >= timeoutAMRange_1.TimeOfDay And DateTime.Now.TimeOfDay <= timeoutAMRange_2.TimeOfDay Then
-            Return "Timeout AM"
-        ElseIf DateTime.Now.TimeOfDay >= timeinPMRange_1.TimeOfDay And DateTime.Now.TimeOfDay <= timeinPMRange_2.TimeOfDay Then
-            Return "Timein PM"
-        ElseIf DateTime.Now.TimeOfDay >= timeoutPMRange_1.TimeOfDay And DateTime.Now.TimeOfDay <= timeoutPMRange_2.TimeOfDay Then
-            Return "Timeout PM"
-        Else
-            Return "Error"
-        End If
-    End Function
-
-
 
     Public Function CheckIfLogExist(sLRN As String) As String
         Dim currentDate As String
