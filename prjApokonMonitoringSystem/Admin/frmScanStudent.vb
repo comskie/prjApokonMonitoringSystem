@@ -14,9 +14,9 @@ Public Class frmScanStudent
         bmp = DirectCast(eventArgs.Frame.Clone(), Bitmap)
 
         Dim filter = New AForge.Imaging.Filters.Mirror(False, True)
-        bmp = filter.Apply(bmp)
+        Dim mirroredBmp = filter.Apply(bmp)
 
-        PictureBox1.Image = bmp
+        PictureBox1.Image = mirroredBmp
     End Sub
 
     Public Function ModemsConnected() As String
