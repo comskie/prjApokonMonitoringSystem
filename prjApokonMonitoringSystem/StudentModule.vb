@@ -49,7 +49,7 @@ Module StudentModule
             End Select
         End Function
 
-        Public Shared Function Exists(LRN As String) As Boolean
+        Public Shared Function StudentExists(LRN As String) As Boolean
             If LRN.Length <> 12 Then
                 Return False
             End If
