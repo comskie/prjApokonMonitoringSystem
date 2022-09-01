@@ -1,5 +1,12 @@
 ﻿Module StudentModule
-    Function GetFieldOfStudentLogType(studentLogType As Enums.StudentLogType)
+    Enum StudentLogType
+        TimeInAM
+        TimeOutAM
+        TimeInPM
+        TimeOutPM
+    End Enum
+
+    Function GetFieldOfStudentLogType(studentLogType As StudentLogType)
         Select Case studentLogType
             Case StudentLogType.TimeInAM
                 Return "timeIN_AM"
