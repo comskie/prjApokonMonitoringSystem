@@ -111,7 +111,7 @@ Public Class frmScanStudent
                 txtFname.Text = table.Rows(0).Item(2).ToString()
                 txtMname.Text = table.Rows(0).Item(3).ToString()
                 txtLname.Text = table.Rows(0).Item(4).ToString()
-                If table.Rows(0).Item(5).ToString() = "Male" Then
+                If table.Rows(0).Item(5).ToString() = Gender.Male Then
                     cmbGender.SelectedIndex = 0
                 Else
                     cmbGender.SelectedIndex = 1
