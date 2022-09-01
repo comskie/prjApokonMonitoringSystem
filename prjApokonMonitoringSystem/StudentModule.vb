@@ -1,4 +1,6 @@
-﻿Module StudentModule
+﻿Imports MySql.Data.MySqlClient
+
+Module StudentModule
 
     Class StudentUtil
         Enum LogType
@@ -32,7 +34,7 @@
             End If
         End Function
 
-        Public Shared Function GetTableFieldFromLogType(studentLogType As LogType)
+        Public Shared Function GetTableFieldFromLogType(studentLogType As LogType) As String
             Select Case studentLogType
                 Case LogType.TimeInAM
                     Return "timeIN_AM"
@@ -45,6 +47,32 @@
                 Case Else
                     Throw New Exception("Error log type!")
             End Select
+        End Function
+
+        Public Shared Function StudentExists(LRN As String) As Boolean
+            If LRN.Length <> 12 Then
+                Return False
+            End If
+
+            Try
+                conn.Open()
+                comm = New MySqlCommand("SELECT lrn FROM tbl_student WHERE lrn = '" & LRN & "' limit 1", conn)
+                adapter = New MySqlDataAdapter(comm)
+
+                Dim table As New DataTable()
+                adapter.Fill(table)
+
+                If table.Rows.Count <> 1 Then
+                    Return True
+                End If
+
+                Return False
+            Catch ex As Exception
+                MessageBox.Show(ex.Message)
+            End Try
+            conn.Dispose()
+            conn.Close()
+            Return False
         End Function
 
     End Class
