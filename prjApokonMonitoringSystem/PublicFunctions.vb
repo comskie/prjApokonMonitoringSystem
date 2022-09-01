@@ -285,7 +285,7 @@ Module PublicFunctions
         End If
     End Function
 
-    Public Function GetStudentLogTypeFromDateTime(dateTime As DateTime) As Enums.StudentLogType
+    Public Function GetStudentLogTypeFromDateTime(dateTime As DateTime) As StudentLogType
         Dim timeinAMRange_1 As DateTime = #12:00:00 AM#
         Dim timeinAMRange_2 As DateTime = #11:59:00 AM#
         Dim timeoutAMRange_1 As DateTime = #12:00:00 PM#
@@ -297,13 +297,13 @@ Module PublicFunctions
 
 
         If dateTime.TimeOfDay >= timeinAMRange_1.TimeOfDay And dateTime.TimeOfDay <= timeinAMRange_2.TimeOfDay Then
-            Return Enums.StudentLogType.TimeInAM
+            Return StudentLogType.TimeInAM
         ElseIf dateTime.TimeOfDay >= timeoutAMRange_1.TimeOfDay And dateTime.TimeOfDay <= timeoutAMRange_2.TimeOfDay Then
-            Return Enums.StudentLogType.TimeOutAM
+            Return StudentLogType.TimeOutAM
         ElseIf dateTime.TimeOfDay >= timeinPMRange_1.TimeOfDay And dateTime.TimeOfDay <= timeinPMRange_2.TimeOfDay Then
-            Return Enums.StudentLogType.TimeInPM
+            Return StudentLogType.TimeInPM
         ElseIf dateTime.TimeOfDay >= timeoutPMRange_1.TimeOfDay And dateTime.TimeOfDay <= timeoutPMRange_2.TimeOfDay Then
-            Return Enums.StudentLogType.TimeOutPM
+            Return StudentLogType.TimeOutPM
         Else
             Throw New Exception("Error log type")
         End If
