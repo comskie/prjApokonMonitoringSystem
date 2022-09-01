@@ -3,6 +3,15 @@
 Module StudentModule
 
     Class StudentUtil
+        Private Shared ReadOnly timeinAMRangeMin = TimeSpan.Parse("00:00:00") '12:00:00 AM
+        Private Shared ReadOnly timeinAMRangeMax = TimeSpan.Parse("11:59:00") '11:59:00 AM
+        Private Shared ReadOnly timeoutAMRangeMin = TimeSpan.Parse("12:00:00") '12:00:00 PM
+        Private Shared ReadOnly timeoutAMRangeMax = TimeSpan.Parse("12:30:00") '12:30:00 PM
+        Private Shared ReadOnly timeinPMRangeMin = TimeSpan.Parse("12:31:00") '12:31:00 PM
+        Private Shared ReadOnly timeinPMRangeMax = TimeSpan.Parse("16:59:00") ' 4:59:00 PM
+        Private Shared ReadOnly timeoutPMRangeMin = TimeSpan.Parse("17:00:00") '5:00:00 PM
+        Private Shared ReadOnly timeoutPMRangeMax = TimeSpan.Parse("23:59:00") '11:59:00 PM
+
         Enum LogType
             TimeInAM
             TimeOutAM
@@ -10,31 +19,18 @@ Module StudentModule
             TimeOutPM
         End Enum
 
-        Public Shared Function GetLogTypeFromDateTime(dateTime As DateTime) As LogType
-            Dim time = dateTime.TimeOfDay
+        Public Shared Function GetLogTypeFromTimeSpan(time As TimeSpan) As LogType
 
-            Dim timeinAMRange_1 As DateTime = #12:00:00 AM#
-            Dim timeinAMRange_2 As DateTime = #11:59:00 AM#
-            Dim timeoutAMRange_1 As DateTime = #12:00:00 PM#
-            Dim timeoutAMRange_2 As DateTime = #12:30:00 PM#
-            Dim timeinPMRange_1 As DateTime = #12:31:00 PM#
-            Dim timeinPMRange_2 As DateTime = #4:59:00 PM#
-            Dim timeoutPMRange_1 As DateTime = #5:00:00 PM#
-            Dim timeoutPMRange_2 As DateTime = #11:59:00 PM#
-
-            MsgBox(timeoutPMRange_1.TimeOfDay)
-
-
-            If dateTime.TimeOfDay >= timeinAMRange_1.TimeOfDay And dateTime.TimeOfDay <= timeinAMRange_2.TimeOfDay Then
+            If time >= timeinAMRangeMin And time <= timeinAMRangeMax Then
                 Return LogType.TimeInAM
-            ElseIf dateTime.TimeOfDay >= timeoutAMRange_1.TimeOfDay And dateTime.TimeOfDay <= timeoutAMRange_2.TimeOfDay Then
+            ElseIf time >= timeoutAMRangeMin And time <= timeoutAMRangeMax Then
                 Return LogType.TimeOutAM
-            ElseIf dateTime.TimeOfDay >= timeinPMRange_1.TimeOfDay And dateTime.TimeOfDay <= timeinPMRange_2.TimeOfDay Then
+            ElseIf time >= timeinPMRangeMin And time <= timeinPMRangeMax Then
                 Return LogType.TimeInPM
-            ElseIf dateTime.TimeOfDay >= timeoutPMRange_1.TimeOfDay And dateTime.TimeOfDay <= timeoutPMRange_2.TimeOfDay Then
+            ElseIf time >= timeoutPMRangeMin And time <= timeoutPMRangeMax Then
                 Return LogType.TimeOutPM
             Else
-                Throw New Exception("Error log type")
+                Throw New Exception("Invalid log type")
             End If
         End Function
 
