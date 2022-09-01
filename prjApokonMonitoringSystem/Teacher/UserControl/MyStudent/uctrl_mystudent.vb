@@ -146,7 +146,7 @@ Public Class uctrl_mystudent
                     .txtFname.Text = selectedRow.Cells(5).Value.ToString
                     .txtMname.Text = selectedRow.Cells(6).Value.ToString
                     .txtLname.Text = selectedRow.Cells(7).Value.ToString
-                    If selectedRow.Cells(8).Value.ToString = "Male" Then
+                    If selectedRow.Cells(8).Value.ToString = Gender.Male Then
                         .cmbGender.SelectedIndex = 0
                     Else
                         .cmbGender.SelectedIndex = 1
@@ -169,7 +169,7 @@ Public Class uctrl_mystudent
                     .txtFname.Text = selectedRow.Cells(5).Value.ToString
                     .txtMname.Text = selectedRow.Cells(6).Value.ToString
                     .txtLname.Text = selectedRow.Cells(7).Value.ToString
-                    If selectedRow.Cells(8).Value.ToString = "Male" Then
+                    If selectedRow.Cells(8).Value.ToString = Gender.Male Then
                         .cmbGender.SelectedIndex = 0
                     Else
                         .cmbGender.SelectedIndex = 1
