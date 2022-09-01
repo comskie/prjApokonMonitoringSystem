@@ -32,7 +32,7 @@
             End If
         End Function
 
-        Public Shared Function GetFieldOfStudentLogType(studentLogType As LogType)
+        Public Shared Function GetFieldFromLogType(studentLogType As LogType)
             Select Case studentLogType
                 Case LogType.TimeInAM
                     Return "timeIN_AM"
