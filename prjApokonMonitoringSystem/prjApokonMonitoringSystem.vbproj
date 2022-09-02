@@ -434,6 +434,8 @@
     <Compile Include="Admin\UserControl\UserControl_StartScreen.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="SharedModule.vb" />
+    <Compile Include="StudentModule.vb" />
     <Compile Include="Teacher\frmMainPageTeacher.Designer.vb">
       <DependentUpon>frmMainPageTeacher.vb</DependentUpon>
     </Compile>

@@ -102,7 +102,8 @@ Module PublicFunctions
             For i As Integer = 0 To dgv.Rows.Count - 1 Step +1
                 Dim ms As New MemoryStream
                 ProfileContainer.BackgroundImage.Save(ms, ProfileContainer.BackgroundImage.RawFormat)
-                If checkIfStudentExist(dgv.Rows(i).Cells(0).Value.ToString()) Then
+                Dim lrn = dgv.Rows(i).Cells(0).Value.ToString()
+                If StudentUtil.StudentExists(lrn) Then
                     Dim dialogResult As DialogResult = MessageBox.Show("Student '" & dgv.Rows(i).Cells(0).Value.ToString() & "' already exists in the database. Do you want to overwrite / update the data?", "Import Student", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
                     If dialogResult = DialogResult.Yes Then
                         conn.Open()
@@ -201,59 +202,21 @@ Module PublicFunctions
 
     End Sub
 
-    Function checkIfStudentExist(sLRN As String) As Boolean
-        Try
-            conn.Open()
-            comm = New MySqlCommand("SELECT COUNT(*) FROM tbl_student WHERE lrn = '" & sLRN & "'", conn)
-            adapter = New MySqlDataAdapter(comm)
-            Dim table As New DataTable()
-            adapter.Fill(table)
-
-            If table.Rows.Count = 0 Then
-                Return True
-            Else
-                If table.Rows(0).Item(0).ToString() = "0" Then
-                    Return False
-                Else
-                    Return True
-                End If
-            End If
-        Catch ex As Exception
-            conn.Close()
-            MessageBox.Show(ex.Message)
-        Finally
-            conn.Dispose()
-        End Try
-        Return False
-        conn.Close()
-    End Function
-
     Public Sub InsertToLogs(sLRN As String, currentDateTime As DateTime)
         Dim formattedCurrentTime = Format(currentDateTime, "HH:mm:ss")
         Dim formattedCurrentDate = currentDateTime.ToString("yyyy/MM/dd")
 
-        Dim logType As String
-        Dim validatedTimeLog = ValidateTimeLog()
-
-        If validatedTimeLog = "Timein AM" Then
-            logType = "timeIN_AM"
-        ElseIf validatedTimeLog = "Timeout AM" Then
-            logType = "timeOUT_AM"
-        ElseIf validatedTimeLog = "Timein PM" Then
-            logType = "timeIN_PM"
-        ElseIf validatedTimeLog = "Timeout PM" Then
-            logType = "timeOUT_PM"
-        Else
-            Throw New Exception("Error validated time log!")
-        End If
+        Dim logType = StudentUtil.GetLogTypeFromTimeSpan(currentDateTime.TimeOfDay)
+        Dim logTypeField = StudentUtil.GetTableFieldFromLogType(logType)
 
         Dim commandString As String
 
         If CheckIfLogExist(sLRN) Then
-            commandString = "UPDATE tbl_logs SET " & logType & " = '" & formattedCurrentTime & "' WHERE logcurrent_date='" & formattedCurrentDate & "' AND lrn = '" & sLRN & "'"
+            commandString = "UPDATE tbl_logs SET " & logTypeField & " = '" & formattedCurrentTime & "' WHERE logcurrent_date='" & formattedCurrentDate & "' AND lrn = '" & sLRN & "'"
         Else
-            commandString = "INSERT INTO tbl_logs(lrn, " & logType & ", logcurrent_date) VALUES ('" & sLRN & "', '" & formattedCurrentTime & "', '" & formattedCurrentDate & "')"
+            commandString = "INSERT INTO tbl_logs(lrn, " & logTypeField & ", logcurrent_date) VALUES ('" & sLRN & "', '" & formattedCurrentTime & "', '" & formattedCurrentDate & "')"
         End If
+
         InsertTheLogs(commandString)
     End Sub
 
@@ -272,29 +235,6 @@ Module PublicFunctions
         End Try
         conn.Close()
     End Sub
-    Public Function ValidateTimeLog()
-        Dim timeinAMRange_1 As DateTime = #12:00:00 AM#
-        Dim timeinAMRange_2 As DateTime = #11:59:00 AM#
-        Dim timeoutAMRange_1 As DateTime = #12:00:00 PM#
-        Dim timeoutAMRange_2 As DateTime = #12:30:00 PM#
-        Dim timeinPMRange_1 As DateTime = #12:31:00 PM#
-        Dim timeinPMRange_2 As DateTime = #4:59:00 PM#
-        Dim timeoutPMRange_1 As DateTime = #5:00:00 PM#
-        Dim timeoutPMRange_2 As DateTime = #11:59:00 PM#
-
-
-        If DateTime.Now.TimeOfDay >= timeinAMRange_1.TimeOfDay And DateTime.Now.TimeOfDay <= timeinAMRange_2.TimeOfDay Then
-            Return "Timein AM"
-        ElseIf DateTime.Now.TimeOfDay >= timeoutAMRange_1.TimeOfDay And DateTime.Now.TimeOfDay <= timeoutAMRange_2.TimeOfDay Then
-            Return "Timeout AM"
-        ElseIf DateTime.Now.TimeOfDay >= timeinPMRange_1.TimeOfDay And DateTime.Now.TimeOfDay <= timeinPMRange_2.TimeOfDay Then
-            Return "Timein PM"
-        ElseIf DateTime.Now.TimeOfDay >= timeoutPMRange_1.TimeOfDay And DateTime.Now.TimeOfDay <= timeoutPMRange_2.TimeOfDay Then
-            Return "Timeout PM"
-        Else
-            Return "Error"
-        End If
-    End Function
 
     Public Function CheckIfLogExist(sLRN As String) As String
         Dim currentDate As String

@@ -1,4 +1,5 @@
 ﻿Imports MySql.Data.MySqlClient
+
 Public Class uctrl_teacher_list
     Private Sub displayTeacher()
         Try
@@ -103,10 +104,10 @@ Public Class uctrl_teacher_list
                     .txtFname.Text = selectedRow.Cells(5).Value.ToString
                     .txtMname.Text = selectedRow.Cells(6).Value.ToString
                     .txtLname.Text = selectedRow.Cells(7).Value.ToString
-                    If selectedRow.Cells(8).Value.ToString = "Male" Then
-                        .cmbGender.SelectedIndex = 0
+                    If selectedRow.Cells(8).Value.ToString = GenderEnum.Male.ToString Then
+                        .cmbGender.SelectedIndex = GenderEnum.Male
                     Else
-                        .cmbGender.SelectedIndex = 1
+                        .cmbGender.SelectedIndex = GenderEnum.Female
                     End If
                     .txtContactNo.Text = selectedRow.Cells(9).Value.ToString
                     .txtEmail.Text = selectedRow.Cells(10).Value.ToString
@@ -120,10 +121,10 @@ Public Class uctrl_teacher_list
                     .txtMname.Text = selectedRow.Cells(6).Value.ToString
                     .txtLname.Text = selectedRow.Cells(7).Value.ToString
 
-                    If selectedRow.Cells(8).Value.ToString = "Male" Then
-                        .cmbGender.SelectedIndex = 0
+                    If selectedRow.Cells(8).Value.ToString = GenderEnum.Male.ToString Then
+                        .cmbGender.SelectedIndex = GenderEnum.Male
                     Else
-                        .cmbGender.SelectedIndex = 1
+                        .cmbGender.SelectedIndex = GenderEnum.Female
                     End If
                     .txtContactNo.Text = selectedRow.Cells(9).Value.ToString
                     .txtEmail.Text = selectedRow.Cells(10).Value.ToString
