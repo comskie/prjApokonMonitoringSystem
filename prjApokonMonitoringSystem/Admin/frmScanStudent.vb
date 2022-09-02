@@ -10,13 +10,14 @@ Public Class frmScanStudent
     Dim vcd As VideoCaptureDevice
     Dim bmp As Bitmap
     Dim rcvdata As String = ""
+
+    ReadOnly mirrorFilter As New AForge.Imaging.Filters.Mirror(False, True)
+    ReadOnly barcodeReader As New BarcodeReader()
+
     Private Sub Captured(sender As Object, eventArgs As NewFrameEventArgs)
         bmp = DirectCast(eventArgs.Frame.Clone(), Bitmap)
 
-        Dim filter = New AForge.Imaging.Filters.Mirror(False, True)
-        Dim mirroredBmp = filter.Apply(bmp)
-
-        PictureBox1.Image = mirroredBmp
+        PictureBox1.Image = mirrorFilter.Apply(bmp)
     End Sub
 
     Public Function ModemsConnected() As String
@@ -59,11 +60,11 @@ Public Class frmScanStudent
     End Sub
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
-        Dim Reader As New BarcodeReader()
-        Dim result As Result = Reader.Decode(CType(PictureBox1.Image, Bitmap))
-
         Dim currentDateTime = DateTime.Now
-        lblClock.Text = currentDateTime.ToString("hh:mm:ss tt").ToUpper
+
+        lblClock.Text = currentDateTime.ToString("hh:mm:ss tt").ToUpper 'update display time
+
+        Dim result As Result = barcodeReader.Decode(mirrorFilter.Apply(PictureBox1.Image))
 
         If result Is Nothing Then
             Return
@@ -75,6 +76,8 @@ Public Class frmScanStudent
             Timer1.Start()
             Return
         End If
+
+        Timer1.Stop()
 
         Dim logType = StudentUtil.GetLogTypeFromTimeSpan(currentDateTime.TimeOfDay)
 
@@ -90,7 +93,6 @@ Public Class frmScanStudent
             timeStatus.Text = "[no data]"
         End If
 
-        Timer1.Stop()
         SearchStudent(result.Text, currentDateTime, logType)
         Timer1.Start()
     End Sub
