@@ -15,9 +15,7 @@ Public Class frmScanStudent
     ReadOnly barcodeReader As New BarcodeReader()
 
     Private Sub Captured(sender As Object, eventArgs As NewFrameEventArgs)
-        bmp = DirectCast(eventArgs.Frame.Clone(), Bitmap)
-
-        PictureBox1.Image = mirrorFilter.Apply(bmp)
+        PictureBox1.Image = mirrorFilter.Apply(DirectCast(eventArgs.Frame.Clone(), Bitmap))
     End Sub
 
     Public Function ModemsConnected() As String
