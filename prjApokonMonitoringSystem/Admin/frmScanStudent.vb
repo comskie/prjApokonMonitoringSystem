@@ -128,8 +128,9 @@ Public Class frmScanStudent
 
                 If logType = StudentUtil.LogType.TimeInAM Or logType = StudentUtil.LogType.TimeOutPM Then
                     SendSMS(txtContactNo.Text, txtFname.Text & " " & txtLname.Text & " " & timeStatus.Text & " Apokon Elementary School at " & lblClock.Text)
-                    InsertToLogs(txtLRN.Text, currentDateTime)
                 End If
+
+                InsertToLogs(txtLRN.Text, currentDateTime)
             End If
         Catch ex As Exception
             conn.Close()

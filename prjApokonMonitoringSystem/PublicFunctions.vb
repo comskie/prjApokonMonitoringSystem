@@ -241,7 +241,7 @@ Module PublicFunctions
         currentDate = Date.Now.ToString("yyyy/MM/dd")
         Try
             conn.Open()
-            comm = New MySqlCommand("SELECT * FROM tbl_logs WHERE lrn = '" & sLRN & "' AND logcurrent_date = '" & currentDate & "'", conn)
+            comm = New MySqlCommand("SELECT COUNT(*) FROM tbl_logs WHERE lrn = '" & sLRN & "' AND logcurrent_date = '" & currentDate & "'", conn)
             adapter = New MySqlDataAdapter(comm)
             Dim table As New DataTable()
             adapter.Fill(table)
