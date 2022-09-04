@@ -57,10 +57,11 @@ Partial Class uctrl_student_list
         Me.Guna2ShadowPanel1.Controls.Add(Me.Label1)
         Me.Guna2ShadowPanel1.Controls.Add(Me.dgvStudent)
         Me.Guna2ShadowPanel1.FillColor = System.Drawing.Color.White
-        Me.Guna2ShadowPanel1.Location = New System.Drawing.Point(15, 86)
+        Me.Guna2ShadowPanel1.Location = New System.Drawing.Point(22, 132)
+        Me.Guna2ShadowPanel1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Guna2ShadowPanel1.Name = "Guna2ShadowPanel1"
         Me.Guna2ShadowPanel1.ShadowColor = System.Drawing.Color.Black
-        Me.Guna2ShadowPanel1.Size = New System.Drawing.Size(862, 439)
+        Me.Guna2ShadowPanel1.Size = New System.Drawing.Size(1293, 675)
         Me.Guna2ShadowPanel1.TabIndex = 24
         '
         'Label1
@@ -69,9 +70,10 @@ Partial Class uctrl_student_list
         Me.Label1.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.Label1.Font = New System.Drawing.Font("Segoe UI", 10.5!)
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(24, 17)
+        Me.Label1.Location = New System.Drawing.Point(36, 26)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(54, 19)
+        Me.Label1.Size = New System.Drawing.Size(82, 30)
         Me.Label1.TabIndex = 3
         Me.Label1.Text = "Actions"
         '
@@ -80,11 +82,6 @@ Partial Class uctrl_student_list
         Me.dgvStudent.AllowUserToAddRows = False
         DataGridViewCellStyle1.BackColor = System.Drawing.Color.White
         Me.dgvStudent.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
-        Me.dgvStudent.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.dgvStudent.BackgroundColor = System.Drawing.Color.White
-        Me.dgvStudent.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.dgvStudent.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
-        Me.dgvStudent.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
         DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI", 10.5!)
@@ -94,7 +91,6 @@ Partial Class uctrl_student_list
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.dgvStudent.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.dgvStudent.ColumnHeadersHeight = 50
-        Me.dgvStudent.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.dgvStudent.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.action_view, Me.action_edit, Me.action_delete})
         Me.dgvStudent.Cursor = System.Windows.Forms.Cursors.Hand
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
@@ -106,15 +102,15 @@ Partial Class uctrl_student_list
         DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.dgvStudent.DefaultCellStyle = DataGridViewCellStyle3
         Me.dgvStudent.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.dgvStudent.EnableHeadersVisualStyles = False
         Me.dgvStudent.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.dgvStudent.Location = New System.Drawing.Point(0, 0)
+        Me.dgvStudent.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.dgvStudent.Name = "dgvStudent"
         Me.dgvStudent.ReadOnly = True
         Me.dgvStudent.RowHeadersVisible = False
+        Me.dgvStudent.RowHeadersWidth = 62
         Me.dgvStudent.RowTemplate.Height = 80
-        Me.dgvStudent.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvStudent.Size = New System.Drawing.Size(862, 439)
+        Me.dgvStudent.Size = New System.Drawing.Size(1293, 675)
         Me.dgvStudent.TabIndex = 0
         Me.dgvStudent.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
         Me.dgvStudent.ThemeStyle.AlternatingRowsStyle.Font = Nothing
@@ -144,6 +140,7 @@ Partial Class uctrl_student_list
         Me.action_view.Frozen = True
         Me.action_view.HeaderText = ""
         Me.action_view.Image = CType(resources.GetObject("action_view.Image"), System.Drawing.Image)
+        Me.action_view.MinimumWidth = 8
         Me.action_view.Name = "action_view"
         Me.action_view.ReadOnly = True
         Me.action_view.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
@@ -155,6 +152,7 @@ Partial Class uctrl_student_list
         Me.action_edit.Frozen = True
         Me.action_edit.HeaderText = ""
         Me.action_edit.Image = CType(resources.GetObject("action_edit.Image"), System.Drawing.Image)
+        Me.action_edit.MinimumWidth = 8
         Me.action_edit.Name = "action_edit"
         Me.action_edit.ReadOnly = True
         Me.action_edit.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
@@ -166,6 +164,7 @@ Partial Class uctrl_student_list
         Me.action_delete.DividerWidth = 2
         Me.action_delete.HeaderText = ""
         Me.action_delete.Image = CType(resources.GetObject("action_delete.Image"), System.Drawing.Image)
+        Me.action_delete.MinimumWidth = 8
         Me.action_delete.Name = "action_delete"
         Me.action_delete.ReadOnly = True
         Me.action_delete.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
@@ -180,46 +179,51 @@ Partial Class uctrl_student_list
         Me.Panel2.Controls.Add(Me.Guna2Button3)
         Me.Panel2.Controls.Add(Me.Guna2Button1)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel2.Location = New System.Drawing.Point(0, 529)
+        Me.Panel2.Location = New System.Drawing.Point(0, 814)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(893, 43)
+        Me.Panel2.Size = New System.Drawing.Size(1340, 66)
         Me.Panel2.TabIndex = 31
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(146, 16)
+        Me.Label2.Location = New System.Drawing.Point(219, 25)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(16, 13)
+        Me.Label2.Size = New System.Drawing.Size(23, 20)
         Me.Label2.TabIndex = 52
         Me.Label2.Text = "of"
         '
         'currentPg
         '
         Me.currentPg.AutoSize = True
-        Me.currentPg.Location = New System.Drawing.Point(118, 16)
+        Me.currentPg.Location = New System.Drawing.Point(177, 25)
+        Me.currentPg.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.currentPg.Name = "currentPg"
-        Me.currentPg.Size = New System.Drawing.Size(13, 13)
+        Me.currentPg.Size = New System.Drawing.Size(18, 20)
         Me.currentPg.TabIndex = 51
         Me.currentPg.Text = "1"
         '
         'pgRows
         '
         Me.pgRows.AutoSize = True
-        Me.pgRows.Location = New System.Drawing.Point(180, 16)
+        Me.pgRows.Location = New System.Drawing.Point(270, 25)
+        Me.pgRows.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.pgRows.Name = "pgRows"
-        Me.pgRows.Size = New System.Drawing.Size(10, 13)
+        Me.pgRows.Size = New System.Drawing.Size(18, 20)
         Me.pgRows.TabIndex = 50
-        Me.pgRows.Text = " "
+        Me.pgRows.Text = "?"
         '
         'Guna2Button4
         '
         Me.Guna2Button4.BorderRadius = 10
         Me.Guna2Button4.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2Button4.ForeColor = System.Drawing.Color.White
-        Me.Guna2Button4.Location = New System.Drawing.Point(210, 3)
+        Me.Guna2Button4.Location = New System.Drawing.Point(315, 5)
+        Me.Guna2Button4.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Guna2Button4.Name = "Guna2Button4"
-        Me.Guna2Button4.Size = New System.Drawing.Size(86, 36)
+        Me.Guna2Button4.Size = New System.Drawing.Size(129, 55)
         Me.Guna2Button4.TabIndex = 49
         Me.Guna2Button4.Text = ">"
         '
@@ -228,9 +232,10 @@ Partial Class uctrl_student_list
         Me.Guna2Button3.BorderRadius = 10
         Me.Guna2Button3.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2Button3.ForeColor = System.Drawing.Color.White
-        Me.Guna2Button3.Location = New System.Drawing.Point(24, 3)
+        Me.Guna2Button3.Location = New System.Drawing.Point(36, 5)
+        Me.Guna2Button3.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Guna2Button3.Name = "Guna2Button3"
-        Me.Guna2Button3.Size = New System.Drawing.Size(86, 36)
+        Me.Guna2Button3.Size = New System.Drawing.Size(129, 55)
         Me.Guna2Button3.TabIndex = 48
         Me.Guna2Button3.Text = "<"
         '
@@ -242,9 +247,10 @@ Partial Class uctrl_student_list
         Me.Guna2Button1.ForeColor = System.Drawing.Color.White
         Me.Guna2Button1.Image = CType(resources.GetObject("Guna2Button1.Image"), System.Drawing.Image)
         Me.Guna2Button1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.Guna2Button1.Location = New System.Drawing.Point(796, 3)
+        Me.Guna2Button1.Location = New System.Drawing.Point(1194, 5)
+        Me.Guna2Button1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Guna2Button1.Name = "Guna2Button1"
-        Me.Guna2Button1.Size = New System.Drawing.Size(96, 37)
+        Me.Guna2Button1.Size = New System.Drawing.Size(144, 57)
         Me.Guna2Button1.TabIndex = 1
         Me.Guna2Button1.Text = "Export"
         Me.Guna2Button1.TextOffset = New System.Drawing.Point(4, 0)
@@ -256,9 +262,10 @@ Partial Class uctrl_student_list
         Me.chkboxAutoSearch.CheckedState.BorderRadius = 2
         Me.chkboxAutoSearch.CheckedState.BorderThickness = 0
         Me.chkboxAutoSearch.CheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.chkboxAutoSearch.Location = New System.Drawing.Point(210, 65)
+        Me.chkboxAutoSearch.Location = New System.Drawing.Point(315, 100)
+        Me.chkboxAutoSearch.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.chkboxAutoSearch.Name = "chkboxAutoSearch"
-        Me.chkboxAutoSearch.Size = New System.Drawing.Size(85, 17)
+        Me.chkboxAutoSearch.Size = New System.Drawing.Size(124, 24)
         Me.chkboxAutoSearch.TabIndex = 30
         Me.chkboxAutoSearch.Text = "Auto Search"
         Me.chkboxAutoSearch.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
@@ -272,18 +279,20 @@ Partial Class uctrl_student_list
         Me.btnSearch.BorderRadius = 10
         Me.btnSearch.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSearch.ForeColor = System.Drawing.Color.White
-        Me.btnSearch.Location = New System.Drawing.Point(791, 23)
+        Me.btnSearch.Location = New System.Drawing.Point(1186, 35)
+        Me.btnSearch.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btnSearch.Name = "btnSearch"
-        Me.btnSearch.Size = New System.Drawing.Size(86, 36)
+        Me.btnSearch.Size = New System.Drawing.Size(129, 55)
         Me.btnSearch.TabIndex = 29
         Me.btnSearch.Text = "Search"
         '
         'Gender
         '
         Me.Gender.AutoSize = True
-        Me.Gender.Location = New System.Drawing.Point(589, 7)
+        Me.Gender.Location = New System.Drawing.Point(884, 11)
+        Me.Gender.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Gender.Name = "Gender"
-        Me.Gender.Size = New System.Drawing.Size(42, 13)
+        Me.Gender.Size = New System.Drawing.Size(63, 20)
         Me.Gender.TabIndex = 28
         Me.Gender.Text = "Gender"
         '
@@ -299,18 +308,20 @@ Partial Class uctrl_student_list
         Me.cmbGender.FormattingEnabled = True
         Me.cmbGender.ItemHeight = 30
         Me.cmbGender.Items.AddRange(New Object() {"Male", "Female"})
-        Me.cmbGender.Location = New System.Drawing.Point(592, 23)
+        Me.cmbGender.Location = New System.Drawing.Point(888, 35)
+        Me.cmbGender.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.cmbGender.Name = "cmbGender"
-        Me.cmbGender.Size = New System.Drawing.Size(187, 36)
+        Me.cmbGender.Size = New System.Drawing.Size(278, 36)
         Me.cmbGender.StartIndex = 0
         Me.cmbGender.TabIndex = 27
         '
         'lblFilter
         '
         Me.lblFilter.AutoSize = True
-        Me.lblFilter.Location = New System.Drawing.Point(21, 7)
+        Me.lblFilter.Location = New System.Drawing.Point(32, 11)
+        Me.lblFilter.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblFilter.Name = "lblFilter"
-        Me.lblFilter.Size = New System.Drawing.Size(29, 13)
+        Me.lblFilter.Size = New System.Drawing.Size(44, 20)
         Me.lblFilter.TabIndex = 26
         Me.lblFilter.Text = "Filter"
         '
@@ -326,9 +337,10 @@ Partial Class uctrl_student_list
         Me.cmbFilter.FormattingEnabled = True
         Me.cmbFilter.ItemHeight = 30
         Me.cmbFilter.Items.AddRange(New Object() {"All", "By Name", "By Gender", "By LRN", "By Section", "No Section"})
-        Me.cmbFilter.Location = New System.Drawing.Point(15, 23)
+        Me.cmbFilter.Location = New System.Drawing.Point(22, 35)
+        Me.cmbFilter.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.cmbFilter.Name = "cmbFilter"
-        Me.cmbFilter.Size = New System.Drawing.Size(187, 36)
+        Me.cmbFilter.Size = New System.Drawing.Size(278, 36)
         Me.cmbFilter.StartIndex = 0
         Me.cmbFilter.TabIndex = 25
         '
@@ -345,18 +357,18 @@ Partial Class uctrl_student_list
         Me.txtSearchBox.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtSearchBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtSearchBox.IconLeft = CType(resources.GetObject("txtSearchBox.IconLeft"), System.Drawing.Image)
-        Me.txtSearchBox.Location = New System.Drawing.Point(210, 23)
-        Me.txtSearchBox.Margin = New System.Windows.Forms.Padding(5)
+        Me.txtSearchBox.Location = New System.Drawing.Point(315, 35)
+        Me.txtSearchBox.Margin = New System.Windows.Forms.Padding(8)
         Me.txtSearchBox.Name = "txtSearchBox"
         Me.txtSearchBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtSearchBox.PlaceholderText = "Search..."
         Me.txtSearchBox.SelectedText = ""
-        Me.txtSearchBox.Size = New System.Drawing.Size(374, 36)
+        Me.txtSearchBox.Size = New System.Drawing.Size(561, 55)
         Me.txtSearchBox.TabIndex = 23
         '
         'uctrl_student_list
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.Controls.Add(Me.Guna2ShadowPanel1)
@@ -368,8 +380,9 @@ Partial Class uctrl_student_list
         Me.Controls.Add(Me.lblFilter)
         Me.Controls.Add(Me.cmbFilter)
         Me.Controls.Add(Me.txtSearchBox)
+        Me.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Name = "uctrl_student_list"
-        Me.Size = New System.Drawing.Size(893, 572)
+        Me.Size = New System.Drawing.Size(1340, 880)
         Me.Guna2ShadowPanel1.ResumeLayout(False)
         Me.Guna2ShadowPanel1.PerformLayout()
         CType(Me.dgvStudent, System.ComponentModel.ISupportInitialize).EndInit()
