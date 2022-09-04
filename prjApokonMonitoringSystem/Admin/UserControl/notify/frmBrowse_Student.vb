@@ -14,7 +14,7 @@ Public Class frmBrowse_Student
 
             Dim dialogResult As DialogResult = MessageBox.Show("Do you want to select " + dgvStudent.SelectedCells.Item(1).Value.ToString + "?", "Browse Patient", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
             If dialogResult = DialogResult.Yes Then
-                slrn = selectedRow.Cells(0).Value.ToString
+                slrn = selectedRow.Cells(1).Value.ToString
                 sname = selectedRow.Cells(2).Value.ToString + " " + selectedRow.Cells(3).Value.ToString + " " + selectedRow.Cells(4).Value.ToString
                 scontact = selectedRow.Cells(8).Value.ToString
                 semail = selectedRow.Cells(9).Value.ToString
